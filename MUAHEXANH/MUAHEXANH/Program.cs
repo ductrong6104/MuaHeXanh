@@ -36,6 +36,7 @@ namespace MUAHEXANH
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
+        public static String maChienDich = "CD01";
         public static int mKhoa = 0;
 
         public static BindingSource bds_dspm = new BindingSource(); // giu danh sach phan manh khi dang nhap
@@ -129,7 +130,8 @@ namespace MUAHEXANH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            frmDN = new frmDangNhap();
+            Application.Run(frmDN);
         }
     }
 }

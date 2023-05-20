@@ -24,7 +24,7 @@ namespace MUAHEXANH
                 MessageBox.Show("Login name và mật mã không để trống", "", MessageBoxButtons.OK);
                 return;
             }
-
+            Program.servername = "DESKTOP-9QNDCS8\\DUCTRONG";
             Program.mlogin = txtLogin.Text;
             Program.password = txtPass.Text;
             // ket noi toi sv phan manh// lay duoc Program.connstr
@@ -72,6 +72,11 @@ namespace MUAHEXANH
             Program.frmChinh.NHOM.Text = "Nhóm = " + Program.mGroup;
             Program.frmChinh.TENSV.Text = "Ten sv: " + Program.servername;
             Program.frmDN.Hide();
+        }
+
+        private void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

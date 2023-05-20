@@ -70,7 +70,7 @@
             // 
             this.btnQuenMK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnQuenMK.Location = new System.Drawing.Point(384, 226);
-            this.btnQuenMK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuenMK.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuenMK.Name = "btnQuenMK";
             this.btnQuenMK.Size = new System.Drawing.Size(194, 36);
             this.btnQuenMK.TabIndex = 25;
@@ -80,7 +80,7 @@
             // 
             this.txtLogin.EditValue = "";
             this.txtLogin.Location = new System.Drawing.Point(89, 91);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(489, 22);
             this.txtLogin.TabIndex = 19;
@@ -88,7 +88,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(89, 226);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(181, 36);
             this.btnLogin.TabIndex = 22;
@@ -99,7 +99,7 @@
             // 
             this.txtPass.EditValue = "";
             this.txtPass.Location = new System.Drawing.Point(89, 155);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Properties.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(489, 22);
@@ -108,7 +108,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(6, 94);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(56, 16);
             this.labelControl2.TabIndex = 18;
@@ -117,7 +117,7 @@
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(10, 158);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(52, 16);
             this.labelControl3.TabIndex = 20;
@@ -133,8 +133,8 @@
             this.panelControl1.Controls.Add(this.txtPass);
             this.panelControl1.Controls.Add(this.txtLogin);
             this.panelControl1.Controls.Add(this.btnLogin);
-            this.panelControl1.Location = new System.Drawing.Point(116, 54);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Location = new System.Drawing.Point(92, 45);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(614, 337);
             this.panelControl1.TabIndex = 26;
@@ -147,6 +147,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frmDangNhap";
             this.Text = "frmDangNhap";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDangNhap_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

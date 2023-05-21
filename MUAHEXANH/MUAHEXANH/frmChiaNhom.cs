@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Mask.Design;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,19 @@ namespace MUAHEXANH
 {
     public partial class frmChiaNhom : Form
     {
+        int viTri;
+        
         public frmChiaNhom()
         {
             InitializeComponent();
         }
+
+        // chua cho phep hieu chinh tren bảng thanhviennhom
+        // chi nhung sinh vien thuộc đội chứa nhóm này thì mới thêm
         private void trangThaiBanDau()
         {
-            btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
-            btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
+            btnGhi.Enabled = btnPhucHoi.Enabled = btnHieuChinh.Enabled  = false;
 
             gcNhom.Enabled = true;
             dgvTVN.Enabled = true;
@@ -48,6 +54,7 @@ namespace MUAHEXANH
 
             this.sp_lay_doi_tu_chiendichTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_doi_tu_chiendichTableAdapter.Fill(this.dSchiaNhom.sp_lay_doi_tu_chiendich, Program.maChienDich);
+            
             cmbDoi.DataSource = sp_lay_doi_tu_chiendichBindingSource;
             cmbDoi.ValueMember = "MADOI";
             cmbDoi.DisplayMember = "TENDOI";
@@ -74,8 +81,8 @@ namespace MUAHEXANH
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //viTri = bdsLOP.Position;
-            bdsThanhVienNhom.AddNew();
+            viTri = ttsv_trong_nhomBindingSource.Position;
+            
             txtMaNhom.Text = ((DataRowView)sp_lay_nhom_tu_doiBindingSource[sp_lay_nhom_tu_doiBindingSource.Position])["MANHOM"].ToString();
             txtMaSV.Text = cmbSinhVien.SelectedValue.ToString();
             trangThaiChuaGhi();
@@ -83,7 +90,7 @@ namespace MUAHEXANH
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //viTri = bdsLOP.Position;
+            viTri = ttsv_trong_nhomBindingSource.Position;
 
             trangThaiChuaGhi();
         }
@@ -105,12 +112,15 @@ namespace MUAHEXANH
             try
             {
                 // ket thuc hieu chinh: ghi
-                bdsThanhVienNhom.EndEdit();
-                // dua thong tin len luoi (grid)
-                bdsThanhVienNhom.ResetCurrentItem();
-                this.thanhVienNhomTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.thanhVienNhomTableAdapter.Update(this.dSchiaNhom.ThanhVienNhom);
-                this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
+                string cmd = "INSERT INTO THANHVIENNHOM VALUES('" + txtMaNhom.Text.ToString() + "', '" + txtMaSV.Text.ToString() + "')";
+                int hd_them = Program.ExecSqlNonQuery(cmd);
+                if (hd_them != 0)
+                {
+                    MessageBox.Show("Lỗi xóa thành viên trong nhóm. Bạn hãy thử xóa lại\n" + hd_them.ToString(), "", MessageBoxButtons.OK);
+                    return;
+                }
+                MessageBox.Show("thêm thành viên thành công", "", MessageBoxButtons.OK);
+                //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
 
             }
             catch (Exception ex)
@@ -120,7 +130,7 @@ namespace MUAHEXANH
                 // tro ve trang thai luc them cho user dieu chinh lai
                 return;
             }
-
+            this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
             trangThaiBanDau();
         }
 
@@ -134,27 +144,32 @@ namespace MUAHEXANH
                 {
                     // giu lai vi tri con tro chuot dang tro toi giang vien chon de xoa
                     masv = ((DataRowView)ttsv_trong_nhomBindingSource[ttsv_trong_nhomBindingSource.Position])["MASV"].ToString();
-                    //manhom = ((DataRowView)sp_lay_nhom_tu_doiBindingSource[sp_lay_nhom_tu_doiBindingSource.Position])["MANHOM"].ToString();
+                    manhom = ((DataRowView)sp_lay_nhom_tu_doiBindingSource[sp_lay_nhom_tu_doiBindingSource.Position])["MANHOM"].ToString();
                     Console.WriteLine(masv);
-                    bdsThanhVienNhom.Position = bdsThanhVienNhom.Find("MaSV", masv);
-                    Console.WriteLine(bdsThanhVienNhom.Position);
-                    // xoa tren giao dien
-                    bdsThanhVienNhom.RemoveCurrent();
-                    this.thanhVienNhomTableAdapter.Connection.ConnectionString = Program.connstr;
-                    // cap nhat xoa tren database
-                    this.thanhVienNhomTableAdapter.Update(this.dSchiaNhom.ThanhVienNhom);
+                    Console.WriteLine(manhom);
+                    string cmd = "DELETE FROM THANHVIENNHOM WHERE MANHOM = '" + manhom + "' AND MASV = '" + masv + "'";
+                    int hd_xoa = Program.ExecSqlNonQuery(cmd);
+                    if (hd_xoa != 0)
+                    {
+                        MessageBox.Show("Lỗi xóa thành viên trong nhóm. Bạn hãy thử xóa lại\n" + hd_xoa.ToString(), "", MessageBoxButtons.OK);
+                        return;
+                    }
+                    MessageBox.Show("Xóa thành viên thành công", "", MessageBoxButtons.OK);
+                    
+                 
                 }
                 catch (Exception ex)
                 {
                     // truong hop cap nhat tren db bi loi
                     MessageBox.Show("Lỗi xóa lớp. Bạn hãy thử xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
                     // do du lieu tu db vào lại giao diện nếu xóa không thành công
-                    this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
+
                     // hiển thị dòng được trỏ tới để xóa ở trên
                     ttsv_trong_nhomBindingSource.Position = ttsv_trong_nhomBindingSource.Find("MASV", masv);
                     return;
                 }
             }
+            this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
             trangThaiBanDau();
         }
 
@@ -162,8 +177,9 @@ namespace MUAHEXANH
         {
 
             //neu chua ghi
-            ttsv_trong_nhomBindingSource.CancelEdit();
-            //if (btnThem.Enabled == false) ttsv_trong_nhomBindingSource.Position = viTri;
+            
+            // dang bam nut button
+            if (btnThem.Enabled == false || btnHieuChinh.Enabled == false) ttsv_trong_nhomBindingSource.Position = viTri;
             trangThaiBanDau();
 
         }
@@ -200,5 +216,7 @@ namespace MUAHEXANH
 
             }
         }
+
+        
     }
 }

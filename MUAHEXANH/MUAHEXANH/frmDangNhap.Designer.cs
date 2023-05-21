@@ -78,7 +78,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.EditValue = "";
+            this.txtLogin.EditValue = "N20DCCN079";
             this.txtLogin.Location = new System.Drawing.Point(89, 91);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
@@ -97,7 +97,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.EditValue = "";
+            this.txtPass.EditValue = "1";
             this.txtPass.Location = new System.Drawing.Point(89, 155);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";

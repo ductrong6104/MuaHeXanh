@@ -82,7 +82,7 @@
             this.txtLogin.Location = new System.Drawing.Point(89, 91);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(489, 22);
+            this.txtLogin.Size = new System.Drawing.Size(489, 26);
             this.txtLogin.TabIndex = 19;
             // 
             // btnLogin
@@ -102,7 +102,7 @@
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Properties.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(489, 22);
+            this.txtPass.Size = new System.Drawing.Size(489, 26);
             this.txtPass.TabIndex = 21;
             // 
             // labelControl2
@@ -110,7 +110,7 @@
             this.labelControl2.Location = new System.Drawing.Point(6, 94);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(56, 16);
+            this.labelControl2.Size = new System.Drawing.Size(73, 20);
             this.labelControl2.TabIndex = 18;
             this.labelControl2.Text = "Tài khoản";
             // 
@@ -119,7 +119,7 @@
             this.labelControl3.Location = new System.Drawing.Point(10, 158);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(52, 16);
+            this.labelControl3.Size = new System.Drawing.Size(69, 20);
             this.labelControl3.TabIndex = 20;
             this.labelControl3.Text = "Mật khẩu";
             // 

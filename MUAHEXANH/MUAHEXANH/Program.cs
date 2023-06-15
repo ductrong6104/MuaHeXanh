@@ -29,15 +29,17 @@ namespace MUAHEXANH
         public static String password = "";
 
         public static String database = "TTCS_MUAHEXANH";
-        public static String remotelogin = "HTKN";
-        public static String remotepassword = "123456";
+
 
         public static String mloginDN = "";
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
+        // tam thoi mac dinh chien dich hien tai luc dang nhap la CD01
         public static String maChienDich = "CD01";
         public static int mKhoa = 0;
+        public static String mTeam = "";
+        public static String mNhom = "";
 
         public static BindingSource bds_dspm = new BindingSource(); // giu danh sach phan manh khi dang nhap
         public static frmMain frmChinh; // de su dung doi tuong frmChinh trong cac form khac (vi du form dang nhap voi form main trao doi du lieu voi nhau)

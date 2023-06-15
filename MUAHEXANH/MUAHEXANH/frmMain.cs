@@ -65,5 +65,21 @@ namespace MUAHEXANH
                 f.Show();
             }
         }
+
+        private void btnChiaCV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmChiaViec));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmChiaViec f = new frmChiaViec();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

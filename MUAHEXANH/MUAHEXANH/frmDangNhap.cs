@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DevExpress.XtraPrinting.Native;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -61,7 +63,18 @@ namespace MUAHEXANH
             // dong datareader va connect db
             Program.myReader.Close();
             Program.conn.Close();
-
+            if (Program.mGroup == "GIAMSAT" || Program.mGroup == "DOITRUONG" || Program.mGroup == "DOIPHO")
+            {
+                using (SqlDataReader layMaDoi = Program.ExecSqlDataReader("SELECT MADOI FROM DOI WHERE " +
+                    "GIAMSAT1 = '" + Program.username 
+                    + "' OR GIAMSAT2='"  + Program.username 
+                    + "' OR DOITRUONG='" + Program.username 
+                    + "' OR DOIPHO='" + Program.username + "'"))
+                {
+                    layMaDoi.Read();
+                    Program.mTeam = layMaDoi.GetString(0);
+                }
+            }
 
             Program.frmChinh = new frmMain();
             Program.frmChinh.Show();

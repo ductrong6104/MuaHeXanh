@@ -29,7 +29,7 @@ namespace MUAHEXANH
         public static String password = "";
 
         public static String database = "TTCS_MUAHEXANH";
-
+        
 
         public static String mloginDN = "";
         public static String passwordDN = "";

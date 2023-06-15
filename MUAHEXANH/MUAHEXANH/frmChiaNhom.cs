@@ -17,6 +17,7 @@ namespace MUAHEXANH
     {
         private int viTri;
         private string maDoi;
+        private string maNhomDangChon = "";
         public frmChiaNhom()
         {
             InitializeComponent();
@@ -24,21 +25,7 @@ namespace MUAHEXANH
 
         // chua cho phep hieu chinh tren bảng thanhviennhom
         // chi nhung sinh vien thuộc đội chứa nhóm này thì mới thêm
-        private void trangThaiBanDau()
-        {
-            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
-            btnGhi.Enabled = btnPhucHoi.Enabled = btnHieuChinh.Enabled  = false;
-
-    
-        }
-
-        private void trangThaiChuaGhi()
-        {
-            btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
-            btnGhi.Enabled = btnPhucHoi.Enabled = true;
-
-
-        }
+        
         private void frmChiaNhom_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dSchiaNhom.thongtinsinhvien_trongnhom' table. You can move, or remove it, as needed.
@@ -51,164 +38,145 @@ namespace MUAHEXANH
 
             // TODO: This line of code loads data into the 'dSchiaNhom.Nhom' table. You can move, or remove it, as needed.
             dSchiaNhom.EnforceConstraints = false;
-
-            DataTable dsNhom = Program.ExecSqlDataTable("SELECT MANHOM, TENNHOM FROM NHOM WHERE MADOI='" + Program.mTeam + "'");
             this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam);
-            this.thongtinsinhvien_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+            this.ttsv_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.ttsv_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+            maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
+            if (maNhomDangChon == "")
+            {
+                Console.WriteLine("maNhomDangChon trong form load rong ");
+            }
+            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi_de_chia, Program.mTeam, maNhomDangChon);
+            this.sp_lay_nhom_tu_manhomTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
 
-            this.thongtinsinhvien_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
-
-            trangThaiBanDau();
         }
 
 
-
-       
-
-        private void btnDoi_Click(object sender, EventArgs e)
+        private void dataGridView3_SelectionChanged(object sender, EventArgs e)
         {
-            //this.ttsv_trong_doiTableAdapter.Connection.ConnectionString = Program.connstr;
-            //this.ttsv_trong_doiTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_doi);
-            //this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
-            //this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, cmbDoi.SelectedValue.ToString());
-            //// TODO: This line of code loads data into the 'dSchiaNhom.ttsv_trong_nhom' table. You can move, or remove it, as needed.
-            //this.ttsv_trong_nhomTableAdapter.Connection.ConnectionString = Program.connstr;
-            //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
+            if (maNhomDangChon == "")
+            {
+                Console.WriteLine("maNhomDangChon trong form selection changed rong ");
+            }
+            this.ttsv_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+            maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
+            Console.WriteLine("manhomdangchon trong datagridview3: " + maNhomDangChon);
+            Console.WriteLine("vi tri bdsNHOM: " + bdsNHOM.Position.ToString());
+            Console.WriteLine("soluongnhom: " + bdsNHOM.Count.ToString());
+            Console.WriteLine("soluongsvnhom: " + dgvSVNHOM.RowCount.ToString());
+
+            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi_de_chia, Program.mTeam, maNhomDangChon);
+            this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+            for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)
+            {
+                // chi lay sinh vien nào được tick
+                dgvSVNHOM.Rows[i].Cells[3].Value = "False";
+            }
         }
 
-
-
-        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void cmbNHOMCANTHEM_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //viTri = ttsv_trong_nhomBindingSource.Position;
-            
-            //txtMaNhom.Text = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
-            //txtMaSV.Text = cmbSinhVien.SelectedValue.ToString();
-            //trangThaiChuaGhi();
+            this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
         }
 
-        private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnCHUYEN_Click(object sender, EventArgs e)
         {
-            //viTri = ttsv_trong_nhomBindingSource.Position;
+            if (maNhomDangChon == "")
+            {
+                Console.WriteLine("maNhomDangChon trong btn chuyen rong ");
+            }
+            DataTable dtThem = new DataTable();
+            DataTable dtXoa = new DataTable();
+            dtThem.Columns.Add("MANHOM", typeof(string));
+            dtThem.Columns.Add("MASV", typeof(string));
+            dtXoa.Columns.Add("MANHOM", typeof(string));
+            dtXoa.Columns.Add("MASV", typeof(string));
+            // lay ra ma nhom chua sinh vien de them sang nhom khac
+            string manhomxoa = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
+            string manhomthem = cmbNHOMCANTHEM.SelectedValue.ToString();
+            Console.WriteLine("manhomxoa: " + manhomxoa);
+            Console.WriteLine("manhomthem: " + manhomthem);
+            int countTick = 0;
+            Console.WriteLine("dgvSVNHOM row count: " + dgvSVNHOM.RowCount.ToString());
+            if (dgvSVNHOM.Rows.Count == 0)
+            {
+                MessageBox.Show("Nhóm này không chứa sinh viên nào để chuyển! Vui lòng chọn nhóm khác", "", MessageBoxButtons.OK);
+                dgvNHOM.Focus();
+                return;
 
-            //trangThaiChuaGhi();
+            }
+
+            for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)
+            {
+                // chi lay sinh vien nào được tick
+                if (dgvSVNHOM.Rows[i].Cells[3].Value.ToString() == "True")
+                {
+                    Console.WriteLine(dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
+                    dtXoa.Rows.Add(manhomxoa, dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
+                    dtThem.Rows.Add(manhomthem, dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
+                    countTick++;
+                }
+            }
+
+            if (countTick == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn sinh viên nào để chuyển! Vui lòng chọn!", "", MessageBoxButtons.OK);
+                dgvSVNHOM.Focus();
+                return;
+            }
+            printDT(dtThem);
+            printDT(dtXoa);
+            SqlParameter para1 = new SqlParameter();
+            para1.SqlDbType = SqlDbType.Structured;
+            para1.TypeName = "dbo.TYPE_CHIANHOM";
+            para1.ParameterName = "@SVXOA";
+            para1.Value = dtXoa;
+            SqlParameter para2 = new SqlParameter();
+            para2.SqlDbType = SqlDbType.Structured;
+            para2.SqlDbType = SqlDbType.Structured;
+            para2.TypeName = "dbo.TYPE_CHIANHOM";
+            para2.ParameterName = "@SVTHEM";
+            para2.Value = dtThem;
+
+            try
+            {
+                Program.KetNoi();
+                SqlCommand sqlcmd = new SqlCommand("sp_chianhom", Program.conn);
+                sqlcmd.Parameters.Clear();
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.Add(para1);
+                sqlcmd.Parameters.Add(para2);
+                sqlcmd.ExecuteNonQuery();
+                MessageBox.Show("Sinh viên chuyển sang nhóm thành công!", "", MessageBoxButtons.OK);
+                Console.WriteLine("manhomdangchon trong btnChuyen: " + maNhomDangChon);
+                this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam);
+                this.ttsv_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+                this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sinh viên chuyển sang nhóm không thành công! Vui lòng kiểm tra lại", "", MessageBoxButtons.OK);
+                Console.WriteLine(ex.Message);
+                return;
+            }
+
+
         }
-
-        private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void printDT(DataTable dt)
         {
-            
-            //Console.WriteLine(txtMaNhom.Text);
-            //Console.WriteLine(txtMaSV.Text);
-            //if (txtMaSV.Text.Trim() == "")
-            //{
-            //    MessageBox.Show("Chưa chọn sinh viên!Vui lòng chọn", "", MessageBoxButtons.OK);
-            //    // đưa con nháy về text box
-            //    cmbSinhVien.Focus();
-            //    return;
-            //}
-
-
-            //try
-            //{
-            //    // ket thuc hieu chinh: ghi
-            //    string cmd = "INSERT INTO THANHVIENNHOM VALUES('" + txtMaNhom.Text.ToString() + "', '" + txtMaSV.Text.ToString() + "')";
-            //    int hd_them = Program.ExecSqlNonQuery(cmd);
-            //    if (hd_them != 0)
-            //    {
-            //        MessageBox.Show("Lỗi xóa thành viên trong nhóm. Bạn hãy thử xóa lại\n" + hd_them.ToString(), "", MessageBoxButtons.OK);
-            //        return;
-            //    }
-            //    MessageBox.Show("thêm thành viên thành công", "", MessageBoxButtons.OK);
-            //    //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi thêm sinh viên vào nhóm, vui lòng kiểm tra lại!", "", MessageBoxButtons.OK);
-            //    Console.WriteLine(ex.ToString());
-            //    // tro ve trang thai luc them cho user dieu chinh lai
-            //    return;
-            //}
-            //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
-            //trangThaiBanDau();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Console.WriteLine("MANHOM: " + dt.Rows[i]["MANHOM"] + ",MASV: " + dt.Rows[i]["MASV"]);
+            }
         }
 
-        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //string masv = "";
-            //string manhom = "";
-            //if (MessageBox.Show("Ban có thật sự muốn xóa sinh viên khỏi nhóm này không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            //{
-            //    try
-            //    {
-            //        // giu lai vi tri con tro chuot dang tro toi giang vien chon de xoa
-            //        masv = ((DataRowView)ttsv_trong_nhomBindingSource[ttsv_trong_nhomBindingSource.Position])["MASV"].ToString();
-            //        manhom = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
-            //        Console.WriteLine(masv);
-            //        Console.WriteLine(manhom);
-            //        string cmd = "DELETE FROM THANHVIENNHOM WHERE MANHOM = '" + manhom + "' AND MASV = '" + masv + "'";
-            //        int hd_xoa = Program.ExecSqlNonQuery(cmd);
-            //        if (hd_xoa != 0)
-            //        {
-            //            MessageBox.Show("Lỗi xóa thành viên trong nhóm. Bạn hãy thử xóa lại\n" + hd_xoa.ToString(), "", MessageBoxButtons.OK);
-            //            return;
-            //        }
-            //        MessageBox.Show("Xóa thành viên thành công", "", MessageBoxButtons.OK);
-                    
-                 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        // truong hop cap nhat tren db bi loi
-            //        MessageBox.Show("Lỗi xóa lớp. Bạn hãy thử xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
-            //        // do du lieu tu db vào lại giao diện nếu xóa không thành công
-
-            //        // hiển thị dòng được trỏ tới để xóa ở trên
-            //        ttsv_trong_nhomBindingSource.Position = ttsv_trong_nhomBindingSource.Find("MASV", masv);
-            //        return;
-            //    }
-            //}
-            //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
-            //trangThaiBanDau();
-        }
-
-        private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-            //neu chua ghi
-            
-            // dang bam nut button
-            //if (btnThem.Enabled == false || btnHieuChinh.Enabled == false) ttsv_trong_nhomBindingSource.Position = viTri;
-            //trangThaiBanDau();
-
-        }
-
-        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //try
-            //{
-            //    this.ttsv_trong_doiTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_doi);
-            //    this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom);
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi Reload: " + ex.Message, " ", MessageBoxButtons.OK);
-            //    return;
-            //}
-            //trangThaiBanDau();
-        }
-
-        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-
-
     }
 }

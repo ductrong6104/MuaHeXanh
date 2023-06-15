@@ -31,38 +31,36 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiaNhom));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSGV = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.pnlNHOM = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dgvNHOM = new System.Windows.Forms.DataGridView();
+            this.mANHOMDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENNHOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nHOMTRUONGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENDOIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sOSVNHOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsNHOM = new System.Windows.Forms.BindingSource(this.components);
             this.dSchiaNhom = new MUAHEXANH.DSchiaNhom();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMANHOM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENNHOM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNHOMTRUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENDOI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOSVNHOM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pnlSVNHOM = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCHUYEN = new DevExpress.XtraEditors.SimpleButton();
+            this.dgvSVNHOM = new System.Windows.Forms.DataGridView();
             this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hOTENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maNhomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,45 +69,48 @@
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pnlTHEMSV = new DevExpress.XtraEditors.PanelControl();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvSVNHOMCANTHEM = new System.Windows.Forms.DataGridView();
+            this.masvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotenDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sp_lay_nhom_tu_manhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.btnLoc = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmbNHOMCANTHEM = new System.Windows.Forms.ComboBox();
+            this.sp_lay_nhom_tu_doi_de_chiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new MUAHEXANH.DSchiaNhomTableAdapters.TableAdapterManager();
             this.sp_lay_nhom_tu_doiTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter();
-            this.thongtinsinhvien_trongnhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter();
-            this.maSVDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hOTENDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNhomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttsv_trongnhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter();
+            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_doi_de_chiaTableAdapter();
+            this.sp_lay_nhom_tu_manhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_manhomTableAdapter();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlNHOM)).BeginInit();
             this.pnlNHOM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNHOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNHOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSchiaNhom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlSVNHOM)).BeginInit();
             this.pnlSVNHOM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSVNHOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSVNHOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTHEMSV)).BeginInit();
             this.pnlTHEMSV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSVNHOMCANTHEM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_manhomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_doi_de_chiaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1});
             this.barManager1.DockControls.Add(this.barDockControl3);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -128,91 +129,13 @@
             this.btnThoat});
             this.barManager1.MaxItemId = 10;
             // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHieuChinh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar1.Text = "Tools";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Caption = "Thêm";
-            this.btnThem.Id = 1;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
-            this.btnThem.Name = "btnThem";
-            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
-            // 
-            // btnHieuChinh
-            // 
-            this.btnHieuChinh.Caption = "Hiệu chỉnh";
-            this.btnHieuChinh.Id = 2;
-            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
-            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
-            this.btnHieuChinh.Name = "btnHieuChinh";
-            this.btnHieuChinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinh_ItemClick);
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.Caption = "Ghi";
-            this.btnGhi.Id = 3;
-            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
-            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Caption = "Xóa";
-            this.btnXoa.Id = 4;
-            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
-            // 
-            // btnPhucHoi
-            // 
-            this.btnPhucHoi.Caption = "Phục hồi";
-            this.btnPhucHoi.Id = 5;
-            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
-            this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
-            this.btnPhucHoi.Name = "btnPhucHoi";
-            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
-            // 
-            // btnReload
-            // 
-            this.btnReload.Caption = "Reload";
-            this.btnReload.Id = 6;
-            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
-            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
-            this.btnReload.Name = "btnReload";
-            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 9;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
-            // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager1;
-            this.barDockControl3.Size = new System.Drawing.Size(1526, 30);
+            this.barDockControl3.Size = new System.Drawing.Size(1526, 0);
             // 
             // barDockControlBottom
             // 
@@ -226,17 +149,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 623);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 653);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1526, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1526, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 623);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 653);
             // 
             // barButtonItem1
             // 
@@ -245,6 +168,54 @@
             this.barButtonItem1.Enabled = false;
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 1;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
+            // 
+            // btnHieuChinh
+            // 
+            this.btnHieuChinh.Caption = "Hiệu chỉnh";
+            this.btnHieuChinh.Id = 2;
+            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
+            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
+            this.btnHieuChinh.Name = "btnHieuChinh";
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Caption = "Ghi";
+            this.btnGhi.Id = 3;
+            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
+            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
+            this.btnGhi.Name = "btnGhi";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 4;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
+            // 
+            // btnPhucHoi
+            // 
+            this.btnPhucHoi.Caption = "Phục hồi";
+            this.btnPhucHoi.Id = 5;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
+            this.btnPhucHoi.Name = "btnPhucHoi";
+            // 
+            // btnReload
+            // 
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 6;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
+            this.btnReload.Name = "btnReload";
             // 
             // btnDSGV
             // 
@@ -258,28 +229,91 @@
             this.barButtonItem8.Id = 8;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 9;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
+            // 
             // pnlNHOM
             // 
-            this.pnlNHOM.Controls.Add(this.gridControl1);
+            this.pnlNHOM.Controls.Add(this.dgvNHOM);
             this.pnlNHOM.Controls.Add(this.panelControl4);
             this.pnlNHOM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNHOM.Location = new System.Drawing.Point(0, 30);
+            this.pnlNHOM.Location = new System.Drawing.Point(0, 0);
             this.pnlNHOM.Name = "pnlNHOM";
             this.pnlNHOM.Size = new System.Drawing.Size(1526, 278);
             this.pnlNHOM.TabIndex = 31;
             // 
-            // gridControl1
+            // dgvNHOM
             // 
-            this.gridControl1.DataSource = this.bdsNHOM;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 52);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1522, 224);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.dgvNHOM.AllowUserToAddRows = false;
+            this.dgvNHOM.AutoGenerateColumns = false;
+            this.dgvNHOM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNHOM.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvNHOM.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvNHOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNHOM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mANHOMDataGridViewTextBoxColumn2,
+            this.tENNHOMDataGridViewTextBoxColumn,
+            this.nHOMTRUONGDataGridViewTextBoxColumn,
+            this.tENDOIDataGridViewTextBoxColumn,
+            this.tENAPDataGridViewTextBoxColumn,
+            this.sOSVNHOMDataGridViewTextBoxColumn});
+            this.dgvNHOM.DataSource = this.bdsNHOM;
+            this.dgvNHOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNHOM.Location = new System.Drawing.Point(2, 52);
+            this.dgvNHOM.Name = "dgvNHOM";
+            this.dgvNHOM.RowHeadersWidth = 51;
+            this.dgvNHOM.RowTemplate.Height = 24;
+            this.dgvNHOM.Size = new System.Drawing.Size(1522, 224);
+            this.dgvNHOM.TabIndex = 2;
+            this.dgvNHOM.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            // 
+            // mANHOMDataGridViewTextBoxColumn2
+            // 
+            this.mANHOMDataGridViewTextBoxColumn2.DataPropertyName = "MANHOM";
+            this.mANHOMDataGridViewTextBoxColumn2.HeaderText = "MANHOM";
+            this.mANHOMDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.mANHOMDataGridViewTextBoxColumn2.Name = "mANHOMDataGridViewTextBoxColumn2";
+            // 
+            // tENNHOMDataGridViewTextBoxColumn
+            // 
+            this.tENNHOMDataGridViewTextBoxColumn.DataPropertyName = "TENNHOM";
+            this.tENNHOMDataGridViewTextBoxColumn.HeaderText = "TENNHOM";
+            this.tENNHOMDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENNHOMDataGridViewTextBoxColumn.Name = "tENNHOMDataGridViewTextBoxColumn";
+            // 
+            // nHOMTRUONGDataGridViewTextBoxColumn
+            // 
+            this.nHOMTRUONGDataGridViewTextBoxColumn.DataPropertyName = "NHOMTRUONG";
+            this.nHOMTRUONGDataGridViewTextBoxColumn.HeaderText = "NHOMTRUONG";
+            this.nHOMTRUONGDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nHOMTRUONGDataGridViewTextBoxColumn.Name = "nHOMTRUONGDataGridViewTextBoxColumn";
+            this.nHOMTRUONGDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tENDOIDataGridViewTextBoxColumn
+            // 
+            this.tENDOIDataGridViewTextBoxColumn.DataPropertyName = "TENDOI";
+            this.tENDOIDataGridViewTextBoxColumn.HeaderText = "TENDOI";
+            this.tENDOIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENDOIDataGridViewTextBoxColumn.Name = "tENDOIDataGridViewTextBoxColumn";
+            // 
+            // tENAPDataGridViewTextBoxColumn
+            // 
+            this.tENAPDataGridViewTextBoxColumn.DataPropertyName = "TENAP";
+            this.tENAPDataGridViewTextBoxColumn.HeaderText = "TENAP";
+            this.tENAPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tENAPDataGridViewTextBoxColumn.Name = "tENAPDataGridViewTextBoxColumn";
+            // 
+            // sOSVNHOMDataGridViewTextBoxColumn
+            // 
+            this.sOSVNHOMDataGridViewTextBoxColumn.DataPropertyName = "SOSVNHOM";
+            this.sOSVNHOMDataGridViewTextBoxColumn.HeaderText = "SOSVNHOM";
+            this.sOSVNHOMDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sOSVNHOMDataGridViewTextBoxColumn.Name = "sOSVNHOMDataGridViewTextBoxColumn";
+            this.sOSVNHOMDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bdsNHOM
             // 
@@ -291,74 +325,9 @@
             this.dSchiaNhom.DataSetName = "DSchiaNhom";
             this.dSchiaNhom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMANHOM,
-            this.colTENNHOM,
-            this.colNHOMTRUONG,
-            this.colTENDOI,
-            this.colTENAP,
-            this.colSOSVNHOM});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colMANHOM
-            // 
-            this.colMANHOM.FieldName = "MANHOM";
-            this.colMANHOM.MinWidth = 25;
-            this.colMANHOM.Name = "colMANHOM";
-            this.colMANHOM.Visible = true;
-            this.colMANHOM.VisibleIndex = 0;
-            this.colMANHOM.Width = 94;
-            // 
-            // colTENNHOM
-            // 
-            this.colTENNHOM.FieldName = "TENNHOM";
-            this.colTENNHOM.MinWidth = 25;
-            this.colTENNHOM.Name = "colTENNHOM";
-            this.colTENNHOM.Visible = true;
-            this.colTENNHOM.VisibleIndex = 1;
-            this.colTENNHOM.Width = 94;
-            // 
-            // colNHOMTRUONG
-            // 
-            this.colNHOMTRUONG.FieldName = "NHOMTRUONG";
-            this.colNHOMTRUONG.MinWidth = 25;
-            this.colNHOMTRUONG.Name = "colNHOMTRUONG";
-            this.colNHOMTRUONG.Visible = true;
-            this.colNHOMTRUONG.VisibleIndex = 2;
-            this.colNHOMTRUONG.Width = 94;
-            // 
-            // colTENDOI
-            // 
-            this.colTENDOI.FieldName = "TENDOI";
-            this.colTENDOI.MinWidth = 25;
-            this.colTENDOI.Name = "colTENDOI";
-            this.colTENDOI.Visible = true;
-            this.colTENDOI.VisibleIndex = 3;
-            this.colTENDOI.Width = 94;
-            // 
-            // colTENAP
-            // 
-            this.colTENAP.FieldName = "TENAP";
-            this.colTENAP.MinWidth = 25;
-            this.colTENAP.Name = "colTENAP";
-            this.colTENAP.Visible = true;
-            this.colTENAP.VisibleIndex = 4;
-            this.colTENAP.Width = 94;
-            // 
-            // colSOSVNHOM
-            // 
-            this.colSOSVNHOM.FieldName = "SOSVNHOM";
-            this.colSOSVNHOM.MinWidth = 25;
-            this.colSOSVNHOM.Name = "colSOSVNHOM";
-            this.colSOSVNHOM.Visible = true;
-            this.colSOSVNHOM.VisibleIndex = 5;
-            this.colSOSVNHOM.Width = 94;
-            // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.btnClose);
             this.panelControl4.Controls.Add(this.labelControl1);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl4.Location = new System.Drawing.Point(2, 2);
@@ -379,52 +348,53 @@
             // pnlSVNHOM
             // 
             this.pnlSVNHOM.Controls.Add(this.panelControl7);
-            this.pnlSVNHOM.Controls.Add(this.dataGridView1);
+            this.pnlSVNHOM.Controls.Add(this.dgvSVNHOM);
             this.pnlSVNHOM.Controls.Add(this.panelControl5);
             this.pnlSVNHOM.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSVNHOM.Location = new System.Drawing.Point(0, 308);
+            this.pnlSVNHOM.Location = new System.Drawing.Point(0, 278);
             this.pnlSVNHOM.Name = "pnlSVNHOM";
-            this.pnlSVNHOM.Size = new System.Drawing.Size(743, 345);
+            this.pnlSVNHOM.Size = new System.Drawing.Size(743, 375);
             this.pnlSVNHOM.TabIndex = 32;
             // 
             // panelControl7
             // 
-            this.panelControl7.Controls.Add(this.simpleButton2);
+            this.panelControl7.Controls.Add(this.btnCHUYEN);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl7.Location = new System.Drawing.Point(2, 258);
+            this.panelControl7.Location = new System.Drawing.Point(640, 69);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(739, 85);
+            this.panelControl7.Size = new System.Drawing.Size(101, 304);
             this.panelControl7.TabIndex = 2;
             // 
-            // simpleButton2
+            // btnCHUYEN
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(440, 12);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(94, 29);
-            this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Text = "Ghi";
+            this.btnCHUYEN.Location = new System.Drawing.Point(4, 109);
+            this.btnCHUYEN.Name = "btnCHUYEN";
+            this.btnCHUYEN.Size = new System.Drawing.Size(94, 29);
+            this.btnCHUYEN.TabIndex = 0;
+            this.btnCHUYEN.Text = "Chuyển >";
+            this.btnCHUYEN.Click += new System.EventHandler(this.btnCHUYEN_Click);
             // 
-            // dataGridView1
+            // dgvSVNHOM
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSVNHOM.AllowUserToAddRows = false;
+            this.dgvSVNHOM.AutoGenerateColumns = false;
+            this.dgvSVNHOM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSVNHOM.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSVNHOM.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvSVNHOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSVNHOM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSVDataGridViewTextBoxColumn,
             this.hOTENDataGridViewTextBoxColumn,
             this.maNhomDataGridViewTextBoxColumn,
             this.themVaoNhom});
-            this.dataGridView1.DataSource = this.bdsSVNHOM;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(739, 189);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvSVNHOM.DataSource = this.bdsSVNHOM;
+            this.dgvSVNHOM.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvSVNHOM.Location = new System.Drawing.Point(2, 69);
+            this.dgvSVNHOM.Name = "dgvSVNHOM";
+            this.dgvSVNHOM.RowHeadersWidth = 51;
+            this.dgvSVNHOM.RowTemplate.Height = 24;
+            this.dgvSVNHOM.Size = new System.Drawing.Size(638, 304);
+            this.dgvSVNHOM.TabIndex = 1;
             // 
             // maSVDataGridViewTextBoxColumn
             // 
@@ -480,38 +450,64 @@
             // 
             // pnlTHEMSV
             // 
-            this.pnlTHEMSV.Controls.Add(this.dataGridView2);
+            this.pnlTHEMSV.Controls.Add(this.dgvSVNHOMCANTHEM);
             this.pnlTHEMSV.Controls.Add(this.panelControl6);
             this.pnlTHEMSV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTHEMSV.Location = new System.Drawing.Point(743, 308);
+            this.pnlTHEMSV.Location = new System.Drawing.Point(743, 278);
             this.pnlTHEMSV.Name = "pnlTHEMSV";
-            this.pnlTHEMSV.Size = new System.Drawing.Size(783, 345);
+            this.pnlTHEMSV.Size = new System.Drawing.Size(783, 375);
             this.pnlTHEMSV.TabIndex = 33;
             // 
-            // dataGridView2
+            // dgvSVNHOMCANTHEM
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSVDataGridViewTextBoxColumn1,
-            this.hOTENDataGridViewTextBoxColumn1,
+            this.dgvSVNHOMCANTHEM.AllowUserToAddRows = false;
+            this.dgvSVNHOMCANTHEM.AutoGenerateColumns = false;
+            this.dgvSVNHOMCANTHEM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSVNHOMCANTHEM.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSVNHOMCANTHEM.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvSVNHOMCANTHEM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSVNHOMCANTHEM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.masvDataGridViewTextBoxColumn1,
+            this.hotenDataGridViewTextBoxColumn1,
             this.maNhomDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.bdsSVNHOM;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 69);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(779, 274);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvSVNHOMCANTHEM.DataSource = this.sp_lay_nhom_tu_manhomBindingSource;
+            this.dgvSVNHOMCANTHEM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSVNHOMCANTHEM.Location = new System.Drawing.Point(2, 69);
+            this.dgvSVNHOMCANTHEM.Name = "dgvSVNHOMCANTHEM";
+            this.dgvSVNHOMCANTHEM.RowHeadersWidth = 51;
+            this.dgvSVNHOMCANTHEM.RowTemplate.Height = 24;
+            this.dgvSVNHOMCANTHEM.Size = new System.Drawing.Size(779, 304);
+            this.dgvSVNHOMCANTHEM.TabIndex = 1;
+            // 
+            // masvDataGridViewTextBoxColumn1
+            // 
+            this.masvDataGridViewTextBoxColumn1.DataPropertyName = "masv";
+            this.masvDataGridViewTextBoxColumn1.HeaderText = "masv";
+            this.masvDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.masvDataGridViewTextBoxColumn1.Name = "masvDataGridViewTextBoxColumn1";
+            // 
+            // hotenDataGridViewTextBoxColumn1
+            // 
+            this.hotenDataGridViewTextBoxColumn1.DataPropertyName = "hoten";
+            this.hotenDataGridViewTextBoxColumn1.HeaderText = "hoten";
+            this.hotenDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.hotenDataGridViewTextBoxColumn1.Name = "hotenDataGridViewTextBoxColumn1";
+            this.hotenDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // maNhomDataGridViewTextBoxColumn1
+            // 
+            this.maNhomDataGridViewTextBoxColumn1.DataPropertyName = "MaNhom";
+            this.maNhomDataGridViewTextBoxColumn1.HeaderText = "MaNhom";
+            this.maNhomDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.maNhomDataGridViewTextBoxColumn1.Name = "maNhomDataGridViewTextBoxColumn1";
+            // 
+            // sp_lay_nhom_tu_manhomBindingSource
+            // 
+            this.sp_lay_nhom_tu_manhomBindingSource.DataMember = "sp_lay_nhom_tu_manhom";
+            this.sp_lay_nhom_tu_manhomBindingSource.DataSource = this.dSchiaNhom;
             // 
             // panelControl6
             // 
-            this.panelControl6.Controls.Add(this.btnLoc);
             this.panelControl6.Controls.Add(this.labelControl3);
             this.panelControl6.Controls.Add(this.cmbNHOMCANTHEM);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -519,14 +515,6 @@
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(779, 67);
             this.panelControl6.TabIndex = 0;
-            // 
-            // btnLoc
-            // 
-            this.btnLoc.Location = new System.Drawing.Point(456, 23);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(94, 29);
-            this.btnLoc.TabIndex = 2;
-            this.btnLoc.Text = "Lọc";
             // 
             // labelControl3
             // 
@@ -538,11 +526,20 @@
             // 
             // cmbNHOMCANTHEM
             // 
+            this.cmbNHOMCANTHEM.DataSource = this.sp_lay_nhom_tu_doi_de_chiaBindingSource;
+            this.cmbNHOMCANTHEM.DisplayMember = "TenNhom";
             this.cmbNHOMCANTHEM.FormattingEnabled = true;
             this.cmbNHOMCANTHEM.Location = new System.Drawing.Point(221, 23);
             this.cmbNHOMCANTHEM.Name = "cmbNHOMCANTHEM";
             this.cmbNHOMCANTHEM.Size = new System.Drawing.Size(157, 28);
             this.cmbNHOMCANTHEM.TabIndex = 0;
+            this.cmbNHOMCANTHEM.ValueMember = "MaNhom";
+            this.cmbNHOMCANTHEM.SelectionChangeCommitted += new System.EventHandler(this.cmbNHOMCANTHEM_SelectionChangeCommitted);
+            // 
+            // sp_lay_nhom_tu_doi_de_chiaBindingSource
+            // 
+            this.sp_lay_nhom_tu_doi_de_chiaBindingSource.DataMember = "sp_lay_nhom_tu_doi_de_chia";
+            this.sp_lay_nhom_tu_doi_de_chiaBindingSource.DataSource = this.dSchiaNhom;
             // 
             // tableAdapterManager
             // 
@@ -557,31 +554,27 @@
             // 
             this.sp_lay_nhom_tu_doiTableAdapter.ClearBeforeFill = true;
             // 
-            // thongtinsinhvien_trongnhomTableAdapter
+            // ttsv_trongnhomTableAdapter
             // 
-            this.thongtinsinhvien_trongnhomTableAdapter.ClearBeforeFill = true;
+            this.ttsv_trongnhomTableAdapter.ClearBeforeFill = true;
             // 
-            // maSVDataGridViewTextBoxColumn1
+            // sp_lay_nhom_tu_doi_de_chiaTableAdapter
             // 
-            this.maSVDataGridViewTextBoxColumn1.DataPropertyName = "MaSV";
-            this.maSVDataGridViewTextBoxColumn1.HeaderText = "MaSV";
-            this.maSVDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.maSVDataGridViewTextBoxColumn1.Name = "maSVDataGridViewTextBoxColumn1";
+            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.ClearBeforeFill = true;
             // 
-            // hOTENDataGridViewTextBoxColumn1
+            // sp_lay_nhom_tu_manhomTableAdapter
             // 
-            this.hOTENDataGridViewTextBoxColumn1.DataPropertyName = "HOTEN";
-            this.hOTENDataGridViewTextBoxColumn1.HeaderText = "HOTEN";
-            this.hOTENDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.hOTENDataGridViewTextBoxColumn1.Name = "hOTENDataGridViewTextBoxColumn1";
-            this.hOTENDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sp_lay_nhom_tu_manhomTableAdapter.ClearBeforeFill = true;
             // 
-            // maNhomDataGridViewTextBoxColumn1
+            // btnClose
             // 
-            this.maNhomDataGridViewTextBoxColumn1.DataPropertyName = "MaNhom";
-            this.maNhomDataGridViewTextBoxColumn1.HeaderText = "MaNhom";
-            this.maNhomDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.maNhomDataGridViewTextBoxColumn1.Name = "maNhomDataGridViewTextBoxColumn1";
+            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
+            this.btnClose.Location = new System.Drawing.Point(1415, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 40);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmChiaNhom
             // 
@@ -602,10 +595,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlNHOM)).EndInit();
             this.pnlNHOM.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNHOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNHOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSchiaNhom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
@@ -613,17 +605,19 @@
             this.pnlSVNHOM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSVNHOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSVNHOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTHEMSV)).EndInit();
             this.pnlTHEMSV.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSVNHOMCANTHEM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_manhomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_doi_de_chiaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,7 +625,6 @@
 
         #endregion
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem btnThem;
         private DevExpress.XtraBars.BarButtonItem btnHieuChinh;
         private DevExpress.XtraBars.BarButtonItem btnGhi;
@@ -652,35 +645,38 @@
         private DSchiaNhom dSchiaNhom;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraGrid.GridControl gridControl1;
         private System.Windows.Forms.BindingSource bdsNHOM;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMANHOM;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENNHOM;
-        private DevExpress.XtraGrid.Columns.GridColumn colNHOMTRUONG;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENDOI;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENAP;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOSVNHOM;
         private DSchiaNhomTableAdapters.TableAdapterManager tableAdapterManager;
         private DSchiaNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter sp_lay_nhom_tu_doiTableAdapter;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSVNHOM;
         private System.Windows.Forms.BindingSource bdsSVNHOM;
-        private DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter thongtinsinhvien_trongnhomTableAdapter;
+        private DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter ttsv_trongnhomTableAdapter;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.ComboBox cmbNHOMCANTHEM;
-        private DevExpress.XtraEditors.SimpleButton btnLoc;
         private DevExpress.XtraEditors.PanelControl panelControl7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnCHUYEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hOTENDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn themVaoNhom;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hOTENDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dgvSVNHOMCANTHEM;
+        private System.Windows.Forms.BindingSource sp_lay_nhom_tu_doi_de_chiaBindingSource;
+        private DSchiaNhomTableAdapters.sp_lay_nhom_tu_doi_de_chiaTableAdapter sp_lay_nhom_tu_doi_de_chiaTableAdapter;
+        private System.Windows.Forms.DataGridView dgvNHOM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mANHOMDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENNHOMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nHOMTRUONGDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENDOIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENAPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sOSVNHOMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sp_lay_nhom_tu_manhomBindingSource;
+        private DSchiaNhomTableAdapters.sp_lay_nhom_tu_manhomTableAdapter sp_lay_nhom_tu_manhomTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn1;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
     }
 }

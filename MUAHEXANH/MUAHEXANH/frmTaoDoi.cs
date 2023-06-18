@@ -12,6 +12,7 @@ namespace MUAHEXANH
 {
     public partial class frmTaoDoi : Form
     {
+        private int viTri
         public frmTaoDoi()
         {
             InitializeComponent();

@@ -51,8 +51,8 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.pnlDANHSACHNHOM = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.sp_lay_nhom_tu_doiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gcNHOM = new DevExpress.XtraGrid.GridControl();
+            this.bdsDSNHOM = new System.Windows.Forms.BindingSource(this.components);
             this.dStaoNhom = new MUAHEXANH.DStaoNhom();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMANHOM = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,22 +68,22 @@
             this.pnlDSSV = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.pnlTHEMNHOM = new DevExpress.XtraEditors.PanelControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tENDOITextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tENNHOMTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.sp_lay_nhom_tu_doiTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter();
-            this.tableAdapterManager = new MUAHEXANH.DStaoNhomTableAdapters.TableAdapterManager();
-            this.sp_lay_nha_chuaconhom_tudoiTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.sp_lay_nha_chuaconhom_tudoiTableAdapter();
-            this.sp_lay_nha_chuaconhom_tudoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttsv_trongnhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttsv_trongnhomTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.ttsv_trongnhomTableAdapter();
             this.manhomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.masvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.makhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttsv_trongnhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.pnlTHEMNHOM = new DevExpress.XtraEditors.PanelControl();
+            this.cmbDIACHI = new System.Windows.Forms.ComboBox();
+            this.sp_lay_nha_chuaconhom_tudoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tENDOITextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.txtTENNHOM = new DevExpress.XtraEditors.TextEdit();
+            this.sp_lay_nhom_tu_doiTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter();
+            this.tableAdapterManager = new MUAHEXANH.DStaoNhomTableAdapters.TableAdapterManager();
+            this.sp_lay_nha_chuaconhom_tudoiTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.sp_lay_nha_chuaconhom_tudoiTableAdapter();
+            this.ttsv_trongnhomTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.ttsv_trongnhomTableAdapter();
             tENNHOMLabel = new System.Windows.Forms.Label();
             tENDOILabel = new System.Windows.Forms.Label();
             diachiLabel = new System.Windows.Forms.Label();
@@ -92,8 +92,8 @@
             this.pnlDANHSACHNHOM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_doiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNHOM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDSNHOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dStaoNhom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -105,14 +105,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttsv_trongnhomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTHEMNHOM)).BeginInit();
             this.pnlTHEMNHOM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tENDOITextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENNHOMTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nha_chuaconhom_tudoiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttsv_trongnhomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENDOITextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTENNHOM.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tENNHOMLabel
@@ -187,6 +187,7 @@
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnHieuChinh
             // 
@@ -195,6 +196,7 @@
             this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
             this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
             this.btnHieuChinh.Name = "btnHieuChinh";
+            this.btnHieuChinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinh_ItemClick);
             // 
             // btnGhi
             // 
@@ -203,6 +205,7 @@
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -211,6 +214,7 @@
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -219,6 +223,7 @@
             this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
             this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnReload
             // 
@@ -227,6 +232,7 @@
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -234,6 +240,7 @@
             this.btnThoat.Id = 9;
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControl3
             // 
@@ -299,30 +306,30 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.gridControl1);
+            this.panelControl2.Controls.Add(this.gcNHOM);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(2, 59);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1117, 235);
             this.panelControl2.TabIndex = 1;
             // 
-            // gridControl1
+            // gcNHOM
             // 
-            this.gridControl1.DataSource = this.sp_lay_nhom_tu_doiBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1113, 231);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcNHOM.DataSource = this.bdsDSNHOM;
+            this.gcNHOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcNHOM.Location = new System.Drawing.Point(2, 2);
+            this.gcNHOM.MainView = this.gridView1;
+            this.gcNHOM.MenuManager = this.barManager1;
+            this.gcNHOM.Name = "gcNHOM";
+            this.gcNHOM.Size = new System.Drawing.Size(1113, 231);
+            this.gcNHOM.TabIndex = 0;
+            this.gcNHOM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // sp_lay_nhom_tu_doiBindingSource
+            // bdsDSNHOM
             // 
-            this.sp_lay_nhom_tu_doiBindingSource.DataMember = "sp_lay_nhom_tu_doi";
-            this.sp_lay_nhom_tu_doiBindingSource.DataSource = this.dStaoNhom;
+            this.bdsDSNHOM.DataMember = "sp_lay_nhom_tu_doi";
+            this.bdsDSNHOM.DataSource = this.dStaoNhom;
             // 
             // dStaoNhom
             // 
@@ -339,7 +346,7 @@
             this.colTENAP,
             this.coldiachi,
             this.colSOSVNHOM});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gcNHOM;
             this.gridView1.Name = "gridView1";
             // 
             // colMANHOM
@@ -347,6 +354,7 @@
             this.colMANHOM.FieldName = "MANHOM";
             this.colMANHOM.MinWidth = 25;
             this.colMANHOM.Name = "colMANHOM";
+            this.colMANHOM.OptionsColumn.ReadOnly = true;
             this.colMANHOM.Visible = true;
             this.colMANHOM.VisibleIndex = 0;
             this.colMANHOM.Width = 94;
@@ -356,6 +364,7 @@
             this.colTENNHOM.FieldName = "TENNHOM";
             this.colTENNHOM.MinWidth = 25;
             this.colTENNHOM.Name = "colTENNHOM";
+            this.colTENNHOM.OptionsColumn.ReadOnly = true;
             this.colTENNHOM.Visible = true;
             this.colTENNHOM.VisibleIndex = 1;
             this.colTENNHOM.Width = 94;
@@ -365,6 +374,7 @@
             this.colNHOMTRUONG.FieldName = "NHOMTRUONG";
             this.colNHOMTRUONG.MinWidth = 25;
             this.colNHOMTRUONG.Name = "colNHOMTRUONG";
+            this.colNHOMTRUONG.OptionsColumn.ReadOnly = true;
             this.colNHOMTRUONG.Visible = true;
             this.colNHOMTRUONG.VisibleIndex = 2;
             this.colNHOMTRUONG.Width = 94;
@@ -374,6 +384,7 @@
             this.colTENDOI.FieldName = "TENDOI";
             this.colTENDOI.MinWidth = 25;
             this.colTENDOI.Name = "colTENDOI";
+            this.colTENDOI.OptionsColumn.ReadOnly = true;
             this.colTENDOI.Visible = true;
             this.colTENDOI.VisibleIndex = 3;
             this.colTENDOI.Width = 94;
@@ -383,6 +394,7 @@
             this.colTENAP.FieldName = "TENAP";
             this.colTENAP.MinWidth = 25;
             this.colTENAP.Name = "colTENAP";
+            this.colTENAP.OptionsColumn.ReadOnly = true;
             this.colTENAP.Visible = true;
             this.colTENAP.VisibleIndex = 4;
             this.colTENAP.Width = 94;
@@ -392,6 +404,7 @@
             this.coldiachi.FieldName = "diachi";
             this.coldiachi.MinWidth = 25;
             this.coldiachi.Name = "coldiachi";
+            this.coldiachi.OptionsColumn.ReadOnly = true;
             this.coldiachi.Visible = true;
             this.coldiachi.VisibleIndex = 5;
             this.coldiachi.Width = 94;
@@ -401,6 +414,7 @@
             this.colSOSVNHOM.FieldName = "SOSVNHOM";
             this.colSOSVNHOM.MinWidth = 25;
             this.colSOSVNHOM.Name = "colSOSVNHOM";
+            this.colSOSVNHOM.OptionsColumn.ReadOnly = true;
             this.colSOSVNHOM.Visible = true;
             this.colSOSVNHOM.VisibleIndex = 6;
             this.colSOSVNHOM.Width = 94;
@@ -455,6 +469,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -473,98 +488,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(481, 272);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.labelControl2);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(2, 2);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(485, 58);
-            this.panelControl3.TabIndex = 0;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(64, 5);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(453, 33);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "DANH SÁCH SINH VIÊN CỦA NHÓM";
-            // 
-            // pnlTHEMNHOM
-            // 
-            this.pnlTHEMNHOM.Controls.Add(this.comboBox1);
-            this.pnlTHEMNHOM.Controls.Add(diachiLabel);
-            this.pnlTHEMNHOM.Controls.Add(tENDOILabel);
-            this.pnlTHEMNHOM.Controls.Add(this.tENDOITextEdit);
-            this.pnlTHEMNHOM.Controls.Add(tENNHOMLabel);
-            this.pnlTHEMNHOM.Controls.Add(this.tENNHOMTextEdit);
-            this.pnlTHEMNHOM.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlTHEMNHOM.Location = new System.Drawing.Point(2, 2);
-            this.pnlTHEMNHOM.Name = "pnlTHEMNHOM";
-            this.pnlTHEMNHOM.Size = new System.Drawing.Size(628, 338);
-            this.pnlTHEMNHOM.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_nhom_tu_doiBindingSource, "diachi", true));
-            this.comboBox1.DataSource = this.sp_lay_nha_chuaconhom_tudoiBindingSource;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(459, 28);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.ValueMember = "MaNha";
-            // 
-            // tENDOITextEdit
-            // 
-            this.tENDOITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_nhom_tu_doiBindingSource, "TENDOI", true));
-            this.tENDOITextEdit.Location = new System.Drawing.Point(126, 14);
-            this.tENDOITextEdit.MenuManager = this.barManager1;
-            this.tENDOITextEdit.Name = "tENDOITextEdit";
-            this.tENDOITextEdit.Properties.ReadOnly = true;
-            this.tENDOITextEdit.Size = new System.Drawing.Size(308, 26);
-            this.tENDOITextEdit.TabIndex = 3;
-            // 
-            // tENNHOMTextEdit
-            // 
-            this.tENNHOMTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_nhom_tu_doiBindingSource, "TENNHOM", true));
-            this.tENNHOMTextEdit.Location = new System.Drawing.Point(126, 76);
-            this.tENNHOMTextEdit.MenuManager = this.barManager1;
-            this.tENNHOMTextEdit.Name = "tENNHOMTextEdit";
-            this.tENNHOMTextEdit.Size = new System.Drawing.Size(308, 26);
-            this.tENNHOMTextEdit.TabIndex = 1;
-            // 
-            // sp_lay_nhom_tu_doiTableAdapter
-            // 
-            this.sp_lay_nhom_tu_doiTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.NhomTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MUAHEXANH.DStaoNhomTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // sp_lay_nha_chuaconhom_tudoiTableAdapter
-            // 
-            this.sp_lay_nha_chuaconhom_tudoiTableAdapter.ClearBeforeFill = true;
-            // 
-            // sp_lay_nha_chuaconhom_tudoiBindingSource
-            // 
-            this.sp_lay_nha_chuaconhom_tudoiBindingSource.DataMember = "sp_lay_nha_chuaconhom_tudoi";
-            this.sp_lay_nha_chuaconhom_tudoiBindingSource.DataSource = this.dStaoNhom;
-            // 
-            // ttsv_trongnhomBindingSource
-            // 
-            this.ttsv_trongnhomBindingSource.DataMember = "sp_lay_nhom_tu_doi_ttsv_trongnhom";
-            this.ttsv_trongnhomBindingSource.DataSource = this.sp_lay_nhom_tu_doiBindingSource;
-            // 
-            // ttsv_trongnhomTableAdapter
-            // 
-            this.ttsv_trongnhomTableAdapter.ClearBeforeFill = true;
             // 
             // manhomDataGridViewTextBoxColumn
             // 
@@ -595,6 +518,99 @@
             this.makhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.makhoaDataGridViewTextBoxColumn.Name = "makhoaDataGridViewTextBoxColumn";
             // 
+            // ttsv_trongnhomBindingSource
+            // 
+            this.ttsv_trongnhomBindingSource.DataMember = "sp_lay_nhom_tu_doi_ttsv_trongnhom";
+            this.ttsv_trongnhomBindingSource.DataSource = this.bdsDSNHOM;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.labelControl2);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(2, 2);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(485, 58);
+            this.panelControl3.TabIndex = 0;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(64, 5);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(453, 33);
+            this.labelControl2.TabIndex = 0;
+            this.labelControl2.Text = "DANH SÁCH SINH VIÊN CỦA NHÓM";
+            // 
+            // pnlTHEMNHOM
+            // 
+            this.pnlTHEMNHOM.Controls.Add(this.cmbDIACHI);
+            this.pnlTHEMNHOM.Controls.Add(diachiLabel);
+            this.pnlTHEMNHOM.Controls.Add(tENDOILabel);
+            this.pnlTHEMNHOM.Controls.Add(this.tENDOITextEdit);
+            this.pnlTHEMNHOM.Controls.Add(tENNHOMLabel);
+            this.pnlTHEMNHOM.Controls.Add(this.txtTENNHOM);
+            this.pnlTHEMNHOM.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlTHEMNHOM.Location = new System.Drawing.Point(2, 2);
+            this.pnlTHEMNHOM.Name = "pnlTHEMNHOM";
+            this.pnlTHEMNHOM.Size = new System.Drawing.Size(628, 338);
+            this.pnlTHEMNHOM.TabIndex = 0;
+            // 
+            // cmbDIACHI
+            // 
+            this.cmbDIACHI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDSNHOM, "diachi", true));
+            this.cmbDIACHI.DataSource = this.sp_lay_nha_chuaconhom_tudoiBindingSource;
+            this.cmbDIACHI.DisplayMember = "DiaChi";
+            this.cmbDIACHI.FormattingEnabled = true;
+            this.cmbDIACHI.Location = new System.Drawing.Point(126, 130);
+            this.cmbDIACHI.Name = "cmbDIACHI";
+            this.cmbDIACHI.Size = new System.Drawing.Size(459, 28);
+            this.cmbDIACHI.TabIndex = 6;
+            this.cmbDIACHI.ValueMember = "MaNha";
+            // 
+            // sp_lay_nha_chuaconhom_tudoiBindingSource
+            // 
+            this.sp_lay_nha_chuaconhom_tudoiBindingSource.DataMember = "sp_lay_nha_chuaconhom_tudoi";
+            this.sp_lay_nha_chuaconhom_tudoiBindingSource.DataSource = this.dStaoNhom;
+            // 
+            // tENDOITextEdit
+            // 
+            this.tENDOITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDSNHOM, "TENDOI", true));
+            this.tENDOITextEdit.Location = new System.Drawing.Point(126, 14);
+            this.tENDOITextEdit.MenuManager = this.barManager1;
+            this.tENDOITextEdit.Name = "tENDOITextEdit";
+            this.tENDOITextEdit.Properties.ReadOnly = true;
+            this.tENDOITextEdit.Size = new System.Drawing.Size(308, 26);
+            this.tENDOITextEdit.TabIndex = 3;
+            // 
+            // txtTENNHOM
+            // 
+            this.txtTENNHOM.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDSNHOM, "TENNHOM", true));
+            this.txtTENNHOM.Location = new System.Drawing.Point(126, 76);
+            this.txtTENNHOM.MenuManager = this.barManager1;
+            this.txtTENNHOM.Name = "txtTENNHOM";
+            this.txtTENNHOM.Size = new System.Drawing.Size(308, 26);
+            this.txtTENNHOM.TabIndex = 1;
+            // 
+            // sp_lay_nhom_tu_doiTableAdapter
+            // 
+            this.sp_lay_nhom_tu_doiTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.NhomTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = MUAHEXANH.DStaoNhomTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // sp_lay_nha_chuaconhom_tudoiTableAdapter
+            // 
+            this.sp_lay_nha_chuaconhom_tudoiTableAdapter.ClearBeforeFill = true;
+            // 
+            // ttsv_trongnhomTableAdapter
+            // 
+            this.ttsv_trongnhomTableAdapter.ClearBeforeFill = true;
+            // 
             // frmTaoNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -615,8 +631,8 @@
             this.pnlDANHSACHNHOM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_doiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNHOM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDSNHOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dStaoNhom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -629,16 +645,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttsv_trongnhomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTHEMNHOM)).EndInit();
             this.pnlTHEMNHOM.ResumeLayout(false);
             this.pnlTHEMNHOM.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tENDOITextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tENNHOMTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nha_chuaconhom_tudoiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttsv_trongnhomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENDOITextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTENNHOM.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,10 +688,10 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gcNHOM;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DStaoNhom dStaoNhom;
-        private System.Windows.Forms.BindingSource sp_lay_nhom_tu_doiBindingSource;
+        private System.Windows.Forms.BindingSource bdsDSNHOM;
         private DStaoNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter sp_lay_nhom_tu_doiTableAdapter;
         private DStaoNhomTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.Columns.GridColumn colMANHOM;
@@ -687,8 +703,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSOSVNHOM;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraEditors.TextEdit tENDOITextEdit;
-        private DevExpress.XtraEditors.TextEdit tENNHOMTextEdit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraEditors.TextEdit txtTENNHOM;
+        private System.Windows.Forms.ComboBox cmbDIACHI;
         private DStaoNhomTableAdapters.sp_lay_nha_chuaconhom_tudoiTableAdapter sp_lay_nha_chuaconhom_tudoiTableAdapter;
         private System.Windows.Forms.BindingSource sp_lay_nha_chuaconhom_tudoiBindingSource;
         private System.Windows.Forms.BindingSource ttsv_trongnhomBindingSource;

@@ -74,21 +74,21 @@
             this.cmbCongViec = new System.Windows.Forms.ComboBox();
             this.bdsCongViec = new System.Windows.Forms.BindingSource(this.components);
             this.cmbNhom = new System.Windows.Forms.ComboBox();
-            this.sp_lay_dsphancong_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter();
             this.tableAdapterManager = new MUAHEXANH.DSchiaViecTableAdapters.TableAdapterManager();
             this.sp_lay_ap_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_ap_tu_doiTableAdapter();
             this.sp_lay_dscongviec_tu_apTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dscongviec_tu_apTableAdapter();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvCongViec = new System.Windows.Forms.DataGridView();
-            this.sp_lay_dscongviec_tu_doiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.sp_lay_dscongviec_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dscongviec_tu_doiTableAdapter();
             this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayBatDauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayKetThucDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sp_lay_dscongviec_tu_doiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.sp_lay_dscongviec_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dscongviec_tu_doiTableAdapter();
+            this.sp_lay_dsphancong_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -503,6 +503,7 @@
             this.cmbAp.Size = new System.Drawing.Size(256, 28);
             this.cmbAp.TabIndex = 12;
             this.cmbAp.ValueMember = "MaAp";
+            this.cmbAp.SelectionChangeCommitted += new System.EventHandler(this.cmbAp_SelectionChangeCommitted);
             // 
             // bdsAp
             // 
@@ -536,10 +537,6 @@
             this.cmbNhom.Size = new System.Drawing.Size(256, 28);
             this.cmbNhom.TabIndex = 10;
             this.cmbNhom.ValueMember = "MANHOM";
-            // 
-            // sp_lay_dsphancong_tu_doiTableAdapter
-            // 
-            this.sp_lay_dsphancong_tu_doiTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -591,32 +588,6 @@
             this.dgvCongViec.Size = new System.Drawing.Size(571, 369);
             this.dgvCongViec.TabIndex = 1;
             // 
-            // sp_lay_dscongviec_tu_doiBindingSource
-            // 
-            this.sp_lay_dscongviec_tu_doiBindingSource.DataMember = "sp_lay_dscongviec_tu_doi";
-            this.sp_lay_dscongviec_tu_doiBindingSource.DataSource = this.dSchiaViec;
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.labelControl7);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(2, 2);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(571, 61);
-            this.panelControl3.TabIndex = 0;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(89, 19);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(294, 20);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "KHỐI LƯỢNG CÔNG VIỆC CỦA ĐỘI";
-            // 
-            // sp_lay_dscongviec_tu_doiTableAdapter
-            // 
-            this.sp_lay_dscongviec_tu_doiTableAdapter.ClearBeforeFill = true;
-            // 
             // maCVDataGridViewTextBoxColumn
             // 
             this.maCVDataGridViewTextBoxColumn.DataPropertyName = "MaCV";
@@ -656,6 +627,36 @@
             this.TENAP.MinimumWidth = 6;
             this.TENAP.Name = "TENAP";
             this.TENAP.ReadOnly = true;
+            // 
+            // sp_lay_dscongviec_tu_doiBindingSource
+            // 
+            this.sp_lay_dscongviec_tu_doiBindingSource.DataMember = "sp_lay_dscongviec_tu_doi";
+            this.sp_lay_dscongviec_tu_doiBindingSource.DataSource = this.dSchiaViec;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.labelControl7);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(2, 2);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(571, 61);
+            this.panelControl3.TabIndex = 0;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(89, 19);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(294, 20);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "KHỐI LƯỢNG CÔNG VIỆC CỦA ĐỘI";
+            // 
+            // sp_lay_dscongviec_tu_doiTableAdapter
+            // 
+            this.sp_lay_dscongviec_tu_doiTableAdapter.ClearBeforeFill = true;
+            // 
+            // sp_lay_dsphancong_tu_doiTableAdapter
+            // 
+            this.sp_lay_dsphancong_tu_doiTableAdapter.ClearBeforeFill = true;
             // 
             // frmChiaViec
             // 
@@ -743,8 +744,6 @@
         private System.Windows.Forms.ComboBox cmbBuoi;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DSchiaViec dSchiaViec;
-        private System.Windows.Forms.BindingSource bdsDSPHANCONG;
-        private DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter sp_lay_dsphancong_tu_doiTableAdapter;
         private DSchiaViecTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource bdsAp;
         private DSchiaViecTableAdapters.sp_lay_ap_tu_doiTableAdapter sp_lay_ap_tu_doiTableAdapter;
@@ -763,5 +762,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayBatDauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayKetThucDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENAP;
+        private System.Windows.Forms.BindingSource bdsDSPHANCONG;
+        private DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter sp_lay_dsphancong_tu_doiTableAdapter;
     }
 }

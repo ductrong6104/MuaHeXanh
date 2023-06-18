@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraEditors.Mask.Design;
+﻿using DevExpress.XtraCharts.Native;
+using DevExpress.XtraEditors.Mask.Design;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraPrinting.Native;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,7 @@ namespace MUAHEXANH
         private int viTri;
         private string maDoi;
         private string maNhomDangChon = "";
+        private bool ghiThanhCong = false;
         public frmChiaNhom()
         {
             InitializeComponent();
@@ -28,8 +31,9 @@ namespace MUAHEXANH
         
         private void frmChiaNhom_Load(object sender, EventArgs e)
         {
+          
             // TODO: This line of code loads data into the 'dSchiaNhom.thongtinsinhvien_trongnhom' table. You can move, or remove it, as needed.
-      
+
             // TODO: This line of code loads data into the 'dSchiaNhom.ttsv_trong_doi' table. You can move, or remove it, as needed.
 
             // TODO: This line of code loads data into the 'dSchiaNhom.ThanhVienNhom' table. You can move, or remove it, as needed.
@@ -40,29 +44,34 @@ namespace MUAHEXANH
             dSchiaNhom.EnforceConstraints = false;
             this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam);
-            this.ttsv_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.ttsv_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
-            maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
-            if (maNhomDangChon == "")
-            {
-                Console.WriteLine("maNhomDangChon trong form load rong ");
-            }
-            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi_de_chia, Program.mTeam, maNhomDangChon);
-            this.sp_lay_nhom_tu_manhomTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+            //this.thongtinsinhvien_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+            //maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
+            //if (maNhomDangChon == "")
+            //{
+            //    Console.WriteLine("maNhomDangChon trong form load rong ");
+            //}
+            //this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi_de_chia, Program.mTeam, maNhomDangChon);
+            //this.sp_lay_nhom_tu_manhomTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
 
         }
 
-
+        
         private void dataGridView3_SelectionChanged(object sender, EventArgs e)
         {
+            
+            Console.WriteLine("manhomdangchon khi vo selectionchanged: " + maNhomDangChon);
+            Console.WriteLine("soluongnhom: khi vo selectionchanged" + bdsNHOM.Count.ToString());
             if (maNhomDangChon == "")
             {
                 Console.WriteLine("maNhomDangChon trong form selection changed rong ");
             }
-            this.ttsv_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
-            maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
+            
+            this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+            if (!ghiThanhCong) 
+                maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
             Console.WriteLine("manhomdangchon trong datagridview3: " + maNhomDangChon);
             Console.WriteLine("vi tri bdsNHOM: " + bdsNHOM.Position.ToString());
             Console.WriteLine("soluongnhom: " + bdsNHOM.Count.ToString());
@@ -75,6 +84,7 @@ namespace MUAHEXANH
                 // chi lay sinh vien nào được tick
                 dgvSVNHOM.Rows[i].Cells[3].Value = "False";
             }
+            ghiThanhCong = false; 
         }
 
         private void cmbNHOMCANTHEM_SelectionChangeCommitted(object sender, EventArgs e)
@@ -152,9 +162,11 @@ namespace MUAHEXANH
                 sqlcmd.ExecuteNonQuery();
                 MessageBox.Show("Sinh viên chuyển sang nhóm thành công!", "", MessageBoxButtons.OK);
                 Console.WriteLine("manhomdangchon trong btnChuyen: " + maNhomDangChon);
-                this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam);
-                this.ttsv_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
-                this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+                ghiThanhCong = true;
+                this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam.Trim());
+                
+                //this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+                //this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
 
             }
             catch (Exception ex)
@@ -178,5 +190,7 @@ namespace MUAHEXANH
         {
             this.Close();
         }
+
+       
     }
 }

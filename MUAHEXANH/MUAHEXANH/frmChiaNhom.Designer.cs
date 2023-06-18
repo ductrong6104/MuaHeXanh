@@ -47,15 +47,17 @@
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.pnlNHOM = new DevExpress.XtraEditors.PanelControl();
             this.dgvNHOM = new System.Windows.Forms.DataGridView();
-            this.mANHOMDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mANHOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENNHOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nHOMTRUONGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENDOIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sOSVNHOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsNHOM = new System.Windows.Forms.BindingSource(this.components);
             this.dSchiaNhom = new MUAHEXANH.DSchiaNhom();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pnlSVNHOM = new DevExpress.XtraEditors.PanelControl();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
@@ -63,7 +65,7 @@
             this.dgvSVNHOM = new System.Windows.Forms.DataGridView();
             this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hOTENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNhomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.themVaoNhom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bdsSVNHOM = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
@@ -79,11 +81,16 @@
             this.cmbNHOMCANTHEM = new System.Windows.Forms.ComboBox();
             this.sp_lay_nhom_tu_doi_de_chiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new MUAHEXANH.DSchiaNhomTableAdapters.TableAdapterManager();
-            this.sp_lay_nhom_tu_doiTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter();
-            this.ttsv_trongnhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter();
             this.sp_lay_nhom_tu_doi_de_chiaTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_doi_de_chiaTableAdapter();
             this.sp_lay_nhom_tu_manhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_manhomTableAdapter();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.sp_lay_nhom_tu_doiTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter();
+            this.tENNHOMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nHOMTRUONGDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENDOIDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENAPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sOSVNHOMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thongtinsinhvien_trongnhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlNHOM)).BeginInit();
             this.pnlNHOM.SuspendLayout();
@@ -255,12 +262,13 @@
             this.dgvNHOM.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvNHOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNHOM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mANHOMDataGridViewTextBoxColumn2,
+            this.mANHOMDataGridViewTextBoxColumn,
             this.tENNHOMDataGridViewTextBoxColumn,
             this.nHOMTRUONGDataGridViewTextBoxColumn,
             this.tENDOIDataGridViewTextBoxColumn,
             this.tENAPDataGridViewTextBoxColumn,
-            this.sOSVNHOMDataGridViewTextBoxColumn});
+            this.sOSVNHOMDataGridViewTextBoxColumn,
+            this.diachiDataGridViewTextBoxColumn});
             this.dgvNHOM.DataSource = this.bdsNHOM;
             this.dgvNHOM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNHOM.Location = new System.Drawing.Point(2, 52);
@@ -271,12 +279,12 @@
             this.dgvNHOM.TabIndex = 2;
             this.dgvNHOM.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
-            // mANHOMDataGridViewTextBoxColumn2
+            // mANHOMDataGridViewTextBoxColumn
             // 
-            this.mANHOMDataGridViewTextBoxColumn2.DataPropertyName = "MANHOM";
-            this.mANHOMDataGridViewTextBoxColumn2.HeaderText = "MANHOM";
-            this.mANHOMDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.mANHOMDataGridViewTextBoxColumn2.Name = "mANHOMDataGridViewTextBoxColumn2";
+            this.mANHOMDataGridViewTextBoxColumn.DataPropertyName = "MANHOM";
+            this.mANHOMDataGridViewTextBoxColumn.HeaderText = "MANHOM";
+            this.mANHOMDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mANHOMDataGridViewTextBoxColumn.Name = "mANHOMDataGridViewTextBoxColumn";
             // 
             // tENNHOMDataGridViewTextBoxColumn
             // 
@@ -315,6 +323,13 @@
             this.sOSVNHOMDataGridViewTextBoxColumn.Name = "sOSVNHOMDataGridViewTextBoxColumn";
             this.sOSVNHOMDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // diachiDataGridViewTextBoxColumn
+            // 
+            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
+            this.diachiDataGridViewTextBoxColumn.HeaderText = "diachi";
+            this.diachiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
+            // 
             // bdsNHOM
             // 
             this.bdsNHOM.DataMember = "sp_lay_nhom_tu_doi";
@@ -334,6 +349,17 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1522, 50);
             this.panelControl4.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
+            this.btnClose.Location = new System.Drawing.Point(1423, 2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 46);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // labelControl1
             // 
@@ -385,7 +411,7 @@
             this.dgvSVNHOM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSVDataGridViewTextBoxColumn,
             this.hOTENDataGridViewTextBoxColumn,
-            this.maNhomDataGridViewTextBoxColumn,
+            this.maNhomDataGridViewTextBoxColumn2,
             this.themVaoNhom});
             this.dgvSVNHOM.DataSource = this.bdsSVNHOM;
             this.dgvSVNHOM.Dock = System.Windows.Forms.DockStyle.Left;
@@ -411,12 +437,12 @@
             this.hOTENDataGridViewTextBoxColumn.Name = "hOTENDataGridViewTextBoxColumn";
             this.hOTENDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // maNhomDataGridViewTextBoxColumn
+            // maNhomDataGridViewTextBoxColumn2
             // 
-            this.maNhomDataGridViewTextBoxColumn.DataPropertyName = "MaNhom";
-            this.maNhomDataGridViewTextBoxColumn.HeaderText = "MaNhom";
-            this.maNhomDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNhomDataGridViewTextBoxColumn.Name = "maNhomDataGridViewTextBoxColumn";
+            this.maNhomDataGridViewTextBoxColumn2.DataPropertyName = "MaNhom";
+            this.maNhomDataGridViewTextBoxColumn2.HeaderText = "MaNhom";
+            this.maNhomDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.maNhomDataGridViewTextBoxColumn2.Name = "maNhomDataGridViewTextBoxColumn2";
             // 
             // themVaoNhom
             // 
@@ -550,14 +576,6 @@
             this.tableAdapterManager.ThanhVienNhomTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = MUAHEXANH.DSchiaNhomTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // sp_lay_nhom_tu_doiTableAdapter
-            // 
-            this.sp_lay_nhom_tu_doiTableAdapter.ClearBeforeFill = true;
-            // 
-            // ttsv_trongnhomTableAdapter
-            // 
-            this.ttsv_trongnhomTableAdapter.ClearBeforeFill = true;
-            // 
             // sp_lay_nhom_tu_doi_de_chiaTableAdapter
             // 
             this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.ClearBeforeFill = true;
@@ -566,15 +584,63 @@
             // 
             this.sp_lay_nhom_tu_manhomTableAdapter.ClearBeforeFill = true;
             // 
-            // btnClose
+            // sp_lay_nhom_tu_doiTableAdapter
             // 
-            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
-            this.btnClose.Location = new System.Drawing.Point(1415, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(97, 40);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Thoát";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.sp_lay_nhom_tu_doiTableAdapter.ClearBeforeFill = true;
+            // 
+            // tENNHOMDataGridViewTextBoxColumn1
+            // 
+            this.tENNHOMDataGridViewTextBoxColumn1.DataPropertyName = "TENNHOM";
+            this.tENNHOMDataGridViewTextBoxColumn1.HeaderText = "TENNHOM";
+            this.tENNHOMDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tENNHOMDataGridViewTextBoxColumn1.Name = "tENNHOMDataGridViewTextBoxColumn1";
+            this.tENNHOMDataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // nHOMTRUONGDataGridViewTextBoxColumn1
+            // 
+            this.nHOMTRUONGDataGridViewTextBoxColumn1.DataPropertyName = "NHOMTRUONG";
+            this.nHOMTRUONGDataGridViewTextBoxColumn1.HeaderText = "NHOMTRUONG";
+            this.nHOMTRUONGDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nHOMTRUONGDataGridViewTextBoxColumn1.Name = "nHOMTRUONGDataGridViewTextBoxColumn1";
+            this.nHOMTRUONGDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nHOMTRUONGDataGridViewTextBoxColumn1.Width = 74;
+            // 
+            // tENDOIDataGridViewTextBoxColumn1
+            // 
+            this.tENDOIDataGridViewTextBoxColumn1.DataPropertyName = "TENDOI";
+            this.tENDOIDataGridViewTextBoxColumn1.HeaderText = "TENDOI";
+            this.tENDOIDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tENDOIDataGridViewTextBoxColumn1.Name = "tENDOIDataGridViewTextBoxColumn1";
+            this.tENDOIDataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // tENAPDataGridViewTextBoxColumn1
+            // 
+            this.tENAPDataGridViewTextBoxColumn1.DataPropertyName = "TENAP";
+            this.tENAPDataGridViewTextBoxColumn1.HeaderText = "TENAP";
+            this.tENAPDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.tENAPDataGridViewTextBoxColumn1.Name = "tENAPDataGridViewTextBoxColumn1";
+            this.tENAPDataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // sOSVNHOMDataGridViewTextBoxColumn1
+            // 
+            this.sOSVNHOMDataGridViewTextBoxColumn1.DataPropertyName = "SOSVNHOM";
+            this.sOSVNHOMDataGridViewTextBoxColumn1.HeaderText = "SOSVNHOM";
+            this.sOSVNHOMDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sOSVNHOMDataGridViewTextBoxColumn1.Name = "sOSVNHOMDataGridViewTextBoxColumn1";
+            this.sOSVNHOMDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sOSVNHOMDataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // diachiDataGridViewTextBoxColumn1
+            // 
+            this.diachiDataGridViewTextBoxColumn1.DataPropertyName = "diachi";
+            this.diachiDataGridViewTextBoxColumn1.HeaderText = "diachi";
+            this.diachiDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.diachiDataGridViewTextBoxColumn1.Name = "diachiDataGridViewTextBoxColumn1";
+            this.diachiDataGridViewTextBoxColumn1.Width = 73;
+            // 
+            // thongtinsinhvien_trongnhomTableAdapter
+            // 
+            this.thongtinsinhvien_trongnhomTableAdapter.ClearBeforeFill = true;
             // 
             // frmChiaNhom
             // 
@@ -645,38 +711,45 @@
         private DSchiaNhom dSchiaNhom;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private System.Windows.Forms.BindingSource bdsNHOM;
         private DSchiaNhomTableAdapters.TableAdapterManager tableAdapterManager;
-        private DSchiaNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter sp_lay_nhom_tu_doiTableAdapter;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.DataGridView dgvSVNHOM;
-        private System.Windows.Forms.BindingSource bdsSVNHOM;
-        private DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter ttsv_trongnhomTableAdapter;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.ComboBox cmbNHOMCANTHEM;
         private DevExpress.XtraEditors.PanelControl panelControl7;
         private DevExpress.XtraEditors.SimpleButton btnCHUYEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hOTENDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn themVaoNhom;
         private System.Windows.Forms.DataGridView dgvSVNHOMCANTHEM;
         private System.Windows.Forms.BindingSource sp_lay_nhom_tu_doi_de_chiaBindingSource;
         private DSchiaNhomTableAdapters.sp_lay_nhom_tu_doi_de_chiaTableAdapter sp_lay_nhom_tu_doi_de_chiaTableAdapter;
         private System.Windows.Forms.DataGridView dgvNHOM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mANHOMDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tENNHOMDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nHOMTRUONGDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tENDOIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tENAPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sOSVNHOMDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sp_lay_nhom_tu_manhomBindingSource;
         private DSchiaNhomTableAdapters.sp_lay_nhom_tu_manhomTableAdapter sp_lay_nhom_tu_manhomTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
+        private System.Windows.Forms.BindingSource bdsNHOM;
+        private DSchiaNhomTableAdapters.sp_lay_nhom_tu_doiTableAdapter sp_lay_nhom_tu_doiTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mANHOMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENNHOMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nHOMTRUONGDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENDOIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENAPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sOSVNHOMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diachiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENNHOMDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nHOMTRUONGDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENDOIDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENAPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sOSVNHOMDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diachiDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource bdsSVNHOM;
+        private DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter thongtinsinhvien_trongnhomTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOTENDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn themVaoNhom;
     }
 }

@@ -273,6 +273,10 @@ namespace MUAHEXANH
             }
         }
 
-       
+        private void cmbAp_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.sp_lay_dscongviec_tu_apTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.sp_lay_dscongviec_tu_apTableAdapter.Fill(this.dSchiaViec.sp_lay_dscongviec_tu_ap, cmbAp.SelectedValue.ToString(), DateTime.Parse(deNgay.Text));
+        }
     }
 }

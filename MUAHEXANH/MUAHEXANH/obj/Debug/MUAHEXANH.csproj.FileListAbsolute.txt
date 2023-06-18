@@ -69,3 +69,6 @@ D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\bin\
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\bin\Debug\DevExpress.Xpo.v22.2.xml
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.frmChiaViec.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.frmTaoDoi.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.frmChiaDoi.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.frmTaoNhom.resources

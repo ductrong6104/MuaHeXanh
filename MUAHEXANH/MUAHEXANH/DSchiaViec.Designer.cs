@@ -1113,6 +1113,8 @@ namespace MUAHEXANH {
             
             private global::System.Data.DataColumn columnTenAp;
             
+            private global::System.Data.DataColumn columndiachi;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_lay_dsphancong_tu_doiDataTable() {
@@ -1196,6 +1198,14 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn diachiColumn {
+                get {
+                    return this.columndiachi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1231,7 +1241,7 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_lay_dsphancong_tu_doiRow Addsp_lay_dsphancong_tu_doiRow(string MaNhom, string TenNhom, string Buoi, System.DateTime Ngay, string TenCV, string TenAp) {
+            public sp_lay_dsphancong_tu_doiRow Addsp_lay_dsphancong_tu_doiRow(string MaNhom, string TenNhom, string Buoi, System.DateTime Ngay, string TenCV, string TenAp, string diachi) {
                 sp_lay_dsphancong_tu_doiRow rowsp_lay_dsphancong_tu_doiRow = ((sp_lay_dsphancong_tu_doiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaNhom,
@@ -1239,7 +1249,8 @@ namespace MUAHEXANH {
                         Buoi,
                         Ngay,
                         TenCV,
-                        TenAp};
+                        TenAp,
+                        diachi};
                 rowsp_lay_dsphancong_tu_doiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_lay_dsphancong_tu_doiRow);
                 return rowsp_lay_dsphancong_tu_doiRow;
@@ -1268,6 +1279,7 @@ namespace MUAHEXANH {
                 this.columnNgay = base.Columns["Ngay"];
                 this.columnTenCV = base.Columns["TenCV"];
                 this.columnTenAp = base.Columns["TenAp"];
+                this.columndiachi = base.Columns["diachi"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1285,6 +1297,8 @@ namespace MUAHEXANH {
                 base.Columns.Add(this.columnTenCV);
                 this.columnTenAp = new global::System.Data.DataColumn("TenAp", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenAp);
+                this.columndiachi = new global::System.Data.DataColumn("diachi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiachi);
                 this.columnMaNhom.AllowDBNull = false;
                 this.columnMaNhom.MaxLength = 5;
                 this.columnTenNhom.AllowDBNull = false;
@@ -1296,6 +1310,8 @@ namespace MUAHEXANH {
                 this.columnTenCV.MaxLength = 100;
                 this.columnTenAp.AllowDBNull = false;
                 this.columnTenAp.MaxLength = 50;
+                this.columndiachi.AllowDBNull = false;
+                this.columndiachi.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2583,6 +2599,17 @@ namespace MUAHEXANH {
                     this[this.tablesp_lay_dsphancong_tu_doi.TenApColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string diachi {
+                get {
+                    return ((string)(this[this.tablesp_lay_dsphancong_tu_doi.diachiColumn]));
+                }
+                set {
+                    this[this.tablesp_lay_dsphancong_tu_doi.diachiColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -3729,6 +3756,7 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             tableMapping.ColumnMappings.Add("Ngay", "Ngay");
             tableMapping.ColumnMappings.Add("TenCV", "TenCV");
             tableMapping.ColumnMappings.Add("TenAp", "TenAp");
+            tableMapping.ColumnMappings.Add("diachi", "diachi");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

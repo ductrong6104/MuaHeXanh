@@ -119,29 +119,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSThietBiBackup.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackup\frmBackup.cs">
+    <Compile Include="FormBackup\FrmBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackup\frmBackup.Designer.cs">
-      <DependentUpon>frmBackup.cs</DependentUpon>
+    <Compile Include="FormBackup\FrmBackup.Designer.cs">
+      <DependentUpon>FrmBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackup\frmChonBackupDevice.cs">
+    <Compile Include="FormBackup\FrmChonBackupDevice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackup\frmChonBackupDevice.Designer.cs">
-      <DependentUpon>frmChonBackupDevice.cs</DependentUpon>
+    <Compile Include="FormBackup\FrmChonBackupDevice.Designer.cs">
+      <DependentUpon>FrmChonBackupDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackup\FrmWaitBackup.cs">
+    <Compile Include="FormBackup\FrmWaitBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackup\FrmWaitBackup.Designer.cs">
+    <Compile Include="FormBackup\FrmWaitBackup.Designer.cs">
       <DependentUpon>FrmWaitBackup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBackup\MyProgress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBackup\MyProgress.Designer.cs">
-      <DependentUpon>MyProgress.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiaDoi.cs">
       <SubType>Form</SubType>
@@ -161,23 +155,23 @@
     <Compile Include="frmChiaViec.Designer.cs">
       <DependentUpon>frmChiaViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmChon\FrmChonAp.cs">
+    <Compile Include="FormTaoCongViec\FrmChonAp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmChon\FrmChonAp.Designer.cs">
+    <Compile Include="FormTaoCongViec\FrmChonAp.Designer.cs">
       <DependentUpon>FrmChonAp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackup\frmNhapLieuBackup.cs">
+    <Compile Include="FormBackup\FrmNhapLieuBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackup\frmNhapLieuBackup.Designer.cs">
-      <DependentUpon>frmNhapLieuBackup.cs</DependentUpon>
+    <Compile Include="FormBackup\FrmNhapLieuBackup.Designer.cs">
+      <DependentUpon>FrmNhapLieuBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhapLieuThemCongViec.cs">
+    <Compile Include="FormTaoCongViec\FrmNhapLieuCongViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhapLieuThemCongViec.Designer.cs">
-      <DependentUpon>frmNhapLieuThemCongViec.cs</DependentUpon>
+    <Compile Include="FormTaoCongViec\FrmNhapLieuCongViec.Designer.cs">
+      <DependentUpon>FrmNhapLieuCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -197,11 +191,23 @@
     <Compile Include="frmRestore.Designer.cs">
       <DependentUpon>frmRestore.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaoCongViec.cs">
+    <Compile Include="FormTaoChienDich\FrmNhapLieuChienDich.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTaoCongViec.Designer.cs">
-      <DependentUpon>frmTaoCongViec.cs</DependentUpon>
+    <Compile Include="FormTaoChienDich\FrmNhapLieuChienDich.Designer.cs">
+      <DependentUpon>FrmNhapLieuChienDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoChienDich\FrmChienDich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoChienDich\FrmChienDich.Designer.cs">
+      <DependentUpon>FrmChienDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoCongViec\FrmCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoCongViec\FrmCongViec.Designer.cs">
+      <DependentUpon>FrmCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaoDoi.cs">
       <SubType>Form</SubType>
@@ -215,31 +221,28 @@
     <Compile Include="frmTaoNhom.Designer.cs">
       <DependentUpon>frmTaoNhom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackup\frmThietBiBackup.cs">
+    <Compile Include="FormBackup\FrBackupDevice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackup\frmThietBiBackup.Designer.cs">
-      <DependentUpon>frmThietBiBackup.cs</DependentUpon>
+    <Compile Include="FormBackup\FrBackupDevice.Designer.cs">
+      <DependentUpon>FrBackupDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackup\FrmWaitTaoDevice.cs">
+    <Compile Include="FormBackup\FrmWaitTaoDevice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackup\FrmWaitTaoDevice.Designer.cs">
+    <Compile Include="FormBackup\FrmWaitTaoDevice.Designer.cs">
       <DependentUpon>FrmWaitTaoDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmBackup\frmBackup.resx">
-      <DependentUpon>frmBackup.cs</DependentUpon>
+    <EmbeddedResource Include="FormBackup\FrmBackup.resx">
+      <DependentUpon>FrmBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackup\frmChonBackupDevice.resx">
-      <DependentUpon>frmChonBackupDevice.cs</DependentUpon>
+    <EmbeddedResource Include="FormBackup\FrmChonBackupDevice.resx">
+      <DependentUpon>FrmChonBackupDevice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackup\FrmWaitBackup.resx">
+    <EmbeddedResource Include="FormBackup\FrmWaitBackup.resx">
       <DependentUpon>FrmWaitBackup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackup\MyProgress.resx">
-      <DependentUpon>MyProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiaDoi.resx">
       <DependentUpon>frmChiaDoi.cs</DependentUpon>
@@ -250,14 +253,14 @@
     <EmbeddedResource Include="frmChiaViec.resx">
       <DependentUpon>frmChiaViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChon\FrmChonAp.resx">
+    <EmbeddedResource Include="FormTaoCongViec\FrmChonAp.resx">
       <DependentUpon>FrmChonAp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackup\frmNhapLieuBackup.resx">
-      <DependentUpon>frmNhapLieuBackup.cs</DependentUpon>
+    <EmbeddedResource Include="FormBackup\FrmNhapLieuBackup.resx">
+      <DependentUpon>FrmNhapLieuBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapLieuThemCongViec.resx">
-      <DependentUpon>frmNhapLieuThemCongViec.cs</DependentUpon>
+    <EmbeddedResource Include="FormTaoCongViec\FrmNhapLieuCongViec.resx">
+      <DependentUpon>FrmNhapLieuCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -265,8 +268,14 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaoCongViec.resx">
-      <DependentUpon>frmTaoCongViec.cs</DependentUpon>
+    <EmbeddedResource Include="FormTaoChienDich\FrmNhapLieuChienDich.resx">
+      <DependentUpon>FrmNhapLieuChienDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoChienDich\FrmChienDich.resx">
+      <DependentUpon>FrmChienDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoCongViec\FrmCongViec.resx">
+      <DependentUpon>FrmCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoDoi.resx">
       <DependentUpon>frmTaoDoi.cs</DependentUpon>
@@ -274,10 +283,10 @@
     <EmbeddedResource Include="frmTaoNhom.resx">
       <DependentUpon>frmTaoNhom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackup\frmThietBiBackup.resx">
-      <DependentUpon>frmThietBiBackup.cs</DependentUpon>
+    <EmbeddedResource Include="FormBackup\FrBackupDevice.resx">
+      <DependentUpon>FrBackupDevice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackup\FrmWaitTaoDevice.resx">
+    <EmbeddedResource Include="FormBackup\FrmWaitTaoDevice.resx">
       <DependentUpon>FrmWaitTaoDevice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

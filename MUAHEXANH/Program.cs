@@ -7,7 +7,6 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using MUAHEXANH.App;
-using MUAHEXANH.FrmBackup;
 using System.Threading;
 
 namespace MUAHEXANH
@@ -147,7 +146,7 @@ namespace MUAHEXANH
             //dev row
             connstr = "Data Source=PDM;Initial Catalog=TTCS_MUAHEXANH;Persist Security Info=True;User ID=sa;Password=1";
             conn = new SqlConnection(connstr);
-            Application.Run(new frmBackup());
+            Application.Run(new FrmTaoChienDich());
         }
     }
 }

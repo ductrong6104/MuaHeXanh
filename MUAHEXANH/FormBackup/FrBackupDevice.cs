@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH
 {
-    public partial class frmThietBiBackup : Form
+    public partial class FrBackupDevice : Form
     {
         private DataTable dt;
-        public frmThietBiBackup()
+        public FrBackupDevice()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace MUAHEXANH
 
             dt = new DataTable();
 
-            using (SqlCommand command = new SqlCommand("Sp_DanhSachThietBiBackup", Program.conn))
+/*            using (SqlCommand command = new SqlCommand("Sp_DanhSachThietBiBackup", Program.conn))
             {
                 command.CommandType = CommandType.StoredProcedure;
 
@@ -35,7 +35,7 @@ namespace MUAHEXANH
                 {
                     adapter.Fill(dt);
                 }
-            }
+            }*/
 
             this.dt = Program.ExecSqlDataTable("Exec Sp_DanhSachThietBiBackup");
             string[] names = { "Tên backup", "Đường dẫn", "Mô tả", "Trạng thái", "Loại", "Kích thước" };
@@ -53,7 +53,7 @@ namespace MUAHEXANH
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNhapLieuBackup f = new frmNhapLieuBackup();
+            FrmNhapLieuBackup f = new FrmNhapLieuBackup();
             f.ShowDialog();
             loadData();
         }

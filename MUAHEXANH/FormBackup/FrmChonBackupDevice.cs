@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH
 {
-    public partial class frmChonBackupDevice : Form
+    public partial class FrmChonBackupDevice : Form
     {
         private DataTable dt;
         private void loadData()
@@ -38,7 +38,7 @@ namespace MUAHEXANH
             }
             gcBackupDevice.DataSource = dt;
         }
-        public frmChonBackupDevice()
+        public FrmChonBackupDevice()
         {
             InitializeComponent();
         }
@@ -65,7 +65,7 @@ namespace MUAHEXANH
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmNhapLieuBackup f = new frmNhapLieuBackup();
+            FrmNhapLieuBackup f = new FrmNhapLieuBackup();
             f.ShowDialog();
             loadData();
         }

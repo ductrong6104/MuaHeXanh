@@ -1,6 +1,6 @@
 ﻿namespace MUAHEXANH
 {
-    partial class frmChonBackupDevice
+    partial class FrmChonBackupDevice
     {
         /// <summary>
         /// Required designer variable.
@@ -47,18 +47,20 @@
             this.panelControl1.Controls.Add(this.btnDong);
             this.panelControl1.Controls.Add(this.btnChon);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 359);
+            this.panelControl1.Location = new System.Drawing.Point(0, 379);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 91);
+            this.panelControl1.Size = new System.Drawing.Size(1067, 175);
             this.panelControl1.TabIndex = 0;
             // 
             // btnThem
             // 
             this.btnThem.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnThem.Appearance.Options.UseBackColor = true;
-            this.btnThem.Location = new System.Drawing.Point(417, 40);
+            this.btnThem.Location = new System.Drawing.Point(556, 49);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(101, 25);
+            this.btnThem.Size = new System.Drawing.Size(135, 31);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -67,9 +69,10 @@
             // 
             this.btnDong.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.btnDong.Appearance.Options.UseBackColor = true;
-            this.btnDong.Location = new System.Drawing.Point(687, 40);
+            this.btnDong.Location = new System.Drawing.Point(916, 49);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(101, 25);
+            this.btnDong.Size = new System.Drawing.Size(135, 31);
             this.btnDong.TabIndex = 1;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
@@ -78,9 +81,10 @@
             // 
             this.btnChon.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnChon.Appearance.Options.UseBackColor = true;
-            this.btnChon.Location = new System.Drawing.Point(556, 40);
+            this.btnChon.Location = new System.Drawing.Point(741, 49);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(101, 25);
+            this.btnChon.Size = new System.Drawing.Size(135, 31);
             this.btnChon.TabIndex = 0;
             this.btnChon.Text = "Chọn";
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
@@ -88,10 +92,12 @@
             // gcBackupDevice
             // 
             this.gcBackupDevice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcBackupDevice.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcBackupDevice.Location = new System.Drawing.Point(0, 0);
             this.gcBackupDevice.MainView = this.gvBackupDevice;
+            this.gcBackupDevice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcBackupDevice.Name = "gcBackupDevice";
-            this.gcBackupDevice.Size = new System.Drawing.Size(800, 359);
+            this.gcBackupDevice.Size = new System.Drawing.Size(1067, 379);
             this.gcBackupDevice.TabIndex = 1;
             this.gcBackupDevice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBackupDevice});
@@ -100,18 +106,20 @@
             // 
             this.gvBackupDevice.Appearance.FocusedCell.BackColor = System.Drawing.Color.Transparent;
             this.gvBackupDevice.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvBackupDevice.DetailHeight = 431;
             this.gvBackupDevice.GridControl = this.gcBackupDevice;
             this.gvBackupDevice.Name = "gvBackupDevice";
             this.gvBackupDevice.OptionsBehavior.Editable = false;
             // 
             // frmChonBackupDevice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.gcBackupDevice);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmChonBackupDevice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn thiết bị backup";

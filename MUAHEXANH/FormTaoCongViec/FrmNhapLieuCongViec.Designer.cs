@@ -1,6 +1,6 @@
 ﻿namespace MUAHEXANH.FrmChon
 {
-    partial class frmNhapLieuThemCongViec
+    partial class FrmNhapLieuCongViec
     {
         /// <summary>
         /// Required designer variable.

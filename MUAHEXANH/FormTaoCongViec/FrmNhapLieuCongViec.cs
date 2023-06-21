@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH.FrmChon
 {
-    public partial class frmNhapLieuThemCongViec : Form
+    public partial class FrmNhapLieuCongViec : Form
     {
         private string state = "none";
         private BindingSource bdsCongViec;
         private CongViecTableAdapter adapter;
         private DSTaoCongViec dsTaoCongViec;
-        public frmNhapLieuThemCongViec(BindingSource bdsAp, BindingSource bdsCongViec, string state, CongViecTableAdapter adapter, DSTaoCongViec dsTaoCongViec)
+        public FrmNhapLieuCongViec(BindingSource bdsAp, BindingSource bdsCongViec, string state, CongViecTableAdapter adapter, DSTaoCongViec dsTaoCongViec)
         {
             InitializeComponent();
             this.txtTenAp.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", bdsAp, "TenAp", true));

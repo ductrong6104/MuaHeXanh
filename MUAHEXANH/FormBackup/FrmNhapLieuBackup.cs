@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH
 {
-    public partial class frmNhapLieuBackup : Form
+    public partial class FrmNhapLieuBackup : Form
     {
         private String filePath;
 
@@ -36,7 +36,7 @@ namespace MUAHEXANH
             cmbLoai.DisplayMember = "NAME";
             cmbLoai.ValueMember = "VALUE";
         }
-        public frmNhapLieuBackup()
+        public FrmNhapLieuBackup()
         {
             InitializeComponent();
         }

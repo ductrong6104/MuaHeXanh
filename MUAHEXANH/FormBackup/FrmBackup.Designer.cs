@@ -1,6 +1,6 @@
 ﻿namespace MUAHEXANH
 {
-    partial class frmBackup
+    partial class FrmBackup
     {
         /// <summary>
         /// Required designer variable.

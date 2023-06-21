@@ -1,5 +1,4 @@
 ﻿using MUAHEXANH.App;
-using MUAHEXANH.FrmBackup;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,7 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH
 {
-    public partial class frmBackup : Form
+    public partial class FrmBackup : Form
     {
         private void initCombobox()
         {
@@ -66,7 +65,7 @@ namespace MUAHEXANH
 
             cmbDestination.SelectedIndex = 0;
         }
-        public frmBackup()
+        public FrmBackup()
         {
             InitializeComponent();
         }
@@ -79,7 +78,7 @@ namespace MUAHEXANH
                 if (destination == 1)
                 {
                     txtUrl.ReadOnly = true;
-                    frmChonBackupDevice frm = new frmChonBackupDevice();
+                    FrmChonBackupDevice frm = new FrmChonBackupDevice();
                     frm.ShowDialog();
 
                     if (Program.backupDeviceName != null)

@@ -1,4 +1,4 @@
-﻿namespace MUAHEXANH.FrmBackup
+﻿namespace MUAHEXANH
 {
     partial class FrmWaitBackup
     {

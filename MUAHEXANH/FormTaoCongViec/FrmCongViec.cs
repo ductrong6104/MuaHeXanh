@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH
 {
-    public partial class frmTaoCongViec : Form
+    public partial class FrmCongViec : Form
     {
-        public frmTaoCongViec()
+        public FrmCongViec()
         {
             InitializeComponent();
         }
@@ -45,13 +45,6 @@ namespace MUAHEXANH
             this.phanCongTableAdapter.Fill(this.dSTaoCongViec.PhanCong);
 
         }
-        private void diaBanBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsDiaBan.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSTaoCongViec);
-
-        }
 
         private void frmTaoCongViec_Load(object sender, EventArgs e)
         {
@@ -62,13 +55,13 @@ namespace MUAHEXANH
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsCongViec.AddNew();
-            frmNhapLieuThemCongViec f = new frmNhapLieuThemCongViec(this.bdsAp, this.bdsCongViec, "them", congViecTableAdapter, this.dSTaoCongViec);
+            FrmNhapLieuCongViec f = new FrmNhapLieuCongViec(this.bdsAp, this.bdsCongViec, "them", congViecTableAdapter, this.dSTaoCongViec);
             f.ShowDialog();
         }
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNhapLieuThemCongViec f = new frmNhapLieuThemCongViec(this.bdsAp, this.bdsCongViec, "sua", congViecTableAdapter, this.dSTaoCongViec);
+            FrmNhapLieuCongViec f = new FrmNhapLieuCongViec(this.bdsAp, this.bdsCongViec, "sua", congViecTableAdapter, this.dSTaoCongViec);
             f.ShowDialog();
         }
 

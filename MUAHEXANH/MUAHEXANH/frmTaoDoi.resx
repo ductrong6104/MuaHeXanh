@@ -562,8 +562,11 @@
   <metadata name="nhomBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>708, 232</value>
   </metadata>
-  <metadata name="sp_lay_dsdoi_theo_chiendichBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 232</value>
+  <metadata name="splaydsdoitheochiendichNhomBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>708, 275</value>
+  </metadata>
+  <metadata name="bdsDOI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 117</value>
   </metadata>
   <metadata name="dStaoDoi.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>165, 17</value>
@@ -602,6 +605,6 @@
     <value>672, 189</value>
   </metadata>
   <metadata name="sp_lay_dsdoi_theo_chiendichTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>366, 232</value>
+    <value>366, 275</value>
   </metadata>
 </root>

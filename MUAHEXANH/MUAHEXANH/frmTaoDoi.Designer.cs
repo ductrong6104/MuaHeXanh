@@ -53,8 +53,8 @@
             this.btnDSGV = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.pnlDSDOI = new DevExpress.XtraEditors.PanelControl();
-            this.gcDOI = new DevExpress.XtraGrid.GridControl();
-            this.sp_lay_dsdoi_theo_chiendichBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gcDSDOI = new DevExpress.XtraGrid.GridControl();
+            this.bdsDOI = new System.Windows.Forms.BindingSource(this.components);
             this.dStaoDoi = new MUAHEXANH.DStaoDoi();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaDoi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,6 +65,7 @@
             this.colDoiPho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenkhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenxa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsosv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sp_lay_xa_tu_chiendichBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -77,6 +78,7 @@
             this.tenNhomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maDoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.splaydsdoitheochiendichNhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,7 +88,6 @@
             this.sp_lay_giamsat1_them_vao_doiTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.sp_lay_giamsat1_them_vao_doiTableAdapter();
             this.sp_lay_giamsat2_them_vao_doiTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.sp_lay_giamsat2_them_vao_doiTableAdapter();
             this.sp_lay_xa_tu_chiendichTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.sp_lay_xa_tu_chiendichTableAdapter();
-            this.sp_lay_dsdoi_theo_chiendichTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.sp_lay_dsdoi_theo_chiendichTableAdapter();
             this.txtTenDoi = new DevExpress.XtraEditors.TextEdit();
             this.txtChienDich = new DevExpress.XtraEditors.TextEdit();
             this.cmbGiamSat1 = new System.Windows.Forms.ComboBox();
@@ -94,6 +95,7 @@
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.cmbXa = new System.Windows.Forms.ComboBox();
             this.pnlDOI = new DevExpress.XtraEditors.PanelControl();
+            this.sp_lay_dsdoi_theo_chiendichTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.sp_lay_dsdoi_theo_chiendichTableAdapter();
             tendoiLabel = new System.Windows.Forms.Label();
             giamSat1Label = new System.Windows.Forms.Label();
             giamSat2Label = new System.Windows.Forms.Label();
@@ -103,8 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlDSDOI)).BeginInit();
             this.pnlDSDOI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcDOI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_dsdoi_theo_chiendichBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDSDOI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDOI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dStaoDoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -117,6 +119,7 @@
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNHOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splaydsdoitheochiendichNhomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhomBindingSource)).BeginInit();
@@ -334,7 +337,7 @@
             // 
             // pnlDSDOI
             // 
-            this.pnlDSDOI.Controls.Add(this.gcDOI);
+            this.pnlDSDOI.Controls.Add(this.gcDSDOI);
             this.pnlDSDOI.Controls.Add(this.panelControl2);
             this.pnlDSDOI.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDSDOI.Location = new System.Drawing.Point(0, 30);
@@ -342,23 +345,23 @@
             this.pnlDSDOI.Size = new System.Drawing.Size(1207, 288);
             this.pnlDSDOI.TabIndex = 4;
             // 
-            // gcDOI
+            // gcDSDOI
             // 
-            this.gcDOI.DataSource = this.sp_lay_dsdoi_theo_chiendichBindingSource;
-            this.gcDOI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDOI.Location = new System.Drawing.Point(2, 60);
-            this.gcDOI.MainView = this.gridView1;
-            this.gcDOI.MenuManager = this.barManager1;
-            this.gcDOI.Name = "gcDOI";
-            this.gcDOI.Size = new System.Drawing.Size(1203, 226);
-            this.gcDOI.TabIndex = 1;
-            this.gcDOI.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcDSDOI.DataSource = this.bdsDOI;
+            this.gcDSDOI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcDSDOI.Location = new System.Drawing.Point(2, 60);
+            this.gcDSDOI.MainView = this.gridView1;
+            this.gcDSDOI.MenuManager = this.barManager1;
+            this.gcDSDOI.Name = "gcDSDOI";
+            this.gcDSDOI.Size = new System.Drawing.Size(1203, 226);
+            this.gcDSDOI.TabIndex = 1;
+            this.gcDSDOI.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // sp_lay_dsdoi_theo_chiendichBindingSource
+            // bdsDOI
             // 
-            this.sp_lay_dsdoi_theo_chiendichBindingSource.DataMember = "sp_lay_dsdoi_theo_chiendich";
-            this.sp_lay_dsdoi_theo_chiendichBindingSource.DataSource = this.dStaoDoi;
+            this.bdsDOI.DataMember = "sp_lay_dsdoi_theo_chiendich";
+            this.bdsDOI.DataSource = this.dStaoDoi;
             // 
             // dStaoDoi
             // 
@@ -375,8 +378,9 @@
             this.colDoiTruong,
             this.colDoiPho,
             this.coltenkhoa,
-            this.coltenxa});
-            this.gridView1.GridControl = this.gcDOI;
+            this.coltenxa,
+            this.colsosv});
+            this.gridView1.GridControl = this.gcDSDOI;
             this.gridView1.Name = "gridView1";
             // 
             // colMaDoi
@@ -384,7 +388,6 @@
             this.colMaDoi.FieldName = "MaDoi";
             this.colMaDoi.MinWidth = 25;
             this.colMaDoi.Name = "colMaDoi";
-            this.colMaDoi.OptionsColumn.ReadOnly = true;
             this.colMaDoi.Visible = true;
             this.colMaDoi.VisibleIndex = 0;
             this.colMaDoi.Width = 94;
@@ -394,7 +397,6 @@
             this.coltendoi.FieldName = "tendoi";
             this.coltendoi.MinWidth = 25;
             this.coltendoi.Name = "coltendoi";
-            this.coltendoi.OptionsColumn.ReadOnly = true;
             this.coltendoi.Visible = true;
             this.coltendoi.VisibleIndex = 1;
             this.coltendoi.Width = 94;
@@ -404,7 +406,6 @@
             this.colGiamSat1.FieldName = "GiamSat1";
             this.colGiamSat1.MinWidth = 25;
             this.colGiamSat1.Name = "colGiamSat1";
-            this.colGiamSat1.OptionsColumn.ReadOnly = true;
             this.colGiamSat1.Visible = true;
             this.colGiamSat1.VisibleIndex = 2;
             this.colGiamSat1.Width = 94;
@@ -414,7 +415,6 @@
             this.colGiamSat2.FieldName = "GiamSat2";
             this.colGiamSat2.MinWidth = 25;
             this.colGiamSat2.Name = "colGiamSat2";
-            this.colGiamSat2.OptionsColumn.ReadOnly = true;
             this.colGiamSat2.Visible = true;
             this.colGiamSat2.VisibleIndex = 3;
             this.colGiamSat2.Width = 94;
@@ -424,7 +424,6 @@
             this.colDoiTruong.FieldName = "DoiTruong";
             this.colDoiTruong.MinWidth = 25;
             this.colDoiTruong.Name = "colDoiTruong";
-            this.colDoiTruong.OptionsColumn.ReadOnly = true;
             this.colDoiTruong.Visible = true;
             this.colDoiTruong.VisibleIndex = 4;
             this.colDoiTruong.Width = 94;
@@ -434,7 +433,6 @@
             this.colDoiPho.FieldName = "DoiPho";
             this.colDoiPho.MinWidth = 25;
             this.colDoiPho.Name = "colDoiPho";
-            this.colDoiPho.OptionsColumn.ReadOnly = true;
             this.colDoiPho.Visible = true;
             this.colDoiPho.VisibleIndex = 5;
             this.colDoiPho.Width = 94;
@@ -444,7 +442,6 @@
             this.coltenkhoa.FieldName = "tenkhoa";
             this.coltenkhoa.MinWidth = 25;
             this.coltenkhoa.Name = "coltenkhoa";
-            this.coltenkhoa.OptionsColumn.ReadOnly = true;
             this.coltenkhoa.Visible = true;
             this.coltenkhoa.VisibleIndex = 6;
             this.coltenkhoa.Width = 94;
@@ -454,10 +451,18 @@
             this.coltenxa.FieldName = "tenxa";
             this.coltenxa.MinWidth = 25;
             this.coltenxa.Name = "coltenxa";
-            this.coltenxa.OptionsColumn.ReadOnly = true;
             this.coltenxa.Visible = true;
             this.coltenxa.VisibleIndex = 7;
             this.coltenxa.Width = 94;
+            // 
+            // colsosv
+            // 
+            this.colsosv.FieldName = "sosv";
+            this.colsosv.MinWidth = 25;
+            this.colsosv.Name = "colsosv";
+            this.colsosv.Visible = true;
+            this.colsosv.VisibleIndex = 8;
+            this.colsosv.Width = 94;
             // 
             // panelControl2
             // 
@@ -556,8 +561,12 @@
             // 
             // nhomBindingSource1
             // 
-            this.nhomBindingSource1.DataMember = "sp_lay_dsdoi_theo_chiendich_Nhom";
-            this.nhomBindingSource1.DataSource = this.sp_lay_dsdoi_theo_chiendichBindingSource;
+            this.nhomBindingSource1.DataSource = this.splaydsdoitheochiendichNhomBindingSource;
+            // 
+            // splaydsdoitheochiendichNhomBindingSource
+            // 
+            this.splaydsdoitheochiendichNhomBindingSource.DataMember = "sp_lay_dsdoi_theo_chiendich_Nhom";
+            this.splaydsdoitheochiendichNhomBindingSource.DataSource = this.bdsDOI;
             // 
             // panelControl5
             // 
@@ -605,13 +614,9 @@
             // 
             this.sp_lay_xa_tu_chiendichTableAdapter.ClearBeforeFill = true;
             // 
-            // sp_lay_dsdoi_theo_chiendichTableAdapter
-            // 
-            this.sp_lay_dsdoi_theo_chiendichTableAdapter.ClearBeforeFill = true;
-            // 
             // txtTenDoi
             // 
-            this.txtTenDoi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_dsdoi_theo_chiendichBindingSource, "tendoi", true));
+            this.txtTenDoi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "tendoi", true));
             this.txtTenDoi.Location = new System.Drawing.Point(155, 27);
             this.txtTenDoi.MenuManager = this.barManager1;
             this.txtTenDoi.Name = "txtTenDoi";
@@ -629,7 +634,7 @@
             // 
             // cmbGiamSat1
             // 
-            this.cmbGiamSat1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_dsdoi_theo_chiendichBindingSource, "GiamSat1", true));
+            this.cmbGiamSat1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "GiamSat1", true));
             this.cmbGiamSat1.DataSource = this.sp_lay_giamsat1_them_vao_doiBindingSource;
             this.cmbGiamSat1.DisplayMember = "hoten";
             this.cmbGiamSat1.FormattingEnabled = true;
@@ -641,7 +646,7 @@
             // 
             // cmbGiamSat2
             // 
-            this.cmbGiamSat2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_dsdoi_theo_chiendichBindingSource, "GiamSat2", true));
+            this.cmbGiamSat2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "GiamSat2", true));
             this.cmbGiamSat2.DataSource = this.sp_lay_giamsat2_them_vao_doiBindingSource;
             this.cmbGiamSat2.DisplayMember = "hoten";
             this.cmbGiamSat2.FormattingEnabled = true;
@@ -653,7 +658,7 @@
             // 
             // cmbKhoa
             // 
-            this.cmbKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_dsdoi_theo_chiendichBindingSource, "tenkhoa", true));
+            this.cmbKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "tenkhoa", true));
             this.cmbKhoa.DataSource = this.khoaBindingSource;
             this.cmbKhoa.DisplayMember = "TenKhoa";
             this.cmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -663,10 +668,11 @@
             this.cmbKhoa.Size = new System.Drawing.Size(198, 28);
             this.cmbKhoa.TabIndex = 19;
             this.cmbKhoa.ValueMember = "MaKhoa";
+            this.cmbKhoa.SelectionChangeCommitted += new System.EventHandler(this.cmbKhoa_SelectionChangeCommitted);
             // 
             // cmbXa
             // 
-            this.cmbXa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_dsdoi_theo_chiendichBindingSource, "tenxa", true));
+            this.cmbXa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "tenxa", true));
             this.cmbXa.DataSource = this.sp_lay_xa_tu_chiendichBindingSource;
             this.cmbXa.DisplayMember = "TenXa";
             this.cmbXa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -697,6 +703,10 @@
             this.pnlDOI.Size = new System.Drawing.Size(749, 305);
             this.pnlDOI.TabIndex = 5;
             // 
+            // sp_lay_dsdoi_theo_chiendichTableAdapter
+            // 
+            this.sp_lay_dsdoi_theo_chiendichTableAdapter.ClearBeforeFill = true;
+            // 
             // frmTaoDoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -716,8 +726,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlDSDOI)).EndInit();
             this.pnlDSDOI.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcDOI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_dsdoi_theo_chiendichBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDSDOI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDOI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dStaoDoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -731,6 +741,7 @@
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNHOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splaydsdoitheochiendichNhomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
@@ -770,18 +781,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.DataGridView dgvNHOM;
-        private DevExpress.XtraGrid.GridControl gcDOI;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DStaoDoi dStaoDoi;
         private DStaoDoiTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaDoi;
-        private DevExpress.XtraGrid.Columns.GridColumn coltendoi;
-        private DevExpress.XtraGrid.Columns.GridColumn colGiamSat1;
-        private DevExpress.XtraGrid.Columns.GridColumn colGiamSat2;
-        private DevExpress.XtraGrid.Columns.GridColumn colDoiTruong;
-        private DevExpress.XtraGrid.Columns.GridColumn colDoiPho;
-        private DevExpress.XtraGrid.Columns.GridColumn coltenkhoa;
-        private DevExpress.XtraGrid.Columns.GridColumn coltenxa;
         private System.Windows.Forms.BindingSource nhomBindingSource;
         private DStaoDoiTableAdapters.NhomTableAdapter nhomTableAdapter;
         private System.Windows.Forms.BindingSource khoaBindingSource;
@@ -792,11 +793,6 @@
         private DStaoDoiTableAdapters.sp_lay_giamsat2_them_vao_doiTableAdapter sp_lay_giamsat2_them_vao_doiTableAdapter;
         private System.Windows.Forms.BindingSource sp_lay_xa_tu_chiendichBindingSource;
         private DStaoDoiTableAdapters.sp_lay_xa_tu_chiendichTableAdapter sp_lay_xa_tu_chiendichTableAdapter;
-        private System.Windows.Forms.BindingSource sp_lay_dsdoi_theo_chiendichBindingSource;
-        private DStaoDoiTableAdapters.sp_lay_dsdoi_theo_chiendichTableAdapter sp_lay_dsdoi_theo_chiendichTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maDoiDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource nhomBindingSource1;
         private DevExpress.XtraEditors.PanelControl pnlDOI;
         private System.Windows.Forms.ComboBox cmbXa;
@@ -805,5 +801,22 @@
         private System.Windows.Forms.ComboBox cmbGiamSat1;
         private DevExpress.XtraEditors.TextEdit txtChienDich;
         private DevExpress.XtraEditors.TextEdit txtTenDoi;
+        private System.Windows.Forms.BindingSource bdsDOI;
+        private DStaoDoiTableAdapters.sp_lay_dsdoi_theo_chiendichTableAdapter sp_lay_dsdoi_theo_chiendichTableAdapter;
+        private DevExpress.XtraGrid.GridControl gcDSDOI;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaDoi;
+        private DevExpress.XtraGrid.Columns.GridColumn coltendoi;
+        private DevExpress.XtraGrid.Columns.GridColumn colGiamSat1;
+        private DevExpress.XtraGrid.Columns.GridColumn colGiamSat2;
+        private DevExpress.XtraGrid.Columns.GridColumn colDoiTruong;
+        private DevExpress.XtraGrid.Columns.GridColumn colDoiPho;
+        private DevExpress.XtraGrid.Columns.GridColumn coltenkhoa;
+        private DevExpress.XtraGrid.Columns.GridColumn coltenxa;
+        private DevExpress.XtraGrid.Columns.GridColumn colsosv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maDoiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource splaydsdoitheochiendichNhomBindingSource;
     }
 }

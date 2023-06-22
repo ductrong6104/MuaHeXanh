@@ -984,6 +984,8 @@ namespace MUAHEXANH {
             
             private global::System.Data.DataColumn columntenxa;
             
+            private global::System.Data.DataColumn columnsosv;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_lay_dsdoi_theo_chiendichDataTable() {
@@ -1083,6 +1085,14 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sosvColumn {
+                get {
+                    return this.columnsosv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1118,7 +1128,7 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_lay_dsdoi_theo_chiendichRow Addsp_lay_dsdoi_theo_chiendichRow(string MaDoi, string tendoi, string GiamSat1, string GiamSat2, string DoiTruong, string DoiPho, string tenkhoa, string tenxa) {
+            public sp_lay_dsdoi_theo_chiendichRow Addsp_lay_dsdoi_theo_chiendichRow(string MaDoi, string tendoi, string GiamSat1, string GiamSat2, string DoiTruong, string DoiPho, string tenkhoa, string tenxa, int sosv) {
                 sp_lay_dsdoi_theo_chiendichRow rowsp_lay_dsdoi_theo_chiendichRow = ((sp_lay_dsdoi_theo_chiendichRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaDoi,
@@ -1128,7 +1138,8 @@ namespace MUAHEXANH {
                         DoiTruong,
                         DoiPho,
                         tenkhoa,
-                        tenxa};
+                        tenxa,
+                        sosv};
                 rowsp_lay_dsdoi_theo_chiendichRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_lay_dsdoi_theo_chiendichRow);
                 return rowsp_lay_dsdoi_theo_chiendichRow;
@@ -1159,6 +1170,7 @@ namespace MUAHEXANH {
                 this.columnDoiPho = base.Columns["DoiPho"];
                 this.columntenkhoa = base.Columns["tenkhoa"];
                 this.columntenxa = base.Columns["tenxa"];
+                this.columnsosv = base.Columns["sosv"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1180,6 +1192,8 @@ namespace MUAHEXANH {
                 base.Columns.Add(this.columntenkhoa);
                 this.columntenxa = new global::System.Data.DataColumn("tenxa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntenxa);
+                this.columnsosv = new global::System.Data.DataColumn("sosv", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsosv);
                 this.columnMaDoi.AllowDBNull = false;
                 this.columnMaDoi.MaxLength = 11;
                 this.columntendoi.AllowDBNull = false;
@@ -1196,6 +1210,7 @@ namespace MUAHEXANH {
                 this.columntenkhoa.MaxLength = 50;
                 this.columntenxa.AllowDBNull = false;
                 this.columntenxa.MaxLength = 50;
+                this.columnsosv.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3563,6 +3578,22 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int sosv {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_lay_dsdoi_theo_chiendich.sosvColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sosv\' in table \'sp_lay_dsdoi_theo_chiendich\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_dsdoi_theo_chiendich.sosvColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsGiamSat1Null() {
                 return this.IsNull(this.tablesp_lay_dsdoi_theo_chiendich.GiamSat1Column);
             }
@@ -3607,6 +3638,18 @@ namespace MUAHEXANH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDoiPhoNull() {
                 this[this.tablesp_lay_dsdoi_theo_chiendich.DoiPhoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IssosvNull() {
+                return this.IsNull(this.tablesp_lay_dsdoi_theo_chiendich.sosvColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetsosvNull() {
+                this[this.tablesp_lay_dsdoi_theo_chiendich.sosvColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5020,6 +5063,7 @@ SELECT MaDoi, TenDoi, GiamSat1, GiamSat2, DoiTruong, DoiPho, MaChienDich, MaKhoa
             tableMapping.ColumnMappings.Add("DoiPho", "DoiPho");
             tableMapping.ColumnMappings.Add("tenkhoa", "tenkhoa");
             tableMapping.ColumnMappings.Add("tenxa", "tenxa");
+            tableMapping.ColumnMappings.Add("sosv", "sosv");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

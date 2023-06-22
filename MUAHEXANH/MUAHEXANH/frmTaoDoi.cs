@@ -12,7 +12,8 @@ namespace MUAHEXANH
 {
     public partial class frmTaoDoi : Form
     {
-        private int viTri
+        private int viTri;
+        private bool dangThem;
         public frmTaoDoi()
         {
             InitializeComponent();
@@ -22,11 +23,16 @@ namespace MUAHEXANH
         {
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = true;
+            pnlDOI.Enabled = false;
+            gcDSDOI.Enabled = true;
+
         }
         public void trangThaiChuaGhi()
         {
             btnPhucHoi.Enabled = btnGhi.Enabled = true;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = false;
+            pnlDOI.Enabled = true;
+            gcDSDOI.Enabled = false;
         }
 
         private void frmTaoDoi_Load(object sender, EventArgs e)
@@ -57,6 +63,8 @@ namespace MUAHEXANH
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            viTri = bdsDOI.Position;
+            dangThem = true;
             txtTenDoi.Text = "";
             cmbGiamSat1.Text = "";
             cmbGiamSat2.Text = "";
@@ -65,6 +73,14 @@ namespace MUAHEXANH
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (int.Parse(((DataRowView)bdsDOI[bdsDOI.Position])["sosv"].ToString()) > 0)
+            {
+                MessageBox.Show("Đội này đã có sinh viên, không thể chỉnh sửa! Vui lòng chọn đội khác!", "", MessageBoxButtons.OK);
+                gcDSDOI.Focus();
+                return;
+            }
+            viTri = bdsDOI.Position;
+            dangThem = false;
             trangThaiChuaGhi();
         }
 
@@ -88,33 +104,57 @@ namespace MUAHEXANH
                 cmbGiamSat2.Focus();
                 return;
             }
-     
+            if (cmbGiamSat1.Text.Trim() == cmbGiamSat2.Text.Trim())
+            {
+                MessageBox.Show("Trùng tên 2 giám sát! Vui lòng chọn!", "", MessageBoxButtons.OK);
+                cmbGiamSat1.Focus();
+                return;
+            }
+
+
             try
             {
+                string cmd = "";
                 // ket thuc hieu chinh: ghi
-                
-                string cmd = "INSERT INTO DOI(TENDOI, GIAMSAT1, GIAMSAT2, MACHIENDICH, MAKHOA, MAXA) VALUES(N'"
+                if (dangThem == true)
+                {
+                    cmd = "INSERT INTO DOI(TENDOI, GIAMSAT1, GIAMSAT2, MACHIENDICH, MAKHOA, MAXA) VALUES(N'"
                                 + txtTenDoi.Text + "', '"
                                 + cmbGiamSat1.SelectedValue.ToString() + "', '"
                                 + cmbGiamSat2.SelectedValue.ToString() + "', '"
                                 + Program.maChienDich + "', '"
                                 + cmbKhoa.SelectedValue.ToString() + "', '"
                                 + cmbXa.SelectedValue.ToString() + "')";
+                }
+                else
+                {
+                    string madoi = ((DataRowView)bdsDOI[bdsDOI.Position])["MADOI"].ToString();
+                    cmd = "UPDATE DOI " +
+                        "SET TENDOI = N'" + txtTenDoi.Text
+                        + "', GIAMSAT1 = '" + cmbGiamSat1.SelectedValue.ToString()
+                        + "', GIAMSAT2 = '" + cmbGiamSat2.SelectedValue.ToString()
+                        + "', MAKHOA = '" + cmbKhoa.SelectedValue.ToString()
+                        + "', MAXA = '" + cmbXa.SelectedValue.ToString()
+                        + "' WHERE MADOI = '" + madoi + "'";
+                }
+                
+
+
                 Console.WriteLine(cmd);
                 int hd_them = Program.ExecSqlNonQuery(cmd);
                 if (hd_them != 0)
                 {
-                    MessageBox.Show("Lỗi thêm đội cho chiến dịch. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi ghi đội cho chiến dịch. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
                     return;
                 }
 
                 // khi ghi đội thì tự động thêm một nhóm chứa đội trưởng, đội phó đội đó 
-                MessageBox.Show("thêm đội thành công", "", MessageBoxButtons.OK);
+                MessageBox.Show("ghi đội thành công", "", MessageBoxButtons.OK);
                 //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom); 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi thêm đội!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi đội!", "", MessageBoxButtons.OK);
                 Console.WriteLine(ex.ToString());
                 // tro ve trang thai luc them cho user dieu chinh lai
                 return;
@@ -131,12 +171,25 @@ namespace MUAHEXANH
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (btnThem.Enabled == false)
+            {
+                bdsDOI.Position = viTri;
+            }
             trangThaiBanDau();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            try
+            {
+                this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                MessageBox.Show("Lỗi reload!", "", MessageBoxButtons.OK);
+                return;
+            }
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -144,6 +197,15 @@ namespace MUAHEXANH
             this.Close();
         }
 
-       
+        private void cmbKhoa_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.sp_lay_giamsat1_them_vao_doiTableAdapter.Fill(this.dStaoDoi.sp_lay_giamsat1_them_vao_doi, cmbKhoa.SelectedValue.ToString(), "", Program.maChienDich);
+            this.sp_lay_giamsat2_them_vao_doiTableAdapter.Fill(this.dStaoDoi.sp_lay_giamsat2_them_vao_doi, cmbKhoa.SelectedValue.ToString(), "", Program.maChienDich);
+            if (cmbGiamSat1.Items.Count <= 1)
+            {
+                MessageBox.Show("Không đủ số lượng giám sát cho khoa này, vui lòng chọn khoa khác !", "", MessageBoxButtons.OK);
+                cmbKhoa.Focus();    
+            }
+        }
     }
 }

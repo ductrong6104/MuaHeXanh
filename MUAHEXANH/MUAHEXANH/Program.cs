@@ -29,8 +29,9 @@ namespace MUAHEXANH
         public static String password = "";
 
         public static String database = "TTCS_MUAHEXANH";
-        
 
+        public static String maApDuocChon = null;
+        public static String backupDeviceName = null;
         public static String mloginDN = "";
         public static String passwordDN = "";
         public static String mGroup = "";

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MUAHEXANH.FrmChon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,6 +133,54 @@ namespace MUAHEXANH
             else
             {
                 frmTaoNhom f = new frmTaoNhom();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmCongViec));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmCongViec f = new FrmCongViec();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmChienDich));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmChienDich f = new FrmChienDich();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmBackup));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmBackup f = new FrmBackup();
                 // set property of frmMain: ismdicontainer = true 
                 f.MdiParent = this;
                 f.Show();

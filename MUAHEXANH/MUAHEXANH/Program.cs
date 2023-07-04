@@ -65,7 +65,8 @@ namespace MUAHEXANH
             }
             catch
             {
-                MessageBox.Show("Lỗi kết nối tới cơ sở dữ liệu.\nBạn xem lại tên server, tên CSDL!!");
+                Console.WriteLine("Lỗi kết nối tới cơ sở dữ liệu.\nBạn xem lại tên server, tên CSDL!!");
+                MessageBox.Show("Lỗi đăng nhập\nTài khoản hoặc mật khẩu bạn nhập không chính xác!!");
                 return 0;
             }
         }
@@ -86,7 +87,8 @@ namespace MUAHEXANH
             catch (SqlException ex)
             {
                 Program.conn.Close();
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Vui lòng chọn phù hợp tài khoản cho giảng viên hay sinh viên!");
                 return null;
             }
         }

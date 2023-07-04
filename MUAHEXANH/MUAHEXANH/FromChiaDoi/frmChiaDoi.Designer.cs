@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiaDoi));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.diachiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENNHOMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nHOMTRUONGDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +38,6 @@
             this.tENAPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sOSVNHOMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSchiaDoi = new MUAHEXANH.DSchiaDoi();
@@ -150,7 +150,6 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.textEdit2);
             this.panelControl1.Controls.Add(this.txtMANHOM);
             this.panelControl1.Controls.Add(this.labelControl5);
@@ -162,17 +161,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1134, 55);
             this.panelControl1.TabIndex = 41;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
-            this.btnClose.Location = new System.Drawing.Point(1035, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(97, 51);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Thoát";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // textEdit2
             // 
@@ -258,13 +246,23 @@
             this.dgvTHANHVIENDOI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTHANHVIENDOI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTHANHVIENDOI.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvTHANHVIENDOI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTHANHVIENDOI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12.2F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTHANHVIENDOI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTHANHVIENDOI.ColumnHeadersHeight = 50;
             this.dgvTHANHVIENDOI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masvDataGridViewTextBoxColumn,
             this.hotenDataGridViewTextBoxColumn,
             this.maNhomDataGridViewTextBoxColumn});
             this.dgvTHANHVIENDOI.DataSource = this.sp_lay_nhom_tu_manhomBindingSource;
             this.dgvTHANHVIENDOI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTHANHVIENDOI.EnableHeadersVisualStyles = false;
             this.dgvTHANHVIENDOI.Location = new System.Drawing.Point(2, 60);
             this.dgvTHANHVIENDOI.Name = "dgvTHANHVIENDOI";
             this.dgvTHANHVIENDOI.RowHeadersWidth = 51;
@@ -363,7 +361,16 @@
             this.dgvSVCHUACODOI.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSVCHUACODOI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSVCHUACODOI.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvSVCHUACODOI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSVCHUACODOI.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSVCHUACODOI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSVCHUACODOI.ColumnHeadersHeight = 50;
             this.dgvSVCHUACODOI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masvDataGridViewTextBoxColumn1,
             this.hotenDataGridViewTextBoxColumn1,
@@ -371,6 +378,7 @@
             this.chkThemVaoDoi});
             this.dgvSVCHUACODOI.DataSource = this.sp_lay_dssv_chuacodoi_theo_makhoaBindingSource;
             this.dgvSVCHUACODOI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSVCHUACODOI.EnableHeadersVisualStyles = false;
             this.dgvSVCHUACODOI.Location = new System.Drawing.Point(2, 47);
             this.dgvSVCHUACODOI.Name = "dgvSVCHUACODOI";
             this.dgvSVCHUACODOI.RowHeadersWidth = 51;
@@ -438,7 +446,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(143, 8);
+            this.labelControl2.Location = new System.Drawing.Point(74, 8);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(459, 31);
             this.labelControl2.TabIndex = 0;
@@ -472,6 +480,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 716);
             this.Controls.Add(this.pnlCHIASV);
             this.Controls.Add(this.pnlTHANHVIENDOI);
@@ -546,7 +555,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource;
         private DSchiaDoiTableAdapters.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter;
-        private DevExpress.XtraEditors.SimpleButton btnClose;
         private System.Windows.Forms.DataGridView dgvSVCHUACODOI;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkThemVaoDoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn1;

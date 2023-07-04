@@ -21,6 +21,26 @@ namespace MUAHEXANH
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnQuenMK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
             if (txtLogin.Text.Trim() == "" || txtPass.Text.Trim() == "")
             {
                 MessageBox.Show("Login name và mật mã không để trống", "", MessageBoxButtons.OK);
@@ -48,27 +68,30 @@ namespace MUAHEXANH
 
 
             // viet chuong trinh tra ve du lieu tu viec goi sp
-            Program.myReader = Program.ExecSqlDataReader(strLenh);
-            if (Program.myReader == null) return; // khong tim thay du lieu cua sinh vien dang nhap
-            Program.myReader.Read();    // doc 1 dong trong datareader, neu nhieu dong thi viet vong lap
+            using(Program.myReader = Program.ExecSqlDataReader(strLenh)){
+                if (Program.myReader == null) return; // khong tim thay du lieu cua sinh vien dang nhap
+                Program.myReader.Read();    // doc 1 dong trong datareader, neu nhieu dong thi viet vong lap
 
-            Program.username = Program.myReader.GetString(0); // cot dau tien la username
-            if (Convert.IsDBNull(Program.username))
-            {
-                MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
+                Program.username = Program.myReader.GetString(0); // cot dau tien la username
+                if (Convert.IsDBNull(Program.username))
+                {
+                    MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
+                }
+                Program.mHoten = Program.myReader.GetString(1);
+                Program.mGroup = Program.myReader.GetString(2);
+                // dong datareader va connect db
+                Program.myReader.Close();
+                Program.conn.Close();
             }
+            
 
-            Program.mHoten = Program.myReader.GetString(1);
-            Program.mGroup = Program.myReader.GetString(2);
-            // dong datareader va connect db
-            Program.myReader.Close();
-            Program.conn.Close();
+            
             if (Program.mGroup == "GIAMSAT" || Program.mGroup == "DOITRUONG" || Program.mGroup == "DOIPHO")
             {
                 using (SqlDataReader layMaDoi = Program.ExecSqlDataReader("SELECT MADOI FROM DOI WHERE " +
-                    "GIAMSAT1 = '" + Program.username 
-                    + "' OR GIAMSAT2='"  + Program.username 
-                    + "' OR DOITRUONG='" + Program.username 
+                    "GIAMSAT1 = '" + Program.username
+                    + "' OR GIAMSAT2='" + Program.username
+                    + "' OR DOITRUONG='" + Program.username
                     + "' OR DOIPHO='" + Program.username + "'"))
                 {
                     layMaDoi.Read();
@@ -87,9 +110,15 @@ namespace MUAHEXANH
             Program.frmDN.Hide();
         }
 
-        private void frmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtLogin.Text = "";
+            txtPass.Text = "";
         }
     }
 }

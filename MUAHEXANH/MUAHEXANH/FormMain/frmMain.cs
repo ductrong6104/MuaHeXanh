@@ -1,4 +1,5 @@
-﻿using MUAHEXANH.FrmChon;
+﻿using MUAHEXANH.FormTaoTaiKhoanCuaKhoa;
+using MUAHEXANH.FrmChon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 
 namespace MUAHEXANH
 {
@@ -17,7 +19,7 @@ namespace MUAHEXANH
             InitializeComponent();
         }
 
-        private Form CheckExists(Type ftype)
+        public Form CheckExists(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
                 if (f.GetType() == ftype)
@@ -37,18 +39,28 @@ namespace MUAHEXANH
                 rbKHOA.Visible = true;
                 rbGiamSat.Visible = false;
                 rbDoiTruong.Visible = false;
+                rbAdmin.Visible = false;
             }
             else if (Program.mGroup == "GIAMSAT")
             {
                 rbKHOA.Visible = false;
                 rbGiamSat.Visible = true;
                 rbDoiTruong.Visible = false;
+                rbAdmin.Visible = false;
             }
             else if (Program.mGroup == "DOITRUONG" || Program.mGroup == "DOIPHO")
             {
                 rbKHOA.Visible = false;
                 rbGiamSat.Visible = false;
                 rbDoiTruong.Visible = true;
+                rbAdmin.Visible = false;
+            }
+            else if (Program.mGroup == "ADMIN")
+            {
+                rbKHOA.Visible = false;
+                rbGiamSat.Visible = false;
+                rbDoiTruong.Visible = false;
+                rbAdmin.Visible = true;
             }
         }
 
@@ -181,6 +193,54 @@ namespace MUAHEXANH
             else
             {
                 FrmBackup f = new FrmBackup();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnTaoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmTaoTaiKhoanCuaKhoa));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmTaoTaiKhoanCuaKhoa f = new frmTaoTaiKhoanCuaKhoa();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnKhoiPhucTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmKhoiPhucTaiKhoanCuaKhoa));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmKhoiPhucTaiKhoanCuaKhoa f = new frmKhoiPhucTaiKhoanCuaKhoa();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnVoHieuHoaTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmVoHieuHoaTaiKhoanCuaKhoa));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmVoHieuHoaTaiKhoanCuaKhoa f = new frmVoHieuHoaTaiKhoanCuaKhoa();
                 // set property of frmMain: ismdicontainer = true 
                 f.MdiParent = this;
                 f.Show();

@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Alert.cs" />
+    <Compile Include="DSchiaDoi.cs">
+      <DependentUpon>DSchiaDoi.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSchiaDoi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +90,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSChonAp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSquanLiTaiKhoanCuaKhoa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSquanLiTaiKhoanCuaKhoa.xsd</DependentUpon>
     </Compile>
     <Compile Include="DSTaoChienDich.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -186,47 +194,71 @@
     <Compile Include="FormTaoCongViec\FrmNhapLieuCongViec.Designer.cs">
       <DependentUpon>FrmNhapLieuCongViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChiaDoi.cs">
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmKhoiPhucTaiKhoanCuaKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChiaDoi.Designer.cs">
-      <DependentUpon>frmChiaDoi.cs</DependentUpon>
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmKhoiPhucTaiKhoanCuaKhoa.Designer.cs">
+      <DependentUpon>frmKhoiPhucTaiKhoanCuaKhoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChiaNhom.cs">
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmTaoTaiKhoanCuaKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChiaNhom.Designer.cs">
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmTaoTaiKhoanCuaKhoa.Designer.cs">
+      <DependentUpon>frmTaoTaiKhoanCuaKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmVoHieuHoaTaiKhoanCuaKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmVoHieuHoaTaiKhoanCuaKhoa.Designer.cs">
+      <DependentUpon>frmVoHieuHoaTaiKhoanCuaKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmXoaTaiKhoanCuaKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoTaiKhoanCuaKhoa\frmXoaTaiKhoanCuaKhoa.Designer.cs">
+      <DependentUpon>frmXoaTaiKhoanCuaKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromChiaNhom\frmChiaNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromChiaNhom\frmChiaNhom.Designer.cs">
       <DependentUpon>frmChiaNhom.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChiaViec.cs">
+    <Compile Include="FormChiaViec\frmChiaViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChiaViec.Designer.cs">
+    <Compile Include="FormChiaViec\frmChiaViec.Designer.cs">
       <DependentUpon>frmChiaViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="FormMain\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="FormMain\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="FormDangNhap\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="FormDangNhap\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaoDoi.cs">
+    <Compile Include="FormTaoDoi\frmTaoDoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTaoDoi.Designer.cs">
+    <Compile Include="FormTaoDoi\frmTaoDoi.Designer.cs">
       <DependentUpon>frmTaoDoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaoNhom.cs">
+    <Compile Include="FormTaoNhom\frmTaoNhom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTaoNhom.Designer.cs">
+    <Compile Include="FormTaoNhom\frmTaoNhom.Designer.cs">
       <DependentUpon>frmTaoNhom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromChiaDoi\frmChiaDoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromChiaDoi\frmChiaDoi.Designer.cs">
+      <DependentUpon>frmChiaDoi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,26 +298,35 @@
     <EmbeddedResource Include="FormTaoCongViec\FrmNhapLieuCongViec.resx">
       <DependentUpon>FrmNhapLieuCongViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChiaDoi.resx">
-      <DependentUpon>frmChiaDoi.cs</DependentUpon>
+    <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmKhoiPhucTaiKhoanCuaKhoa.resx">
+      <DependentUpon>frmKhoiPhucTaiKhoanCuaKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChiaNhom.resx">
+    <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmTaoTaiKhoanCuaKhoa.resx">
+      <DependentUpon>frmTaoTaiKhoanCuaKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmVoHieuHoaTaiKhoanCuaKhoa.resx">
+      <DependentUpon>frmVoHieuHoaTaiKhoanCuaKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromChiaNhom\frmChiaNhom.resx">
       <DependentUpon>frmChiaNhom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChiaViec.resx">
+    <EmbeddedResource Include="FormChiaViec\frmChiaViec.resx">
       <DependentUpon>frmChiaViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="FormDangNhap\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="FormMain\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaoDoi.resx">
+    <EmbeddedResource Include="FormTaoDoi\frmTaoDoi.resx">
       <DependentUpon>frmTaoDoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaoNhom.resx">
+    <EmbeddedResource Include="FormTaoNhom\frmTaoNhom.resx">
       <DependentUpon>frmTaoNhom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromChiaDoi\frmChiaDoi.resx">
+      <DependentUpon>frmChiaDoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -296,6 +337,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="DSchiaDoi.xsc">
@@ -341,6 +383,17 @@
     </None>
     <None Include="DSChonAp.xss">
       <DependentUpon>DSChonAp.xsd</DependentUpon>
+    </None>
+    <None Include="DSquanLiTaiKhoanCuaKhoa.xsc">
+      <DependentUpon>DSquanLiTaiKhoanCuaKhoa.xsd</DependentUpon>
+    </None>
+    <None Include="DSquanLiTaiKhoanCuaKhoa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSquanLiTaiKhoanCuaKhoa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSquanLiTaiKhoanCuaKhoa.xss">
+      <DependentUpon>DSquanLiTaiKhoanCuaKhoa.xsd</DependentUpon>
     </None>
     <None Include="DSTaoChienDich.xsc">
       <DependentUpon>DSTaoChienDich.xsd</DependentUpon>
@@ -395,6 +448,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FormTaoTaiKhoanCuaAdmin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summer-beach-logo-illustration-free-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-user-icon-isolated-on-abstract-background-png-image_1875037.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-logo-portable-network-graphics-clip-art-image-tran-user-logo-search-result-8-cliparts-for-user-log-5d1e8b881e0666.422237491562282888123.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-logo-portable-network-graphics-clip-art-image-tran-user-logo-search-result-8-cliparts-for-user-log-5d1e8b881e0666.4222374915622828881231.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-e-commerce-android-business-password-android-blue-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-user-icon-isolated-on-abstract-background-png-image_18750371.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-lock-icon-png-image_1011211.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

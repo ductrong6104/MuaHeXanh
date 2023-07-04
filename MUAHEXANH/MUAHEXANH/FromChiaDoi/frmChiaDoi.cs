@@ -45,10 +45,7 @@ namespace MUAHEXANH
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void btnGhi_Click(object sender, EventArgs e)
         {

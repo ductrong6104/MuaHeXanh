@@ -84,3 +84,6 @@ D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FrmCongViec.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FrmChon.FrmNhapLieuCongViec.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FrmChienDich.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormTaoTaiKhoanCuaKhoa.frmTaoTaiKhoanCuaKhoa.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormTaoTaiKhoanCuaKhoa.frmKhoiPhucTaiKhoanCuaKhoa.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormTaoTaiKhoanCuaKhoa.frmVoHieuHoaTaiKhoanCuaKhoa.resources

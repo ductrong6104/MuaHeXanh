@@ -70,6 +70,9 @@
             this.NHOM = new System.Windows.Forms.ToolStripStatusLabel();
             this.TENSV = new System.Windows.Forms.ToolStripStatusLabel();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.rbNhomTruong = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -98,10 +101,11 @@
             this.barButtonItem9,
             this.btnVoHieuHoaTK,
             this.btnXoaTK,
-            this.btnKhoiPhucTK});
+            this.btnKhoiPhucTK,
+            this.barButtonItem10});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 1074;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -109,7 +113,8 @@
             this.rbGiamSat,
             this.rbDoiTruong,
             this.rbAdmin,
-            this.rbCaiDat});
+            this.rbCaiDat,
+            this.rbNhomTruong});
             this.ribbonControl1.Size = new System.Drawing.Size(1263, 223);
             // 
             // btnTaoTK
@@ -396,6 +401,28 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // rbNhomTruong
+            // 
+            this.rbNhomTruong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup12});
+            this.rbNhomTruong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
+            this.rbNhomTruong.Name = "rbNhomTruong";
+            this.rbNhomTruong.Text = "Nhóm trưởng";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Xem thời gian làm việc";
+            this.barButtonItem10.Id = 26;
+            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -462,6 +489,9 @@
         private DevExpress.XtraBars.BarButtonItem btnVoHieuHoaTK;
         private DevExpress.XtraBars.BarButtonItem btnXoaTK;
         private DevExpress.XtraBars.BarButtonItem btnKhoiPhucTK;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbNhomTruong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
     }
 }
 

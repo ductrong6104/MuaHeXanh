@@ -1,4 +1,5 @@
 ﻿using MUAHEXANH.FormTaoTaiKhoanCuaKhoa;
+using MUAHEXANH.FormXemThoiGianCV;
 using MUAHEXANH.FrmChon;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,7 @@ namespace MUAHEXANH
                 rbGiamSat.Visible = false;
                 rbDoiTruong.Visible = false;
                 rbAdmin.Visible = false;
+                rbNhomTruong.Visible = false;
             }
             else if (Program.mGroup == "GIAMSAT")
             {
@@ -47,6 +49,7 @@ namespace MUAHEXANH
                 rbGiamSat.Visible = true;
                 rbDoiTruong.Visible = false;
                 rbAdmin.Visible = false;
+                rbNhomTruong.Visible = false;
             }
             else if (Program.mGroup == "DOITRUONG" || Program.mGroup == "DOIPHO")
             {
@@ -54,6 +57,7 @@ namespace MUAHEXANH
                 rbGiamSat.Visible = false;
                 rbDoiTruong.Visible = true;
                 rbAdmin.Visible = false;
+                rbNhomTruong.Visible = false;
             }
             else if (Program.mGroup == "ADMIN")
             {
@@ -61,6 +65,15 @@ namespace MUAHEXANH
                 rbGiamSat.Visible = false;
                 rbDoiTruong.Visible = false;
                 rbAdmin.Visible = true;
+                rbNhomTruong.Visible = false;
+            }
+            else if (Program.mGroup == "NHOMTRUONG")
+            {
+                rbKHOA.Visible = false;
+                rbGiamSat.Visible = false;
+                rbDoiTruong.Visible = false;
+                rbAdmin.Visible = false;
+                rbNhomTruong.Visible = true;
             }
         }
 
@@ -241,6 +254,22 @@ namespace MUAHEXANH
             else
             {
                 frmVoHieuHoaTaiKhoanCuaKhoa f = new frmVoHieuHoaTaiKhoanCuaKhoa();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmXemThoiGianLamViec));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmXemThoiGianLamViec f = new frmXemThoiGianLamViec();
                 // set property of frmMain: ismdicontainer = true 
                 f.MdiParent = this;
                 f.Show();

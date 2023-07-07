@@ -117,6 +117,7 @@ namespace MUAHEXANH
             }
             catch (SqlException ex)
             {
+                Console.WriteLine(ex.Message);
                 Program.conn.Close();
                 return ex.State; // chuoi bao loi raiserror từ sql 
             }

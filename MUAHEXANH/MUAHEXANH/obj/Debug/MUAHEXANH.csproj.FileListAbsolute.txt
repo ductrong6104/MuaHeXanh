@@ -87,3 +87,4 @@ D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormTaoTaiKhoanCuaKhoa.frmTaoTaiKhoanCuaKhoa.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormTaoTaiKhoanCuaKhoa.frmKhoiPhucTaiKhoanCuaKhoa.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormTaoTaiKhoanCuaKhoa.frmVoHieuHoaTaiKhoanCuaKhoa.resources
+D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormXemThoiGianCV.frmXemThoiGianLamViec.resources

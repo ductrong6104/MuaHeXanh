@@ -49,7 +49,9 @@
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -91,6 +93,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSChonAp.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSkhenThuong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSkhenThuong.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSquanLiTaiKhoanCuaKhoa.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +128,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DStaoNhom.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSxemThoiGianLamViec.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSxemThoiGianLamViec.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormBackup\FrBackupDevice.cs">
       <SubType>Form</SubType>
@@ -157,6 +169,18 @@
     </Compile>
     <Compile Include="FormBackup\FrmWaitTaoDevice.Designer.cs">
       <DependentUpon>FrmWaitTaoDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKhenThuong\frmDanhHieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKhenThuong\frmDanhHieu.Designer.cs">
+      <DependentUpon>frmDanhHieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKhenThuong\frmKhenThuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKhenThuong\frmKhenThuong.Designer.cs">
+      <DependentUpon>frmKhenThuong.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRestore\frmRestore.cs">
       <SubType>Form</SubType>
@@ -217,6 +241,12 @@
     </Compile>
     <Compile Include="FormTaoTaiKhoanCuaKhoa\frmXoaTaiKhoanCuaKhoa.Designer.cs">
       <DependentUpon>frmXoaTaiKhoanCuaKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXemThoiGianCV\frmXemThoiGianLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemThoiGianCV\frmXemThoiGianLamViec.Designer.cs">
+      <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
     </Compile>
     <Compile Include="FromChiaNhom\frmChiaNhom.cs">
       <SubType>Form</SubType>
@@ -280,6 +310,12 @@
     <EmbeddedResource Include="FormBackup\FrmWaitTaoDevice.resx">
       <DependentUpon>FrmWaitTaoDevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKhenThuong\frmDanhHieu.resx">
+      <DependentUpon>frmDanhHieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKhenThuong\frmKhenThuong.resx">
+      <DependentUpon>frmKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRestore\frmRestore.resx">
       <DependentUpon>frmRestore.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmVoHieuHoaTaiKhoanCuaKhoa.resx">
       <DependentUpon>frmVoHieuHoaTaiKhoanCuaKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemThoiGianCV\frmXemThoiGianLamViec.resx">
+      <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromChiaNhom\frmChiaNhom.resx">
       <DependentUpon>frmChiaNhom.cs</DependentUpon>
@@ -384,6 +423,17 @@
     <None Include="DSChonAp.xss">
       <DependentUpon>DSChonAp.xsd</DependentUpon>
     </None>
+    <None Include="DSkhenThuong.xsc">
+      <DependentUpon>DSkhenThuong.xsd</DependentUpon>
+    </None>
+    <None Include="DSkhenThuong.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSkhenThuong.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSkhenThuong.xss">
+      <DependentUpon>DSkhenThuong.xsd</DependentUpon>
+    </None>
     <None Include="DSquanLiTaiKhoanCuaKhoa.xsc">
       <DependentUpon>DSquanLiTaiKhoanCuaKhoa.xsd</DependentUpon>
     </None>
@@ -438,6 +488,17 @@
     </None>
     <None Include="DStaoNhom.xss">
       <DependentUpon>DStaoNhom.xsd</DependentUpon>
+    </None>
+    <None Include="DSxemThoiGianLamViec.xsc">
+      <DependentUpon>DSxemThoiGianLamViec.xsd</DependentUpon>
+    </None>
+    <None Include="DSxemThoiGianLamViec.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSxemThoiGianLamViec.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSxemThoiGianLamViec.xss">
+      <DependentUpon>DSxemThoiGianLamViec.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

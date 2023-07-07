@@ -55,7 +55,12 @@ namespace MUAHEXANH
 
         private void frmChiaViec_Load(object sender, EventArgs e)
         {
-            dSchiaViec.EnforceConstraints = false;
+            this.deNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.deNgay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.deNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.deNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+
             deNgay.DateTime = DateTime.Now;
             dSchiaViec.EnforceConstraints = false;
             cmbBuoi.SelectedIndex = 0;
@@ -151,6 +156,7 @@ namespace MUAHEXANH
                                 + cmbBuoi.Text.ToString() + "', '"
                                 + deNgay.Text.ToString() + "', '"
                                 + cmbCongViec.SelectedValue.ToString()+ "')";
+                Console.WriteLine("cmd chia cv: " + cmd);
                 int hd_them = Program.ExecSqlNonQuery(cmd);
                 if (hd_them != 0)
                 {

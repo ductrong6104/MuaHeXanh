@@ -54,9 +54,6 @@
             this.cmbHoTen.TabIndex = 1;
             this.cmbHoTen.SelectionChangeCommitted += new System.EventHandler(this.cmbHoTen_SelectionChangeCommitted);
             // 
-            // dStaoTaiKhoan
-            // 
-            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(34, 187);
@@ -121,9 +118,6 @@
             this.lblCHONHOTEN.TabIndex = 13;
             this.lblCHONHOTEN.Text = "label1";
             // 
-            // tableAdapterManager
-            // 
-            // 
             // cmbChonQuyen
             // 
             this.cmbChonQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -131,7 +125,8 @@
             this.cmbChonQuyen.Items.AddRange(new object[] {
             "Giám sát",
             "Đội trưởng",
-            "Đội phó"});
+            "Đội phó",
+            "Nhóm trưởng"});
             this.cmbChonQuyen.Location = new System.Drawing.Point(258, 71);
             this.cmbChonQuyen.Name = "cmbChonQuyen";
             this.cmbChonQuyen.Size = new System.Drawing.Size(230, 24);

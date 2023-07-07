@@ -98,6 +98,15 @@ namespace MUAHEXANH
                     Program.mTeam = layMaDoi.GetString(0);
                 }
             }
+            else if (Program.mGroup == "NHOMTRUONG")
+            {
+                using (SqlDataReader layMaNhom = Program.ExecSqlDataReader("SELECT MANHOM FROM NHOM WHERE " +
+                    "NHOMTRUONG = '" + Program.username+ "'"))
+                {
+                    layMaNhom.Read();
+                    Program.mNhom = layMaNhom.GetString(0);
+                }
+            }
 
             Program.frmChinh = new frmMain();
             Program.frmChinh.Show();

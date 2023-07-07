@@ -77,8 +77,8 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 Console.WriteLine("so luong hoten: " + cmbHoTen.Items.Count);
                 role = "DOITRUONG";
 
-            }
-            else
+            } 
+            else if (cmbChonQuyen.SelectedIndex == 2)
             {
                 dataTable = Program.ExecSqlDataTable("exec sp_lay_doipho_chua_tao_taikhoan");
                 Console.WriteLine("so doi pho chua co tai khoan: " + dataTable.Rows.Count.ToString());
@@ -95,6 +95,24 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 txtTaiKhoan.Text = cmbHoTen.SelectedValue.ToString();
                 Console.WriteLine("so luong hoten: " + cmbHoTen.Items.Count);
                 role = "DOIPHO";
+            }
+            else
+            {
+                dataTable = Program.ExecSqlDataTable("exec sp_lay_nhomtruong_chua_tao_taikhoan");
+                Console.WriteLine("so nhom truong chua co tai khoan: " + dataTable.Rows.Count.ToString());
+                if (dataTable.Rows.Count == 0)
+                {
+                    MessageBox.Show("Tất cả các nhóm trưởng đã có tài khoản! Không cần tạo nữa!", "", MessageBoxButtons.OK);
+                    cmbChonQuyen.Focus();
+                    return;
+                }
+                lblCHONHOTEN.Text = "Họ tên sinh viên";
+                cmbHoTen.DataSource = dataTable;
+                cmbHoTen.ValueMember = "masv";
+                cmbHoTen.DisplayMember = "hoten";
+                txtTaiKhoan.Text = cmbHoTen.SelectedValue.ToString();
+                Console.WriteLine("so luong hoten: " + cmbHoTen.Items.Count);
+                role = "NHOMTRUONG";
             }
         }
         public void printDT(DataTable dt)

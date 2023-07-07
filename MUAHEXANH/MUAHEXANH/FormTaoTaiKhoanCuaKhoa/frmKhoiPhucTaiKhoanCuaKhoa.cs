@@ -39,19 +39,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
             Console.WriteLine(dgvTaiKhoanKhoiPhuc.Rows.Count);*/
         }
 
-        public void reloadForm()
-        {
-            cmbChonTK.SelectedIndex = 0;
-            // TODO: This line of code loads data into the 'dStaoTaiKhoan.sp_lay_ds_taikhoan_vohieuhoa' table. You can move, or remove it, as needed.
-            if (cmbChonTK.SelectedIndex == 0)
-                role = "GIAMSAT";
-            this.sp_lay_ds_taikhoan_vohieuhoaTableAdapter.Fill(this.dStaoTaiKhoan.sp_lay_ds_taikhoan_vohieuhoa, role);
-            if (dgvTaiKhoanKhoiPhuc.RowCount == 0)
-            {
-                MessageBox.Show("Không có tài khoản nào để khôi phục lúc này!", "", MessageBoxButtons.OK);
-                return;
-            }
-        }
+        
 
         private void btnKhoiPhuc_Click(object sender, EventArgs e)
         {

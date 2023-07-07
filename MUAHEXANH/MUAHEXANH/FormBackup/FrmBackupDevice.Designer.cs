@@ -1,6 +1,6 @@
 ﻿namespace MUAHEXANH
 {
-    partial class FrBackupDevice
+    partial class FrmBackupDevice
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrBackupDevice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBackupDevice));
             this.gcBackup = new DevExpress.XtraGrid.GridControl();
             this.gvBackup = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);

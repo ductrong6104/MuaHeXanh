@@ -1,4 +1,5 @@
 ﻿using MUAHEXANH.App;
+using MUAHEXANH.FormSchedule;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,10 @@ namespace MUAHEXANH
 {
     public partial class FrmBackup : Form
     {
+        public FrmBackup()
+        {
+            InitializeComponent();
+        }
         private void initCombobox()
         {
             //Loai
@@ -42,135 +47,97 @@ namespace MUAHEXANH
             cmbLoai.DisplayMember = "NAME";
             cmbLoai.ValueMember = "VALUE";
 
-            //Destination
+         
 
-            DataTable dataTable2 = new DataTable();
-            dataTable2.Columns.Add(new DataColumn("NAME", typeof(string)));
-            dataTable2.Columns.Add(new DataColumn("VALUE", typeof(int)));
-
-            DataRow row21 = dataTable2.NewRow();
-            row21["NAME"] = "Url";
-            row21["VALUE"] = 0;
-            dataTable2.Rows.Add(row21);
-
-            DataRow row22 = dataTable2.NewRow();
-            row22["NAME"] = "Disk";
-            row22["VALUE"] = 1;
-            dataTable2.Rows.Add(row22);
-
-
-            cmbDestination.DataSource = dataTable2;
-            cmbDestination.DisplayMember = "NAME";
-            cmbDestination.ValueMember = "VALUE";
-
-            cmbDestination.SelectedIndex = 0;
-        }
-        public FrmBackup()
-        {
-            InitializeComponent();
-        }
-
-        private void cmbDestination_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int destination = int.Parse(cmbDestination.SelectedValue.ToString());
-                if (destination == 1)
-                {
-                    txtUrl.ReadOnly = true;
-                    FrmChonBackupDevice frm = new FrmChonBackupDevice();
-                    frm.ShowDialog();
-
-                    if (Program.backupDeviceName != null)
-                    {
-                        txtUrl.Text = Program.backupDeviceName.Trim();
-                    }
-                }
-                else if (destination == 0)
-                {
-                    txtUrl.ReadOnly = false;
-                }
-            }
-            catch(Exception ex) { }
         }
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
+            if(txtBackupDevice.Text.Trim() == "")
+            {
+                Alert.ErrorMessageBox("Vui lòng chọn backup device");
+                return;
+            }
+
             int backupType = cmbLoai.SelectedIndex;
-            String deviceName= null;
-            String url = null;
+            String deviceName= txtBackupDevice.Text.Trim();
             String description = $"Backup TTCS_MUAHEXANH {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
-            if(int.Parse(cmbDestination.SelectedValue.ToString()) == 0)
-            {
-                url = txtUrl.Text.Trim();
-            }
-            else
-            {
-                deviceName = txtUrl.Text.Trim();
-            }
+
+            object[] args = { backupType, deviceName, description };
+
             //Gọi sp backup
-            Action<int, String, String, String> worker = (param1, param2, param3, param4) =>
+            Action<object[]> worker = (arrParams) =>
             {
-                callBackup(param1, param2, param3, param4);
+                callBackup(arrParams);
             };
-            using (FrmWaitBackup f = new FrmWaitBackup(worker, backupType, deviceName, url, description))
+            using (MyWaitForm f = new MyWaitForm(worker, args))
             {
+                Program.frmChinh.Enabled = false;
                 f.Dock = DockStyle.Fill;
+                f.SetCaption("Đang backup");
                 f.ShowDialog(this);
+                Program.frmChinh.Enabled = true;
             }
 //            callBackup(backupType, deviceName, url, description);
         }
-        private void callBackup(int backupType, String deviceName, String url, String description)
+        private void callBackup(object[] args)
         {
-            using (SqlConnection connection = new SqlConnection(Program.connstr))
+            try
             {
-                connection.InfoMessage += Connection_InfoMessage;
-                connection.Open();
-                string sql = "";
-                if (url != null)
-                {
-                    sql = $"DECLARE\t@return_value int\r\n\r\nEXEC\t@return_value = [dbo].[Sp_Backup]\r\n\t\t@Type = {backupType},\r\n\t\t@BackupDevice = NULL,\r\n\t\t@Url = '{url}',\r\n\t\t@Description='{description}'\r\n\r\nSELECT\t'Value' = @return_value";
-                }
-                else if (deviceName != null)
-                {
-                    sql = $"DECLARE\t@return_value int\r\n\r\nEXEC\t@return_value = [dbo].[Sp_Backup]\r\n\t\t@Type = {backupType},\r\n\t\t@BackupDevice = '{deviceName}',\r\n\t\t@Url = NULL,\r\n\t\t@Description='{description}'\r\n\r\nSELECT\t'Value' = @return_value";
-                }
-                else
-                {
-                    Alert.ErrorMessageBox("Không được để trống Url");
-                    return;
-                }
+                int backupType = (int)args[0];
+                String deviceName = (String)args[1];
+                String description = (String)args[2];
 
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                using (SqlConnection connection = new SqlConnection(Program.connstr))
                 {
-                    command.CommandType = CommandType.Text;
-                    try
+                    connection.InfoMessage += Connection_InfoMessage;
+                    connection.Open();
+                    string sql = "";
+                    if (deviceName != null)
                     {
-                        SqlDataReader reader = command.ExecuteReader();
-                        if(reader == null)
-                        {
-                            Alert.ErrorMessageBox("Đã xả ra lỗi khi backup");
-                            return;
-                        }
-                        if(reader.Read())
-                        {
-                            int stt = int.Parse(reader.GetValue(0).ToString());
-                            if (stt == 0)
-                            {
-                                Alert.InfoMessageBox($"Backup thành công");
-                            }
-                            else
-                            {
-                                Alert.ErrorMessageBox("Backup thất bại");
-                            }
-                        }
+                        sql = $"DECLARE\t@return_value int\r\n\r\nEXEC\t@return_value = [dbo].[Sp_Backup]\r\n\t\t@Type = {backupType},\r\n\t\t@BackupDevice = '{deviceName}',\r\n\t\t@Description='{description}'\r\n\r\nSELECT\t'Value' = @return_value";
                     }
-                    catch (Exception ex) {
-                        MessageBox.Show(ex.Message);
+                    else
+                    {
+                        Alert.ErrorMessageBox("Không được để trống Url");
                         return;
                     }
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.CommandType = CommandType.Text;
+                        try
+                        {
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader == null)
+                            {
+                                Alert.ErrorMessageBox("Đã xả ra lỗi khi backup");
+                                return;
+                            }
+                            if (reader.Read())
+                            {
+                                int stt = int.Parse(reader.GetValue(0).ToString());
+                                if (stt == 0)
+                                {
+                                    Alert.InfoMessageBox($"Backup thành công");
+                                }
+                                else
+                                {
+                                    Alert.ErrorMessageBox("Backup thất bại");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            return;
+                        }
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Alert.ErrorMessageBox("Lỗi");
             }
         }
         private static void Connection_InfoMessage(object sender, SqlInfoMessageEventArgs e)
@@ -181,6 +148,7 @@ namespace MUAHEXANH
                 
                 if(error.State == 1)
                 {
+                    
                 }
                 //Console.WriteLine($"_______________________{error.Message} :: {error.State}");
             }
@@ -189,6 +157,7 @@ namespace MUAHEXANH
         {
             if(e.CurrentState == ConnectionState.Closed)
             {
+                    
             }
         }
 
@@ -205,6 +174,16 @@ namespace MUAHEXANH
         private void frmBackup_Shown(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnChonBackupDevice_Click(object sender, EventArgs e)
+        {
+            FrmChonBackupDevice frm = new FrmChonBackupDevice();
+            frm.ShowDialog(this);
+            if (Program.backupDeviceName != null)
+            {
+                txtBackupDevice.Text = Program.backupDeviceName.Trim();
+            }
         }
     }
 }

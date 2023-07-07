@@ -30,6 +30,8 @@ namespace MUAHEXANH
             }
             this.txtTenChienDich.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", bdsChienDich, "TenChienDich", true));
             this.dtpNgayPhatDong.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", bdsChienDich, "NgayPhatDong", true));
+            this.dtpNgayKetThuc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", bdsChienDich, "NgayKetThuc", true));
+
             this.bdsChienDich = bdsChienDich;
             this.dSTaoChienDich = dSTaoChienDich;
             this.chienDichTableAdapter = chienDichTableAdapter;
@@ -43,22 +45,21 @@ namespace MUAHEXANH
                 Alert.ErrorMessageBox("Tên chiến dịch không được để trống");
                 return;
             }
-      
-            try
+            DateTime ngayPhatDong = dtpNgayPhatDong.DateTime;
+            DateTime ngayKetThuc = dtpNgayKetThuc.DateTime;
+            if(ngayPhatDong > ngayKetThuc)
             {
-                bdsChienDich.EndEdit();
-                chienDichTableAdapter.Update(this.dSTaoChienDich.ChienDich);
-                int index = bdsChienDich.Position;
-                this.chienDichTableAdapter.Fill(this.dSTaoChienDich.ChienDich);
-                bdsChienDich.Position = index;
-                this.Close();
+                Alert.ErrorMessageBox("Ngày kết thúc phải sau ngày phát động");
+                return;
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.StackTrace);
-                Alert.ErrorMessageBox("Loi them chien dich!");
-            }
-            
+
+
+            bdsChienDich.EndEdit();
+            chienDichTableAdapter.Update(this.dSTaoChienDich.ChienDich);
+            int index = bdsChienDich.Position;
+            this.chienDichTableAdapter.Fill(this.dSTaoChienDich.ChienDich);
+            bdsChienDich.Position = index;
+            this.Close();
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -79,7 +80,12 @@ namespace MUAHEXANH
         private void FrmNhapLieuChienDich_Shown(object sender, EventArgs e)
         {
             dtpNgayPhatDong.EditValue = DateTime.Now;
-           
+            dtpNgayKetThuc.EditValue = DateTime.Now;
+        }
+
+        private void FrmNhapLieuChienDich_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

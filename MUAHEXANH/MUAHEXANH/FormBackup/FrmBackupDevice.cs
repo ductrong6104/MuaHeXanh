@@ -14,10 +14,11 @@ using System.Windows.Forms;
 
 namespace MUAHEXANH
 {
-    public partial class FrBackupDevice : Form
+    public partial class FrmBackupDevice : Form
     {
         private DataTable dt;
-        public FrBackupDevice()
+        private BindingSource bds;
+        public FrmBackupDevice()
         {
             InitializeComponent();
         }
@@ -26,16 +27,7 @@ namespace MUAHEXANH
             if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
 
             dt = new DataTable();
-
-/*            using (SqlCommand command = new SqlCommand("Sp_DanhSachThietBiBackup", Program.conn))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    adapter.Fill(dt);
-                }
-            }*/
+            bds = new BindingSource();
 
             this.dt = Program.ExecSqlDataTable("Exec Sp_DanhSachThietBiBackup");
             string[] names = { "Tên backup", "Đường dẫn", "Mô tả", "Trạng thái", "Loại", "Kích thước" };
@@ -43,7 +35,9 @@ namespace MUAHEXANH
             {
                 dt.Columns[i].ColumnName = names[i];
             }
-            gcBackup.DataSource = dt;
+
+            bds.DataSource = dt;
+            gcBackup.DataSource = bds;
         }
 
         private void frmThietBiBackup_Load(object sender, EventArgs e)

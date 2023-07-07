@@ -1,4 +1,5 @@
-﻿using MUAHEXANH.FormTaoTaiKhoanCuaKhoa;
+﻿using MUAHEXANH.FormKhenThuong;
+using MUAHEXANH.FormTaoTaiKhoanCuaKhoa;
 using MUAHEXANH.FormXemThoiGianCV;
 using MUAHEXANH.FrmChon;
 using System;
@@ -20,7 +21,7 @@ namespace MUAHEXANH
             InitializeComponent();
         }
 
-        public Form CheckExists(Type ftype)
+        private Form CheckExists(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
                 if (f.GetType() == ftype)
@@ -270,6 +271,70 @@ namespace MUAHEXANH
             else
             {
                 frmXemThoiGianLamViec f = new frmXemThoiGianLamViec();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmKhenThuong));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmKhenThuong f = new frmKhenThuong();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmRestore));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmRestore f = new FrmRestore();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmBackup));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmBackup f = new FrmBackup();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmBackupDevice));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmBackupDevice f = new FrmBackupDevice();
                 // set property of frmMain: ismdicontainer = true 
                 f.MdiParent = this;
                 f.Show();

@@ -57,6 +57,7 @@
             this.colMaChienDich = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenChienDich = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayPhatDong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -179,22 +180,22 @@
             this.panelControl1.Controls.Add(this.gcDiaBanChuaCo);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 409);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Location = new System.Drawing.Point(0, 497);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1688, 386);
+            this.panelControl1.Size = new System.Drawing.Size(1688, 298);
             this.panelControl1.TabIndex = 6;
             // 
             // gcDiaBanChuaCo
             // 
             this.gcDiaBanChuaCo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDiaBanChuaCo.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDiaBanChuaCo.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiaBanChuaCo.Location = new System.Drawing.Point(0, 0);
             this.gcDiaBanChuaCo.MainView = this.gvDiaBanChuaCo;
-            this.gcDiaBanChuaCo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDiaBanChuaCo.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiaBanChuaCo.MenuManager = this.barManager1;
             this.gcDiaBanChuaCo.Name = "gcDiaBanChuaCo";
-            this.gcDiaBanChuaCo.Size = new System.Drawing.Size(467, 386);
+            this.gcDiaBanChuaCo.Size = new System.Drawing.Size(467, 298);
             this.gcDiaBanChuaCo.TabIndex = 1;
             this.gcDiaBanChuaCo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDiaBanChuaCo});
@@ -220,21 +221,21 @@
             this.panelControl2.Controls.Add(this.btnThemDiaBan);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl2.Location = new System.Drawing.Point(467, 0);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1221, 386);
+            this.panelControl2.Size = new System.Drawing.Size(1221, 298);
             this.panelControl2.TabIndex = 0;
             // 
             // gcDiaBanChienDich
             // 
             this.gcDiaBanChienDich.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gcDiaBanChienDich.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDiaBanChienDich.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiaBanChienDich.Location = new System.Drawing.Point(232, 0);
             this.gcDiaBanChienDich.MainView = this.gvDiaBanChienDich;
-            this.gcDiaBanChienDich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDiaBanChienDich.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiaBanChienDich.MenuManager = this.barManager1;
             this.gcDiaBanChienDich.Name = "gcDiaBanChienDich";
-            this.gcDiaBanChienDich.Size = new System.Drawing.Size(989, 386);
+            this.gcDiaBanChienDich.Size = new System.Drawing.Size(989, 298);
             this.gcDiaBanChienDich.TabIndex = 2;
             this.gcDiaBanChienDich.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDiaBanChienDich});
@@ -255,10 +256,10 @@
             // btnXoaDiaBan
             // 
             this.btnXoaDiaBan.Enabled = false;
-            this.btnXoaDiaBan.Location = new System.Drawing.Point(67, 261);
-            this.btnXoaDiaBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaDiaBan.Location = new System.Drawing.Point(68, 149);
+            this.btnXoaDiaBan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaDiaBan.Name = "btnXoaDiaBan";
-            this.btnXoaDiaBan.Size = new System.Drawing.Size(100, 28);
+            this.btnXoaDiaBan.Size = new System.Drawing.Size(105, 31);
             this.btnXoaDiaBan.TabIndex = 1;
             this.btnXoaDiaBan.Text = "Xóa";
             this.btnXoaDiaBan.Click += new System.EventHandler(this.btnXoaDiaBan_Click);
@@ -266,10 +267,10 @@
             // btnThemDiaBan
             // 
             this.btnThemDiaBan.Enabled = false;
-            this.btnThemDiaBan.Location = new System.Drawing.Point(67, 166);
-            this.btnThemDiaBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemDiaBan.Location = new System.Drawing.Point(68, 72);
+            this.btnThemDiaBan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemDiaBan.Name = "btnThemDiaBan";
-            this.btnThemDiaBan.Size = new System.Drawing.Size(100, 28);
+            this.btnThemDiaBan.Size = new System.Drawing.Size(105, 31);
             this.btnThemDiaBan.TabIndex = 0;
             this.btnThemDiaBan.Text = "Thêm";
             this.btnThemDiaBan.Click += new System.EventHandler(this.btnThemDiaBan_Click);
@@ -298,13 +299,13 @@
             // 
             this.gcChienDich.DataSource = this.bdsChienDich;
             this.gcChienDich.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcChienDich.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcChienDich.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcChienDich.Location = new System.Drawing.Point(0, 30);
             this.gcChienDich.MainView = this.gvChienDich;
-            this.gcChienDich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcChienDich.Margin = new System.Windows.Forms.Padding(4);
             this.gcChienDich.MenuManager = this.barManager1;
             this.gcChienDich.Name = "gcChienDich";
-            this.gcChienDich.Size = new System.Drawing.Size(1688, 379);
+            this.gcChienDich.Size = new System.Drawing.Size(1688, 467);
             this.gcChienDich.TabIndex = 11;
             this.gcChienDich.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvChienDich});
@@ -316,7 +317,8 @@
             this.gvChienDich.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaChienDich,
             this.colTenChienDich,
-            this.colNgayPhatDong});
+            this.colNgayPhatDong,
+            this.colNgayKetThuc});
             this.gvChienDich.DetailHeight = 431;
             this.gvChienDich.GridControl = this.gcChienDich;
             this.gvChienDich.Name = "gvChienDich";
@@ -355,6 +357,16 @@
             this.colNgayPhatDong.Visible = true;
             this.colNgayPhatDong.VisibleIndex = 2;
             this.colNgayPhatDong.Width = 100;
+            // 
+            // colNgayKetThuc
+            // 
+            this.colNgayKetThuc.Caption = "Ngày kết thúc";
+            this.colNgayKetThuc.FieldName = "NgayKetThuc";
+            this.colNgayKetThuc.MinWidth = 25;
+            this.colNgayKetThuc.Name = "colNgayKetThuc";
+            this.colNgayKetThuc.Visible = true;
+            this.colNgayKetThuc.VisibleIndex = 3;
+            this.colNgayKetThuc.Width = 100;
             // 
             // FrmChienDich
             // 
@@ -419,5 +431,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaChienDich;
         private DevExpress.XtraGrid.Columns.GridColumn colTenChienDich;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayPhatDong;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayKetThuc;
     }
 }

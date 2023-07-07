@@ -63,6 +63,16 @@ namespace MUAHEXANH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _332 {
+            get {
+                object obj = ResourceManager.GetObject("332", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kisspng_logo_portable_network_graphics_clip_art_image_tran_user_logo_search_result_8_cliparts_for_user_log_5d1e8b881e0666_422237491562282888123 {
             get {
                 object obj = ResourceManager.GetObject("kisspng-logo-portable-network-graphics-clip-art-image-tran-user-logo-search-resul" +

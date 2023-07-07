@@ -14,11 +14,13 @@ namespace MUAHEXANH
     public partial class FrmChonBackupDevice : Form
     {
         private DataTable dt;
+        private BindingSource bds;
         private void loadData()
         {
             if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
 
             dt = new DataTable();
+            bds = new BindingSource();
 
             using (SqlCommand command = new SqlCommand("Sp_DanhSachThietBiBackup", Program.conn))
             {
@@ -36,7 +38,8 @@ namespace MUAHEXANH
             {
                 dt.Columns[i].ColumnName = names[i];
             }
-            gcBackupDevice.DataSource = dt;
+            bds.DataSource = dt;
+            gcBackupDevice.DataSource = bds;
         }
         public FrmChonBackupDevice()
         {
@@ -45,10 +48,10 @@ namespace MUAHEXANH
 
         private void btnChon_Click(object sender, EventArgs e)
         {
-            if(dt.Rows.Count > 0)
+            if(bds.Count > 0)
             {
-                DataRowView dr = (DataRowView)gvBackupDevice.GetFocusedRow();
-                Program.backupDeviceName = dr["Tên backup"].ToString();
+                DataRowView drv = (DataRowView)bds.Current;
+                Program.backupDeviceName = drv["Tên backup"].ToString();
                 this.Close();
             }
         }
@@ -63,11 +66,8 @@ namespace MUAHEXANH
             loadData();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void FrmChonBackupDevice_Shown(object sender, EventArgs e)
         {
-            FrmNhapLieuBackup f = new FrmNhapLieuBackup();
-            f.ShowDialog();
-            loadData();
         }
     }
 }

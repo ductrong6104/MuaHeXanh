@@ -1,44 +1,30 @@
 ﻿using DevExpress.XtraWaitForm;
-using MUAHEXANH.App;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MUAHEXANH
+namespace MUAHEXANH.FormSchedule
 {
-    public partial class FrmWaitBackup : WaitForm
+    public partial class MyWaitForm : WaitForm
     {
-        public Action<int, String, String, String> Worker;
-        public int backupType;
-        public String deviceName;
-        public String url;
-        public String description;
-        public FrmWaitBackup(Action<int, String, String, String> worker, int backupType,
-            String deviceName, String url, String description)
+        private Action<object[]> action;
+        private object[] args;
+        public MyWaitForm(Action<object[]> action, object[] args)
         {
             InitializeComponent();
             this.progressPanel1.AutoHeight = true;
-            this.StartPosition = FormStartPosition.CenterParent;
-            if (worker == null)
-            {
-                throw new ArgumentException();
-            }
-            this.Worker = worker;
-            this.backupType = backupType;
-            this.deviceName = deviceName;
-            this.url = url;
-            this.description = description;
+            this.action = action;
+            this.args = args;
         }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            Task.Factory.StartNew(() => Worker(backupType, deviceName, url, description))
+            Task.Factory.StartNew(() => action(args))
                 .ContinueWith(t => { this.Close(); }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -63,11 +49,6 @@ namespace MUAHEXANH
 
         public enum WaitFormCommand
         {
-        }
-
-        private void frmWait_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
         }
     }
 }

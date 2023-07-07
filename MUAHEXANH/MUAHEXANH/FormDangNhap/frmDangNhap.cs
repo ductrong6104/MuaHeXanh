@@ -88,7 +88,7 @@ namespace MUAHEXANH
             
             if (Program.mGroup == "GIAMSAT" || Program.mGroup == "DOITRUONG" || Program.mGroup == "DOIPHO")
             {
-                using (SqlDataReader layMaDoi = Program.ExecSqlDataReader("SELECT MADOI FROM DOI WHERE " +
+                using (SqlDataReader layMaDoi = Program.ExecSqlDataReader("SELECT MADOI, TENDOI FROM DOI WHERE " +
                     "GIAMSAT1 = '" + Program.username
                     + "' OR GIAMSAT2='" + Program.username
                     + "' OR DOITRUONG='" + Program.username
@@ -96,6 +96,7 @@ namespace MUAHEXANH
                 {
                     layMaDoi.Read();
                     Program.mTeam = layMaDoi.GetString(0);
+                    Program.tenDoiLucDN = layMaDoi.GetString(1);
                 }
             }
             else if (Program.mGroup == "NHOMTRUONG")

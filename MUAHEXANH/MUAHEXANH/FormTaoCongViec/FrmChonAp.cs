@@ -33,12 +33,8 @@ namespace MUAHEXANH.FrmChon
 
         private void FrmChonAp_Load(object sender, EventArgs e)
         {
-            dSChonAp.EnforceConstraints = false;
-            this.diaBanTableAdapter.Connection.ConnectionString = Program.connstr;
             this.diaBanTableAdapter.Fill(this.dSChonAp.DiaBan);
-            this.xaTableAdapter.Connection.ConnectionString = Program.connstr;
             this.xaTableAdapter.Fill(this.dSChonAp.Xa);
-            this.apTableAdapter.Connection.ConnectionString = Program.connstr;
             this.apTableAdapter.Fill(this.dSChonAp.Ap);
             initCombobox();
         }
@@ -64,7 +60,7 @@ namespace MUAHEXANH.FrmChon
 
         private void btnChon_Click(object sender, EventArgs e)
         {
-            DataRow drv = gvAp.GetDataRow(gvAp.FocusedRowHandle);
+            DataRow drv = (DataRow)bdsAp.Current;
             Program.maApDuocChon = drv["MaAp"].ToString().Trim();
             MessageBox.Show(Program.maApDuocChon);
             this.Close();

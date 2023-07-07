@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnChon = new DevExpress.XtraEditors.SimpleButton();
             this.gcBackupDevice = new DevExpress.XtraGrid.GridControl();
@@ -43,48 +42,37 @@
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.btnThem);
             this.panelControl1.Controls.Add(this.btnDong);
             this.panelControl1.Controls.Add(this.btnChon);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 379);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Location = new System.Drawing.Point(0, 442);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1067, 175);
+            this.panelControl1.Size = new System.Drawing.Size(988, 74);
             this.panelControl1.TabIndex = 0;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
-            this.btnThem.Appearance.Options.UseBackColor = true;
-            this.btnThem.Location = new System.Drawing.Point(556, 49);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(135, 31);
-            this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnDong
             // 
+            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDong.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.btnDong.Appearance.Options.UseBackColor = true;
-            this.btnDong.Location = new System.Drawing.Point(916, 49);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDong.Location = new System.Drawing.Point(859, 26);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(5);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(135, 31);
+            this.btnDong.Size = new System.Drawing.Size(105, 31);
             this.btnDong.TabIndex = 1;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnChon
             // 
+            this.btnChon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChon.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnChon.Appearance.Options.UseBackColor = true;
-            this.btnChon.Location = new System.Drawing.Point(741, 49);
-            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChon.Location = new System.Drawing.Point(731, 26);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(5);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(135, 31);
+            this.btnChon.Size = new System.Drawing.Size(105, 31);
             this.btnChon.TabIndex = 0;
             this.btnChon.Text = "Chọn";
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
@@ -92,12 +80,12 @@
             // gcBackupDevice
             // 
             this.gcBackupDevice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcBackupDevice.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcBackupDevice.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
             this.gcBackupDevice.Location = new System.Drawing.Point(0, 0);
             this.gcBackupDevice.MainView = this.gvBackupDevice;
-            this.gcBackupDevice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcBackupDevice.Margin = new System.Windows.Forms.Padding(5);
             this.gcBackupDevice.Name = "gcBackupDevice";
-            this.gcBackupDevice.Size = new System.Drawing.Size(1067, 379);
+            this.gcBackupDevice.Size = new System.Drawing.Size(988, 442);
             this.gcBackupDevice.TabIndex = 1;
             this.gcBackupDevice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBackupDevice});
@@ -106,24 +94,25 @@
             // 
             this.gvBackupDevice.Appearance.FocusedCell.BackColor = System.Drawing.Color.Transparent;
             this.gvBackupDevice.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gvBackupDevice.DetailHeight = 431;
+            this.gvBackupDevice.DetailHeight = 539;
             this.gvBackupDevice.GridControl = this.gcBackupDevice;
             this.gvBackupDevice.Name = "gvBackupDevice";
             this.gvBackupDevice.OptionsBehavior.Editable = false;
             // 
-            // frmChonBackupDevice
+            // FrmChonBackupDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(988, 516);
             this.Controls.Add(this.gcBackupDevice);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmChonBackupDevice";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmChonBackupDevice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chọn thiết bị backup";
             this.Load += new System.EventHandler(this.frmChonBackupDevice_Load);
+            this.Shown += new System.EventHandler(this.FrmChonBackupDevice_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcBackupDevice)).EndInit();
@@ -139,6 +128,5 @@
         private DevExpress.XtraEditors.SimpleButton btnChon;
         private DevExpress.XtraGrid.GridControl gcBackupDevice;
         private DevExpress.XtraGrid.Views.Grid.GridView gvBackupDevice;
-        private DevExpress.XtraEditors.SimpleButton btnThem;
     }
 }

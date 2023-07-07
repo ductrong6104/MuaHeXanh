@@ -46,6 +46,7 @@ namespace MUAHEXANH
         public static BindingSource bds_dspm = new BindingSource(); // giu danh sach phan manh khi dang nhap
         public static frmMain frmChinh; // de su dung doi tuong frmChinh trong cac form khac (vi du form dang nhap voi form main trao doi du lieu voi nhau)
         public static frmDangNhap frmDN;
+        public static String tenDoiLucDN = "";
 
         public static int KetNoi()
         {

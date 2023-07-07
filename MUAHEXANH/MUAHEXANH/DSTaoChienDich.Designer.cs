@@ -285,6 +285,8 @@ namespace MUAHEXANH {
             
             private global::System.Data.DataColumn columnNgayPhatDong;
             
+            private global::System.Data.DataColumn columnNgayKetThuc;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ChienDichDataTable() {
@@ -344,6 +346,14 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NgayKetThucColumn {
+                get {
+                    return this.columnNgayKetThuc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +389,13 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ChienDichRow AddChienDichRow(string MaChienDich, string TenChienDich, System.DateTime NgayPhatDong) {
+            public ChienDichRow AddChienDichRow(string MaChienDich, string TenChienDich, System.DateTime NgayPhatDong, System.DateTime NgayKetThuc) {
                 ChienDichRow rowChienDichRow = ((ChienDichRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaChienDich,
                         TenChienDich,
-                        NgayPhatDong};
+                        NgayPhatDong,
+                        NgayKetThuc};
                 rowChienDichRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowChienDichRow);
                 return rowChienDichRow;
@@ -417,6 +428,7 @@ namespace MUAHEXANH {
                 this.columnMaChienDich = base.Columns["MaChienDich"];
                 this.columnTenChienDich = base.Columns["TenChienDich"];
                 this.columnNgayPhatDong = base.Columns["NgayPhatDong"];
+                this.columnNgayKetThuc = base.Columns["NgayKetThuc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,6 +440,8 @@ namespace MUAHEXANH {
                 base.Columns.Add(this.columnTenChienDich);
                 this.columnNgayPhatDong = new global::System.Data.DataColumn("NgayPhatDong", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNgayPhatDong);
+                this.columnNgayKetThuc = new global::System.Data.DataColumn("NgayKetThuc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNgayKetThuc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaChienDich}, true));
                 this.columnMaChienDich.AllowDBNull = false;
@@ -436,6 +450,7 @@ namespace MUAHEXANH {
                 this.columnTenChienDich.AllowDBNull = false;
                 this.columnTenChienDich.MaxLength = 50;
                 this.columnNgayPhatDong.AllowDBNull = false;
+                this.columnNgayKetThuc.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -608,6 +623,17 @@ namespace MUAHEXANH {
                     this[this.tableChienDich.NgayPhatDongColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime NgayKetThuc {
+                get {
+                    return ((global::System.DateTime)(this[this.tableChienDich.NgayKetThucColumn]));
+                }
+                set {
+                    this[this.tableChienDich.NgayKetThucColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -772,36 +798,40 @@ namespace MUAHEXANH.DSTaoChienDichTableAdapters {
             tableMapping.ColumnMappings.Add("MaChienDich", "MaChienDich");
             tableMapping.ColumnMappings.Add("TenChienDich", "TenChienDich");
             tableMapping.ColumnMappings.Add("NgayPhatDong", "NgayPhatDong");
+            tableMapping.ColumnMappings.Add("NgayKetThuc", "NgayKetThuc");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ChienDich] WHERE (([MaChienDich] = @Original_MaChienDich) AND " +
-                "([TenChienDich] = @Original_TenChienDich) AND ([NgayPhatDong] = @Original_NgayPh" +
-                "atDong))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [ChienDich] WHERE (([MaChienDich] = @Original_MaChienDich) AND ([TenC" +
+                "hienDich] = @Original_TenChienDich) AND ([NgayPhatDong] = @Original_NgayPhatDong" +
+                ") AND ([NgayKetThuc] = @Original_NgayKetThuc))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaChienDich", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaChienDich", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TenChienDich", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenChienDich", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NgayPhatDong", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayPhatDong", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NgayKetThuc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayKetThuc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ChienDich] ([MaChienDich], [TenChienDich], [NgayPhatDong]) VAL" +
-                "UES (@MaChienDich, @TenChienDich, @NgayPhatDong);\r\nSELECT MaChienDich, TenChienD" +
-                "ich, NgayPhatDong FROM ChienDich WHERE (MaChienDich = @MaChienDich)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ChienDich] ([MaChienDich], [TenChienDich], [NgayPhatDong], [NgayKetThuc]) VALUES (@MaChienDich, @TenChienDich, @NgayPhatDong, @NgayKetThuc);
+SELECT MaChienDich, TenChienDich, NgayPhatDong, NgayKetThuc FROM ChienDich WHERE (MaChienDich = @MaChienDich)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaChienDich", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaChienDich", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenChienDich", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenChienDich", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NgayPhatDong", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayPhatDong", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NgayKetThuc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayKetThuc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ChienDich] SET [MaChienDich] = @MaChienDich, [TenChienDich] = @TenChienDich, [NgayPhatDong] = @NgayPhatDong WHERE (([MaChienDich] = @Original_MaChienDich) AND ([TenChienDich] = @Original_TenChienDich) AND ([NgayPhatDong] = @Original_NgayPhatDong));
-SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich = @MaChienDich)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [ChienDich] SET [MaChienDich] = @MaChienDich, [TenChienDich] = @TenChienDich, [NgayPhatDong] = @NgayPhatDong, [NgayKetThuc] = @NgayKetThuc WHERE (([MaChienDich] = @Original_MaChienDich) AND ([TenChienDich] = @Original_TenChienDich) AND ([NgayPhatDong] = @Original_NgayPhatDong) AND ([NgayKetThuc] = @Original_NgayKetThuc));
+SELECT MaChienDich, TenChienDich, NgayPhatDong, NgayKetThuc FROM ChienDich WHERE (MaChienDich = @MaChienDich)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaChienDich", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaChienDich", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenChienDich", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenChienDich", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NgayPhatDong", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayPhatDong", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NgayKetThuc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayKetThuc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaChienDich", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaChienDich", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TenChienDich", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TenChienDich", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NgayPhatDong", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayPhatDong", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NgayKetThuc", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NgayKetThuc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -817,7 +847,7 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MaChienDich, TenChienDich, NgayPhatDong FROM dbo.ChienDich";
+            this._commandCollection[0].CommandText = "SELECT MaChienDich, TenChienDich, NgayPhatDong, NgayKetThuc\r\nFROM     ChienDich";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -878,7 +908,7 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_MaChienDich, string Original_TenChienDich, System.DateTime Original_NgayPhatDong) {
+        public virtual int Delete(string Original_MaChienDich, string Original_TenChienDich, System.DateTime Original_NgayPhatDong, System.DateTime Original_NgayKetThuc) {
             if ((Original_MaChienDich == null)) {
                 throw new global::System.ArgumentNullException("Original_MaChienDich");
             }
@@ -892,6 +922,7 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_TenChienDich));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_NgayPhatDong));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_NgayKetThuc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -912,7 +943,7 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MaChienDich, string TenChienDich, System.DateTime NgayPhatDong) {
+        public virtual int Insert(string MaChienDich, string TenChienDich, System.DateTime NgayPhatDong, System.DateTime NgayKetThuc) {
             if ((MaChienDich == null)) {
                 throw new global::System.ArgumentNullException("MaChienDich");
             }
@@ -926,6 +957,7 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(TenChienDich));
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(NgayPhatDong));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(NgayKetThuc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -946,7 +978,7 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MaChienDich, string TenChienDich, System.DateTime NgayPhatDong, string Original_MaChienDich, string Original_TenChienDich, System.DateTime Original_NgayPhatDong) {
+        public virtual int Update(string MaChienDich, string TenChienDich, System.DateTime NgayPhatDong, System.DateTime NgayKetThuc, string Original_MaChienDich, string Original_TenChienDich, System.DateTime Original_NgayPhatDong, System.DateTime Original_NgayKetThuc) {
             if ((MaChienDich == null)) {
                 throw new global::System.ArgumentNullException("MaChienDich");
             }
@@ -960,19 +992,21 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(TenChienDich));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(NgayPhatDong));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(NgayKetThuc));
             if ((Original_MaChienDich == null)) {
                 throw new global::System.ArgumentNullException("Original_MaChienDich");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_MaChienDich));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_MaChienDich));
             }
             if ((Original_TenChienDich == null)) {
                 throw new global::System.ArgumentNullException("Original_TenChienDich");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_TenChienDich));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_TenChienDich));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_NgayPhatDong));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_NgayPhatDong));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_NgayKetThuc));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -993,8 +1027,8 @@ SELECT MaChienDich, TenChienDich, NgayPhatDong FROM ChienDich WHERE (MaChienDich
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TenChienDich, System.DateTime NgayPhatDong, string Original_MaChienDich, string Original_TenChienDich, System.DateTime Original_NgayPhatDong) {
-            return this.Update(Original_MaChienDich, TenChienDich, NgayPhatDong, Original_MaChienDich, Original_TenChienDich, Original_NgayPhatDong);
+        public virtual int Update(string TenChienDich, System.DateTime NgayPhatDong, System.DateTime NgayKetThuc, string Original_MaChienDich, string Original_TenChienDich, System.DateTime Original_NgayPhatDong, System.DateTime Original_NgayKetThuc) {
+            return this.Update(Original_MaChienDich, TenChienDich, NgayPhatDong, NgayKetThuc, Original_MaChienDich, Original_TenChienDich, Original_NgayPhatDong, Original_NgayKetThuc);
         }
     }
     

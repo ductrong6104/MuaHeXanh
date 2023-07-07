@@ -1,4 +1,5 @@
 ﻿using MUAHEXANH.App;
+using MUAHEXANH.FormSchedule;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace MUAHEXANH
     public partial class FrmNhapLieuBackup : Form
     {
         private String filePath;
+        private bool needExit = false;
 
         private void initCombobox()
         {
@@ -75,10 +77,14 @@ namespace MUAHEXANH
             }
             return false;
         }
-        private void luuFile(String loaiBackup, String tenBackup, String tenFileBackup)
+        private void luuFile(object[] args)
         {
             try
             {
+                String loaiBackup = (string)args[0];
+                String tenBackup = (string)args[1];
+                String tenFileBackup = (string)args[2];
+
                 string sql = $"DECLARE\t@return_value int\r\n\r\nEXEC\t@return_value = [dbo].[sp_addumpdevice]\r\n\t\t@devtype = '{loaiBackup}',\r\n\t\t@logicalname = '{tenBackup}',\r\n\t\t@physicalname = '{tenFileBackup}'\r\n\r\nSELECT\t'Value' = @return_value";
                 SqlDataReader dataReader = Program.ExecSqlDataReader(sql);
                 if (dataReader == null)
@@ -92,6 +98,7 @@ namespace MUAHEXANH
                     if (stt == 0)
                     {
                         Alert.InfoMessageBox($"Đã thêm.\nTên backup: {tenBackup}\nĐường dẫn: {tenFileBackup}");
+                        needExit = true;
                     }
                     else
                     {
@@ -118,14 +125,21 @@ namespace MUAHEXANH
                 string tenBackup = txtTenBackup.Text.Trim();
                 string tenFileBackup = filePath;
 
-                Action<String, String, String> worker = (loai, ten, path) =>
+                object[] args = { loaiBackup, tenBackup, tenFileBackup };
+
+                Action<object[]> worker = (arrParams) =>
                 {
-                    luuFile(loai, ten, path);
+                    luuFile(arrParams);
                 };
-                using (FrmWaitTaoDevice f = new FrmWaitTaoDevice(worker, loaiBackup, tenBackup, tenFileBackup))
+                using (MyWaitForm f = new MyWaitForm(worker, args))
                 {
+                    this.Enabled = false;
                     f.Dock = DockStyle.Fill;
+                    f.SetCaption("Đang tạo backup device");
                     f.ShowDialog(this);
+                    this.Enabled = true;
+                    if (needExit)
+                        this.Close();
                 }
             }
            

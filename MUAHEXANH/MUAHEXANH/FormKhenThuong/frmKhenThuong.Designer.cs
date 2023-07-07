@@ -60,7 +60,7 @@
             this.sp_laySinhVienKhenThuongTheoDoiTableAdapter = new MUAHEXANH.DSkhenThuongTableAdapters.sp_laySinhVienKhenThuongTheoDoiTableAdapter();
             this.sp_lay_nhom_tu_doiTableAdapter = new MUAHEXANH.DSkhenThuongTableAdapters.sp_lay_nhom_tu_doiTableAdapter();
             this.cmsThemKhenThuong = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.khenThưởngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnKhenThuong = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsXoaKhenThuong = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaKhỏiKhenThưởngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
@@ -173,7 +173,7 @@
             this.pnlDSSV.Location = new System.Drawing.Point(0, 90);
             this.pnlDSSV.Margin = new System.Windows.Forms.Padding(10);
             this.pnlDSSV.Name = "pnlDSSV";
-            this.pnlDSSV.Size = new System.Drawing.Size(1500, 401);
+            this.pnlDSSV.Size = new System.Drawing.Size(1500, 302);
             this.pnlDSSV.TabIndex = 1;
             // 
             // dgvDSSV
@@ -195,7 +195,7 @@
             this.dgvDSSV.Name = "dgvDSSV";
             this.dgvDSSV.RowHeadersWidth = 51;
             this.dgvDSSV.RowTemplate.Height = 24;
-            this.dgvDSSV.Size = new System.Drawing.Size(1496, 338);
+            this.dgvDSSV.Size = new System.Drawing.Size(1496, 239);
             this.dgvDSSV.TabIndex = 1;
             this.dgvDSSV.Sorted += new System.EventHandler(this.dgvDSSV_Sorted);
             // 
@@ -251,7 +251,7 @@
             // lblTenDoi
             // 
             this.lblTenDoi.AutoSize = true;
-            this.lblTenDoi.Location = new System.Drawing.Point(806, 26);
+            this.lblTenDoi.Location = new System.Drawing.Point(629, 26);
             this.lblTenDoi.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTenDoi.Name = "lblTenDoi";
             this.lblTenDoi.Size = new System.Drawing.Size(51, 20);
@@ -271,10 +271,10 @@
             // 
             this.pnlSVKHENTHUONG.Controls.Add(this.dgvDSKhenThuong);
             this.pnlSVKHENTHUONG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSVKHENTHUONG.Location = new System.Drawing.Point(0, 491);
+            this.pnlSVKHENTHUONG.Location = new System.Drawing.Point(0, 392);
             this.pnlSVKHENTHUONG.Margin = new System.Windows.Forms.Padding(10);
             this.pnlSVKHENTHUONG.Name = "pnlSVKHENTHUONG";
-            this.pnlSVKHENTHUONG.Size = new System.Drawing.Size(1500, 157);
+            this.pnlSVKHENTHUONG.Size = new System.Drawing.Size(1500, 256);
             this.pnlSVKHENTHUONG.TabIndex = 2;
             // 
             // dgvDSKhenThuong
@@ -297,7 +297,7 @@
             this.dgvDSKhenThuong.Name = "dgvDSKhenThuong";
             this.dgvDSKhenThuong.RowHeadersWidth = 51;
             this.dgvDSKhenThuong.RowTemplate.Height = 24;
-            this.dgvDSKhenThuong.Size = new System.Drawing.Size(654, 153);
+            this.dgvDSKhenThuong.Size = new System.Drawing.Size(654, 252);
             this.dgvDSKhenThuong.TabIndex = 0;
             // 
             // masvDataGridViewTextBoxColumn
@@ -357,16 +357,16 @@
             // 
             this.cmsThemKhenThuong.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsThemKhenThuong.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.khenThưởngToolStripMenuItem});
+            this.btnKhenThuong});
             this.cmsThemKhenThuong.Name = "cmsThemKhenThuong";
-            this.cmsThemKhenThuong.Size = new System.Drawing.Size(211, 56);
+            this.cmsThemKhenThuong.Size = new System.Drawing.Size(164, 28);
             // 
-            // khenThưởngToolStripMenuItem
+            // btnKhenThuong
             // 
-            this.khenThưởngToolStripMenuItem.Name = "khenThưởngToolStripMenuItem";
-            this.khenThưởngToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.khenThưởngToolStripMenuItem.Text = "Khen thưởng";
-            this.khenThưởngToolStripMenuItem.Click += new System.EventHandler(this.khenThưởngToolStripMenuItem_Click);
+            this.btnKhenThuong.Name = "btnKhenThuong";
+            this.btnKhenThuong.Size = new System.Drawing.Size(210, 24);
+            this.btnKhenThuong.Text = "Khen thưởng";
+            this.btnKhenThuong.Click += new System.EventHandler(this.khenThưởngToolStripMenuItem_Click);
             // 
             // cmsXoaKhenThuong
             // 
@@ -451,7 +451,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkNhomTruongDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip cmsThemKhenThuong;
-        private System.Windows.Forms.ToolStripMenuItem khenThưởngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnKhenThuong;
         private System.Windows.Forms.ContextMenuStrip cmsXoaKhenThuong;
         private System.Windows.Forms.ToolStripMenuItem xóaKhỏiKhenThưởngToolStripMenuItem;
     }

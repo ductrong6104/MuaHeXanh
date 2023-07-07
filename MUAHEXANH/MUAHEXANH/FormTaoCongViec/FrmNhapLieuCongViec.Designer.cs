@@ -112,7 +112,7 @@
             // txtTenCongViec
             // 
             this.txtTenCongViec.Location = new System.Drawing.Point(152, 146);
-            this.txtTenCongViec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenCongViec.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenCongViec.Name = "txtTenCongViec";
             this.txtTenCongViec.Size = new System.Drawing.Size(436, 26);
             this.txtTenCongViec.TabIndex = 4;
@@ -121,7 +121,7 @@
             // 
             this.dtpNgayBatDau.EditValue = null;
             this.dtpNgayBatDau.Location = new System.Drawing.Point(152, 196);
-            this.dtpNgayBatDau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayBatDau.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -129,12 +129,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgayBatDau.Size = new System.Drawing.Size(133, 26);
             this.dtpNgayBatDau.TabIndex = 5;
+            this.dtpNgayBatDau.EditValueChanged += new System.EventHandler(this.dtpNgayBatDau_EditValueChanged);
             // 
             // dtpNgayKetThuc
             // 
             this.dtpNgayKetThuc.EditValue = null;
             this.dtpNgayKetThuc.Location = new System.Drawing.Point(455, 196);
-            this.dtpNgayKetThuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayKetThuc.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
             this.dtpNgayKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -146,7 +147,7 @@
             // txtMaAp
             // 
             this.txtMaAp.Location = new System.Drawing.Point(152, 38);
-            this.txtMaAp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaAp.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaAp.Name = "txtMaAp";
             this.txtMaAp.Properties.ReadOnly = true;
             this.txtMaAp.Size = new System.Drawing.Size(436, 26);
@@ -155,7 +156,7 @@
             // txtTenAp
             // 
             this.txtTenAp.Location = new System.Drawing.Point(152, 94);
-            this.txtTenAp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenAp.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenAp.Name = "txtTenAp";
             this.txtTenAp.Properties.ReadOnly = true;
             this.txtTenAp.Size = new System.Drawing.Size(436, 26);
@@ -166,7 +167,7 @@
             this.btnLuu.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Question;
             this.btnLuu.Appearance.Options.UseBackColor = true;
             this.btnLuu.Location = new System.Drawing.Point(348, 292);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(105, 31);
             this.btnLuu.TabIndex = 13;
@@ -178,7 +179,7 @@
             this.btnDong.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Danger;
             this.btnDong.Appearance.Options.UseBackColor = true;
             this.btnDong.Location = new System.Drawing.Point(483, 292);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(4);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(105, 31);
             this.btnDong.TabIndex = 14;
@@ -203,7 +204,7 @@
             this.Controls.Add(tenCVLabel);
             this.Controls.Add(this.txtTenCongViec);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNhapLieuCongViec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Công việc";

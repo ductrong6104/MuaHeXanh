@@ -93,6 +93,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgayPhatDong.Size = new System.Drawing.Size(320, 26);
             this.dtpNgayPhatDong.TabIndex = 4;
+            this.dtpNgayPhatDong.EditValueChanged += new System.EventHandler(this.dtpNgayPhatDong_EditValueChanged);
             // 
             // btnDong
             // 

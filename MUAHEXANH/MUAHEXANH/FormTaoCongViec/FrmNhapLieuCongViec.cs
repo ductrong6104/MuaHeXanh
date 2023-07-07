@@ -66,5 +66,10 @@ namespace MUAHEXANH.FrmChon
             bdsCongViec.Position = index;
             this.Close();
         }
+
+        private void dtpNgayBatDau_EditValueChanged(object sender, EventArgs e)
+        {
+            dtpNgayKetThuc.Properties.MinValue = dtpNgayBatDau.DateTime;
+        }
     }
 }

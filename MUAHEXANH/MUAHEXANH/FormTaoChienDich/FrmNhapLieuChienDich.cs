@@ -87,5 +87,10 @@ namespace MUAHEXANH
         {
 
         }
+
+        private void dtpNgayPhatDong_EditValueChanged(object sender, EventArgs e)
+        {
+            dtpNgayKetThuc.Properties.MinValue = dtpNgayPhatDong.DateTime;
+        }
     }
 }

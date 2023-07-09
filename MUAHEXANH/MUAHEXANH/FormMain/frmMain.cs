@@ -2,6 +2,7 @@
 using MUAHEXANH.FormTaoTaiKhoanCuaKhoa;
 using MUAHEXANH.FormXemThoiGianCV;
 using MUAHEXANH.FrmChon;
+using MUAHEXANH.frmXaApNhaDan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -335,6 +336,38 @@ namespace MUAHEXANH
             else
             {
                 FrmBackupDevice f = new FrmBackupDevice();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmThemDiaBan));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThemDiaBan f = new frmThemDiaBan();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmThemNhaDan));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThemNhaDan f = new frmThemNhaDan();
                 // set property of frmMain: ismdicontainer = true 
                 f.MdiParent = this;
                 f.Show();

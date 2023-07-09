@@ -175,39 +175,45 @@ namespace MUAHEXANH
                 gcDSDOI.Focus();
                 return;
             }
-            try
-            {
-                
-                string madoi = ((DataRowView)bdsDOI[bdsDOI.Position])["MADOI"].ToString();
-                // ket thuc hieu chinh: ghi
-                string cmd = "DELETE FROM DOI WHERE MADOI = '"
-                                + madoi + "' AND MACHIENDICH = '"
-                                + Program.maChienDich + "'";
 
-                Console.WriteLine("cmd xoa doi: " + cmd);
-                int hd_them = Program.ExecSqlNonQuery(cmd);
-                if (hd_them != 0)
+            if (MessageBox.Show("Ban có thật sự muốn xóa nhóm này không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
                 {
-                    MessageBox.Show("Lỗi xóa đội trong chiến dịch. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
+
+                    string madoi = ((DataRowView)bdsDOI[bdsDOI.Position])["MADOI"].ToString();
+                    // ket thuc hieu chinh: ghi
+                    string cmd = "DELETE FROM DOI WHERE MADOI = '"
+                                    + madoi + "' AND MACHIENDICH = '"
+                                    + Program.maChienDich + "'";
+
+                    Console.WriteLine("cmd xoa doi: " + cmd);
+                    int hd_them = Program.ExecSqlNonQuery(cmd);
+                    if (hd_them != 0)
+                    {
+                        MessageBox.Show("Lỗi xóa đội trong chiến dịch. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    // khi ghi đội thì tự động thêm một nhóm chứa đội trưởng, đội phó đội đó 
+
+                    //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa đội!" + ex.Message, "", MessageBoxButtons.OK);
+                    Console.WriteLine(ex.ToString());
+                    // tro ve trang thai luc them cho user dieu chinh lai
                     return;
                 }
-
-                // khi ghi đội thì tự động thêm một nhóm chứa đội trưởng, đội phó đội đó 
+                MessageBox.Show("xóa đội thành công", "", MessageBoxButtons.OK);
                 
-                //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom); 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi xóa đội!" + ex.Message, "", MessageBoxButtons.OK);
-                Console.WriteLine(ex.ToString());
-                // tro ve trang thai luc them cho user dieu chinh lai
-                return;
-            }
-            MessageBox.Show("xóa đội thành công", "", MessageBoxButtons.OK);
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
 
 
             trangThaiBanDau();
+
         }
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

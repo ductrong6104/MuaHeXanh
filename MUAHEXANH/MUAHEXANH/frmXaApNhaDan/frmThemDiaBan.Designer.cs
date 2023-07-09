@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemDiaBan));
             System.Windows.Forms.Label tenDiaBanLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemDiaBan));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
@@ -45,28 +44,38 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSGV = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.bdsDiaBan = new System.Windows.Forms.BindingSource(this.components);
             this.dSthemXaApNhaDan = new MUAHEXANH.DSthemXaApNhaDan();
-            this.diaBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.diaBanTableAdapter = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.DiaBanTableAdapter();
-            this.tableAdapterManager = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.TableAdapterManager();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaDiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenDiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.tenDiaBanTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.diaBanTableAdapter = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.DiaBanTableAdapter();
+            this.tableAdapterManager = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.TableAdapterManager();
             tenDiaBanLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDiaBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSthemXaApNhaDan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSthemXaApNhaDan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenDiaBanTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tenDiaBanLabel
+            // 
+            tenDiaBanLabel.AutoSize = true;
+            tenDiaBanLabel.Location = new System.Drawing.Point(55, 26);
+            tenDiaBanLabel.Name = "tenDiaBanLabel";
+            tenDiaBanLabel.Size = new System.Drawing.Size(105, 20);
+            tenDiaBanLabel.TabIndex = 0;
+            tenDiaBanLabel.Text = "Ten Dia Ban:";
             // 
             // barManager1
             // 
@@ -98,7 +107,6 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHieuChinh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnPhucHoi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -113,14 +121,7 @@
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
-            // 
-            // btnHieuChinh
-            // 
-            this.btnHieuChinh.Caption = "Hiệu chỉnh";
-            this.btnHieuChinh.Id = 2;
-            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
-            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
-            this.btnHieuChinh.Name = "btnHieuChinh";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnGhi
             // 
@@ -129,6 +130,7 @@
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnXoa
             // 
@@ -137,6 +139,7 @@
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -145,6 +148,7 @@
             this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
             this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnReload
             // 
@@ -153,6 +157,7 @@
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
@@ -160,6 +165,7 @@
             this.btnThoat.Id = 9;
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControl3
             // 
@@ -201,6 +207,14 @@
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // btnHieuChinh
+            // 
+            this.btnHieuChinh.Caption = "Hiệu chỉnh";
+            this.btnHieuChinh.Id = 2;
+            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
+            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
+            this.btnHieuChinh.Name = "btnHieuChinh";
+            // 
             // btnDSGV
             // 
             this.btnDSGV.Caption = "In danh sách Giảng viên";
@@ -215,7 +229,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.diaBanBindingSource;
+            this.gridControl1.DataSource = this.bdsDiaBan;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gridControl1.Location = new System.Drawing.Point(0, 30);
             this.gridControl1.MainView = this.gridView1;
@@ -226,6 +240,16 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // bdsDiaBan
+            // 
+            this.bdsDiaBan.DataMember = "DiaBan";
+            this.bdsDiaBan.DataSource = this.dSthemXaApNhaDan;
+            // 
+            // dSthemXaApNhaDan
+            // 
+            this.dSthemXaApNhaDan.DataSetName = "DSthemXaApNhaDan";
+            this.dSthemXaApNhaDan.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -233,39 +257,6 @@
             this.colTenDiaBan});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(tenDiaBanLabel);
-            this.panelControl1.Controls.Add(this.tenDiaBanTextEdit);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 264);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 186);
-            this.panelControl1.TabIndex = 5;
-            // 
-            // dSthemXaApNhaDan
-            // 
-            this.dSthemXaApNhaDan.DataSetName = "DSthemXaApNhaDan";
-            this.dSthemXaApNhaDan.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // diaBanBindingSource
-            // 
-            this.diaBanBindingSource.DataMember = "DiaBan";
-            this.diaBanBindingSource.DataSource = this.dSthemXaApNhaDan;
-            // 
-            // diaBanTableAdapter
-            // 
-            this.diaBanTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ApTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DiaBanTableAdapter = this.diaBanTableAdapter;
-            this.tableAdapterManager.NhaDanTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MUAHEXANH.DSthemXaApNhaDanTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.XaTableAdapter = null;
             // 
             // colMaDiaBan
             // 
@@ -287,23 +278,37 @@
             this.colTenDiaBan.VisibleIndex = 1;
             this.colTenDiaBan.Width = 94;
             // 
-            // tenDiaBanLabel
+            // panelControl1
             // 
-            tenDiaBanLabel.AutoSize = true;
-            tenDiaBanLabel.Location = new System.Drawing.Point(55, 26);
-            tenDiaBanLabel.Name = "tenDiaBanLabel";
-            tenDiaBanLabel.Size = new System.Drawing.Size(105, 20);
-            tenDiaBanLabel.TabIndex = 0;
-            tenDiaBanLabel.Text = "Ten Dia Ban:";
+            this.panelControl1.Controls.Add(tenDiaBanLabel);
+            this.panelControl1.Controls.Add(this.tenDiaBanTextEdit);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 264);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(800, 186);
+            this.panelControl1.TabIndex = 5;
             // 
             // tenDiaBanTextEdit
             // 
-            this.tenDiaBanTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.diaBanBindingSource, "TenDiaBan", true));
+            this.tenDiaBanTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDiaBan, "TenDiaBan", true));
             this.tenDiaBanTextEdit.Location = new System.Drawing.Point(166, 23);
             this.tenDiaBanTextEdit.MenuManager = this.barManager1;
             this.tenDiaBanTextEdit.Name = "tenDiaBanTextEdit";
             this.tenDiaBanTextEdit.Size = new System.Drawing.Size(125, 26);
             this.tenDiaBanTextEdit.TabIndex = 1;
+            // 
+            // diaBanTableAdapter
+            // 
+            this.diaBanTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ApTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.DiaBanTableAdapter = this.diaBanTableAdapter;
+            this.tableAdapterManager.NhaDanTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = MUAHEXANH.DSthemXaApNhaDanTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.XaTableAdapter = null;
             // 
             // frmThemDiaBan
             // 
@@ -317,16 +322,17 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl3);
             this.Name = "frmThemDiaBan";
-            this.Text = "frmThemDiaBan";
+            this.Text = "Địa bàn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmThemDiaBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDiaBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSthemXaApNhaDan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSthemXaApNhaDan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenDiaBanTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,7 +361,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DSthemXaApNhaDan dSthemXaApNhaDan;
-        private System.Windows.Forms.BindingSource diaBanBindingSource;
+        private System.Windows.Forms.BindingSource bdsDiaBan;
         private DSthemXaApNhaDanTableAdapters.DiaBanTableAdapter diaBanTableAdapter;
         private DSthemXaApNhaDanTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.TextEdit tenDiaBanTextEdit;

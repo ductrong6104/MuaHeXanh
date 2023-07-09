@@ -1,5 +1,6 @@
 ﻿using MUAHEXANH.FormKhenThuong;
 using MUAHEXANH.FormTaoTaiKhoanCuaKhoa;
+using MUAHEXANH.FormXaAp;
 using MUAHEXANH.FormXemThoiGianCV;
 using MUAHEXANH.FrmChon;
 using MUAHEXANH.frmXaApNhaDan;
@@ -342,7 +343,9 @@ namespace MUAHEXANH
             }
         }
 
-        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmThemDiaBan));
             if (frm != null)
@@ -358,7 +361,7 @@ namespace MUAHEXANH
             }
         }
 
-        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmThemNhaDan));
             if (frm != null)
@@ -368,6 +371,38 @@ namespace MUAHEXANH
             else
             {
                 frmThemNhaDan f = new frmThemNhaDan();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmXa));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmXa f = new FrmXa();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrmAp));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrmAp f = new FrmAp();
                 // set property of frmMain: ismdicontainer = true 
                 f.MdiParent = this;
                 f.Show();

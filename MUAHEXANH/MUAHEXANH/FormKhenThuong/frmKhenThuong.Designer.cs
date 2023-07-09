@@ -101,7 +101,7 @@
             // txtSoNha
             // 
             this.txtSoNha.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sp_lay_nhom_tu_doiBindingSource, "diachi", true));
-            this.txtSoNha.Location = new System.Drawing.Point(597, 19);
+            this.txtSoNha.Location = new System.Drawing.Point(598, 23);
             this.txtSoNha.Name = "txtSoNha";
             this.txtSoNha.Properties.ReadOnly = true;
             this.txtSoNha.Size = new System.Drawing.Size(343, 26);
@@ -136,7 +136,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(523, 21);
+            this.labelControl3.Location = new System.Drawing.Point(524, 25);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(54, 20);
@@ -364,7 +364,7 @@
             // btnKhenThuong
             // 
             this.btnKhenThuong.Name = "btnKhenThuong";
-            this.btnKhenThuong.Size = new System.Drawing.Size(210, 24);
+            this.btnKhenThuong.Size = new System.Drawing.Size(163, 24);
             this.btnKhenThuong.Text = "Khen thưởng";
             this.btnKhenThuong.Click += new System.EventHandler(this.khenThưởngToolStripMenuItem_Click);
             // 

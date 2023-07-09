@@ -21,16 +21,16 @@ namespace MUAHEXANH
 
         public void trangThaiBanDau()
         {
-            btnPhucHoi.Enabled = btnGhi.Enabled = false;
-            btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = btnHieuChinh.Enabled = true;
+            btnGhi.Enabled = btnPhucHoi.Enabled = false;
             pnlDOI.Enabled = false;
             gcDSDOI.Enabled = true;
 
         }
         public void trangThaiChuaGhi()
         {
-            btnPhucHoi.Enabled = btnGhi.Enabled = true;
-            btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = false;
+            btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
+            btnGhi.Enabled = btnPhucHoi.Enabled = true;
             pnlDOI.Enabled = true;
             gcDSDOI.Enabled = false;
         }
@@ -59,6 +59,7 @@ namespace MUAHEXANH
            
             this.sp_lay_xa_tu_chiendichTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_xa_tu_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_xa_tu_chiendich, Program.maChienDich);
+            trangThaiBanDau();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -144,7 +145,7 @@ namespace MUAHEXANH
                 int hd_them = Program.ExecSqlNonQuery(cmd);
                 if (hd_them != 0)
                 {
-                    MessageBox.Show("Lỗi ghi đội cho chiến dịch. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Ghi đội không thành công! Không còn nhà trống trong xã này! Vui lòng chọn xã khác!", "", MessageBoxButtons.OK);
                     return;
                 }
 
@@ -160,13 +161,53 @@ namespace MUAHEXANH
                 return;
             }
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
+            
+            
             trangThaiBanDau();
 
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (int.Parse(((DataRowView)bdsDOI[bdsDOI.Position])["sosv"].ToString()) > 0)
+            {
+                MessageBox.Show("Đội này đã có sinh viên, không thể xóa! Vui lòng chọn đội khác!", "", MessageBoxButtons.OK);
+                gcDSDOI.Focus();
+                return;
+            }
+            try
+            {
+                
+                string madoi = ((DataRowView)bdsDOI[bdsDOI.Position])["MADOI"].ToString();
+                // ket thuc hieu chinh: ghi
+                string cmd = "DELETE FROM DOI WHERE MADOI = '"
+                                + madoi + "' AND MACHIENDICH = '"
+                                + Program.maChienDich + "'";
 
+                Console.WriteLine("cmd xoa doi: " + cmd);
+                int hd_them = Program.ExecSqlNonQuery(cmd);
+                if (hd_them != 0)
+                {
+                    MessageBox.Show("Lỗi xóa đội trong chiến dịch. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
+                    return;
+                }
+
+                // khi ghi đội thì tự động thêm một nhóm chứa đội trưởng, đội phó đội đó 
+                
+                //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xóa đội!" + ex.Message, "", MessageBoxButtons.OK);
+                Console.WriteLine(ex.ToString());
+                // tro ve trang thai luc them cho user dieu chinh lai
+                return;
+            }
+            MessageBox.Show("xóa đội thành công", "", MessageBoxButtons.OK);
+            this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
+
+
+            trangThaiBanDau();
         }
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

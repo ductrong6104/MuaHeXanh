@@ -81,7 +81,6 @@
             this.splaydsdoitheochiendichNhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.nhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new MUAHEXANH.DStaoDoiTableAdapters.TableAdapterManager();
             this.nhomTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.NhomTableAdapter();
             this.khoaTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.KhoaTableAdapter();
@@ -122,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splaydsdoitheochiendichNhomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChienDich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlDOI)).BeginInit();
@@ -745,7 +743,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nhomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChienDich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlDOI)).EndInit();
@@ -783,7 +780,6 @@
         private System.Windows.Forms.DataGridView dgvNHOM;
         private DStaoDoi dStaoDoi;
         private DStaoDoiTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource nhomBindingSource;
         private DStaoDoiTableAdapters.NhomTableAdapter nhomTableAdapter;
         private System.Windows.Forms.BindingSource khoaBindingSource;
         private DStaoDoiTableAdapters.KhoaTableAdapter khoaTableAdapter;

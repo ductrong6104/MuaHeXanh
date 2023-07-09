@@ -531,6 +531,8 @@ namespace MUAHEXANH {
             
             private global::System.Data.DataColumn columndiachi;
             
+            private global::System.Data.DataColumn columnMANHOMTRUONG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_lay_nhom_tu_doiDataTable() {
@@ -622,6 +624,14 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MANHOMTRUONGColumn {
+                get {
+                    return this.columnMANHOMTRUONG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -657,7 +667,7 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_lay_nhom_tu_doiRow Addsp_lay_nhom_tu_doiRow(string MANHOM, string TENNHOM, string NHOMTRUONG, string TENDOI, string TENAP, int SOSVNHOM, string diachi) {
+            public sp_lay_nhom_tu_doiRow Addsp_lay_nhom_tu_doiRow(string MANHOM, string TENNHOM, string NHOMTRUONG, string TENDOI, string TENAP, int SOSVNHOM, string diachi, string MANHOMTRUONG) {
                 sp_lay_nhom_tu_doiRow rowsp_lay_nhom_tu_doiRow = ((sp_lay_nhom_tu_doiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MANHOM,
@@ -666,7 +676,8 @@ namespace MUAHEXANH {
                         TENDOI,
                         TENAP,
                         SOSVNHOM,
-                        diachi};
+                        diachi,
+                        MANHOMTRUONG};
                 rowsp_lay_nhom_tu_doiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_lay_nhom_tu_doiRow);
                 return rowsp_lay_nhom_tu_doiRow;
@@ -703,6 +714,7 @@ namespace MUAHEXANH {
                 this.columnTENAP = base.Columns["TENAP"];
                 this.columnSOSVNHOM = base.Columns["SOSVNHOM"];
                 this.columndiachi = base.Columns["diachi"];
+                this.columnMANHOMTRUONG = base.Columns["MANHOMTRUONG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -722,6 +734,8 @@ namespace MUAHEXANH {
                 base.Columns.Add(this.columnSOSVNHOM);
                 this.columndiachi = new global::System.Data.DataColumn("diachi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndiachi);
+                this.columnMANHOMTRUONG = new global::System.Data.DataColumn("MANHOMTRUONG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMANHOMTRUONG);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMANHOM}, true));
                 this.columnMANHOM.AllowDBNull = false;
@@ -738,6 +752,7 @@ namespace MUAHEXANH {
                 this.columnSOSVNHOM.ReadOnly = true;
                 this.columndiachi.AllowDBNull = false;
                 this.columndiachi.MaxLength = 150;
+                this.columnMANHOMTRUONG.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2732,6 +2747,22 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MANHOMTRUONG {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_lay_nhom_tu_doi.MANHOMTRUONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MANHOMTRUONG\' in table \'sp_lay_nhom_tu_doi\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_nhom_tu_doi.MANHOMTRUONGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNHOMTRUONGNull() {
                 return this.IsNull(this.tablesp_lay_nhom_tu_doi.NHOMTRUONGColumn);
             }
@@ -2752,6 +2783,18 @@ namespace MUAHEXANH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSOSVNHOMNull() {
                 this[this.tablesp_lay_nhom_tu_doi.SOSVNHOMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMANHOMTRUONGNull() {
+                return this.IsNull(this.tablesp_lay_nhom_tu_doi.MANHOMTRUONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMANHOMTRUONGNull() {
+                this[this.tablesp_lay_nhom_tu_doi.MANHOMTRUONGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3563,6 +3606,7 @@ namespace MUAHEXANH.DSchiaNhomTableAdapters {
             tableMapping.ColumnMappings.Add("TENAP", "TENAP");
             tableMapping.ColumnMappings.Add("SOSVNHOM", "SOSVNHOM");
             tableMapping.ColumnMappings.Add("diachi", "diachi");
+            tableMapping.ColumnMappings.Add("MANHOMTRUONG", "MANHOMTRUONG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

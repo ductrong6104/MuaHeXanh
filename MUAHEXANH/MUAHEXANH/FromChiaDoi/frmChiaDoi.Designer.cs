@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.diachiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENNHOMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nHOMTRUONGDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,15 +38,15 @@
             this.tENAPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sOSVNHOMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.sp_lay_doi_tu_chiendichBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSchiaDoi = new MUAHEXANH.DSchiaDoi();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSchiaDoi = new MUAHEXANH.DSchiaDoi();
             this.txtMANHOM = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmbDOI = new System.Windows.Forms.ComboBox();
-            this.sp_lay_doi_tu_chiendichBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlTHANHVIENDOI = new DevExpress.XtraEditors.PanelControl();
             this.dgvTHANHVIENDOI = new System.Windows.Forms.DataGridView();
             this.masvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,13 +73,21 @@
             this.sp_lay_nhom_tu_manhomTableAdapter = new MUAHEXANH.DSchiaDoiTableAdapters.sp_lay_nhom_tu_manhomTableAdapter();
             this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter = new MUAHEXANH.DSchiaDoiTableAdapters.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter();
             this.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter = new MUAHEXANH.DSchiaDoiTableAdapters.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chọnLàmĐộiTrưởngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chọnLàmĐộiPhóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.xóaKhỏiĐộiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_doi_tu_chiendichBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSchiaDoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSchiaDoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANHOM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_doi_tu_chiendichBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTHANHVIENDOI)).BeginInit();
             this.pnlTHANHVIENDOI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTHANHVIENDOI)).BeginInit();
@@ -96,6 +104,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_dssv_chuacodoi_theo_makhoaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // diachiDataGridViewTextBoxColumn1
@@ -150,6 +161,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.pictureBox2);
+            this.panelControl1.Controls.Add(this.pictureBox1);
+            this.panelControl1.Controls.Add(this.labelControl7);
+            this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Controls.Add(this.textEdit2);
             this.panelControl1.Controls.Add(this.txtMANHOM);
             this.panelControl1.Controls.Add(this.labelControl5);
@@ -159,8 +174,18 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1134, 55);
+            this.panelControl1.Size = new System.Drawing.Size(1134, 109);
             this.panelControl1.TabIndex = 41;
+            // 
+            // sp_lay_doi_tu_chiendichBindingSource
+            // 
+            this.sp_lay_doi_tu_chiendichBindingSource.DataMember = "sp_lay_doi_tu_chiendich";
+            this.sp_lay_doi_tu_chiendichBindingSource.DataSource = this.dSchiaDoi;
+            // 
+            // dSchiaDoi
+            // 
+            this.dSchiaDoi.DataSetName = "DSchiaDoi";
+            this.dSchiaDoi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textEdit2
             // 
@@ -174,11 +199,6 @@
             // 
             this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource.DataMember = "sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoi";
             this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource.DataSource = this.dSchiaDoi;
-            // 
-            // dSchiaDoi
-            // 
-            this.dSchiaDoi.DataSetName = "DSchiaDoi";
-            this.dSchiaDoi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtMANHOM
             // 
@@ -224,17 +244,12 @@
             this.cmbDOI.ValueMember = "MADOI";
             this.cmbDOI.SelectionChangeCommitted += new System.EventHandler(this.cmbDOI_SelectionChangeCommitted);
             // 
-            // sp_lay_doi_tu_chiendichBindingSource
-            // 
-            this.sp_lay_doi_tu_chiendichBindingSource.DataMember = "sp_lay_doi_tu_chiendich";
-            this.sp_lay_doi_tu_chiendichBindingSource.DataSource = this.dSchiaDoi;
-            // 
             // pnlTHANHVIENDOI
             // 
             this.pnlTHANHVIENDOI.Controls.Add(this.dgvTHANHVIENDOI);
             this.pnlTHANHVIENDOI.Controls.Add(this.panelControl4);
             this.pnlTHANHVIENDOI.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTHANHVIENDOI.Location = new System.Drawing.Point(0, 55);
+            this.pnlTHANHVIENDOI.Location = new System.Drawing.Point(0, 109);
             this.pnlTHANHVIENDOI.Name = "pnlTHANHVIENDOI";
             this.pnlTHANHVIENDOI.Size = new System.Drawing.Size(1134, 268);
             this.pnlTHANHVIENDOI.TabIndex = 46;
@@ -247,14 +262,14 @@
             this.dgvTHANHVIENDOI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTHANHVIENDOI.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvTHANHVIENDOI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12.2F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTHANHVIENDOI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTHANHVIENDOI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvTHANHVIENDOI.ColumnHeadersHeight = 50;
             this.dgvTHANHVIENDOI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masvDataGridViewTextBoxColumn,
@@ -269,6 +284,8 @@
             this.dgvTHANHVIENDOI.RowTemplate.Height = 24;
             this.dgvTHANHVIENDOI.Size = new System.Drawing.Size(1130, 206);
             this.dgvTHANHVIENDOI.TabIndex = 1;
+            this.dgvTHANHVIENDOI.Sorted += new System.EventHandler(this.dgvTHANHVIENDOI_Sorted);
+            this.dgvTHANHVIENDOI.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvTHANHVIENDOI_Paint);
             // 
             // masvDataGridViewTextBoxColumn
             // 
@@ -321,9 +338,9 @@
             this.pnlCHIASV.Controls.Add(this.pnlGHI);
             this.pnlCHIASV.Controls.Add(this.pnlSINHVIENKHOA);
             this.pnlCHIASV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCHIASV.Location = new System.Drawing.Point(0, 323);
+            this.pnlCHIASV.Location = new System.Drawing.Point(0, 377);
             this.pnlCHIASV.Name = "pnlCHIASV";
-            this.pnlCHIASV.Size = new System.Drawing.Size(1134, 393);
+            this.pnlCHIASV.Size = new System.Drawing.Size(1134, 339);
             this.pnlCHIASV.TabIndex = 47;
             // 
             // pnlGHI
@@ -332,7 +349,7 @@
             this.pnlGHI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGHI.Location = new System.Drawing.Point(965, 2);
             this.pnlGHI.Name = "pnlGHI";
-            this.pnlGHI.Size = new System.Drawing.Size(167, 389);
+            this.pnlGHI.Size = new System.Drawing.Size(167, 335);
             this.pnlGHI.TabIndex = 1;
             // 
             // btnGhi
@@ -351,7 +368,7 @@
             this.pnlSINHVIENKHOA.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSINHVIENKHOA.Location = new System.Drawing.Point(2, 2);
             this.pnlSINHVIENKHOA.Name = "pnlSINHVIENKHOA";
-            this.pnlSINHVIENKHOA.Size = new System.Drawing.Size(963, 389);
+            this.pnlSINHVIENKHOA.Size = new System.Drawing.Size(963, 335);
             this.pnlSINHVIENKHOA.TabIndex = 0;
             // 
             // dgvSVCHUACODOI
@@ -362,14 +379,14 @@
             this.dgvSVCHUACODOI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSVCHUACODOI.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSVCHUACODOI.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSVCHUACODOI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSVCHUACODOI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvSVCHUACODOI.ColumnHeadersHeight = 50;
             this.dgvSVCHUACODOI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.masvDataGridViewTextBoxColumn1,
@@ -383,7 +400,7 @@
             this.dgvSVCHUACODOI.Name = "dgvSVCHUACODOI";
             this.dgvSVCHUACODOI.RowHeadersWidth = 51;
             this.dgvSVCHUACODOI.RowTemplate.Height = 24;
-            this.dgvSVCHUACODOI.Size = new System.Drawing.Size(959, 340);
+            this.dgvSVCHUACODOI.Size = new System.Drawing.Size(959, 286);
             this.dgvSVCHUACODOI.TabIndex = 1;
             // 
             // masvDataGridViewTextBoxColumn1
@@ -476,6 +493,71 @@
             // 
             this.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter.ClearBeforeFill = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chọnLàmĐộiTrưởngToolStripMenuItem,
+            this.chọnLàmĐộiPhóToolStripMenuItem,
+            this.xóaKhỏiĐộiToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 76);
+            // 
+            // chọnLàmĐộiTrưởngToolStripMenuItem
+            // 
+            this.chọnLàmĐộiTrưởngToolStripMenuItem.Name = "chọnLàmĐộiTrưởngToolStripMenuItem";
+            this.chọnLàmĐộiTrưởngToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
+            this.chọnLàmĐộiTrưởngToolStripMenuItem.Text = "Chọn làm đội trưởng";
+            this.chọnLàmĐộiTrưởngToolStripMenuItem.Click += new System.EventHandler(this.chọnLàmĐộiTrưởngToolStripMenuItem_Click);
+            // 
+            // chọnLàmĐộiPhóToolStripMenuItem
+            // 
+            this.chọnLàmĐộiPhóToolStripMenuItem.Name = "chọnLàmĐộiPhóToolStripMenuItem";
+            this.chọnLàmĐộiPhóToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
+            this.chọnLàmĐộiPhóToolStripMenuItem.Text = "Chọn làm đội phó";
+            this.chọnLàmĐộiPhóToolStripMenuItem.Click += new System.EventHandler(this.chọnLàmĐộiPhóToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(67, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(123, 53);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(79, 20);
+            this.labelControl6.TabIndex = 8;
+            this.labelControl6.Text = "Đội trưởng";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(309, 53);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(58, 20);
+            this.labelControl7.TabIndex = 10;
+            this.labelControl7.Text = "Đội phó";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Green;
+            this.pictureBox2.Location = new System.Drawing.Point(243, 46);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // xóaKhỏiĐộiToolStripMenuItem
+            // 
+            this.xóaKhỏiĐộiToolStripMenuItem.Name = "xóaKhỏiĐộiToolStripMenuItem";
+            this.xóaKhỏiĐộiToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
+            this.xóaKhỏiĐộiToolStripMenuItem.Text = "Xóa khỏi đội";
+            this.xóaKhỏiĐộiToolStripMenuItem.Click += new System.EventHandler(this.xóaKhỏiĐộiToolStripMenuItem_Click);
+            // 
             // frmChiaDoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,17 +568,17 @@
             this.Controls.Add(this.pnlTHANHVIENDOI);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmChiaDoi";
-            this.Text = "frmChiaDoi";
+            this.Text = "Chia đội";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChiaDoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_doi_tu_chiendichBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSchiaDoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSchiaDoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANHOM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_lay_doi_tu_chiendichBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTHANHVIENDOI)).EndInit();
             this.pnlTHANHVIENDOI.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTHANHVIENDOI)).EndInit();
@@ -515,6 +597,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +647,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sp_lay_dssv_chuacodoi_theo_makhoaBindingSource;
         private DSchiaDoiTableAdapters.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem chọnLàmĐộiTrưởngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chọnLàmĐộiPhóToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private System.Windows.Forms.ToolStripMenuItem xóaKhỏiĐộiToolStripMenuItem;
     }
 }

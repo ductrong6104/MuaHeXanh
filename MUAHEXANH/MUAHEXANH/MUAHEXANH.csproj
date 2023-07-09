@@ -129,6 +129,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DStaoNhom.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DSthemXaApNhaDan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSthemXaApNhaDan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSxemThoiGianLamViec.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,6 +247,18 @@
     <Compile Include="FormXemThoiGianCV\frmXemThoiGianLamViec.Designer.cs">
       <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXaApNhaDan\frmThemDiaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXaApNhaDan\frmThemDiaBan.Designer.cs">
+      <DependentUpon>frmThemDiaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmXaApNhaDan\frmThemNhaDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXaApNhaDan\frmThemNhaDan.Designer.cs">
+      <DependentUpon>frmThemNhaDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FromChiaNhom\frmChiaNhom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +359,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormXemThoiGianCV\frmXemThoiGianLamViec.resx">
       <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXaApNhaDan\frmThemDiaBan.resx">
+      <DependentUpon>frmThemDiaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXaApNhaDan\frmThemNhaDan.resx">
+      <DependentUpon>frmThemNhaDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FromChiaNhom\frmChiaNhom.resx">
       <DependentUpon>frmChiaNhom.cs</DependentUpon>
@@ -488,6 +511,17 @@
     </None>
     <None Include="DStaoNhom.xss">
       <DependentUpon>DStaoNhom.xsd</DependentUpon>
+    </None>
+    <None Include="DSthemXaApNhaDan.xsc">
+      <DependentUpon>DSthemXaApNhaDan.xsd</DependentUpon>
+    </None>
+    <None Include="DSthemXaApNhaDan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSthemXaApNhaDan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSthemXaApNhaDan.xss">
+      <DependentUpon>DSthemXaApNhaDan.xsd</DependentUpon>
     </None>
     <None Include="DSxemThoiGianLamViec.xsc">
       <DependentUpon>DSxemThoiGianLamViec.xsd</DependentUpon>

@@ -3777,7 +3777,7 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@madoi", global::System.Data.SqlDbType.NChar, 11, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@buoi", global::System.Data.SqlDbType.NVarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3785,7 +3785,7 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSchiaViec.sp_lay_dsphancong_tu_doiDataTable dataTable, string madoi, global::System.Nullable<global::System.DateTime> ngay, string buoi) {
+        public virtual int Fill(DSchiaViec.sp_lay_dsphancong_tu_doiDataTable dataTable, string madoi, string ngay, string buoi) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((madoi == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3793,11 +3793,11 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(madoi));
             }
-            if ((ngay.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ngay.Value));
+            if ((ngay == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(ngay));
             }
             if ((buoi == null)) {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3816,7 +3816,7 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSchiaViec.sp_lay_dsphancong_tu_doiDataTable GetData(string madoi, global::System.Nullable<global::System.DateTime> ngay, string buoi) {
+        public virtual DSchiaViec.sp_lay_dsphancong_tu_doiDataTable GetData(string madoi, string ngay, string buoi) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((madoi == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3824,11 +3824,11 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(madoi));
             }
-            if ((ngay.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ngay.Value));
+            if ((ngay == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(ngay));
             }
             if ((buoi == null)) {
                 this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -4167,14 +4167,14 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maap", global::System.Data.SqlDbType.NChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ngay", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSchiaViec.sp_lay_dscongviec_tu_apDataTable dataTable, string maap, global::System.Nullable<global::System.DateTime> ngay) {
+        public virtual int Fill(DSchiaViec.sp_lay_dscongviec_tu_apDataTable dataTable, string maap, string ngay) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((maap == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4182,11 +4182,11 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(maap));
             }
-            if ((ngay.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ngay.Value));
+            if ((ngay == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(ngay));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4199,7 +4199,7 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSchiaViec.sp_lay_dscongviec_tu_apDataTable GetData(string maap, global::System.Nullable<global::System.DateTime> ngay) {
+        public virtual DSchiaViec.sp_lay_dscongviec_tu_apDataTable GetData(string maap, string ngay) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((maap == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4207,11 +4207,11 @@ SELECT MaNhom, Buoi, Ngay, MaCV FROM PhanCong WHERE (Buoi = @Buoi) AND (MaNhom =
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(maap));
             }
-            if ((ngay.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ngay.Value));
+            if ((ngay == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(ngay));
             }
             DSchiaViec.sp_lay_dscongviec_tu_apDataTable dataTable = new DSchiaViec.sp_lay_dscongviec_tu_apDataTable();
             this.Adapter.Fill(dataTable);

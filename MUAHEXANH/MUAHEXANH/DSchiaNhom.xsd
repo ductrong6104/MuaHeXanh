@@ -29,6 +29,7 @@
               <Mapping SourceColumn="TENAP" DataSetColumn="TENAP" />
               <Mapping SourceColumn="SOSVNHOM" DataSetColumn="SOSVNHOM" />
               <Mapping SourceColumn="diachi" DataSetColumn="diachi" />
+              <Mapping SourceColumn="MANHOMTRUONG" DataSetColumn="MANHOMTRUONG" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -312,10 +313,17 @@ FROM     SinhVien AS SV INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="SOSVNHOM" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="SOSVNHOMColumn" msprop:Generator_ColumnPropNameInRow="SOSVNHOM" msprop:Generator_UserColumnName="SOSVNHOM" msprop:Generator_ColumnVarNameInTable="columnSOSVNHOM" type="xs:int" minOccurs="0" />
-              <xs:element name="diachi" msprop:Generator_ColumnPropNameInRow="diachi" msprop:Generator_ColumnPropNameInTable="diachiColumn" msprop:Generator_ColumnVarNameInTable="columndiachi" msprop:Generator_UserColumnName="diachi">
+              <xs:element name="diachi" msprop:Generator_UserColumnName="diachi" msprop:Generator_ColumnPropNameInTable="diachiColumn" msprop:Generator_ColumnPropNameInRow="diachi" msprop:Generator_ColumnVarNameInTable="columndiachi">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MANHOMTRUONG" msprop:Generator_ColumnPropNameInRow="MANHOMTRUONG" msprop:Generator_ColumnPropNameInTable="MANHOMTRUONGColumn" msprop:Generator_ColumnVarNameInTable="columnMANHOMTRUONG" msprop:Generator_UserColumnName="MANHOMTRUONG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -464,24 +472,24 @@ FROM     SinhVien AS SV INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_lay_nhom_tu_manhom" msprop:Generator_RowClassName="sp_lay_nhom_tu_manhomRow" msprop:Generator_RowEvHandlerName="sp_lay_nhom_tu_manhomRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_lay_nhom_tu_manhomRowDeleted" msprop:Generator_RowDeletingName="sp_lay_nhom_tu_manhomRowDeleting" msprop:Generator_RowEvArgName="sp_lay_nhom_tu_manhomRowChangeEvent" msprop:Generator_TablePropName="sp_lay_nhom_tu_manhom" msprop:Generator_RowChangedName="sp_lay_nhom_tu_manhomRowChanged" msprop:Generator_UserTableName="sp_lay_nhom_tu_manhom" msprop:Generator_RowChangingName="sp_lay_nhom_tu_manhomRowChanging" msprop:Generator_TableClassName="sp_lay_nhom_tu_manhomDataTable" msprop:Generator_TableVarName="tablesp_lay_nhom_tu_manhom">
+        <xs:element name="sp_lay_nhom_tu_manhom" msprop:Generator_RowEvHandlerName="sp_lay_nhom_tu_manhomRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_lay_nhom_tu_manhomRowDeleted" msprop:Generator_RowDeletingName="sp_lay_nhom_tu_manhomRowDeleting" msprop:Generator_RowEvArgName="sp_lay_nhom_tu_manhomRowChangeEvent" msprop:Generator_TablePropName="sp_lay_nhom_tu_manhom" msprop:Generator_RowChangedName="sp_lay_nhom_tu_manhomRowChanged" msprop:Generator_UserTableName="sp_lay_nhom_tu_manhom" msprop:Generator_RowChangingName="sp_lay_nhom_tu_manhomRowChanging" msprop:Generator_RowClassName="sp_lay_nhom_tu_manhomRow" msprop:Generator_TableClassName="sp_lay_nhom_tu_manhomDataTable" msprop:Generator_TableVarName="tablesp_lay_nhom_tu_manhom">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="masv" msprop:Generator_UserColumnName="masv" msprop:Generator_ColumnPropNameInTable="masvColumn" msprop:Generator_ColumnPropNameInRow="masv" msprop:Generator_ColumnVarNameInTable="columnmasv">
+              <xs:element name="masv" msprop:Generator_ColumnPropNameInTable="masvColumn" msprop:Generator_ColumnPropNameInRow="masv" msprop:Generator_UserColumnName="masv" msprop:Generator_ColumnVarNameInTable="columnmasv">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="hoten" msdata:ReadOnly="true" msprop:Generator_UserColumnName="hoten" msprop:Generator_ColumnPropNameInTable="hotenColumn" msprop:Generator_ColumnPropNameInRow="hoten" msprop:Generator_ColumnVarNameInTable="columnhoten" minOccurs="0">
+              <xs:element name="hoten" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="hotenColumn" msprop:Generator_ColumnPropNameInRow="hoten" msprop:Generator_UserColumnName="hoten" msprop:Generator_ColumnVarNameInTable="columnhoten" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="51" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MaNhom" msprop:Generator_UserColumnName="MaNhom" msprop:Generator_ColumnPropNameInTable="MaNhomColumn" msprop:Generator_ColumnPropNameInRow="MaNhom" msprop:Generator_ColumnVarNameInTable="columnMaNhom">
+              <xs:element name="MaNhom" msprop:Generator_ColumnPropNameInTable="MaNhomColumn" msprop:Generator_ColumnPropNameInRow="MaNhom" msprop:Generator_UserColumnName="MaNhom" msprop:Generator_ColumnVarNameInTable="columnMaNhom">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
@@ -522,10 +530,10 @@ FROM     SinhVien AS SV INNER JOIN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Nhom_SinhVien" msdata:parent="SinhVien" msdata:child="Nhom" msdata:parentkey="MaSV" msdata:childkey="NhomTruong" msprop:Generator_UserParentTable="SinhVien" msprop:Generator_UserChildTable="Nhom" msprop:Generator_RelationVarName="relationFK_Nhom_SinhVien" msprop:Generator_ChildPropName="GetNhomRows" msprop:Generator_ParentPropName="SinhVienRow" msprop:Generator_UserRelationName="FK_Nhom_SinhVien" />
-      <msdata:Relationship name="FK_ThanhVienNhom_Nhom" msdata:parent="Nhom" msdata:child="ThanhVienNhom" msdata:parentkey="MaNhom" msdata:childkey="MaNhom" msprop:Generator_UserParentTable="Nhom" msprop:Generator_UserChildTable="ThanhVienNhom" msprop:Generator_RelationVarName="relationFK_ThanhVienNhom_Nhom" msprop:Generator_ChildPropName="GetThanhVienNhomRows" msprop:Generator_UserRelationName="FK_ThanhVienNhom_Nhom" msprop:Generator_ParentPropName="NhomRow" />
-      <msdata:Relationship name="FK_ThanhVienNhom_SinhVien" msdata:parent="SinhVien" msdata:child="ThanhVienNhom" msdata:parentkey="MaSV" msdata:childkey="MaSV" msprop:Generator_UserParentTable="SinhVien" msprop:Generator_UserChildTable="ThanhVienNhom" msprop:Generator_RelationVarName="relationFK_ThanhVienNhom_SinhVien" msprop:Generator_ChildPropName="GetThanhVienNhomRows" msprop:Generator_UserRelationName="FK_ThanhVienNhom_SinhVien" msprop:Generator_ParentPropName="SinhVienRow" />
-      <msdata:Relationship name="sp_lay_nhom_tu_doi_thongtinsinhvien_trongnhom" msdata:parent="sp_lay_nhom_tu_doi" msdata:child="thongtinsinhvien_trongnhom" msdata:parentkey="MANHOM" msdata:childkey="MaNhom" msprop:Generator_UserParentTable="sp_lay_nhom_tu_doi" msprop:Generator_UserChildTable="thongtinsinhvien_trongnhom" msprop:Generator_RelationVarName="relationsp_lay_nhom_tu_doi_thongtinsinhvien_trongnhom" msprop:Generator_ChildPropName="Getthongtinsinhvien_trongnhomRows" msprop:Generator_UserRelationName="sp_lay_nhom_tu_doi_thongtinsinhvien_trongnhom" msprop:Generator_ParentPropName="sp_lay_nhom_tu_doiRow" />
+      <msdata:Relationship name="FK_Nhom_SinhVien" msdata:parent="SinhVien" msdata:child="Nhom" msdata:parentkey="MaSV" msdata:childkey="NhomTruong" msprop:Generator_UserParentTable="SinhVien" msprop:Generator_UserChildTable="Nhom" msprop:Generator_RelationVarName="relationFK_Nhom_SinhVien" msprop:Generator_ChildPropName="GetNhomRows" msprop:Generator_UserRelationName="FK_Nhom_SinhVien" msprop:Generator_ParentPropName="SinhVienRow" />
+      <msdata:Relationship name="FK_ThanhVienNhom_Nhom" msdata:parent="Nhom" msdata:child="ThanhVienNhom" msdata:parentkey="MaNhom" msdata:childkey="MaNhom" msprop:Generator_UserParentTable="Nhom" msprop:Generator_UserChildTable="ThanhVienNhom" msprop:Generator_RelationVarName="relationFK_ThanhVienNhom_Nhom" msprop:Generator_ChildPropName="GetThanhVienNhomRows" msprop:Generator_ParentPropName="NhomRow" msprop:Generator_UserRelationName="FK_ThanhVienNhom_Nhom" />
+      <msdata:Relationship name="FK_ThanhVienNhom_SinhVien" msdata:parent="SinhVien" msdata:child="ThanhVienNhom" msdata:parentkey="MaSV" msdata:childkey="MaSV" msprop:Generator_UserParentTable="SinhVien" msprop:Generator_UserChildTable="ThanhVienNhom" msprop:Generator_RelationVarName="relationFK_ThanhVienNhom_SinhVien" msprop:Generator_ChildPropName="GetThanhVienNhomRows" msprop:Generator_ParentPropName="SinhVienRow" msprop:Generator_UserRelationName="FK_ThanhVienNhom_SinhVien" />
+      <msdata:Relationship name="sp_lay_nhom_tu_doi_thongtinsinhvien_trongnhom" msdata:parent="sp_lay_nhom_tu_doi" msdata:child="thongtinsinhvien_trongnhom" msdata:parentkey="MANHOM" msdata:childkey="MaNhom" msprop:Generator_UserParentTable="sp_lay_nhom_tu_doi" msprop:Generator_UserChildTable="thongtinsinhvien_trongnhom" msprop:Generator_RelationVarName="relationsp_lay_nhom_tu_doi_thongtinsinhvien_trongnhom" msprop:Generator_ChildPropName="Getthongtinsinhvien_trongnhomRows" msprop:Generator_ParentPropName="sp_lay_nhom_tu_doiRow" msprop:Generator_UserRelationName="sp_lay_nhom_tu_doi_thongtinsinhvien_trongnhom" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,15 +29,23 @@ namespace MUAHEXANH
 
         // chua cho phep hieu chinh tren bảng thanhviennhom
         // chi nhung sinh vien thuộc đội chứa nhóm này thì mới thêm
-        
+        private void batTatContextMenuStrip()
+        {
+            dgvSVNHOM.ContextMenuStrip = contextMenuStrip1;
+
+
+            if (dgvSVNHOM.RowCount == 0)
+            {
+                dgvSVNHOM.ContextMenuStrip.Enabled = false;
+            }
+            else
+            {
+                dgvSVNHOM.ContextMenuStrip.Enabled = true;
+            }
+        }
         private void frmChiaNhom_Load(object sender, EventArgs e)
         {
-          
-            // TODO: This line of code loads data into the 'dSchiaNhom.thongtinsinhvien_trongnhom' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'dSchiaNhom.ttsv_trong_doi' table. You can move, or remove it, as needed.
-
-            // TODO: This line of code loads data into the 'dSchiaNhom.ThanhVienNhom' table. You can move, or remove it, as needed.
+         
 
 
 
@@ -44,6 +53,9 @@ namespace MUAHEXANH
             dSchiaNhom.EnforceConstraints = false;
             this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam);
+            
+            batTatContextMenuStrip();
+
             //this.thongtinsinhvien_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
             //this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
             //maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
@@ -79,17 +91,20 @@ namespace MUAHEXANH
 
             this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi_de_chia, Program.mTeam, maNhomDangChon);
             this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+            batTatContextMenuStrip();
             for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)
             {
                 // chi lay sinh vien nào được tick
                 dgvSVNHOM.Rows[i].Cells[3].Value = "False";
             }
-            ghiThanhCong = false; 
+            ghiThanhCong = false;
+            
         }
 
         private void cmbNHOMCANTHEM_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+            batTatContextMenuStrip();
         }
 
         private void btnCHUYEN_Click(object sender, EventArgs e)
@@ -118,12 +133,19 @@ namespace MUAHEXANH
                 return;
 
             }
-
+            string nhomTruong = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOMTRUONG"].ToString();
             for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)
             {
                 // chi lay sinh vien nào được tick
-                if (dgvSVNHOM.Rows[i].Cells[3].Value.ToString() == "True")
+                if (dgvSVNHOM.Rows[i].Cells[3].Value?.ToString() == "True")
                 {
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value.ToString() == nhomTruong.Trim())
+                    {
+                        MessageBox.Show("Bạn không thể nhóm trưởng sang nhóm khác! Vui lòng chọn sinh viên khác!", "", MessageBoxButtons.OK);
+                        dgvSVNHOM.Focus();
+                        return;
+                    }
+                          
                     Console.WriteLine(dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
                     dtXoa.Rows.Add(manhomxoa, dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
                     dtThem.Rows.Add(manhomthem, dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
@@ -176,6 +198,7 @@ namespace MUAHEXANH
                 return;
             }
 
+            batTatContextMenuStrip();
 
         }
         public void printDT(DataTable dt)
@@ -186,11 +209,81 @@ namespace MUAHEXANH
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        
+
+        private void chọnLàmNhómTrưởngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Ban có thật sự muốn chọn sinh viên này làm nhóm trưởng không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                
+                try
+                {
+                    string maNhom = ((DataRowView)bdsNHOM[bdsNHOM.Position])["manhom"].ToString();
+                    string nhomTruong = ((DataRowView)bdsSVNHOM[bdsSVNHOM.Position])["masv"].ToString();
+                    string cmd = "UPDATE NHOM SET NHOMTRUONG = '" + nhomTruong + "' WHERE MANHOM = '" + maNhom + "'";
+                    Console.WriteLine("cmd set nhom truong: " + cmd);
+                    int setNhomTruong = Program.ExecSqlNonQuery(cmd);
+                    if (setNhomTruong != 0)
+                    {
+                        MessageBox.Show("Lỗi thay đổi nhóm trưởng! ", "", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi thay đổi nhóm trưởng! " + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+                MessageBox.Show("Thay đổi nhóm trưởng thành công! ", "", MessageBoxButtons.OK);
+                ghiThanhCong = true;
+                this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam.Trim());
+                
+                //this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+                //this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+            }
         }
 
-       
+        private void dgvSVNHOM_Paint(object sender, PaintEventArgs e)
+        {
+            string nhomTruong = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOMTRUONG"].ToString();
+            for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)
+            {
+                // chi lay sinh vien nào được tick
+                for (int j = 0; j < dgvNHOM.Rows.Count; j++)
+                {
+                    // chi lay sinh vien nào được tick
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value.ToString().Trim() == dgvNHOM.Rows[j].Cells[7].Value.ToString().Trim())
+                    {
+                        dgvSVNHOM.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+
+                    }
+
+                }
+
+            }
+        }
+
+        private void dgvSVNHOMCANTHEM_Paint(object sender, PaintEventArgs e)
+        {
+            string nhomTruong = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOMTRUONG"].ToString();
+            for (int i = 0; i < dgvSVNHOMCANTHEM.Rows.Count; i++)
+            {
+                // chi lay sinh vien nào được tick
+                for (int j = 0; j < dgvNHOM.Rows.Count; j++)
+                {
+                    // chi lay sinh vien nào được tick
+                    if (dgvSVNHOMCANTHEM.Rows[i].Cells[0].Value.ToString().Trim() == dgvNHOM.Rows[j].Cells[7].Value.ToString().Trim())
+                    {
+                        dgvSVNHOMCANTHEM.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+
+                    }
+
+                }
+
+            }
+        }
+
+        
     }
 }

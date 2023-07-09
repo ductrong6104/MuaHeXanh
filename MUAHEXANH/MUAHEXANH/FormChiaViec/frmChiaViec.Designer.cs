@@ -424,6 +424,8 @@
             // colNgay
             // 
             this.colNgay.Caption = "Ngày";
+            this.colNgay.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNgay.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNgay.FieldName = "Ngay";
             this.colNgay.MinWidth = 25;
             this.colNgay.Name = "colNgay";
@@ -672,7 +674,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl3);
             this.Name = "frmChiaViec";
-            this.Text = "frmChiaViec";
+            this.Text = "Chia việc";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChiaViec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

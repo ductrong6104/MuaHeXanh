@@ -205,7 +205,7 @@
             this.Controls.Add(this.pnlDSCV);
             this.Controls.Add(this.pnlFilterTheoNgay);
             this.Name = "frmXemThoiGianLamViec";
-            this.Text = "frmXemThoiGianLamViec";
+            this.Text = "Xem thời gian làm việc";
             this.Load += new System.EventHandler(this.frmXemThoiGianLamViec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnlFilterTheoNgay)).EndInit();
             this.pnlFilterTheoNgay.ResumeLayout(false);

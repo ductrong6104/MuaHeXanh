@@ -25,11 +25,15 @@ namespace MUAHEXANH
         {
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = true;
+            gcNHOM.Enabled = true;
+            pnlTHEMNHOM.Enabled = false;
         }
         public void trangThaiChuaGhi()
         {
             btnPhucHoi.Enabled = btnGhi.Enabled = true;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = false;
+            gcNHOM.Enabled = false;
+            pnlTHEMNHOM.Enabled = true;
         }
         private void frmTaoNhom_Load(object sender, EventArgs e)
         {

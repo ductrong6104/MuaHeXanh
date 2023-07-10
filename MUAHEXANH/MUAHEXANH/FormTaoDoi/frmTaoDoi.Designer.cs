@@ -130,56 +130,56 @@
             // tendoiLabel
             // 
             tendoiLabel.AutoSize = true;
-            tendoiLabel.Location = new System.Drawing.Point(47, 30);
+            tendoiLabel.Location = new System.Drawing.Point(17, 30);
             tendoiLabel.Name = "tendoiLabel";
-            tendoiLabel.Size = new System.Drawing.Size(57, 20);
+            tendoiLabel.Size = new System.Drawing.Size(106, 20);
             tendoiLabel.TabIndex = 0;
-            tendoiLabel.Text = "tendoi:";
+            tendoiLabel.Text = "Chọn tên đội:";
             // 
             // giamSat1Label
             // 
             giamSat1Label.AutoSize = true;
             giamSat1Label.Location = new System.Drawing.Point(15, 77);
             giamSat1Label.Name = "giamSat1Label";
-            giamSat1Label.Size = new System.Drawing.Size(89, 20);
+            giamSat1Label.Size = new System.Drawing.Size(130, 20);
             giamSat1Label.TabIndex = 2;
-            giamSat1Label.Text = "Giam Sat1:";
+            giamSat1Label.Text = "Chọn giám sát 1:";
             // 
             // giamSat2Label
             // 
             giamSat2Label.AutoSize = true;
             giamSat2Label.Location = new System.Drawing.Point(17, 125);
             giamSat2Label.Name = "giamSat2Label";
-            giamSat2Label.Size = new System.Drawing.Size(89, 20);
+            giamSat2Label.Size = new System.Drawing.Size(130, 20);
             giamSat2Label.TabIndex = 4;
-            giamSat2Label.Text = "Giam Sat2:";
+            giamSat2Label.Text = "Chọn giám sát 2:";
             // 
             // tenchiendichLabel
             // 
             tenchiendichLabel.AutoSize = true;
             tenchiendichLabel.Location = new System.Drawing.Point(390, 30);
             tenchiendichLabel.Name = "tenchiendichLabel";
-            tenchiendichLabel.Size = new System.Drawing.Size(103, 20);
+            tenchiendichLabel.Size = new System.Drawing.Size(120, 20);
             tenchiendichLabel.TabIndex = 10;
-            tenchiendichLabel.Text = "tenchiendich:";
+            tenchiendichLabel.Text = "Tên chiến dịch:";
             // 
             // tenkhoaLabel
             // 
             tenkhoaLabel.AutoSize = true;
             tenkhoaLabel.Location = new System.Drawing.Point(411, 77);
             tenkhoaLabel.Name = "tenkhoaLabel";
-            tenkhoaLabel.Size = new System.Drawing.Size(70, 20);
+            tenkhoaLabel.Size = new System.Drawing.Size(82, 20);
             tenkhoaLabel.TabIndex = 12;
-            tenkhoaLabel.Text = "tenkhoa:";
+            tenkhoaLabel.Text = "Tên khoa:";
             // 
             // tenxaLabel
             // 
             tenxaLabel.AutoSize = true;
             tenxaLabel.Location = new System.Drawing.Point(430, 120);
             tenxaLabel.Name = "tenxaLabel";
-            tenxaLabel.Size = new System.Drawing.Size(51, 20);
+            tenxaLabel.Size = new System.Drawing.Size(63, 20);
             tenxaLabel.TabIndex = 14;
-            tenxaLabel.Text = "tenxa:";
+            tenxaLabel.Text = "Tên xã:";
             // 
             // barManager1
             // 
@@ -380,9 +380,11 @@
             this.colsosv});
             this.gridView1.GridControl = this.gcDSDOI;
             this.gridView1.Name = "gridView1";
+            this.gridView1.ViewCaption = "Tạo Đội";
             // 
             // colMaDoi
             // 
+            this.colMaDoi.Caption = "Mã đội";
             this.colMaDoi.FieldName = "MaDoi";
             this.colMaDoi.MinWidth = 25;
             this.colMaDoi.Name = "colMaDoi";
@@ -392,6 +394,7 @@
             // 
             // coltendoi
             // 
+            this.coltendoi.Caption = "Tên đội";
             this.coltendoi.FieldName = "tendoi";
             this.coltendoi.MinWidth = 25;
             this.coltendoi.Name = "coltendoi";
@@ -401,6 +404,7 @@
             // 
             // colGiamSat1
             // 
+            this.colGiamSat1.Caption = "Giám sát 1";
             this.colGiamSat1.FieldName = "GiamSat1";
             this.colGiamSat1.MinWidth = 25;
             this.colGiamSat1.Name = "colGiamSat1";
@@ -410,6 +414,7 @@
             // 
             // colGiamSat2
             // 
+            this.colGiamSat2.Caption = "Giám sát 2";
             this.colGiamSat2.FieldName = "GiamSat2";
             this.colGiamSat2.MinWidth = 25;
             this.colGiamSat2.Name = "colGiamSat2";
@@ -419,6 +424,7 @@
             // 
             // colDoiTruong
             // 
+            this.colDoiTruong.Caption = "Đội trưởng";
             this.colDoiTruong.FieldName = "DoiTruong";
             this.colDoiTruong.MinWidth = 25;
             this.colDoiTruong.Name = "colDoiTruong";
@@ -428,6 +434,7 @@
             // 
             // colDoiPho
             // 
+            this.colDoiPho.Caption = "Đội phó";
             this.colDoiPho.FieldName = "DoiPho";
             this.colDoiPho.MinWidth = 25;
             this.colDoiPho.Name = "colDoiPho";
@@ -437,6 +444,7 @@
             // 
             // coltenkhoa
             // 
+            this.coltenkhoa.Caption = "Tên khoa";
             this.coltenkhoa.FieldName = "tenkhoa";
             this.coltenkhoa.MinWidth = 25;
             this.coltenkhoa.Name = "coltenkhoa";
@@ -446,6 +454,7 @@
             // 
             // coltenxa
             // 
+            this.coltenxa.Caption = "Tên xã";
             this.coltenxa.FieldName = "tenxa";
             this.coltenxa.MinWidth = 25;
             this.coltenxa.Name = "coltenxa";
@@ -455,6 +464,7 @@
             // 
             // colsosv
             // 
+            this.colsosv.Caption = "Số sinh viên";
             this.colsosv.FieldName = "sosv";
             this.colsosv.MinWidth = 25;
             this.colsosv.Name = "colsosv";
@@ -475,7 +485,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(527, 13);
+            this.labelControl1.Location = new System.Drawing.Point(478, 0);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(257, 37);
             this.labelControl1.TabIndex = 0;
@@ -536,7 +546,7 @@
             // maNhomDataGridViewTextBoxColumn
             // 
             this.maNhomDataGridViewTextBoxColumn.DataPropertyName = "MaNhom";
-            this.maNhomDataGridViewTextBoxColumn.HeaderText = "MaNhom";
+            this.maNhomDataGridViewTextBoxColumn.HeaderText = "Mã nhóm";
             this.maNhomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNhomDataGridViewTextBoxColumn.Name = "maNhomDataGridViewTextBoxColumn";
             this.maNhomDataGridViewTextBoxColumn.ReadOnly = true;
@@ -544,7 +554,7 @@
             // tenNhomDataGridViewTextBoxColumn
             // 
             this.tenNhomDataGridViewTextBoxColumn.DataPropertyName = "TenNhom";
-            this.tenNhomDataGridViewTextBoxColumn.HeaderText = "TenNhom";
+            this.tenNhomDataGridViewTextBoxColumn.HeaderText = "Tên nhóm";
             this.tenNhomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenNhomDataGridViewTextBoxColumn.Name = "tenNhomDataGridViewTextBoxColumn";
             this.tenNhomDataGridViewTextBoxColumn.ReadOnly = true;
@@ -552,7 +562,7 @@
             // maDoiDataGridViewTextBoxColumn
             // 
             this.maDoiDataGridViewTextBoxColumn.DataPropertyName = "MaDoi";
-            this.maDoiDataGridViewTextBoxColumn.HeaderText = "MaDoi";
+            this.maDoiDataGridViewTextBoxColumn.HeaderText = "Mã Đội";
             this.maDoiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maDoiDataGridViewTextBoxColumn.Name = "maDoiDataGridViewTextBoxColumn";
             this.maDoiDataGridViewTextBoxColumn.ReadOnly = true;
@@ -615,7 +625,7 @@
             // txtTenDoi
             // 
             this.txtTenDoi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "tendoi", true));
-            this.txtTenDoi.Location = new System.Drawing.Point(155, 27);
+            this.txtTenDoi.Location = new System.Drawing.Point(164, 27);
             this.txtTenDoi.MenuManager = this.barManager1;
             this.txtTenDoi.Name = "txtTenDoi";
             this.txtTenDoi.Size = new System.Drawing.Size(198, 26);
@@ -636,7 +646,7 @@
             this.cmbGiamSat1.DataSource = this.sp_lay_giamsat1_them_vao_doiBindingSource;
             this.cmbGiamSat1.DisplayMember = "hoten";
             this.cmbGiamSat1.FormattingEnabled = true;
-            this.cmbGiamSat1.Location = new System.Drawing.Point(155, 74);
+            this.cmbGiamSat1.Location = new System.Drawing.Point(164, 74);
             this.cmbGiamSat1.Name = "cmbGiamSat1";
             this.cmbGiamSat1.Size = new System.Drawing.Size(198, 28);
             this.cmbGiamSat1.TabIndex = 16;
@@ -648,7 +658,7 @@
             this.cmbGiamSat2.DataSource = this.sp_lay_giamsat2_them_vao_doiBindingSource;
             this.cmbGiamSat2.DisplayMember = "hoten";
             this.cmbGiamSat2.FormattingEnabled = true;
-            this.cmbGiamSat2.Location = new System.Drawing.Point(155, 117);
+            this.cmbGiamSat2.Location = new System.Drawing.Point(164, 117);
             this.cmbGiamSat2.Name = "cmbGiamSat2";
             this.cmbGiamSat2.Size = new System.Drawing.Size(198, 28);
             this.cmbGiamSat2.TabIndex = 17;
@@ -718,7 +728,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl3);
             this.Name = "frmTaoDoi";
-            this.Text = "frmTaoDoi";
+            this.Text = "Tạo đội";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTaoDoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -774,9 +784,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.PanelControl pnlDSDOI;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.DataGridView dgvNHOM;
         private DStaoDoi dStaoDoi;
         private DStaoDoiTableAdapters.TableAdapterManager tableAdapterManager;
@@ -810,9 +818,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltenkhoa;
         private DevExpress.XtraGrid.Columns.GridColumn coltenxa;
         private DevExpress.XtraGrid.Columns.GridColumn colsosv;
+        private System.Windows.Forms.BindingSource splaydsdoitheochiendichNhomBindingSource;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maDoiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource splaydsdoitheochiendichNhomBindingSource;
     }
 }

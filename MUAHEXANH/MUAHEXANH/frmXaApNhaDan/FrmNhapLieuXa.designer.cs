@@ -44,7 +44,7 @@
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(34, 36);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(81, 20);
             this.labelControl1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(35, 102);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(86, 20);
             this.labelControl2.TabIndex = 1;
@@ -62,7 +62,7 @@
             // txtMaDiaBan
             // 
             this.txtMaDiaBan.Location = new System.Drawing.Point(147, 33);
-            this.txtMaDiaBan.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtMaDiaBan.Margin = new System.Windows.Forms.Padding(5);
             this.txtMaDiaBan.Name = "txtMaDiaBan";
             this.txtMaDiaBan.Properties.ReadOnly = true;
             this.txtMaDiaBan.Size = new System.Drawing.Size(195, 26);
@@ -71,7 +71,7 @@
             // txtTenDiaBan
             // 
             this.txtTenDiaBan.Location = new System.Drawing.Point(147, 99);
-            this.txtTenDiaBan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTenDiaBan.Margin = new System.Windows.Forms.Padding(6);
             this.txtTenDiaBan.Name = "txtTenDiaBan";
             this.txtTenDiaBan.Properties.ReadOnly = true;
             this.txtTenDiaBan.Size = new System.Drawing.Size(266, 26);
@@ -80,7 +80,7 @@
             // txtTenXa
             // 
             this.txtTenXa.Location = new System.Drawing.Point(147, 161);
-            this.txtTenXa.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txtTenXa.Margin = new System.Windows.Forms.Padding(8);
             this.txtTenXa.Name = "txtTenXa";
             this.txtTenXa.Size = new System.Drawing.Size(266, 26);
             this.txtTenXa.TabIndex = 5;
@@ -88,7 +88,7 @@
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(35, 164);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(8);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(50, 20);
             this.labelControl3.TabIndex = 4;
@@ -100,7 +100,7 @@
             this.btnDong.Appearance.Options.UseBackColor = true;
             this.btnDong.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnDong.Location = new System.Drawing.Point(287, 245);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(6);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(112, 28);
             this.btnDong.TabIndex = 10;
@@ -112,7 +112,7 @@
             this.btnLuu.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Primary;
             this.btnLuu.Appearance.Options.UseBackColor = true;
             this.btnLuu.Location = new System.Drawing.Point(73, 245);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(6);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(112, 28);
             this.btnLuu.TabIndex = 9;
@@ -121,6 +121,7 @@
             // 
             // FrmNhapLieuXa
             // 
+            this.AcceptButton = this.btnLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 306);

@@ -132,6 +132,9 @@ SELECT MaNhom, MaSV FROM ThanhVienNhom WHERE (MaNhom = @MaNhom) AND (MaSV = @MaS
               <Mapping SourceColumn="TENDOI" DataSetColumn="TENDOI" />
               <Mapping SourceColumn="DoiTruong" DataSetColumn="DoiTruong" />
               <Mapping SourceColumn="DoiPho" DataSetColumn="DoiPho" />
+              <Mapping SourceColumn="SONHA" DataSetColumn="SONHA" />
+              <Mapping SourceColumn="SOSVTOIDA" DataSetColumn="SOSVTOIDA" />
+              <Mapping SourceColumn="SOSVHIENTAI" DataSetColumn="SOSVHIENTAI" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -278,20 +281,23 @@ SELECT MaNhom, MaSV FROM ThanhVienNhom WHERE (MaNhom = @MaNhom) AND (MaSV = @MaS
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DoiTruong" msprop:Generator_ColumnPropNameInRow="DoiTruong" msprop:Generator_ColumnPropNameInTable="DoiTruongColumn" msprop:Generator_ColumnVarNameInTable="columnDoiTruong" msprop:Generator_UserColumnName="DoiTruong" minOccurs="0">
+              <xs:element name="DoiTruong" msprop:Generator_ColumnPropNameInTable="DoiTruongColumn" msprop:Generator_ColumnPropNameInRow="DoiTruong" msprop:Generator_UserColumnName="DoiTruong" msprop:Generator_ColumnVarNameInTable="columnDoiTruong" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DoiPho" msprop:Generator_ColumnPropNameInRow="DoiPho" msprop:Generator_ColumnPropNameInTable="DoiPhoColumn" msprop:Generator_ColumnVarNameInTable="columnDoiPho" msprop:Generator_UserColumnName="DoiPho" minOccurs="0">
+              <xs:element name="DoiPho" msprop:Generator_ColumnPropNameInTable="DoiPhoColumn" msprop:Generator_ColumnPropNameInRow="DoiPho" msprop:Generator_UserColumnName="DoiPho" msprop:Generator_ColumnVarNameInTable="columnDoiPho" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="SONHA" msdata:ReadOnly="true" msprop:Generator_UserColumnName="SONHA" msprop:Generator_ColumnPropNameInTable="SONHAColumn" msprop:Generator_ColumnPropNameInRow="SONHA" msprop:Generator_ColumnVarNameInTable="columnSONHA" type="xs:int" minOccurs="0" />
+              <xs:element name="SOSVTOIDA" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="SOSVTOIDA" msprop:Generator_ColumnPropNameInTable="SOSVTOIDAColumn" msprop:Generator_ColumnVarNameInTable="columnSOSVTOIDA" msprop:Generator_UserColumnName="SOSVTOIDA" type="xs:int" minOccurs="0" />
+              <xs:element name="SOSVHIENTAI" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="SOSVHIENTAI" msprop:Generator_ColumnPropNameInTable="SOSVHIENTAIColumn" msprop:Generator_ColumnVarNameInTable="columnSOSVHIENTAI" msprop:Generator_UserColumnName="SOSVHIENTAI" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

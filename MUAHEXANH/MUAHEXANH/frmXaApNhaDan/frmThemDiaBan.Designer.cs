@@ -47,24 +47,24 @@
             this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSGV = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gcDiaBan = new DevExpress.XtraGrid.GridControl();
             this.bdsDiaBan = new System.Windows.Forms.BindingSource(this.components);
             this.dSthemXaApNhaDan = new MUAHEXANH.DSthemXaApNhaDan();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaDiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenDiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.pnlThemDiaBan = new DevExpress.XtraEditors.PanelControl();
             this.tenDiaBanTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.diaBanTableAdapter = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.DiaBanTableAdapter();
             this.tableAdapterManager = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.TableAdapterManager();
             tenDiaBanLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDiaBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDiaBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSthemXaApNhaDan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlThemDiaBan)).BeginInit();
+            this.pnlThemDiaBan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tenDiaBanTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,9 +73,9 @@
             tenDiaBanLabel.AutoSize = true;
             tenDiaBanLabel.Location = new System.Drawing.Point(55, 26);
             tenDiaBanLabel.Name = "tenDiaBanLabel";
-            tenDiaBanLabel.Size = new System.Drawing.Size(105, 20);
+            tenDiaBanLabel.Size = new System.Drawing.Size(99, 20);
             tenDiaBanLabel.TabIndex = 0;
-            tenDiaBanLabel.Text = "Ten Dia Ban:";
+            tenDiaBanLabel.Text = "Tên địa bàn:";
             // 
             // barManager1
             // 
@@ -227,17 +227,17 @@
             this.barButtonItem8.Id = 8;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
-            // gridControl1
+            // gcDiaBan
             // 
-            this.gridControl1.DataSource = this.bdsDiaBan;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(0, 30);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(800, 234);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcDiaBan.DataSource = this.bdsDiaBan;
+            this.gcDiaBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcDiaBan.Location = new System.Drawing.Point(0, 30);
+            this.gcDiaBan.MainView = this.gridView1;
+            this.gcDiaBan.MenuManager = this.barManager1;
+            this.gcDiaBan.Name = "gcDiaBan";
+            this.gcDiaBan.Size = new System.Drawing.Size(800, 234);
+            this.gcDiaBan.TabIndex = 4;
+            this.gcDiaBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // bdsDiaBan
@@ -255,11 +255,12 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaDiaBan,
             this.colTenDiaBan});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gcDiaBan;
             this.gridView1.Name = "gridView1";
             // 
             // colMaDiaBan
             // 
+            this.colMaDiaBan.Caption = "Mã địa bàn";
             this.colMaDiaBan.FieldName = "MaDiaBan";
             this.colMaDiaBan.MinWidth = 25;
             this.colMaDiaBan.Name = "colMaDiaBan";
@@ -270,6 +271,7 @@
             // 
             // colTenDiaBan
             // 
+            this.colTenDiaBan.Caption = "Tên địa bàn";
             this.colTenDiaBan.FieldName = "TenDiaBan";
             this.colTenDiaBan.MinWidth = 25;
             this.colTenDiaBan.Name = "colTenDiaBan";
@@ -278,15 +280,15 @@
             this.colTenDiaBan.VisibleIndex = 1;
             this.colTenDiaBan.Width = 94;
             // 
-            // panelControl1
+            // pnlThemDiaBan
             // 
-            this.panelControl1.Controls.Add(tenDiaBanLabel);
-            this.panelControl1.Controls.Add(this.tenDiaBanTextEdit);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 264);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 186);
-            this.panelControl1.TabIndex = 5;
+            this.pnlThemDiaBan.Controls.Add(tenDiaBanLabel);
+            this.pnlThemDiaBan.Controls.Add(this.tenDiaBanTextEdit);
+            this.pnlThemDiaBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlThemDiaBan.Location = new System.Drawing.Point(0, 264);
+            this.pnlThemDiaBan.Name = "pnlThemDiaBan";
+            this.pnlThemDiaBan.Size = new System.Drawing.Size(800, 186);
+            this.pnlThemDiaBan.TabIndex = 5;
             // 
             // tenDiaBanTextEdit
             // 
@@ -294,7 +296,7 @@
             this.tenDiaBanTextEdit.Location = new System.Drawing.Point(166, 23);
             this.tenDiaBanTextEdit.MenuManager = this.barManager1;
             this.tenDiaBanTextEdit.Name = "tenDiaBanTextEdit";
-            this.tenDiaBanTextEdit.Size = new System.Drawing.Size(125, 26);
+            this.tenDiaBanTextEdit.Size = new System.Drawing.Size(193, 26);
             this.tenDiaBanTextEdit.TabIndex = 1;
             // 
             // diaBanTableAdapter
@@ -315,8 +317,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.pnlThemDiaBan);
+            this.Controls.Add(this.gcDiaBan);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -326,13 +328,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmThemDiaBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDiaBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDiaBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSthemXaApNhaDan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlThemDiaBan)).EndInit();
+            this.pnlThemDiaBan.ResumeLayout(false);
+            this.pnlThemDiaBan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tenDiaBanTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -357,8 +359,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnDSGV;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraEditors.PanelControl pnlThemDiaBan;
+        private DevExpress.XtraGrid.GridControl gcDiaBan;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DSthemXaApNhaDan dSthemXaApNhaDan;
         private System.Windows.Forms.BindingSource bdsDiaBan;

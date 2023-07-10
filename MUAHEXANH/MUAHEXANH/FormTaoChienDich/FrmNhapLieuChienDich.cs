@@ -79,8 +79,12 @@ namespace MUAHEXANH
 
         private void FrmNhapLieuChienDich_Shown(object sender, EventArgs e)
         {
-            dtpNgayPhatDong.EditValue = DateTime.Now;
-            dtpNgayKetThuc.EditValue = DateTime.Now;
+            if(state == 0)
+            {
+                dtpNgayPhatDong.EditValue = DateTime.Now;
+                dtpNgayKetThuc.Properties.MinValue = dtpNgayPhatDong.DateTime.AddDays(1);
+                dtpNgayKetThuc.EditValue = dtpNgayKetThuc.Properties.MinValue;
+            }
         }
 
         private void FrmNhapLieuChienDich_Load(object sender, EventArgs e)
@@ -90,7 +94,12 @@ namespace MUAHEXANH
 
         private void dtpNgayPhatDong_EditValueChanged(object sender, EventArgs e)
         {
-            dtpNgayKetThuc.Properties.MinValue = dtpNgayPhatDong.DateTime;
+            dtpNgayKetThuc.Properties.MinValue = dtpNgayPhatDong.DateTime.AddDays(1);
+            if (dtpNgayKetThuc.EditValue != null &&  dtpNgayKetThuc.DateTime > dtpNgayPhatDong.DateTime)
+            {
+                return;
+            }
+            dtpNgayKetThuc.EditValue = dtpNgayKetThuc.Properties.MinValue;
         }
     }
 }

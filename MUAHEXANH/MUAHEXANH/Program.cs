@@ -47,7 +47,7 @@ namespace MUAHEXANH
         public static frmMain frmChinh; // de su dung doi tuong frmChinh trong cac form khac (vi du form dang nhap voi form main trao doi du lieu voi nhau)
         public static frmDangNhap frmDN;
         public static String tenDoiLucDN = "";
-
+        public static String tenNhomLucDN = "";
         public static int KetNoi()
         {
             // neu dang mo ket noi toi database, mo lan nua se bao loi => neu no dang mo-> ta dong -> mo lai

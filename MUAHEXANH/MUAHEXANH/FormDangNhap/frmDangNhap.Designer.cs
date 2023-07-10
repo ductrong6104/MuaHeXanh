@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radGiangVien = new System.Windows.Forms.RadioButton();
-            this.radSinhVien = new System.Windows.Forms.RadioButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -37,11 +35,11 @@
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.txtLogin = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,36 +47,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // radGiangVien
-            // 
-            this.radGiangVien.AutoSize = true;
-            this.radGiangVien.Checked = true;
-            this.radGiangVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radGiangVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.radGiangVien.Location = new System.Drawing.Point(52, 199);
-            this.radGiangVien.Name = "radGiangVien";
-            this.radGiangVien.Size = new System.Drawing.Size(127, 26);
-            this.radGiangVien.TabIndex = 31;
-            this.radGiangVien.TabStop = true;
-            this.radGiangVien.Text = "Giảng viên";
-            this.radGiangVien.UseVisualStyleBackColor = true;
-            // 
-            // radSinhVien
-            // 
-            this.radSinhVien.AutoSize = true;
-            this.radSinhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.radSinhVien.Location = new System.Drawing.Point(226, 199);
-            this.radSinhVien.Name = "radSinhVien";
-            this.radSinhVien.Size = new System.Drawing.Size(117, 26);
-            this.radSinhVien.TabIndex = 32;
-            this.radSinhVien.TabStop = true;
-            this.radSinhVien.Text = "Sinh Viên";
-            this.radSinhVien.UseVisualStyleBackColor = true;
             // 
             // labelControl1
             // 
@@ -86,7 +57,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(130, 129);
+            this.labelControl1.Location = new System.Drawing.Point(129, 163);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(121, 45);
             this.labelControl1.TabIndex = 35;
@@ -115,7 +86,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MUAHEXANH.Properties.Resources.summer_beach_logo_illustration_free_vector;
-            this.pictureBox1.Location = new System.Drawing.Point(130, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(129, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,6 +139,16 @@
             this.panelControl1.Size = new System.Drawing.Size(305, 1);
             this.panelControl1.TabIndex = 38;
             // 
+            // panelControl3
+            // 
+            this.panelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panelControl3.Appearance.Options.UseBackColor = true;
+            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(305, 1);
+            this.panelControl3.TabIndex = 39;
+            // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
@@ -205,6 +186,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.btnExit.Location = new System.Drawing.Point(145, 472);
             this.btnExit.Name = "btnExit";
@@ -213,16 +195,6 @@
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panelControl3.Appearance.Options.UseBackColor = true;
-            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Location = new System.Drawing.Point(0, 0);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(305, 1);
-            this.panelControl3.TabIndex = 39;
             // 
             // frmDangNhap
             // 
@@ -241,8 +213,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.radGiangVien);
-            this.Controls.Add(this.radSinhVien);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -257,17 +227,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton radGiangVien;
-        private System.Windows.Forms.RadioButton radSinhVien;
         private DevExpress.XtraEditors.TextEdit txtPass;
         private DevExpress.XtraEditors.TextEdit txtLogin;
         private System.Windows.Forms.PictureBox pictureBox1;

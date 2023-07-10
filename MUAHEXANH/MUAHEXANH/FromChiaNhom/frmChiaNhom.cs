@@ -133,6 +133,13 @@ namespace MUAHEXANH
                 return;
 
             }
+            if (dgvSVNHOMCANTHEM.Rows.Count == 6)
+            {
+                MessageBox.Show("Một nhóm tối đa 6 sinh viên! Vui lòng chọn nhóm khác", "", MessageBoxButtons.OK);
+                dgvNHOM.Focus();
+                return;
+
+            }
             string nhomTruong = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOMTRUONG"].ToString();
             for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)
             {
@@ -156,6 +163,12 @@ namespace MUAHEXANH
             if (countTick == 0)
             {
                 MessageBox.Show("Bạn chưa chọn sinh viên nào để chuyển! Vui lòng chọn!", "", MessageBoxButtons.OK);
+                dgvSVNHOM.Focus();
+                return;
+            }
+            if (countTick+dgvSVNHOMCANTHEM.RowCount > 6)
+            {
+                MessageBox.Show("Một nhóm tối đa 6 sinh viên! Vui lòng chuyển ít hơn " + (7-dgvSVNHOMCANTHEM.RowCount).ToString() + " sinh viên!", "", MessageBoxButtons.OK);
                 dgvSVNHOM.Focus();
                 return;
             }

@@ -40,20 +40,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pnlDSSV = new DevExpress.XtraEditors.PanelControl();
             this.dgvDSSV = new System.Windows.Forms.DataGridView();
-            this.masvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotenDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkNhomTruongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sp_laySinhVienTuNhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lblTenDoi = new System.Windows.Forms.Label();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pnlSVKHENTHUONG = new DevExpress.XtraEditors.PanelControl();
             this.dgvDSKhenThuong = new System.Windows.Forms.DataGridView();
-            this.masvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lydoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.danhhieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sp_laySinhVienKhenThuongTheoDoiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sp_laySinhVienTuNhomTableAdapter = new MUAHEXANH.DSkhenThuongTableAdapters.sp_laySinhVienTuNhomTableAdapter();
             this.tableAdapterManager = new MUAHEXANH.DSkhenThuongTableAdapters.TableAdapterManager();
@@ -63,6 +55,14 @@
             this.btnKhenThuong = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsXoaKhenThuong = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaKhỏiKhenThưởngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.masvDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotenDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkNhomTruongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.masvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lydoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danhhieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoNha.Properties)).BeginInit();
@@ -199,39 +199,6 @@
             this.dgvDSSV.TabIndex = 1;
             this.dgvDSSV.Sorted += new System.EventHandler(this.dgvDSSV_Sorted);
             // 
-            // masvDataGridViewTextBoxColumn1
-            // 
-            this.masvDataGridViewTextBoxColumn1.DataPropertyName = "masv";
-            this.masvDataGridViewTextBoxColumn1.HeaderText = "masv";
-            this.masvDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.masvDataGridViewTextBoxColumn1.Name = "masvDataGridViewTextBoxColumn1";
-            this.masvDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // hotenDataGridViewTextBoxColumn1
-            // 
-            this.hotenDataGridViewTextBoxColumn1.DataPropertyName = "hoten";
-            this.hotenDataGridViewTextBoxColumn1.HeaderText = "hoten";
-            this.hotenDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.hotenDataGridViewTextBoxColumn1.Name = "hotenDataGridViewTextBoxColumn1";
-            this.hotenDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // maKhoaDataGridViewTextBoxColumn
-            // 
-            this.maKhoaDataGridViewTextBoxColumn.DataPropertyName = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.HeaderText = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maKhoaDataGridViewTextBoxColumn.Name = "maKhoaDataGridViewTextBoxColumn";
-            this.maKhoaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // checkNhomTruongDataGridViewTextBoxColumn
-            // 
-            this.checkNhomTruongDataGridViewTextBoxColumn.DataPropertyName = "checkNhomTruong";
-            this.checkNhomTruongDataGridViewTextBoxColumn.HeaderText = "checkNhomTruong";
-            this.checkNhomTruongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.checkNhomTruongDataGridViewTextBoxColumn.Name = "checkNhomTruongDataGridViewTextBoxColumn";
-            this.checkNhomTruongDataGridViewTextBoxColumn.ReadOnly = true;
-            this.checkNhomTruongDataGridViewTextBoxColumn.Visible = false;
-            // 
             // sp_laySinhVienTuNhomBindingSource
             // 
             this.sp_laySinhVienTuNhomBindingSource.DataMember = "sp_laySinhVienTuNhom";
@@ -300,35 +267,6 @@
             this.dgvDSKhenThuong.Size = new System.Drawing.Size(654, 252);
             this.dgvDSKhenThuong.TabIndex = 0;
             // 
-            // masvDataGridViewTextBoxColumn
-            // 
-            this.masvDataGridViewTextBoxColumn.DataPropertyName = "masv";
-            this.masvDataGridViewTextBoxColumn.HeaderText = "masv";
-            this.masvDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.masvDataGridViewTextBoxColumn.Name = "masvDataGridViewTextBoxColumn";
-            // 
-            // hotenDataGridViewTextBoxColumn
-            // 
-            this.hotenDataGridViewTextBoxColumn.DataPropertyName = "hoten";
-            this.hotenDataGridViewTextBoxColumn.HeaderText = "hoten";
-            this.hotenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hotenDataGridViewTextBoxColumn.Name = "hotenDataGridViewTextBoxColumn";
-            this.hotenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lydoDataGridViewTextBoxColumn
-            // 
-            this.lydoDataGridViewTextBoxColumn.DataPropertyName = "lydo";
-            this.lydoDataGridViewTextBoxColumn.HeaderText = "lydo";
-            this.lydoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lydoDataGridViewTextBoxColumn.Name = "lydoDataGridViewTextBoxColumn";
-            // 
-            // danhhieuDataGridViewTextBoxColumn
-            // 
-            this.danhhieuDataGridViewTextBoxColumn.DataPropertyName = "danhhieu";
-            this.danhhieuDataGridViewTextBoxColumn.HeaderText = "danhhieu";
-            this.danhhieuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.danhhieuDataGridViewTextBoxColumn.Name = "danhhieuDataGridViewTextBoxColumn";
-            // 
             // sp_laySinhVienKhenThuongTheoDoiBindingSource
             // 
             this.sp_laySinhVienKhenThuongTheoDoiBindingSource.DataMember = "sp_laySinhVienKhenThuongTheoDoi";
@@ -382,6 +320,68 @@
             this.xóaKhỏiKhenThưởngToolStripMenuItem.Size = new System.Drawing.Size(223, 24);
             this.xóaKhỏiKhenThưởngToolStripMenuItem.Text = "Xóa khỏi khen thưởng";
             // 
+            // masvDataGridViewTextBoxColumn1
+            // 
+            this.masvDataGridViewTextBoxColumn1.DataPropertyName = "masv";
+            this.masvDataGridViewTextBoxColumn1.HeaderText = "Mã sinh viên";
+            this.masvDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.masvDataGridViewTextBoxColumn1.Name = "masvDataGridViewTextBoxColumn1";
+            this.masvDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hotenDataGridViewTextBoxColumn1
+            // 
+            this.hotenDataGridViewTextBoxColumn1.DataPropertyName = "hoten";
+            this.hotenDataGridViewTextBoxColumn1.HeaderText = "Họ tên";
+            this.hotenDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.hotenDataGridViewTextBoxColumn1.Name = "hotenDataGridViewTextBoxColumn1";
+            this.hotenDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // maKhoaDataGridViewTextBoxColumn
+            // 
+            this.maKhoaDataGridViewTextBoxColumn.DataPropertyName = "MaKhoa";
+            this.maKhoaDataGridViewTextBoxColumn.HeaderText = "Mã khoa";
+            this.maKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maKhoaDataGridViewTextBoxColumn.Name = "maKhoaDataGridViewTextBoxColumn";
+            this.maKhoaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // checkNhomTruongDataGridViewTextBoxColumn
+            // 
+            this.checkNhomTruongDataGridViewTextBoxColumn.DataPropertyName = "checkNhomTruong";
+            this.checkNhomTruongDataGridViewTextBoxColumn.HeaderText = "checkNhomTruong";
+            this.checkNhomTruongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.checkNhomTruongDataGridViewTextBoxColumn.Name = "checkNhomTruongDataGridViewTextBoxColumn";
+            this.checkNhomTruongDataGridViewTextBoxColumn.ReadOnly = true;
+            this.checkNhomTruongDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // masvDataGridViewTextBoxColumn
+            // 
+            this.masvDataGridViewTextBoxColumn.DataPropertyName = "masv";
+            this.masvDataGridViewTextBoxColumn.HeaderText = "Mã sinh viên";
+            this.masvDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.masvDataGridViewTextBoxColumn.Name = "masvDataGridViewTextBoxColumn";
+            // 
+            // hotenDataGridViewTextBoxColumn
+            // 
+            this.hotenDataGridViewTextBoxColumn.DataPropertyName = "hoten";
+            this.hotenDataGridViewTextBoxColumn.HeaderText = "Họ tên";
+            this.hotenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hotenDataGridViewTextBoxColumn.Name = "hotenDataGridViewTextBoxColumn";
+            this.hotenDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lydoDataGridViewTextBoxColumn
+            // 
+            this.lydoDataGridViewTextBoxColumn.DataPropertyName = "lydo";
+            this.lydoDataGridViewTextBoxColumn.HeaderText = "Lý do";
+            this.lydoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lydoDataGridViewTextBoxColumn.Name = "lydoDataGridViewTextBoxColumn";
+            // 
+            // danhhieuDataGridViewTextBoxColumn
+            // 
+            this.danhhieuDataGridViewTextBoxColumn.DataPropertyName = "danhhieu";
+            this.danhhieuDataGridViewTextBoxColumn.HeaderText = "Danh Hiệu";
+            this.danhhieuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.danhhieuDataGridViewTextBoxColumn.Name = "danhhieuDataGridViewTextBoxColumn";
+            // 
             // frmKhenThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -391,7 +391,7 @@
             this.Controls.Add(this.pnlDSSV);
             this.Controls.Add(this.panel1);
             this.Name = "frmKhenThuong";
-            this.Text = "frmKhenThuong";
+            this.Text = "Khen thưởng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmKhenThuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panel1)).EndInit();
@@ -436,23 +436,23 @@
         private System.Windows.Forms.DataGridView dgvDSKhenThuong;
         private System.Windows.Forms.BindingSource sp_laySinhVienKhenThuongTheoDoiBindingSource;
         private DSkhenThuongTableAdapters.sp_laySinhVienKhenThuongTheoDoiTableAdapter sp_laySinhVienKhenThuongTheoDoiTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lydoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn danhhieuDataGridViewTextBoxColumn;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.TextEdit txtSoNha;
         private System.Windows.Forms.BindingSource sp_lay_nhom_tu_doiBindingSource;
         private DSkhenThuongTableAdapters.sp_lay_nhom_tu_doiTableAdapter sp_lay_nhom_tu_doiTableAdapter;
         private System.Windows.Forms.DataGridView dgvDSSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkNhomTruongDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip cmsThemKhenThuong;
         private System.Windows.Forms.ToolStripMenuItem btnKhenThuong;
         private System.Windows.Forms.ContextMenuStrip cmsXoaKhenThuong;
         private System.Windows.Forms.ToolStripMenuItem xóaKhỏiKhenThưởngToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKhoaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkNhomTruongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lydoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn danhhieuDataGridViewTextBoxColumn;
     }
 }

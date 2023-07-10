@@ -57,18 +57,18 @@ namespace MUAHEXANH
             Program.passwordDN = Program.password;
 
             string strLenh = "";
-            if (radGiangVien.Checked)
-            {
-                strLenh = "EXEC sp_lay_thong_tin_gv_tu_login '" + Program.mlogin + "'";
-            }
-            else if (radSinhVien.Checked)
-            {
-                strLenh = "EXEC sp_lay_thong_tin_sv_tu_login '" + Program.mlogin + "'";
-            }
-
+            //if (radGiangVien.Checked)
+            //{
+            //    strLenh = "EXEC sp_lay_thong_tin_gv_tu_login '" + Program.mlogin + "'";
+            //}
+            //else if (radSinhVien.Checked)
+            //{
+            //    strLenh = "EXEC sp_lay_thong_tin_sv_tu_login '" + Program.mlogin + "'";
+            //}
+            strLenh = "EXEC SP_DangNhap '" + Program.mlogin + "'";
 
             // viet chuong trinh tra ve du lieu tu viec goi sp
-            using(Program.myReader = Program.ExecSqlDataReader(strLenh)){
+            using (Program.myReader = Program.ExecSqlDataReader(strLenh)){
                 if (Program.myReader == null) return; // khong tim thay du lieu cua sinh vien dang nhap
                 Program.myReader.Read();    // doc 1 dong trong datareader, neu nhieu dong thi viet vong lap
 
@@ -79,6 +79,7 @@ namespace MUAHEXANH
                 }
                 Program.mHoten = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);
+                Program.maChienDich = Program.myReader.GetString(3);
                 // dong datareader va connect db
                 Program.myReader.Close();
                 Program.conn.Close();
@@ -101,11 +102,12 @@ namespace MUAHEXANH
             }
             else if (Program.mGroup == "NHOMTRUONG")
             {
-                using (SqlDataReader layMaNhom = Program.ExecSqlDataReader("SELECT MANHOM FROM NHOM WHERE " +
+                using (SqlDataReader layMaNhom = Program.ExecSqlDataReader("SELECT MANHOM, TENNHOM FROM NHOM WHERE " +
                     "NHOMTRUONG = '" + Program.username+ "'"))
                 {
                     layMaNhom.Read();
                     Program.mNhom = layMaNhom.GetString(0);
+                    Program.tenNhomLucDN = layMaNhom.GetString(1);
                 }
             }
 

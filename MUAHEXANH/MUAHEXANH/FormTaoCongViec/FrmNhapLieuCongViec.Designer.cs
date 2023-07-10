@@ -209,6 +209,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Công việc";
             this.Load += new System.EventHandler(this.frmNhapLieuThemCongViec_Load);
+            this.Shown += new System.EventHandler(this.FrmNhapLieuCongViec_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.txtTenCongViec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayBatDau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayBatDau.Properties)).EndInit();

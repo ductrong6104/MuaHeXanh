@@ -21,14 +21,15 @@ namespace MUAHEXANH.frmXaApNhaDan
         {
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = btnHieuChinh.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
-            
-
+            gcNhaDan.Enabled = true;
+            pnlNhaDan.Enabled = false;
         }
         public void trangThaiChuaGhi()
         {
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
-           
+            gcNhaDan.Enabled = false;
+            pnlNhaDan.Enabled = true;
         }
 
         private void frmThemNhaDan_Load(object sender, EventArgs e)
@@ -53,6 +54,9 @@ namespace MUAHEXANH.frmXaApNhaDan
             viTri = bdsNhaDan.Position;
             bdsNhaDan.AddNew();
             txtMaAp.Text = cmbAp.SelectedValue.ToString();
+            txtDiaChi.Text = "Man Thiện";
+            txtSDT.EditValue = 1234567890;
+            txtChuHo.Text = "Ông";
             trangThaiChuaGhi();
         }
 
@@ -70,6 +74,7 @@ namespace MUAHEXANH.frmXaApNhaDan
             {
                 MessageBox.Show("Lỗi ghi nhà!Xem lại trùng địa chỉ", "", MessageBoxButtons.OK);
                 Console.WriteLine(ex.ToString());
+                this.nhaDanTableAdapter.Fill(this.dSthemXaApNhaDan.NhaDan);
                 // tro ve trang thai luc them cho user dieu chinh lai
                 return;
             }
@@ -122,6 +127,7 @@ namespace MUAHEXANH.frmXaApNhaDan
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.nhaDanTableAdapter.Fill(this.dSthemXaApNhaDan.NhaDan);
+            
         }
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -129,6 +135,7 @@ namespace MUAHEXANH.frmXaApNhaDan
             if (btnThem.Enabled == false)
                 bdsNhaDan.Position = viTri;
             bdsNhaDan.CancelEdit();
+            trangThaiBanDau();
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

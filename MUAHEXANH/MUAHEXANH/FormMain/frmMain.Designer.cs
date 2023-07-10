@@ -146,8 +146,8 @@
             this.rbGiamSat,
             this.rbDoiTruong,
             this.rbAdmin,
-            this.rbCaiDat,
-            this.rbNhomTruong});
+            this.rbNhomTruong,
+            this.rbCaiDat});
             this.ribbonControl1.Size = new System.Drawing.Size(1263, 223);
             // 
             // btnTaoTK

@@ -37,7 +37,6 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
@@ -48,6 +47,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSGV = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.cmbDiaBan = new System.Windows.Forms.ComboBox();
@@ -61,7 +61,7 @@
             this.cmbAp = new System.Windows.Forms.ComboBox();
             this.apBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gcNhaDan = new DevExpress.XtraGrid.GridControl();
             this.bdsNhaDan = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaNha = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,11 +69,11 @@
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colChuHo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaAp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.pnlNhaDan = new DevExpress.XtraEditors.PanelControl();
             this.txtMaAp = new DevExpress.XtraEditors.TextEdit();
-            this.chuHoTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.txtChuHo = new DevExpress.XtraEditors.TextEdit();
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
-            this.diaChiTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.diaBanTableAdapter = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.DiaBanTableAdapter();
             this.tableAdapterManager = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.TableAdapterManager();
             this.apTableAdapter = new MUAHEXANH.DSthemXaApNhaDanTableAdapters.ApTableAdapter();
@@ -90,15 +90,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.apBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhaDan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhaDan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlNhaDan)).BeginInit();
+            this.pnlNhaDan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaAp.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chuHoTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChuHo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaChiTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // diaChiLabel
@@ -106,9 +106,9 @@
             diaChiLabel.AutoSize = true;
             diaChiLabel.Location = new System.Drawing.Point(49, 33);
             diaChiLabel.Name = "diaChiLabel";
-            diaChiLabel.Size = new System.Drawing.Size(68, 20);
+            diaChiLabel.Size = new System.Drawing.Size(64, 20);
             diaChiLabel.TabIndex = 0;
-            diaChiLabel.Text = "Dia Chi:";
+            diaChiLabel.Text = "Địa chỉ:";
             // 
             // sDTLabel
             // 
@@ -124,18 +124,18 @@
             chuHoLabel.AutoSize = true;
             chuHoLabel.Location = new System.Drawing.Point(430, 33);
             chuHoLabel.Name = "chuHoLabel";
-            chuHoLabel.Size = new System.Drawing.Size(70, 20);
+            chuHoLabel.Size = new System.Drawing.Size(66, 20);
             chuHoLabel.TabIndex = 4;
-            chuHoLabel.Text = "Chu Ho:";
+            chuHoLabel.Text = "Chủ hộ:";
             // 
             // maApLabel
             // 
             maApLabel.AutoSize = true;
             maApLabel.Location = new System.Drawing.Point(438, 91);
             maApLabel.Name = "maApLabel";
-            maApLabel.Size = new System.Drawing.Size(62, 20);
+            maApLabel.Size = new System.Drawing.Size(59, 20);
             maApLabel.TabIndex = 6;
-            maApLabel.Text = "Ma Ap:";
+            maApLabel.Text = "Mã ấp:";
             // 
             // barManager1
             // 
@@ -182,14 +182,6 @@
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
-            // 
-            // btnHieuChinh
-            // 
-            this.btnHieuChinh.Caption = "Hiệu chỉnh";
-            this.btnHieuChinh.Id = 2;
-            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
-            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
-            this.btnHieuChinh.Name = "btnHieuChinh";
             // 
             // btnGhi
             // 
@@ -274,6 +266,14 @@
             this.barButtonItem1.Enabled = false;
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnHieuChinh
+            // 
+            this.btnHieuChinh.Caption = "Hiệu chỉnh";
+            this.btnHieuChinh.Id = 2;
+            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
+            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
+            this.btnHieuChinh.Name = "btnHieuChinh";
             // 
             // btnDSGV
             // 
@@ -381,17 +381,17 @@
             this.panelControl1.Size = new System.Drawing.Size(1088, 60);
             this.panelControl1.TabIndex = 12;
             // 
-            // gridControl1
+            // gcNhaDan
             // 
-            this.gridControl1.DataSource = this.bdsNhaDan;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(0, 90);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1088, 200);
-            this.gridControl1.TabIndex = 13;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcNhaDan.DataSource = this.bdsNhaDan;
+            this.gcNhaDan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcNhaDan.Location = new System.Drawing.Point(0, 90);
+            this.gcNhaDan.MainView = this.gridView1;
+            this.gcNhaDan.MenuManager = this.barManager1;
+            this.gcNhaDan.Name = "gcNhaDan";
+            this.gcNhaDan.Size = new System.Drawing.Size(1088, 200);
+            this.gcNhaDan.TabIndex = 13;
+            this.gcNhaDan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // bdsNhaDan
@@ -407,11 +407,12 @@
             this.colSDT,
             this.colChuHo,
             this.colMaAp});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gcNhaDan;
             this.gridView1.Name = "gridView1";
             // 
             // colMaNha
             // 
+            this.colMaNha.Caption = "Mã nhà";
             this.colMaNha.FieldName = "MaNha";
             this.colMaNha.MinWidth = 25;
             this.colMaNha.Name = "colMaNha";
@@ -422,6 +423,7 @@
             // 
             // colDiaChi
             // 
+            this.colDiaChi.Caption = "Địa chỉ";
             this.colDiaChi.FieldName = "DiaChi";
             this.colDiaChi.MinWidth = 25;
             this.colDiaChi.Name = "colDiaChi";
@@ -432,6 +434,7 @@
             // 
             // colSDT
             // 
+            this.colSDT.Caption = "Số điện thoại";
             this.colSDT.FieldName = "SDT";
             this.colSDT.MinWidth = 25;
             this.colSDT.Name = "colSDT";
@@ -442,6 +445,7 @@
             // 
             // colChuHo
             // 
+            this.colChuHo.Caption = "Chủ hộ";
             this.colChuHo.FieldName = "ChuHo";
             this.colChuHo.MinWidth = 25;
             this.colChuHo.Name = "colChuHo";
@@ -452,6 +456,7 @@
             // 
             // colMaAp
             // 
+            this.colMaAp.Caption = "Mã ấp";
             this.colMaAp.FieldName = "MaAp";
             this.colMaAp.MinWidth = 25;
             this.colMaAp.Name = "colMaAp";
@@ -460,21 +465,21 @@
             this.colMaAp.VisibleIndex = 4;
             this.colMaAp.Width = 94;
             // 
-            // panelControl2
+            // pnlNhaDan
             // 
-            this.panelControl2.Controls.Add(maApLabel);
-            this.panelControl2.Controls.Add(this.txtMaAp);
-            this.panelControl2.Controls.Add(chuHoLabel);
-            this.panelControl2.Controls.Add(this.chuHoTextEdit);
-            this.panelControl2.Controls.Add(sDTLabel);
-            this.panelControl2.Controls.Add(this.txtSDT);
-            this.panelControl2.Controls.Add(diaChiLabel);
-            this.panelControl2.Controls.Add(this.diaChiTextEdit);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 290);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1088, 160);
-            this.panelControl2.TabIndex = 14;
+            this.pnlNhaDan.Controls.Add(maApLabel);
+            this.pnlNhaDan.Controls.Add(this.txtMaAp);
+            this.pnlNhaDan.Controls.Add(chuHoLabel);
+            this.pnlNhaDan.Controls.Add(this.txtChuHo);
+            this.pnlNhaDan.Controls.Add(sDTLabel);
+            this.pnlNhaDan.Controls.Add(this.txtSDT);
+            this.pnlNhaDan.Controls.Add(diaChiLabel);
+            this.pnlNhaDan.Controls.Add(this.txtDiaChi);
+            this.pnlNhaDan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNhaDan.Location = new System.Drawing.Point(0, 290);
+            this.pnlNhaDan.Name = "pnlNhaDan";
+            this.pnlNhaDan.Size = new System.Drawing.Size(1088, 160);
+            this.pnlNhaDan.TabIndex = 14;
             // 
             // txtMaAp
             // 
@@ -486,14 +491,14 @@
             this.txtMaAp.Size = new System.Drawing.Size(125, 26);
             this.txtMaAp.TabIndex = 7;
             // 
-            // chuHoTextEdit
+            // txtChuHo
             // 
-            this.chuHoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNhaDan, "ChuHo", true));
-            this.chuHoTextEdit.Location = new System.Drawing.Point(506, 30);
-            this.chuHoTextEdit.MenuManager = this.barManager1;
-            this.chuHoTextEdit.Name = "chuHoTextEdit";
-            this.chuHoTextEdit.Size = new System.Drawing.Size(125, 26);
-            this.chuHoTextEdit.TabIndex = 5;
+            this.txtChuHo.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNhaDan, "ChuHo", true));
+            this.txtChuHo.Location = new System.Drawing.Point(506, 30);
+            this.txtChuHo.MenuManager = this.barManager1;
+            this.txtChuHo.Name = "txtChuHo";
+            this.txtChuHo.Size = new System.Drawing.Size(125, 26);
+            this.txtChuHo.TabIndex = 5;
             // 
             // txtSDT
             // 
@@ -504,14 +509,14 @@
             this.txtSDT.Size = new System.Drawing.Size(125, 26);
             this.txtSDT.TabIndex = 3;
             // 
-            // diaChiTextEdit
+            // txtDiaChi
             // 
-            this.diaChiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNhaDan, "DiaChi", true));
-            this.diaChiTextEdit.Location = new System.Drawing.Point(123, 30);
-            this.diaChiTextEdit.MenuManager = this.barManager1;
-            this.diaChiTextEdit.Name = "diaChiTextEdit";
-            this.diaChiTextEdit.Size = new System.Drawing.Size(125, 26);
-            this.diaChiTextEdit.TabIndex = 1;
+            this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNhaDan, "DiaChi", true));
+            this.txtDiaChi.Location = new System.Drawing.Point(123, 30);
+            this.txtDiaChi.MenuManager = this.barManager1;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(125, 26);
+            this.txtDiaChi.TabIndex = 1;
             // 
             // diaBanTableAdapter
             // 
@@ -543,15 +548,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 450);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.pnlNhaDan);
+            this.Controls.Add(this.gcNhaDan);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl3);
             this.Name = "frmThemNhaDan";
-            this.Text = "frmThemNhaDan";
+            this.Text = "Nhà dân";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmThemNhaDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -562,16 +567,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhaDan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhaDan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlNhaDan)).EndInit();
+            this.pnlNhaDan.ResumeLayout(false);
+            this.pnlNhaDan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaAp.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chuHoTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChuHo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaChiTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,8 +607,8 @@
         private System.Windows.Forms.ComboBox cmbAp;
         private System.Windows.Forms.ComboBox cmbXa;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraEditors.PanelControl pnlNhaDan;
+        private DevExpress.XtraGrid.GridControl gcNhaDan;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DSthemXaApNhaDan dSthemXaApNhaDan;
         private System.Windows.Forms.BindingSource diaBanBindingSource;
@@ -616,9 +621,9 @@
         private DSthemXaApNhaDanTableAdapters.NhaDanTableAdapter nhaDanTableAdapter;
         private System.Windows.Forms.BindingSource bdsNhaDan;
         private DevExpress.XtraEditors.TextEdit txtMaAp;
-        private DevExpress.XtraEditors.TextEdit chuHoTextEdit;
+        private DevExpress.XtraEditors.TextEdit txtChuHo;
         private DevExpress.XtraEditors.TextEdit txtSDT;
-        private DevExpress.XtraEditors.TextEdit diaChiTextEdit;
+        private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn colMaNha;
         private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;

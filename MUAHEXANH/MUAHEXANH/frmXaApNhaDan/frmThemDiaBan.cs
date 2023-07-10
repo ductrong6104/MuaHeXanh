@@ -21,14 +21,15 @@ namespace MUAHEXANH.frmXaApNhaDan
         {
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
-     
-
+            gcDiaBan.Enabled = true;
+            pnlThemDiaBan.Enabled = false;
         }
         public void trangThaiChuaGhi()
         {
             btnThem.Enabled  = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
-          
+            gcDiaBan.Enabled = false;
+            pnlThemDiaBan.Enabled = true;
         }
         private void frmThemDiaBan_Load(object sender, EventArgs e)
         {
@@ -95,11 +96,13 @@ namespace MUAHEXANH.frmXaApNhaDan
             if (btnThem.Enabled == false)
                 bdsDiaBan.Position = viTri;
             bdsDiaBan.CancelEdit();
+            trangThaiBanDau();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.diaBanTableAdapter.Fill(this.dSthemXaApNhaDan.DiaBan);
+
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

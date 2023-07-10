@@ -72,11 +72,11 @@ namespace MUAHEXANH
             };
             using (MyWaitForm f = new MyWaitForm(worker, args))
             {
-                Program.frmChinh.Enabled = false;
+                this.Enabled = false;
                 f.Dock = DockStyle.Fill;
                 f.SetCaption("Đang backup");
                 f.ShowDialog(this);
-                Program.frmChinh.Enabled = true;
+                this.Enabled = true;
             }
 //            callBackup(backupType, deviceName, url, description);
         }
@@ -148,7 +148,6 @@ namespace MUAHEXANH
                 
                 if(error.State == 1)
                 {
-                    
                 }
                 //Console.WriteLine($"_______________________{error.Message} :: {error.State}");
             }
@@ -157,7 +156,6 @@ namespace MUAHEXANH
         {
             if(e.CurrentState == ConnectionState.Closed)
             {
-                    
             }
         }
 

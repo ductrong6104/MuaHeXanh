@@ -40,6 +40,7 @@ namespace MUAHEXANH.FormXemThoiGianCV
             this.deNgay.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.deNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
             deNgay.DateTime = DateTime.Now;
+            lblTenNhom.Text = Program.tenNhomLucDN;
             Console.WriteLine(Program.mNhom);
             Console.WriteLine(deNgay.Text);
         }

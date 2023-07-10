@@ -74,7 +74,16 @@ namespace MUAHEXANH
                 return;
 
             }
+            int soSVToiDa = int.Parse(((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["SOSVTOIDA"].ToString());
 
+            Console.WriteLine("so sinh vien toi da trong doi: " + soSVToiDa);
+            if (soSVToiDa == sp_lay_nhom_tu_manhomBindingSource.Count)
+            {
+                MessageBox.Show("Đội này có tối đa " + soSVToiDa.ToString() + " sinh viên! Không thể thêm sinh viên được nữa!", "", MessageBoxButtons.OK);
+                dgvSVCHUACODOI.Focus();
+                return;
+
+            }
             for (int i = 0; i < dgvSVCHUACODOI.Rows.Count; i++)
             {
                 // chi lay sinh vien nào được tick
@@ -89,6 +98,12 @@ namespace MUAHEXANH
             if (countTick == 0)
             {
                 MessageBox.Show("Bạn chưa chọn sinh viên nào thêm vào đội! Vui lòng chọn!", "", MessageBoxButtons.OK);
+                dgvSVCHUACODOI.Focus();
+                return;
+            }
+            if (countTick+dgvTHANHVIENDOI.RowCount > soSVToiDa)
+            {
+                MessageBox.Show("Đội này có tối đa " + soSVToiDa.ToString() + " sinh viên! Vui lòng chọn ít hơn " + (soSVToiDa+1-dgvTHANHVIENDOI.RowCount).ToString() + " sinh viên! ", "", MessageBoxButtons.OK);
                 dgvSVCHUACODOI.Focus();
                 return;
             }

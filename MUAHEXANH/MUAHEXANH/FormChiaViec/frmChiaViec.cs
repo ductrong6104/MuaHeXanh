@@ -41,6 +41,7 @@ namespace MUAHEXANH
             btnGhi.Enabled = btnPhucHoi.Enabled  = false;
             btnLoc.Enabled = true;
             pnlPhanViec.Enabled = false;
+            gcPhanViec.Enabled = true;
             deNgay.Enabled = true;
             cmbBuoi.Enabled = true;
         }
@@ -51,6 +52,7 @@ namespace MUAHEXANH
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             btnLoc.Enabled = false;
             pnlPhanViec.Enabled = true;
+            gcPhanViec.Enabled = false;
             deNgay.Enabled = false;
             cmbBuoi.Enabled = false;
         }

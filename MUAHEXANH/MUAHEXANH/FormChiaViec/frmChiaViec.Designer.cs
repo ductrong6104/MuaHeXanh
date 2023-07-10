@@ -79,16 +79,16 @@
             this.sp_lay_dscongviec_tu_apTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dscongviec_tu_apTableAdapter();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvCongViec = new System.Windows.Forms.DataGridView();
-            this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayBatDauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayKetThucDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sp_lay_dscongviec_tu_doiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.sp_lay_dscongviec_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dscongviec_tu_doiTableAdapter();
             this.sp_lay_dsphancong_tu_doiTableAdapter = new MUAHEXANH.DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter();
+            this.maCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenCVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayBatDauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayKetThucDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -590,46 +590,6 @@
             this.dgvCongViec.Size = new System.Drawing.Size(571, 369);
             this.dgvCongViec.TabIndex = 1;
             // 
-            // maCVDataGridViewTextBoxColumn
-            // 
-            this.maCVDataGridViewTextBoxColumn.DataPropertyName = "MaCV";
-            this.maCVDataGridViewTextBoxColumn.HeaderText = "Mã công việc";
-            this.maCVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maCVDataGridViewTextBoxColumn.Name = "maCVDataGridViewTextBoxColumn";
-            this.maCVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenCVDataGridViewTextBoxColumn
-            // 
-            this.tenCVDataGridViewTextBoxColumn.DataPropertyName = "TenCV";
-            this.tenCVDataGridViewTextBoxColumn.HeaderText = "Tên công việc";
-            this.tenCVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenCVDataGridViewTextBoxColumn.Name = "tenCVDataGridViewTextBoxColumn";
-            this.tenCVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngayBatDauDataGridViewTextBoxColumn
-            // 
-            this.ngayBatDauDataGridViewTextBoxColumn.DataPropertyName = "NgayBatDau";
-            this.ngayBatDauDataGridViewTextBoxColumn.HeaderText = "Ngày bắt đầu";
-            this.ngayBatDauDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngayBatDauDataGridViewTextBoxColumn.Name = "ngayBatDauDataGridViewTextBoxColumn";
-            this.ngayBatDauDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngayKetThucDataGridViewTextBoxColumn
-            // 
-            this.ngayKetThucDataGridViewTextBoxColumn.DataPropertyName = "NgayKetThuc";
-            this.ngayKetThucDataGridViewTextBoxColumn.HeaderText = "Ngày bắt đầu";
-            this.ngayKetThucDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngayKetThucDataGridViewTextBoxColumn.Name = "ngayKetThucDataGridViewTextBoxColumn";
-            this.ngayKetThucDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // TENAP
-            // 
-            this.TENAP.DataPropertyName = "TENAP";
-            this.TENAP.HeaderText = "Tên ấp";
-            this.TENAP.MinimumWidth = 6;
-            this.TENAP.Name = "TENAP";
-            this.TENAP.ReadOnly = true;
-            // 
             // sp_lay_dscongviec_tu_doiBindingSource
             // 
             this.sp_lay_dscongviec_tu_doiBindingSource.DataMember = "sp_lay_dscongviec_tu_doi";
@@ -659,6 +619,46 @@
             // sp_lay_dsphancong_tu_doiTableAdapter
             // 
             this.sp_lay_dsphancong_tu_doiTableAdapter.ClearBeforeFill = true;
+            // 
+            // maCVDataGridViewTextBoxColumn
+            // 
+            this.maCVDataGridViewTextBoxColumn.DataPropertyName = "MaCV";
+            this.maCVDataGridViewTextBoxColumn.HeaderText = "Mã công việc";
+            this.maCVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maCVDataGridViewTextBoxColumn.Name = "maCVDataGridViewTextBoxColumn";
+            this.maCVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenCVDataGridViewTextBoxColumn
+            // 
+            this.tenCVDataGridViewTextBoxColumn.DataPropertyName = "TenCV";
+            this.tenCVDataGridViewTextBoxColumn.HeaderText = "Tên công việc";
+            this.tenCVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenCVDataGridViewTextBoxColumn.Name = "tenCVDataGridViewTextBoxColumn";
+            this.tenCVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngayBatDauDataGridViewTextBoxColumn
+            // 
+            this.ngayBatDauDataGridViewTextBoxColumn.DataPropertyName = "NgayBatDau";
+            this.ngayBatDauDataGridViewTextBoxColumn.HeaderText = "Ngày bắt đầu";
+            this.ngayBatDauDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayBatDauDataGridViewTextBoxColumn.Name = "ngayBatDauDataGridViewTextBoxColumn";
+            this.ngayBatDauDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ngayKetThucDataGridViewTextBoxColumn
+            // 
+            this.ngayKetThucDataGridViewTextBoxColumn.DataPropertyName = "NgayKetThuc";
+            this.ngayKetThucDataGridViewTextBoxColumn.HeaderText = "Ngày kết thúc";
+            this.ngayKetThucDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayKetThucDataGridViewTextBoxColumn.Name = "ngayKetThucDataGridViewTextBoxColumn";
+            this.ngayKetThucDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // TENAP
+            // 
+            this.TENAP.DataPropertyName = "TENAP";
+            this.TENAP.HeaderText = "Tên ấp";
+            this.TENAP.MinimumWidth = 6;
+            this.TENAP.Name = "TENAP";
+            this.TENAP.ReadOnly = true;
             // 
             // frmChiaViec
             // 
@@ -759,12 +759,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maApDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sp_lay_dscongviec_tu_doiBindingSource;
         private DSchiaViecTableAdapters.sp_lay_dscongviec_tu_doiTableAdapter sp_lay_dscongviec_tu_doiTableAdapter;
+        private System.Windows.Forms.BindingSource bdsDSPHANCONG;
+        private DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter sp_lay_dsphancong_tu_doiTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maCVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenCVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayBatDauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayKetThucDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENAP;
-        private System.Windows.Forms.BindingSource bdsDSPHANCONG;
-        private DSchiaViecTableAdapters.sp_lay_dsphancong_tu_doiTableAdapter sp_lay_dsphancong_tu_doiTableAdapter;
     }
 }

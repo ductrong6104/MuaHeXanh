@@ -161,8 +161,8 @@ namespace MUAHEXANH
                 return;
             }
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
-            
-            
+            this.nhomTableAdapter.Fill(this.dStaoDoi.Nhom);
+
             trangThaiBanDau();
 
         }
@@ -210,7 +210,7 @@ namespace MUAHEXANH
                 
             }
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
-
+            this.nhomTableAdapter.Fill(this.dStaoDoi.Nhom);
 
             trangThaiBanDau();
 
@@ -230,6 +230,7 @@ namespace MUAHEXANH
             try
             {
                 this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
+                this.nhomTableAdapter.Fill(this.dStaoDoi.Nhom);
             }
             catch (Exception ex)
             {

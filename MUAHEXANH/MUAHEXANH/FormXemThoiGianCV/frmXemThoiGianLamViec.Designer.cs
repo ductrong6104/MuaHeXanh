@@ -42,7 +42,7 @@
             this.colTenAp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTenNhom = new System.Windows.Forms.Label();
             this.sp_xemThoiGianLamViecTableAdapter = new MUAHEXANH.DSxemThoiGianLamViecTableAdapters.sp_xemThoiGianLamViecTableAdapter();
             this.tableAdapterManager = new MUAHEXANH.DSxemThoiGianLamViecTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.pnlFilterTheoNgay)).BeginInit();
@@ -133,6 +133,7 @@
             // 
             // colTenCV
             // 
+            this.colTenCV.Caption = "Tên công việc";
             this.colTenCV.FieldName = "TenCV";
             this.colTenCV.MinWidth = 25;
             this.colTenCV.Name = "colTenCV";
@@ -142,6 +143,7 @@
             // 
             // colbuoi
             // 
+            this.colbuoi.Caption = "Buổi";
             this.colbuoi.FieldName = "buoi";
             this.colbuoi.MinWidth = 25;
             this.colbuoi.Name = "colbuoi";
@@ -151,6 +153,7 @@
             // 
             // colTenAp
             // 
+            this.colTenAp.Caption = "Tên ấp";
             this.colTenAp.FieldName = "TenAp";
             this.colTenAp.MinWidth = 25;
             this.colTenAp.Name = "colTenAp";
@@ -161,7 +164,7 @@
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.label2);
-            this.panelControl3.Controls.Add(this.label1);
+            this.panelControl3.Controls.Add(this.lblTenNhom);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(2, 2);
             this.panelControl3.Name = "panelControl3";
@@ -177,14 +180,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "DANH SÁCH CÔNG VIỆC CỦA NHÓM: ";
             // 
-            // label1
+            // lblTenNhom
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(523, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "lblTenNhom";
+            this.lblTenNhom.AutoSize = true;
+            this.lblTenNhom.Location = new System.Drawing.Point(523, 18);
+            this.lblTenNhom.Name = "lblTenNhom";
+            this.lblTenNhom.Size = new System.Drawing.Size(99, 20);
+            this.lblTenNhom.TabIndex = 3;
+            this.lblTenNhom.Text = "lblTenNhom";
             // 
             // sp_xemThoiGianLamViecTableAdapter
             // 
@@ -234,7 +237,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl lblNgay;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTenNhom;
         private DevExpress.XtraEditors.DateEdit deNgay;
         private DSxemThoiGianLamViec dSxemThoiGianLamViec;
         private System.Windows.Forms.BindingSource sp_xemThoiGianLamViecBindingSource;

@@ -1055,6 +1055,12 @@ namespace MUAHEXANH {
             
             private global::System.Data.DataColumn columnDoiPho;
             
+            private global::System.Data.DataColumn columnSONHA;
+            
+            private global::System.Data.DataColumn columnSOSVTOIDA;
+            
+            private global::System.Data.DataColumn columnSOSVHIENTAI;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_lay_doi_tu_chiendichDataTable() {
@@ -1122,6 +1128,30 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SONHAColumn {
+                get {
+                    return this.columnSONHA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SOSVTOIDAColumn {
+                get {
+                    return this.columnSOSVTOIDA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SOSVHIENTAIColumn {
+                get {
+                    return this.columnSOSVHIENTAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1157,13 +1187,16 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_lay_doi_tu_chiendichRow Addsp_lay_doi_tu_chiendichRow(string MADOI, string TENDOI, string DoiTruong, string DoiPho) {
+            public sp_lay_doi_tu_chiendichRow Addsp_lay_doi_tu_chiendichRow(string MADOI, string TENDOI, string DoiTruong, string DoiPho, int SONHA, int SOSVTOIDA, int SOSVHIENTAI) {
                 sp_lay_doi_tu_chiendichRow rowsp_lay_doi_tu_chiendichRow = ((sp_lay_doi_tu_chiendichRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MADOI,
                         TENDOI,
                         DoiTruong,
-                        DoiPho};
+                        DoiPho,
+                        SONHA,
+                        SOSVTOIDA,
+                        SOSVHIENTAI};
                 rowsp_lay_doi_tu_chiendichRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_lay_doi_tu_chiendichRow);
                 return rowsp_lay_doi_tu_chiendichRow;
@@ -1197,6 +1230,9 @@ namespace MUAHEXANH {
                 this.columnTENDOI = base.Columns["TENDOI"];
                 this.columnDoiTruong = base.Columns["DoiTruong"];
                 this.columnDoiPho = base.Columns["DoiPho"];
+                this.columnSONHA = base.Columns["SONHA"];
+                this.columnSOSVTOIDA = base.Columns["SOSVTOIDA"];
+                this.columnSOSVHIENTAI = base.Columns["SOSVHIENTAI"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1210,6 +1246,12 @@ namespace MUAHEXANH {
                 base.Columns.Add(this.columnDoiTruong);
                 this.columnDoiPho = new global::System.Data.DataColumn("DoiPho", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDoiPho);
+                this.columnSONHA = new global::System.Data.DataColumn("SONHA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSONHA);
+                this.columnSOSVTOIDA = new global::System.Data.DataColumn("SOSVTOIDA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSOSVTOIDA);
+                this.columnSOSVHIENTAI = new global::System.Data.DataColumn("SOSVHIENTAI", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSOSVHIENTAI);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMADOI}, true));
                 this.columnMADOI.AllowDBNull = false;
@@ -1219,6 +1261,9 @@ namespace MUAHEXANH {
                 this.columnTENDOI.MaxLength = 50;
                 this.columnDoiTruong.MaxLength = 10;
                 this.columnDoiPho.MaxLength = 10;
+                this.columnSONHA.ReadOnly = true;
+                this.columnSOSVTOIDA.ReadOnly = true;
+                this.columnSOSVHIENTAI.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2424,6 +2469,54 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SONHA {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_lay_doi_tu_chiendich.SONHAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SONHA\' in table \'sp_lay_doi_tu_chiendich\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_doi_tu_chiendich.SONHAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SOSVTOIDA {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_lay_doi_tu_chiendich.SOSVTOIDAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SOSVTOIDA\' in table \'sp_lay_doi_tu_chiendich\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_doi_tu_chiendich.SOSVTOIDAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int SOSVHIENTAI {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_lay_doi_tu_chiendich.SOSVHIENTAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SOSVHIENTAI\' in table \'sp_lay_doi_tu_chiendich\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_doi_tu_chiendich.SOSVHIENTAIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDoiTruongNull() {
                 return this.IsNull(this.tablesp_lay_doi_tu_chiendich.DoiTruongColumn);
             }
@@ -2444,6 +2537,42 @@ namespace MUAHEXANH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDoiPhoNull() {
                 this[this.tablesp_lay_doi_tu_chiendich.DoiPhoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSONHANull() {
+                return this.IsNull(this.tablesp_lay_doi_tu_chiendich.SONHAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSONHANull() {
+                this[this.tablesp_lay_doi_tu_chiendich.SONHAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSOSVTOIDANull() {
+                return this.IsNull(this.tablesp_lay_doi_tu_chiendich.SOSVTOIDAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSOSVTOIDANull() {
+                this[this.tablesp_lay_doi_tu_chiendich.SOSVTOIDAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSOSVHIENTAINull() {
+                return this.IsNull(this.tablesp_lay_doi_tu_chiendich.SOSVHIENTAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSOSVHIENTAINull() {
+                this[this.tablesp_lay_doi_tu_chiendich.SOSVHIENTAIColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3709,6 +3838,9 @@ SELECT MaSV, Ho, Ten, MaKhoa FROM SinhVien WHERE (MaSV = @MaSV)";
             tableMapping.ColumnMappings.Add("TENDOI", "TENDOI");
             tableMapping.ColumnMappings.Add("DoiTruong", "DoiTruong");
             tableMapping.ColumnMappings.Add("DoiPho", "DoiPho");
+            tableMapping.ColumnMappings.Add("SONHA", "SONHA");
+            tableMapping.ColumnMappings.Add("SOSVTOIDA", "SOSVTOIDA");
+            tableMapping.ColumnMappings.Add("SOSVHIENTAI", "SOSVHIENTAI");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

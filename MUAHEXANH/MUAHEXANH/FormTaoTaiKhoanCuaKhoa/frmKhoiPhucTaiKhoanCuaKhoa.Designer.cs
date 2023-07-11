@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvTaiKhoanKhoiPhuc = new System.Windows.Forms.DataGridView();
-            this.btnKhoiPhuc = new DevExpress.XtraEditors.SimpleButton();
             this.khoiPhuc = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnKhoiPhuc = new DevExpress.XtraEditors.SimpleButton();
             this.cmbChonTK = new System.Windows.Forms.ComboBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,12 @@
             this.dgvTaiKhoanKhoiPhuc.Size = new System.Drawing.Size(441, 150);
             this.dgvTaiKhoanKhoiPhuc.TabIndex = 0;
             // 
+            // khoiPhuc
+            // 
+            this.khoiPhuc.HeaderText = "Khôi phục";
+            this.khoiPhuc.MinimumWidth = 6;
+            this.khoiPhuc.Name = "khoiPhuc";
+            // 
             // btnKhoiPhuc
             // 
             this.btnKhoiPhuc.Location = new System.Drawing.Point(551, 191);
@@ -72,12 +78,6 @@
             this.btnKhoiPhuc.Text = "Khôi phục";
             this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
             // 
-            // khoiPhuc
-            // 
-            this.khoiPhuc.HeaderText = "Khôi phục";
-            this.khoiPhuc.MinimumWidth = 6;
-            this.khoiPhuc.Name = "khoiPhuc";
-            // 
             // cmbChonTK
             // 
             this.cmbChonTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -85,10 +85,11 @@
             this.cmbChonTK.Items.AddRange(new object[] {
             "Giám sát",
             "Đội trưởng ",
-            "Đội phó"});
+            "Đội phó",
+            "Nhóm trưởng"});
             this.cmbChonTK.Location = new System.Drawing.Point(202, 54);
             this.cmbChonTK.Name = "cmbChonTK";
-            this.cmbChonTK.Size = new System.Drawing.Size(121, 24);
+            this.cmbChonTK.Size = new System.Drawing.Size(193, 24);
             this.cmbChonTK.TabIndex = 2;
             this.cmbChonTK.SelectionChangeCommitted += new System.EventHandler(this.cmbChonTK_SelectionChangeCommitted);
             // 

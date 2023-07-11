@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraPrinting.Native;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting.Native;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MUAHEXANH
 {
@@ -80,6 +82,8 @@ namespace MUAHEXANH
                 Program.mHoten = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);
                 Program.maChienDich = Program.myReader.GetString(3);
+                Program.tenChienDich = Program.myReader.GetString(4);
+                //Console.WriteLine(Program.tenChienDich);
                 // dong datareader va connect db
                 Program.myReader.Close();
                 Program.conn.Close();
@@ -115,10 +119,10 @@ namespace MUAHEXANH
             Program.frmChinh.Show();
 
             // Hien thi thong tin sinh  vien
-            Program.frmChinh.MA.Text = "Mã SV = " + Program.username;
+            Program.frmChinh.MA.Text = "Mã = " + Program.username;
             Program.frmChinh.HOTEN.Text = "Họ Tên = " + Program.mHoten;
             Program.frmChinh.NHOM.Text = "Nhóm = " + Program.mGroup;
-            Program.frmChinh.TENSV.Text = "Ten sv: " + Program.servername;
+            Program.frmChinh.TENSV.Text = "Tên server: " + Program.servername;
             Program.frmDN.Hide();
         }
 
@@ -131,6 +135,18 @@ namespace MUAHEXANH
         {
             txtLogin.Text = "";
             txtPass.Text = "";
+        }
+
+        private void tgsHienAnMK_Toggled(object sender, EventArgs e)
+        {
+            if (tgsHienAnMK.IsOn)
+            {
+                txtPass.Properties.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPass.Properties.PasswordChar = '*';
+            }
         }
     }
 }

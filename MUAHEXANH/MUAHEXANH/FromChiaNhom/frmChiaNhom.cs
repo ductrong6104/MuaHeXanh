@@ -90,6 +90,15 @@ namespace MUAHEXANH
             Console.WriteLine("soluongsvnhom: " + dgvSVNHOM.RowCount.ToString());
 
             this.sp_lay_nhom_tu_doi_de_chiaTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi_de_chia, Program.mTeam, maNhomDangChon);
+            if (sp_lay_nhom_tu_doi_de_chiaBindingSource.Count == 0)
+            {
+                MessageBox.Show("Đội này hiện chưa có nhóm để chia, Vui lòng thêm nhóm!", "", MessageBoxButtons.OK);
+                dgvSVNHOM.Enabled = false;
+                btnCHUYEN.Enabled = false;
+                return;
+            }
+            dgvSVNHOM.Enabled = true;
+            btnCHUYEN.Enabled = true;
             this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
             batTatContextMenuStrip();
             for (int i = 0; i < dgvSVNHOM.Rows.Count; i++)

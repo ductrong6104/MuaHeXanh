@@ -40,6 +40,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.tgsHienAnMK = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,6 +50,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgsHienAnMK.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -196,6 +198,17 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // tgsHienAnMK
+            // 
+            this.tgsHienAnMK.Location = new System.Drawing.Point(149, 358);
+            this.tgsHienAnMK.Name = "tgsHienAnMK";
+            this.tgsHienAnMK.Properties.OffText = "Hiện mật khẩu";
+            this.tgsHienAnMK.Properties.OnText = "Ẩn mật khẩu";
+            this.tgsHienAnMK.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tgsHienAnMK.Size = new System.Drawing.Size(189, 25);
+            this.tgsHienAnMK.TabIndex = 43;
+            this.tgsHienAnMK.Toggled += new System.EventHandler(this.tgsHienAnMK_Toggled);
+            // 
             // frmDangNhap
             // 
             this.AcceptButton = this.btnLogin;
@@ -204,6 +217,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(377, 504);
+            this.Controls.Add(this.tgsHienAnMK);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
@@ -229,6 +243,7 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgsHienAnMK.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +262,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
         private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.ToggleSwitch tgsHienAnMK;
     }
 }

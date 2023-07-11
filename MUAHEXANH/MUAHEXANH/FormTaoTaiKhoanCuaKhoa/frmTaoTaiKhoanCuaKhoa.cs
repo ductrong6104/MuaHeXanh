@@ -164,5 +164,19 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
             }
             MessageBox.Show("Tạo tài khoản thành công! Hãy thử đăng nhập", "", MessageBoxButtons.OK);
         }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+            if (tgsHienAnMK.IsOn)
+            {
+                txtMatKhau.Properties.PasswordChar = '\0';
+                txtNhapLaiMK.Properties.PasswordChar = '\0';
+            }
+            else
+            {
+                txtMatKhau.Properties.PasswordChar = '*';
+                txtNhapLaiMK.Properties.PasswordChar = '*';
+            }
+        }
     }
 }

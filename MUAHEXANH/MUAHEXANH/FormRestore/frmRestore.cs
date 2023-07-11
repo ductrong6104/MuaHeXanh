@@ -88,7 +88,7 @@ namespace MUAHEXANH
                 String backupDevice = (string)args[0];
                 int position = (int)args[1];
 
-                string connectString = "Data Source=PDM;Initial Catalog=msdb;Persist Security Info=True;User ID=sa;Password=1";
+                string connectString = $"Data Source=DESKTOP-9QNDCS8\\DUCTRONG;Initial Catalog=msdb;Persist Security Info=True;User ID={Program.mlogin};Password={Program.password}";
                 using (SqlConnection connection = new SqlConnection(connectString))
                 {
                     connection.Open();

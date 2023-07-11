@@ -77,14 +77,13 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rbCaiDat = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbNhomTruong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbCaiDat = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.MA = new System.Windows.Forms.ToolStripStatusLabel();
             this.HOTEN = new System.Windows.Forms.ToolStripStatusLabel();
@@ -276,6 +275,7 @@
             this.btnXoaTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaTK.ImageOptions.Image")));
             this.btnXoaTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoaTK.ImageOptions.LargeImage")));
             this.btnXoaTK.Name = "btnXoaTK";
+            this.btnXoaTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaTK_ItemClick);
             // 
             // btnKhoiPhucTK
             // 
@@ -485,7 +485,6 @@
             // 
             this.rbAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup11,
             this.ribbonPageGroup14,
             this.ribbonPageGroup15,
             this.ribbonPageGroup16});
@@ -497,11 +496,6 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             // 
             // ribbonPageGroup14
             // 
@@ -518,19 +512,6 @@
             this.ribbonPageGroup16.ItemLinks.Add(this.barSubItem2);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             // 
-            // rbCaiDat
-            // 
-            this.rbCaiDat.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.rbCaiDat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("rbCaiDat.ImageOptions.Image")));
-            this.rbCaiDat.Name = "rbCaiDat";
-            this.rbCaiDat.Text = "Cài đặt";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnDangXuat);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
             // rbNhomTruong
             // 
             this.rbNhomTruong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -543,6 +524,19 @@
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            // 
+            // rbCaiDat
+            // 
+            this.rbCaiDat.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.rbCaiDat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("rbCaiDat.ImageOptions.Image")));
+            this.rbCaiDat.Name = "rbCaiDat";
+            this.rbCaiDat.Text = "Cài đặt";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDangXuat);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // statusStrip1
             // 
@@ -647,7 +641,6 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btnTaoTaiKhoan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem btnVoHieuHoaTK;
         private DevExpress.XtraBars.BarButtonItem btnXoaTK;

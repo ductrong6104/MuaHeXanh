@@ -408,5 +408,21 @@ namespace MUAHEXANH
                 f.Show();
             }
         }
+
+        private void btnXoaTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmXoaTaiKhoanCuaKhoa));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmXoaTaiKhoanCuaKhoa f = new frmXoaTaiKhoanCuaKhoa();
+                // set property of frmMain: ismdicontainer = true 
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

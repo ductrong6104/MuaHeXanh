@@ -381,6 +381,9 @@
     <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmVoHieuHoaTaiKhoanCuaKhoa.resx">
       <DependentUpon>frmVoHieuHoaTaiKhoanCuaKhoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmXoaTaiKhoanCuaKhoa.resx">
+      <DependentUpon>frmXoaTaiKhoanCuaKhoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormXemThoiGianCV\frmXemThoiGianLamViec.resx">
       <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
     </EmbeddedResource>

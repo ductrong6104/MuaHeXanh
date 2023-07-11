@@ -37,8 +37,8 @@ namespace MUAHEXANH
         public static String mGroup = "";
         public static String mHoten = "";
         // tam thoi mac dinh chien dich hien tai luc dang nhap la CD01
-        public static String maChienDich = "CD01";
-        public static String tenChienDich = "Mùa hè xanh";
+        public static String maChienDich = "";
+        public static String tenChienDich = "";
         public static int mKhoa = 0;
         public static String mTeam = "";
         public static String mNhom = "";

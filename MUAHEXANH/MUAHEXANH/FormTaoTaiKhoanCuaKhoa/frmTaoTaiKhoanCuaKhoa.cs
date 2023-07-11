@@ -15,6 +15,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
     {
         private string role;
         private DataTable dataTable;
+        private int indexPrevious;
         public frmTaoTaiKhoanCuaKhoa()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
             cmbHoTen.ValueMember= "magv";
             txtTaiKhoan.Text = cmbHoTen.SelectedValue.ToString();
             lblCHONHOTEN.Text = "Họ tên giảng viên";
+            indexPrevious = cmbChonQuyen.SelectedIndex;
         }
       
 
@@ -50,6 +52,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 {
                     MessageBox.Show("Tất cả các giám sát đã có tài khoản! Không cần tạo nữa!", "", MessageBoxButtons.OK);
                     cmbChonQuyen.Focus();
+                    cmbChonQuyen.SelectedIndex = indexPrevious;
                     return;
                 }
                 lblCHONHOTEN.Text = "Họ tên giảng viên";
@@ -67,6 +70,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 {
                     MessageBox.Show("Tất cả các đội trưởng đã có tài khoản! Không cần tạo nữa!", "", MessageBoxButtons.OK);
                     cmbChonQuyen.Focus();
+                    cmbChonQuyen.SelectedIndex = indexPrevious;
                     return;
                 }
                 lblCHONHOTEN.Text = "Họ tên sinh viên";
@@ -86,6 +90,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 {
                     MessageBox.Show("Tất cả các đội phó đã có tài khoản! Không cần tạo nữa!", "", MessageBoxButtons.OK);
                     cmbChonQuyen.Focus();
+                    cmbChonQuyen.SelectedIndex = indexPrevious;
                     return;
                 }
                 lblCHONHOTEN.Text = "Họ tên sinh viên";
@@ -104,6 +109,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 {
                     MessageBox.Show("Tất cả các nhóm trưởng đã có tài khoản! Không cần tạo nữa!", "", MessageBoxButtons.OK);
                     cmbChonQuyen.Focus();
+                    cmbChonQuyen.SelectedIndex = indexPrevious;
                     return;
                 }
                 lblCHONHOTEN.Text = "Họ tên sinh viên";
@@ -114,6 +120,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 Console.WriteLine("so luong hoten: " + cmbHoTen.Items.Count);
                 role = "NHOMTRUONG";
             }
+            indexPrevious = cmbChonQuyen.SelectedIndex;
         }
         public void printDT(DataTable dt)
         {
@@ -178,5 +185,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                 txtNhapLaiMK.Properties.PasswordChar = '*';
             }
         }
+
+        
     }
 }

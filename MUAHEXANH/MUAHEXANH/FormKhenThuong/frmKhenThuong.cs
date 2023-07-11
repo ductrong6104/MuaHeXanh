@@ -100,5 +100,43 @@ namespace MUAHEXANH.FormKhenThuong
             this.sp_laySinhVienKhenThuongTheoDoiTableAdapter.Fill(this.dSkhenThuong.sp_laySinhVienKhenThuongTheoDoi, Program.mTeam);
             
         }
+
+        private void xóaKhỏiKhenThưởngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Ban có thật sự muốn xóa sinh viên này không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+
+                    string masv = ((DataRowView)sp_laySinhVienKhenThuongTheoDoiBindingSource[sp_laySinhVienKhenThuongTheoDoiBindingSource.Position])["MASV"].ToString();
+                    // ket thuc hieu chinh: ghi
+                    string cmd = "DELETE FROM KHENTHUONG WHERE MADOI = '"
+                                    + Program.mTeam + "' AND MASV = '"
+                                    + masv + "'";
+
+                    Console.WriteLine("cmd xoa sinh vien khen thuong: " + cmd);
+                    int hd_them = Program.ExecSqlNonQuery(cmd);
+                    if (hd_them != 0)
+                    {
+                        MessageBox.Show("Lỗi xóa sinh viên khen thưởng. Vui lòng kiểm tra lại thông tin!", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    // khi ghi đội thì tự động thêm một nhóm chứa đội trưởng, đội phó đội đó 
+
+                    //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa sinh viên khen thưởng!" + ex.Message, "", MessageBoxButtons.OK);
+                    Console.WriteLine(ex.ToString());
+                    // tro ve trang thai luc them cho user dieu chinh lai
+                    return;
+                }
+                MessageBox.Show("xóa sinh viên khen thưởng thành công", "", MessageBoxButtons.OK);
+
+            }
+            this.sp_laySinhVienKhenThuongTheoDoiTableAdapter.Fill(this.dSkhenThuong.sp_laySinhVienKhenThuongTheoDoi, Program.mTeam);
+        }
     }
 }

@@ -11,6 +11,22 @@
     <AssemblyName>MUAHEXANH</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\ADMN\Downloads\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +46,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F4F5BBEEEDCB1B48C066F479D4FF0F8913ED105C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MUAHEXANH_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
@@ -199,22 +227,22 @@
     <Compile Include="FormTaoChienDich\FrmTaoChienDich.Designer.cs">
       <DependentUpon>FrmTaoChienDich.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoCongViec\FrmChonAp.cs">
+    <Compile Include="FormCongViec\FrmChonAp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoCongViec\FrmChonAp.Designer.cs">
+    <Compile Include="FormCongViec\FrmChonAp.Designer.cs">
       <DependentUpon>FrmChonAp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoCongViec\FrmCongViec.cs">
+    <Compile Include="FormCongViec\FrmCongViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoCongViec\FrmCongViec.Designer.cs">
+    <Compile Include="FormCongViec\FrmCongViec.Designer.cs">
       <DependentUpon>FrmCongViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoCongViec\FrmNhapLieuCongViec.cs">
+    <Compile Include="FormCongViec\FrmNhapLieuCongViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoCongViec\FrmNhapLieuCongViec.Designer.cs">
+    <Compile Include="FormCongViec\FrmNhapLieuCongViec.Designer.cs">
       <DependentUpon>FrmNhapLieuCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTaoTaiKhoanCuaKhoa\frmKhoiPhucTaiKhoanCuaKhoa.cs">
@@ -241,10 +269,10 @@
     <Compile Include="FormTaoTaiKhoanCuaKhoa\frmXoaTaiKhoanCuaKhoa.Designer.cs">
       <DependentUpon>frmXoaTaiKhoanCuaKhoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormXemThoiGianCV\frmXemThoiGianLamViec.cs">
+    <Compile Include="FormCongViec\frmXemThoiGianLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormXemThoiGianCV\frmXemThoiGianLamViec.Designer.cs">
+    <Compile Include="FormCongViec\frmXemThoiGianLamViec.Designer.cs">
       <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
     </Compile>
     <Compile Include="frmXaApNhaDan\FrmAp.cs">
@@ -283,16 +311,16 @@
     <Compile Include="frmXaApNhaDan\FrmXa.designer.cs">
       <DependentUpon>FrmXa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FromChiaNhom\frmChiaNhom.cs">
+    <Compile Include="FormNhom\frmChiaNhom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FromChiaNhom\frmChiaNhom.Designer.cs">
+    <Compile Include="FormNhom\frmChiaNhom.Designer.cs">
       <DependentUpon>frmChiaNhom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChiaViec\frmChiaViec.cs">
+    <Compile Include="FormCongViec\frmChiaViec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChiaViec\frmChiaViec.Designer.cs">
+    <Compile Include="FormCongViec\frmChiaViec.Designer.cs">
       <DependentUpon>frmChiaViec.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain\frmMain.cs">
@@ -307,22 +335,22 @@
     <Compile Include="FormDangNhap\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoDoi\frmTaoDoi.cs">
+    <Compile Include="FormDoi\frmTaoDoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoDoi\frmTaoDoi.Designer.cs">
+    <Compile Include="FormDoi\frmTaoDoi.Designer.cs">
       <DependentUpon>frmTaoDoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTaoNhom\frmTaoNhom.cs">
+    <Compile Include="FormNhom\frmTaoNhom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTaoNhom\frmTaoNhom.Designer.cs">
+    <Compile Include="FormNhom\frmTaoNhom.Designer.cs">
       <DependentUpon>frmTaoNhom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FromChiaDoi\frmChiaDoi.cs">
+    <Compile Include="FormDoi\frmChiaDoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FromChiaDoi\frmChiaDoi.Designer.cs">
+    <Compile Include="FormDoi\frmChiaDoi.Designer.cs">
       <DependentUpon>frmChiaDoi.cs</DependentUpon>
     </Compile>
     <Compile Include="MyWaitForm.cs">
@@ -363,13 +391,13 @@
     <EmbeddedResource Include="FormTaoChienDich\FrmTaoChienDich.resx">
       <DependentUpon>FrmTaoChienDich.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoCongViec\FrmChonAp.resx">
+    <EmbeddedResource Include="FormCongViec\FrmChonAp.resx">
       <DependentUpon>FrmChonAp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoCongViec\FrmCongViec.resx">
+    <EmbeddedResource Include="FormCongViec\FrmCongViec.resx">
       <DependentUpon>FrmCongViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoCongViec\FrmNhapLieuCongViec.resx">
+    <EmbeddedResource Include="FormCongViec\FrmNhapLieuCongViec.resx">
       <DependentUpon>FrmNhapLieuCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmKhoiPhucTaiKhoanCuaKhoa.resx">
@@ -384,7 +412,7 @@
     <EmbeddedResource Include="FormTaoTaiKhoanCuaKhoa\frmXoaTaiKhoanCuaKhoa.resx">
       <DependentUpon>frmXoaTaiKhoanCuaKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormXemThoiGianCV\frmXemThoiGianLamViec.resx">
+    <EmbeddedResource Include="FormCongViec\frmXemThoiGianLamViec.resx">
       <DependentUpon>frmXemThoiGianLamViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmXaApNhaDan\FrmAp.resx">
@@ -405,10 +433,10 @@
     <EmbeddedResource Include="frmXaApNhaDan\FrmXa.resx">
       <DependentUpon>FrmXa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FromChiaNhom\frmChiaNhom.resx">
+    <EmbeddedResource Include="FormNhom\frmChiaNhom.resx">
       <DependentUpon>frmChiaNhom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChiaViec\frmChiaViec.resx">
+    <EmbeddedResource Include="FormCongViec\frmChiaViec.resx">
       <DependentUpon>frmChiaViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap\frmDangNhap.resx">
@@ -417,13 +445,13 @@
     <EmbeddedResource Include="FormMain\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoDoi\frmTaoDoi.resx">
+    <EmbeddedResource Include="FormDoi\frmTaoDoi.resx">
       <DependentUpon>frmTaoDoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoNhom\frmTaoNhom.resx">
+    <EmbeddedResource Include="FormNhom\frmTaoNhom.resx">
       <DependentUpon>frmTaoNhom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FromChiaDoi\frmChiaDoi.resx">
+    <EmbeddedResource Include="FormDoi\frmChiaDoi.resx">
       <DependentUpon>frmChiaDoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyWaitForm.resx">
@@ -573,6 +601,7 @@
     <None Include="DSxemThoiGianLamViec.xss">
       <DependentUpon>DSxemThoiGianLamViec.xsd</DependentUpon>
     </None>
+    <None Include="MUAHEXANH_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -584,7 +613,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FormTaoTaiKhoanCuaAdmin\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\summer-beach-logo-illustration-free-vector.jpg" />

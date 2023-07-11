@@ -48,13 +48,13 @@ namespace MUAHEXANH
         private void frmTaoDoi_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dStaoDoi.Doi' table. You can move, or remove it, as needed.
-            
+
             // TODO: This line of code loads data into the 'dStaoDoi.Doi' table. You can move, or remove it, as needed.
 
             // TODO: This line of code loads data into the 'dStaoDoi.Khoa' table. You can move, or remove it, as needed.
 
             // TODO: This line of code loads data into the 'dStaoDoi.Nhom' table. You can move, or remove it, as needed.
-
+            this.dStaoDoi.EnforceConstraints = false;
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
             

@@ -174,7 +174,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cmbHoTen);
             this.Name = "frmTaoTaiKhoanCuaKhoa";
-            this.Text = "frmTaoTaiKhoanKhoa";
+            this.Text = "Tạo tài khoản";
             this.Load += new System.EventHandler(this.frmTaoTaiKhoanCuaKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNhapLaiMK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).EndInit();

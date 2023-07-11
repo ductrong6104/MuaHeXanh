@@ -37,17 +37,17 @@
             this.tableAdapterManager = new MUAHEXANH.DStaoTaiKhoanTableAdapters.TableAdapterManager();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvTaiKhoanXoa = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chonXoa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dStaoTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_ds_taikhoanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanXoa)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbChonTK
@@ -112,16 +112,6 @@
             this.panelControl1.Size = new System.Drawing.Size(383, 450);
             this.panelControl1.TabIndex = 4;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.cmbChonTK);
-            this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 2);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(379, 74);
-            this.panelControl2.TabIndex = 4;
-            // 
             // dgvTaiKhoanXoa
             // 
             this.dgvTaiKhoanXoa.AllowUserToAddRows = false;
@@ -156,6 +146,16 @@
             this.chonXoa.MinimumWidth = 6;
             this.chonXoa.Name = "chonXoa";
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.cmbChonTK);
+            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(379, 74);
+            this.panelControl2.TabIndex = 4;
+            // 
             // frmXoaTaiKhoanCuaKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -164,16 +164,16 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btnXoa);
             this.Name = "frmXoaTaiKhoanCuaKhoa";
-            this.Text = "frmXoaTaiKhoanCuaKhoa";
+            this.Text = "Xóa tài khoản";
             this.Load += new System.EventHandler(this.frmXoaTaiKhoanCuaKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dStaoTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_ds_taikhoanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanXoa)).EndInit();
             this.ResumeLayout(false);
 
         }

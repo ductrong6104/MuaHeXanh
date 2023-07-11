@@ -56,7 +56,7 @@ namespace MUAHEXANH.FormKhenThuong
                 int hd_them = Program.ExecSqlNonQuery(cmd);
                 if (hd_them != 0)
                 {
-                    MessageBox.Show("Lỗi thêm danh hiệu cho sinh viên!", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi thêm danh hiệu cho sinh viên! Mỗi đội khen thưởng tối đa 5 sinh viên", "", MessageBoxButtons.OK);
                     return;
                 }
                 

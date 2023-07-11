@@ -14,6 +14,7 @@ namespace MUAHEXANH
     {
         private int viTri;
         private bool dangThem;
+        
         public frmTaoDoi()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace MUAHEXANH
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
             pnlDOI.Enabled = false;
             gcDSDOI.Enabled = true;
-
+            initialPanelThem();
         }
         public void trangThaiChuaGhi()
         {
@@ -33,6 +34,15 @@ namespace MUAHEXANH
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             pnlDOI.Enabled = true;
             gcDSDOI.Enabled = false;
+        }
+
+        public void initialPanelThem()
+        {
+            txtTenDoi.Text = "";
+            cmbGiamSat1.Text = "";
+            cmbGiamSat2.Text = "";
+            cmbKhoa.Text = "";
+            cmbXa.Text = "";
         }
 
         private void frmTaoDoi_Load(object sender, EventArgs e)
@@ -47,8 +57,10 @@ namespace MUAHEXANH
 
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
+            
             this.nhomTableAdapter.Connection.ConnectionString = Program.connstr;
             this.nhomTableAdapter.Fill(this.dStaoDoi.Nhom);
+            
             this.khoaTableAdapter.Connection.ConnectionString = Program.connstr;
             this.khoaTableAdapter.Fill(this.dStaoDoi.Khoa);
             txtChienDich.Text = Program.tenChienDich;
@@ -59,6 +71,7 @@ namespace MUAHEXANH
            
             this.sp_lay_xa_tu_chiendichTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_xa_tu_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_xa_tu_chiendich, Program.maChienDich);
+            
             trangThaiBanDau();
         }
 
@@ -66,9 +79,6 @@ namespace MUAHEXANH
         {
             viTri = bdsDOI.Position;
             dangThem = true;
-            txtTenDoi.Text = "";
-            cmbGiamSat1.Text = "";
-            cmbGiamSat2.Text = "";
             trangThaiChuaGhi();
         }
 
@@ -80,9 +90,15 @@ namespace MUAHEXANH
                 gcDSDOI.Focus();
                 return;
             }
+            cmbGiamSat1.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["GIAMSAT1"].ToString();
+            cmbGiamSat2.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["GIAMSAT2"].ToString();
+            cmbKhoa.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["TENKHOA"].ToString();
+            cmbXa.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["TENXA"].ToString();
+            txtTenDoi.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["TENDOI"].ToString();
             viTri = bdsDOI.Position;
             dangThem = false;
             trangThaiChuaGhi();
+
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -150,7 +166,7 @@ namespace MUAHEXANH
                 }
 
                 // khi ghi đội thì tự động thêm một nhóm chứa đội trưởng, đội phó đội đó 
-                MessageBox.Show("ghi đội thành công", "", MessageBoxButtons.OK);
+                
                 //this.ttsv_trong_nhomTableAdapter.Fill(this.dSchiaNhom.ttsv_trong_nhom); 
             }
             catch (Exception ex)
@@ -160,9 +176,10 @@ namespace MUAHEXANH
                 // tro ve trang thai luc them cho user dieu chinh lai
                 return;
             }
+            MessageBox.Show("ghi đội thành công", "", MessageBoxButtons.OK);
+            bdsDOI.Position = viTri;
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
             this.nhomTableAdapter.Fill(this.dStaoDoi.Nhom);
-
             trangThaiBanDau();
 
         }
@@ -211,7 +228,6 @@ namespace MUAHEXANH
             }
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.Fill(this.dStaoDoi.sp_lay_dsdoi_theo_chiendich, Program.maChienDich);
             this.nhomTableAdapter.Fill(this.dStaoDoi.Nhom);
-
             trangThaiBanDau();
 
         }
@@ -254,6 +270,18 @@ namespace MUAHEXANH
                 MessageBox.Show("Không đủ số lượng giám sát cho khoa này, vui lòng chọn khoa khác !", "", MessageBoxButtons.OK);
                 cmbKhoa.Focus();    
             }
+        }
+
+        
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            //if (btnThem.Enabled == false)
+            //    bdsDOI.Position = viTri;
+            //cmbGiamSat1.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["GIAMSAT1"].ToString();
+            //cmbGiamSat2.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["GIAMSAT2"].ToString();
+            //cmbKhoa.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["TENKHOA"].ToString();
+            //cmbXa.Text = ((DataRowView)bdsDOI[bdsDOI.Position])["TENXA"].ToString();
         }
     }
 }

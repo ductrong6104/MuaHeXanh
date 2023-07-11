@@ -381,6 +381,7 @@
             this.gridView1.GridControl = this.gcDSDOI;
             this.gridView1.Name = "gridView1";
             this.gridView1.ViewCaption = "Tạo Đội";
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             // 
             // colMaDoi
             // 
@@ -388,6 +389,7 @@
             this.colMaDoi.FieldName = "MaDoi";
             this.colMaDoi.MinWidth = 25;
             this.colMaDoi.Name = "colMaDoi";
+            this.colMaDoi.OptionsColumn.ReadOnly = true;
             this.colMaDoi.Visible = true;
             this.colMaDoi.VisibleIndex = 0;
             this.colMaDoi.Width = 94;
@@ -398,6 +400,7 @@
             this.coltendoi.FieldName = "tendoi";
             this.coltendoi.MinWidth = 25;
             this.coltendoi.Name = "coltendoi";
+            this.coltendoi.OptionsColumn.ReadOnly = true;
             this.coltendoi.Visible = true;
             this.coltendoi.VisibleIndex = 1;
             this.coltendoi.Width = 94;
@@ -408,6 +411,7 @@
             this.colGiamSat1.FieldName = "GiamSat1";
             this.colGiamSat1.MinWidth = 25;
             this.colGiamSat1.Name = "colGiamSat1";
+            this.colGiamSat1.OptionsColumn.ReadOnly = true;
             this.colGiamSat1.Visible = true;
             this.colGiamSat1.VisibleIndex = 2;
             this.colGiamSat1.Width = 94;
@@ -418,6 +422,7 @@
             this.colGiamSat2.FieldName = "GiamSat2";
             this.colGiamSat2.MinWidth = 25;
             this.colGiamSat2.Name = "colGiamSat2";
+            this.colGiamSat2.OptionsColumn.ReadOnly = true;
             this.colGiamSat2.Visible = true;
             this.colGiamSat2.VisibleIndex = 3;
             this.colGiamSat2.Width = 94;
@@ -428,6 +433,7 @@
             this.colDoiTruong.FieldName = "DoiTruong";
             this.colDoiTruong.MinWidth = 25;
             this.colDoiTruong.Name = "colDoiTruong";
+            this.colDoiTruong.OptionsColumn.ReadOnly = true;
             this.colDoiTruong.Visible = true;
             this.colDoiTruong.VisibleIndex = 4;
             this.colDoiTruong.Width = 94;
@@ -438,6 +444,7 @@
             this.colDoiPho.FieldName = "DoiPho";
             this.colDoiPho.MinWidth = 25;
             this.colDoiPho.Name = "colDoiPho";
+            this.colDoiPho.OptionsColumn.ReadOnly = true;
             this.colDoiPho.Visible = true;
             this.colDoiPho.VisibleIndex = 5;
             this.colDoiPho.Width = 94;
@@ -448,6 +455,7 @@
             this.coltenkhoa.FieldName = "tenkhoa";
             this.coltenkhoa.MinWidth = 25;
             this.coltenkhoa.Name = "coltenkhoa";
+            this.coltenkhoa.OptionsColumn.ReadOnly = true;
             this.coltenkhoa.Visible = true;
             this.coltenkhoa.VisibleIndex = 6;
             this.coltenkhoa.Width = 94;
@@ -458,6 +466,7 @@
             this.coltenxa.FieldName = "tenxa";
             this.coltenxa.MinWidth = 25;
             this.coltenxa.Name = "coltenxa";
+            this.coltenxa.OptionsColumn.ReadOnly = true;
             this.coltenxa.Visible = true;
             this.coltenxa.VisibleIndex = 7;
             this.coltenxa.Width = 94;
@@ -468,6 +477,7 @@
             this.colsosv.FieldName = "sosv";
             this.colsosv.MinWidth = 25;
             this.colsosv.Name = "colsosv";
+            this.colsosv.OptionsColumn.ReadOnly = true;
             this.colsosv.Visible = true;
             this.colsosv.VisibleIndex = 8;
             this.colsosv.Width = 94;
@@ -642,7 +652,6 @@
             // 
             // cmbGiamSat1
             // 
-            this.cmbGiamSat1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "GiamSat1", true));
             this.cmbGiamSat1.DataSource = this.sp_lay_giamsat1_them_vao_doiBindingSource;
             this.cmbGiamSat1.DisplayMember = "hoten";
             this.cmbGiamSat1.FormattingEnabled = true;
@@ -654,7 +663,6 @@
             // 
             // cmbGiamSat2
             // 
-            this.cmbGiamSat2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "GiamSat2", true));
             this.cmbGiamSat2.DataSource = this.sp_lay_giamsat2_them_vao_doiBindingSource;
             this.cmbGiamSat2.DisplayMember = "hoten";
             this.cmbGiamSat2.FormattingEnabled = true;
@@ -666,10 +674,8 @@
             // 
             // cmbKhoa
             // 
-            this.cmbKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "tenkhoa", true));
             this.cmbKhoa.DataSource = this.khoaBindingSource;
             this.cmbKhoa.DisplayMember = "TenKhoa";
-            this.cmbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKhoa.FormattingEnabled = true;
             this.cmbKhoa.Location = new System.Drawing.Point(520, 74);
             this.cmbKhoa.Name = "cmbKhoa";
@@ -680,10 +686,8 @@
             // 
             // cmbXa
             // 
-            this.cmbXa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsDOI, "tenxa", true));
             this.cmbXa.DataSource = this.sp_lay_xa_tu_chiendichBindingSource;
             this.cmbXa.DisplayMember = "TenXa";
-            this.cmbXa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbXa.FormattingEnabled = true;
             this.cmbXa.Location = new System.Drawing.Point(520, 117);
             this.cmbXa.Name = "cmbXa";

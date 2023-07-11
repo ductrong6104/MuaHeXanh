@@ -123,6 +123,7 @@ namespace MUAHEXANH
             Program.frmChinh.HOTEN.Text = "Họ Tên = " + Program.mHoten;
             Program.frmChinh.NHOM.Text = "Nhóm = " + Program.mGroup;
             Program.frmChinh.TENSV.Text = "Tên server: " + Program.servername;
+            
             Program.frmDN.Hide();
         }
 

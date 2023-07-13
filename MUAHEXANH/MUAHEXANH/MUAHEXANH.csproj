@@ -191,12 +191,6 @@
     <Compile Include="FormBackup\FrmNhapLieuBackup.Designer.cs">
       <DependentUpon>FrmNhapLieuBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBackup\FrmNhapLieuLapLichBackup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBackup\FrmNhapLieuLapLichBackup.Designer.cs">
-      <DependentUpon>FrmNhapLieuLapLichBackup.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormKhenThuong\frmDanhHieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,9 +366,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBackup\FrmNhapLieuBackup.resx">
       <DependentUpon>FrmNhapLieuBackup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormBackup\FrmNhapLieuLapLichBackup.resx">
-      <DependentUpon>FrmNhapLieuLapLichBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhenThuong\frmDanhHieu.resx">
       <DependentUpon>frmDanhHieu.cs</DependentUpon>

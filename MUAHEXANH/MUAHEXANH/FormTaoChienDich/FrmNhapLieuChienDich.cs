@@ -1,10 +1,13 @@
-﻿using DevExpress.XtraCharts.Designer.Native;
+﻿using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.Utils.Gesture;
+using DevExpress.XtraCharts.Designer.Native;
 using MUAHEXANH.App;
 using MUAHEXANH.DSTaoChienDichTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -40,6 +43,8 @@ namespace MUAHEXANH
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            Alert.InfoMessageBox(dtpNgayPhatDong.Text + ", " + dtpNgayKetThuc.Text);
+            
             if (txtTenChienDich.Text?.Trim() == "")
             {
                 Alert.ErrorMessageBox("Tên chiến dịch không được để trống");
@@ -81,7 +86,8 @@ namespace MUAHEXANH
         {
             if(state == 0)
             {
-                dtpNgayPhatDong.EditValue = DateTime.Now;
+                dtpNgayPhatDong.EditValue = maxTimeKetThuc();
+                dtpNgayPhatDong.Properties.MinValue = maxTimeKetThuc();
                 dtpNgayKetThuc.Properties.MinValue = dtpNgayPhatDong.DateTime.AddDays(1);
                 dtpNgayKetThuc.EditValue = dtpNgayKetThuc.Properties.MinValue;
             }
@@ -95,11 +101,34 @@ namespace MUAHEXANH
         private void dtpNgayPhatDong_EditValueChanged(object sender, EventArgs e)
         {
             dtpNgayKetThuc.Properties.MinValue = dtpNgayPhatDong.DateTime.AddDays(1);
-            if (dtpNgayKetThuc.EditValue != null &&  dtpNgayKetThuc.DateTime > dtpNgayPhatDong.DateTime)
+            if (dtpNgayKetThuc.DateTime != null &&  dtpNgayKetThuc.DateTime > dtpNgayPhatDong.DateTime)
             {
                 return;
             }
             dtpNgayKetThuc.EditValue = dtpNgayKetThuc.Properties.MinValue;
+        }
+
+        private DateTime maxTimeKetThuc()
+        {
+            if (bdsChienDich.DataSource == null)
+                return DateTime.Now;
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ngayKetThuc", typeof(DateTime));
+            
+            for (int i =0;i <bdsChienDich.Count; i++)
+            {
+                string ngay = ((DataRowView)bdsChienDich[i])["NGAYKETTHUC"].ToString();
+                string[] sDate = ngay.Split('/');
+                string ngayConvert = sDate[1] + '/' + sDate[0] + '/' + sDate[2];
+                DateTime ngaydata = Convert.ToDateTime(ngayConvert); 
+                Console.WriteLine(((DataRowView)bdsChienDich[i])["NGAYKETTHUC"].ToString());
+                dt.Rows.Add(ngaydata);
+            }
+            DateTime dateTime = Convert.ToDateTime(dt.AsEnumerable()
+                        .Max(row => row["NGAYKETTHUC"]));
+            Alert.InfoMessageBox("datetime max" + dateTime.ToString());
+            return dateTime;
         }
     }
 }

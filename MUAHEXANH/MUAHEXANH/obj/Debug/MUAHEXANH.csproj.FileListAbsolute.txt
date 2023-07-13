@@ -88,7 +88,6 @@ D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormKhenThuong.frmDanhHieu.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormKhenThuong.frmKhenThuong.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FrmBackupDevice.resources
-D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormBackup.FrmNhapLieuLapLichBackup.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.FormSchedule.MyWaitForm.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.frmXaApNhaDan.frmThemDiaBan.resources
 D:\tailieuNam3_HK2\thucTapCoSo\project_github\MuaHeXanh\MUAHEXANH\MUAHEXANH\obj\Debug\MUAHEXANH.frmXaApNhaDan.frmThemNhaDan.resources

@@ -37,17 +37,17 @@
             this.sp_lay_ds_taikhoan_chuavohieuhoaTableAdapter = new MUAHEXANH.DStaoTaiKhoanTableAdapters.sp_lay_ds_taikhoan_chuavohieuhoaTableAdapter();
             this.tableAdapterManager = new MUAHEXANH.DStaoTaiKhoanTableAdapters.TableAdapterManager();
             this.pnlVoHieu = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dgvTaiKhoanVoHieu = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_ds_taikhoan_chuavohieuhoaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dStaoTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlVoHieu)).BeginInit();
             this.pnlVoHieu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanVoHieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanVoHieu)).BeginInit();
             this.SuspendLayout();
             // 
             // sp_lay_ds_taikhoan_chuavohieuhoaBindingSource
@@ -66,7 +66,8 @@
             this.cmbChonTK.Items.AddRange(new object[] {
             "Giám sát",
             "Đội trưởng",
-            "Đội phó"});
+            "Đội phó",
+            "Nhóm trưởng"});
             this.cmbChonTK.Location = new System.Drawing.Point(136, 33);
             this.cmbChonTK.Name = "cmbChonTK";
             this.cmbChonTK.Size = new System.Drawing.Size(185, 28);
@@ -113,16 +114,6 @@
             this.pnlVoHieu.Size = new System.Drawing.Size(525, 450);
             this.pnlVoHieu.TabIndex = 4;
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.cmbChonTK);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(2, 2);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(521, 84);
-            this.panelControl1.TabIndex = 0;
-            // 
             // dgvTaiKhoanVoHieu
             // 
             this.dgvTaiKhoanVoHieu.AllowUserToAddRows = false;
@@ -157,6 +148,16 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.cmbChonTK);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(2, 2);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(521, 84);
+            this.panelControl1.TabIndex = 0;
+            // 
             // frmVoHieuHoaTaiKhoanCuaKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -171,10 +172,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dStaoTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlVoHieu)).EndInit();
             this.pnlVoHieu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanVoHieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoanVoHieu)).EndInit();
             this.ResumeLayout(false);
 
         }

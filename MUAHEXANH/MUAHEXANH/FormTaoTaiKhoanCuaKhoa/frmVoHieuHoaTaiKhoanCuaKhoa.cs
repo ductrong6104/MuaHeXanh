@@ -67,9 +67,13 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
             {
                 role = "DOITRUONG";
             }
-            if (cmbChonTK.SelectedIndex == 2)
+            else if (cmbChonTK.SelectedIndex == 2)
             {
                 role = "DOIPHO";
+            }
+            else if (cmbChonTK.SelectedIndex == 3)
+            {
+                role = "NHOMTRUONG";
             }
             this.sp_lay_ds_taikhoan_chuavohieuhoaTableAdapter.Fill(this.dStaoTaiKhoan.sp_lay_ds_taikhoan_chuavohieuhoa, role);
             Console.WriteLine(dgvTaiKhoanVoHieu.Rows.Count);

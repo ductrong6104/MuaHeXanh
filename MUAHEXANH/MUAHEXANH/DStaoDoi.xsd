@@ -358,7 +358,7 @@ FROM     Khoa</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="sosv" msdata:ReadOnly="true" msprop:Generator_UserColumnName="sosv" msprop:Generator_ColumnPropNameInTable="sosvColumn" msprop:Generator_ColumnPropNameInRow="sosv" msprop:Generator_ColumnVarNameInTable="columnsosv" type="xs:int" minOccurs="0" />
+              <xs:element name="sosv" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="sosvColumn" msprop:Generator_ColumnPropNameInRow="sosv" msprop:Generator_UserColumnName="sosv" msprop:Generator_ColumnVarNameInTable="columnsosv" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -498,9 +498,9 @@ FROM     Khoa</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Nhom_Doi" msdata:parent="Doi" msdata:child="Nhom" msdata:parentkey="MaDoi" msdata:childkey="MaDoi" msprop:Generator_UserParentTable="Doi" msprop:Generator_UserChildTable="Nhom" msprop:Generator_RelationVarName="relationFK_Nhom_Doi" msprop:Generator_ChildPropName="GetNhomRows" msprop:Generator_ParentPropName="DoiRow" msprop:Generator_UserRelationName="FK_Nhom_Doi" />
-      <msdata:Relationship name="sp_lay_dsdoi_theo_chiendich_Nhom" msdata:parent="sp_lay_dsdoi_theo_chiendich" msdata:child="Nhom" msdata:parentkey="MaDoi" msdata:childkey="MaDoi" msprop:Generator_UserParentTable="sp_lay_dsdoi_theo_chiendich" msprop:Generator_UserChildTable="Nhom" msprop:Generator_RelationVarName="relationsp_lay_dsdoi_theo_chiendich_Nhom" msprop:Generator_ChildPropName="GetNhomRows" msprop:Generator_ParentPropName="sp_lay_dsdoi_theo_chiendichRow" msprop:Generator_UserRelationName="sp_lay_dsdoi_theo_chiendich_Nhom" />
-      <msdata:Relationship name="FK_Doi_KHOA" msdata:parent="Khoa" msdata:child="Doi" msdata:parentkey="MaKhoa" msdata:childkey="MaKhoa" msprop:Generator_UserParentTable="Khoa" msprop:Generator_UserChildTable="Doi" msprop:Generator_RelationVarName="relationFK_Doi_KHOA" msprop:Generator_ChildPropName="GetDoiRows" msprop:Generator_UserRelationName="FK_Doi_KHOA" msprop:Generator_ParentPropName="KhoaRow" />
+      <msdata:Relationship name="FK_Nhom_Doi" msdata:parent="Doi" msdata:child="Nhom" msdata:parentkey="MaDoi" msdata:childkey="MaDoi" msprop:Generator_UserParentTable="Doi" msprop:Generator_UserChildTable="Nhom" msprop:Generator_RelationVarName="relationFK_Nhom_Doi" msprop:Generator_ChildPropName="GetNhomRows" msprop:Generator_UserRelationName="FK_Nhom_Doi" msprop:Generator_ParentPropName="DoiRow" />
+      <msdata:Relationship name="sp_lay_dsdoi_theo_chiendich_Nhom" msdata:parent="sp_lay_dsdoi_theo_chiendich" msdata:child="Nhom" msdata:parentkey="MaDoi" msdata:childkey="MaDoi" msprop:Generator_UserParentTable="sp_lay_dsdoi_theo_chiendich" msprop:Generator_UserChildTable="Nhom" msprop:Generator_RelationVarName="relationsp_lay_dsdoi_theo_chiendich_Nhom" msprop:Generator_ChildPropName="GetNhomRows" msprop:Generator_UserRelationName="sp_lay_dsdoi_theo_chiendich_Nhom" msprop:Generator_ParentPropName="sp_lay_dsdoi_theo_chiendichRow" />
+      <msdata:Relationship name="FK_Doi_KHOA" msdata:parent="Khoa" msdata:child="Doi" msdata:parentkey="MaKhoa" msdata:childkey="MaKhoa" msprop:Generator_UserParentTable="Khoa" msprop:Generator_UserChildTable="Doi" msprop:Generator_RelationVarName="relationFK_Doi_KHOA" msprop:Generator_ChildPropName="GetDoiRows" msprop:Generator_ParentPropName="KhoaRow" msprop:Generator_UserRelationName="FK_Doi_KHOA" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -68,6 +68,10 @@
             this.pnlDSSV = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.manhomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.masvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ttsv_trongnhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -80,10 +84,7 @@
             this.tableAdapterManager = new MUAHEXANH.DStaoNhomTableAdapters.TableAdapterManager();
             this.sp_lay_nha_chuaconhom_tudoiTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.sp_lay_nha_chuaconhom_tudoiTableAdapter();
             this.ttsv_trongnhomTableAdapter = new MUAHEXANH.DStaoNhomTableAdapters.ttsv_trongnhomTableAdapter();
-            this.manhomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.masvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.makhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTenDoi = new System.Windows.Forms.Label();
             tENNHOMLabel = new System.Windows.Forms.Label();
             tENDOILabel = new System.Windows.Forms.Label();
             diachiLabel = new System.Windows.Forms.Label();
@@ -428,6 +429,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lblTenDoi);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 2);
@@ -439,11 +441,11 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(430, 5);
+            this.labelControl1.Location = new System.Drawing.Point(314, 5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(299, 37);
+            this.labelControl1.Size = new System.Drawing.Size(457, 37);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "DANH SÁCH NHÓM";
+            this.labelControl1.Text = "DANH SÁCH NHÓM CỦA ĐỘI: ";
             // 
             // pnlDSSVNHOM
             // 
@@ -495,6 +497,35 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(481, 272);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // manhomDataGridViewTextBoxColumn
+            // 
+            this.manhomDataGridViewTextBoxColumn.DataPropertyName = "manhom";
+            this.manhomDataGridViewTextBoxColumn.HeaderText = "Mã nhóm";
+            this.manhomDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.manhomDataGridViewTextBoxColumn.Name = "manhomDataGridViewTextBoxColumn";
+            // 
+            // masvDataGridViewTextBoxColumn
+            // 
+            this.masvDataGridViewTextBoxColumn.DataPropertyName = "masv";
+            this.masvDataGridViewTextBoxColumn.HeaderText = "Mã sinh viên";
+            this.masvDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.masvDataGridViewTextBoxColumn.Name = "masvDataGridViewTextBoxColumn";
+            // 
+            // hotenDataGridViewTextBoxColumn
+            // 
+            this.hotenDataGridViewTextBoxColumn.DataPropertyName = "hoten";
+            this.hotenDataGridViewTextBoxColumn.HeaderText = "Họ tên";
+            this.hotenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hotenDataGridViewTextBoxColumn.Name = "hotenDataGridViewTextBoxColumn";
+            this.hotenDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // makhoaDataGridViewTextBoxColumn
+            // 
+            this.makhoaDataGridViewTextBoxColumn.DataPropertyName = "makhoa";
+            this.makhoaDataGridViewTextBoxColumn.HeaderText = "Mã khoa";
+            this.makhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.makhoaDataGridViewTextBoxColumn.Name = "makhoaDataGridViewTextBoxColumn";
             // 
             // ttsv_trongnhomBindingSource
             // 
@@ -589,34 +620,16 @@
             // 
             this.ttsv_trongnhomTableAdapter.ClearBeforeFill = true;
             // 
-            // manhomDataGridViewTextBoxColumn
+            // lblTenDoi
             // 
-            this.manhomDataGridViewTextBoxColumn.DataPropertyName = "manhom";
-            this.manhomDataGridViewTextBoxColumn.HeaderText = "Mã nhóm";
-            this.manhomDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.manhomDataGridViewTextBoxColumn.Name = "manhomDataGridViewTextBoxColumn";
-            // 
-            // masvDataGridViewTextBoxColumn
-            // 
-            this.masvDataGridViewTextBoxColumn.DataPropertyName = "masv";
-            this.masvDataGridViewTextBoxColumn.HeaderText = "Mã sinh viên";
-            this.masvDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.masvDataGridViewTextBoxColumn.Name = "masvDataGridViewTextBoxColumn";
-            // 
-            // hotenDataGridViewTextBoxColumn
-            // 
-            this.hotenDataGridViewTextBoxColumn.DataPropertyName = "hoten";
-            this.hotenDataGridViewTextBoxColumn.HeaderText = "Họ tên";
-            this.hotenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hotenDataGridViewTextBoxColumn.Name = "hotenDataGridViewTextBoxColumn";
-            this.hotenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // makhoaDataGridViewTextBoxColumn
-            // 
-            this.makhoaDataGridViewTextBoxColumn.DataPropertyName = "makhoa";
-            this.makhoaDataGridViewTextBoxColumn.HeaderText = "Mã khoa";
-            this.makhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.makhoaDataGridViewTextBoxColumn.Name = "makhoaDataGridViewTextBoxColumn";
+            this.lblTenDoi.AutoSize = true;
+            this.lblTenDoi.BackColor = System.Drawing.Color.White;
+            this.lblTenDoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblTenDoi.Location = new System.Drawing.Point(777, 18);
+            this.lblTenDoi.Name = "lblTenDoi";
+            this.lblTenDoi.Size = new System.Drawing.Size(51, 20);
+            this.lblTenDoi.TabIndex = 1;
+            this.lblTenDoi.Text = "label1";
             // 
             // frmTaoNhom
             // 
@@ -720,5 +733,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn masvDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn makhoaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblTenDoi;
     }
 }

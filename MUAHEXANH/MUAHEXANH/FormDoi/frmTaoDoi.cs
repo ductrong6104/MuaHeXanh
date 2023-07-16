@@ -43,6 +43,8 @@ namespace MUAHEXANH
             cmbGiamSat2.Text = "";
             cmbKhoa.Text = "";
             cmbXa.Text = "";
+            txtMaGS1.Text = "";
+            txtMaGS2.Text = "";
         }
 
         private void frmTaoDoi_Load(object sender, EventArgs e)
@@ -78,6 +80,8 @@ namespace MUAHEXANH
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             viTri = bdsDOI.Position;
+            cmbKhoa.SelectedIndex = 0;
+            cmbXa.SelectedIndex = 0;
             dangThem = true;
             trangThaiChuaGhi();
         }

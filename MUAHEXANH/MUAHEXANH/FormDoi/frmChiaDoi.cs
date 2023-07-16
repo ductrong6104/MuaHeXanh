@@ -125,10 +125,12 @@ namespace MUAHEXANH
                 MessageBox.Show("Sinh viên chuyển sang đội thành công!", "", MessageBoxButtons.OK);
                 Console.WriteLine("manhomdangchon trong btnChuyen: " + manhomthem);
                 //ghiThanhCong = true;
+                this.sp_lay_doi_tu_chiendichTableAdapter.Fill(this.dSchiaDoi.sp_lay_doi_tu_chiendich, Program.maChienDich);
                 this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter.Fill(this.dSchiaDoi.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoi, cmbDOI.SelectedValue.ToString());
                 this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaDoi.sp_lay_nhom_tu_manhom, txtMANHOM.Text);
                 maKhoaCuaDoi = ((DataRowView)sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource[0])["MAKHOA"].ToString();
                 this.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter.Fill(this.dSchiaDoi.sp_lay_dssv_chuacodoi_theo_makhoa, maKhoaCuaDoi);
+
                 for (int i = 0; i < dgvSVCHUACODOI.Rows.Count; i++)
                 {
                     // chi lay sinh vien nào được tick

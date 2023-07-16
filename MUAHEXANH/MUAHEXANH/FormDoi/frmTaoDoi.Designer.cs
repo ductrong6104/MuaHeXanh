@@ -36,6 +36,8 @@
             System.Windows.Forms.Label tenkhoaLabel;
             System.Windows.Forms.Label tenxaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoDoi));
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -95,12 +97,16 @@
             this.cmbXa = new System.Windows.Forms.ComboBox();
             this.pnlDOI = new DevExpress.XtraEditors.PanelControl();
             this.sp_lay_dsdoi_theo_chiendichTableAdapter = new MUAHEXANH.DStaoDoiTableAdapters.sp_lay_dsdoi_theo_chiendichTableAdapter();
+            this.txtMaGS1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaGS2 = new DevExpress.XtraEditors.TextEdit();
             tendoiLabel = new System.Windows.Forms.Label();
             giamSat1Label = new System.Windows.Forms.Label();
             giamSat2Label = new System.Windows.Forms.Label();
             tenchiendichLabel = new System.Windows.Forms.Label();
             tenkhoaLabel = new System.Windows.Forms.Label();
             tenxaLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlDSDOI)).BeginInit();
             this.pnlDSDOI.SuspendLayout();
@@ -125,6 +131,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtChienDich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlDOI)).BeginInit();
             this.pnlDOI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGS1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGS2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tendoiLabel
@@ -148,7 +156,7 @@
             // giamSat2Label
             // 
             giamSat2Label.AutoSize = true;
-            giamSat2Label.Location = new System.Drawing.Point(17, 125);
+            giamSat2Label.Location = new System.Drawing.Point(17, 170);
             giamSat2Label.Name = "giamSat2Label";
             giamSat2Label.Size = new System.Drawing.Size(130, 20);
             giamSat2Label.TabIndex = 4;
@@ -666,7 +674,7 @@
             this.cmbGiamSat2.DataSource = this.sp_lay_giamsat2_them_vao_doiBindingSource;
             this.cmbGiamSat2.DisplayMember = "hoten";
             this.cmbGiamSat2.FormattingEnabled = true;
-            this.cmbGiamSat2.Location = new System.Drawing.Point(164, 117);
+            this.cmbGiamSat2.Location = new System.Drawing.Point(164, 162);
             this.cmbGiamSat2.Name = "cmbGiamSat2";
             this.cmbGiamSat2.Size = new System.Drawing.Size(198, 28);
             this.cmbGiamSat2.TabIndex = 17;
@@ -697,6 +705,10 @@
             // 
             // pnlDOI
             // 
+            this.pnlDOI.Controls.Add(label2);
+            this.pnlDOI.Controls.Add(this.txtMaGS2);
+            this.pnlDOI.Controls.Add(label1);
+            this.pnlDOI.Controls.Add(this.txtMaGS1);
             this.pnlDOI.Controls.Add(this.cmbXa);
             this.pnlDOI.Controls.Add(this.cmbKhoa);
             this.pnlDOI.Controls.Add(this.cmbGiamSat2);
@@ -718,6 +730,44 @@
             // sp_lay_dsdoi_theo_chiendichTableAdapter
             // 
             this.sp_lay_dsdoi_theo_chiendichTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(34, 125);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(115, 20);
+            label1.TabIndex = 22;
+            label1.Text = "Mã giám sát 1:";
+            // 
+            // txtMaGS1
+            // 
+            this.txtMaGS1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_giamsat1_them_vao_doiBindingSource, "MaGV", true));
+            this.txtMaGS1.Location = new System.Drawing.Point(164, 119);
+            this.txtMaGS1.MenuManager = this.barManager1;
+            this.txtMaGS1.Name = "txtMaGS1";
+            this.txtMaGS1.Properties.ReadOnly = true;
+            this.txtMaGS1.Size = new System.Drawing.Size(198, 26);
+            this.txtMaGS1.TabIndex = 23;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(34, 212);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(115, 20);
+            label2.TabIndex = 24;
+            label2.Text = "Mã giám sát 2:";
+            // 
+            // txtMaGS2
+            // 
+            this.txtMaGS2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_lay_giamsat2_them_vao_doiBindingSource, "MaGV", true));
+            this.txtMaGS2.Location = new System.Drawing.Point(164, 206);
+            this.txtMaGS2.MenuManager = this.barManager1;
+            this.txtMaGS2.Name = "txtMaGS2";
+            this.txtMaGS2.Properties.ReadOnly = true;
+            this.txtMaGS2.Size = new System.Drawing.Size(198, 26);
+            this.txtMaGS2.TabIndex = 25;
             // 
             // frmTaoDoi
             // 
@@ -762,6 +812,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnlDOI)).EndInit();
             this.pnlDOI.ResumeLayout(false);
             this.pnlDOI.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGS1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGS2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -828,5 +880,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maDoiDataGridViewTextBoxColumn;
+        private DevExpress.XtraEditors.TextEdit txtMaGS2;
+        private DevExpress.XtraEditors.TextEdit txtMaGS1;
     }
 }

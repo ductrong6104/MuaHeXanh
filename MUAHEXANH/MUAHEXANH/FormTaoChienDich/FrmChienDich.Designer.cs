@@ -48,10 +48,6 @@
             this.gvDiaBanChienDich = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnXoaDiaBan = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemDiaBan = new DevExpress.XtraEditors.SimpleButton();
-            this.dSTaoChienDich = new MUAHEXANH.DSTaoChienDich();
-            this.bdsChienDich = new System.Windows.Forms.BindingSource(this.components);
-            this.chienDichTableAdapter = new MUAHEXANH.DSTaoChienDichTableAdapters.ChienDichTableAdapter();
-            this.tableAdapterManager = new MUAHEXANH.DSTaoChienDichTableAdapters.TableAdapterManager();
             this.gcChienDich = new DevExpress.XtraGrid.GridControl();
             this.gvChienDich = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaChienDich = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,8 +63,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDiaBanChienDich)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiaBanChienDich)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSTaoChienDich)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChienDich)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcChienDich)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvChienDich)).BeginInit();
             this.SuspendLayout();
@@ -180,10 +174,10 @@
             this.panelControl1.Controls.Add(this.gcDiaBanChuaCo);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 301);
+            this.panelControl1.Location = new System.Drawing.Point(0, 497);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1688, 494);
+            this.panelControl1.Size = new System.Drawing.Size(1688, 298);
             this.panelControl1.TabIndex = 6;
             // 
             // gcDiaBanChuaCo
@@ -195,7 +189,7 @@
             this.gcDiaBanChuaCo.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiaBanChuaCo.MenuManager = this.barManager1;
             this.gcDiaBanChuaCo.Name = "gcDiaBanChuaCo";
-            this.gcDiaBanChuaCo.Size = new System.Drawing.Size(467, 494);
+            this.gcDiaBanChuaCo.Size = new System.Drawing.Size(467, 298);
             this.gcDiaBanChuaCo.TabIndex = 1;
             this.gcDiaBanChuaCo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDiaBanChuaCo});
@@ -223,7 +217,7 @@
             this.panelControl2.Location = new System.Drawing.Point(467, 0);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1221, 494);
+            this.panelControl2.Size = new System.Drawing.Size(1221, 298);
             this.panelControl2.TabIndex = 0;
             // 
             // gcDiaBanChienDich
@@ -235,7 +229,7 @@
             this.gcDiaBanChienDich.Margin = new System.Windows.Forms.Padding(4);
             this.gcDiaBanChienDich.MenuManager = this.barManager1;
             this.gcDiaBanChienDich.Name = "gcDiaBanChienDich";
-            this.gcDiaBanChienDich.Size = new System.Drawing.Size(989, 494);
+            this.gcDiaBanChienDich.Size = new System.Drawing.Size(989, 298);
             this.gcDiaBanChienDich.TabIndex = 2;
             this.gcDiaBanChienDich.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDiaBanChienDich});
@@ -256,7 +250,7 @@
             // btnXoaDiaBan
             // 
             this.btnXoaDiaBan.Enabled = false;
-            this.btnXoaDiaBan.Location = new System.Drawing.Point(68, 282);
+            this.btnXoaDiaBan.Location = new System.Drawing.Point(68, 149);
             this.btnXoaDiaBan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaDiaBan.Name = "btnXoaDiaBan";
             this.btnXoaDiaBan.Size = new System.Drawing.Size(105, 31);
@@ -267,7 +261,7 @@
             // btnThemDiaBan
             // 
             this.btnThemDiaBan.Enabled = false;
-            this.btnThemDiaBan.Location = new System.Drawing.Point(68, 145);
+            this.btnThemDiaBan.Location = new System.Drawing.Point(68, 72);
             this.btnThemDiaBan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemDiaBan.Name = "btnThemDiaBan";
             this.btnThemDiaBan.Size = new System.Drawing.Size(105, 31);
@@ -275,29 +269,8 @@
             this.btnThemDiaBan.Text = "Thêm";
             this.btnThemDiaBan.Click += new System.EventHandler(this.btnThemDiaBan_Click);
             // 
-            // dSTaoChienDich
-            // 
-            this.dSTaoChienDich.DataSetName = "DSTaoChienDich";
-            this.dSTaoChienDich.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bdsChienDich
-            // 
-            this.bdsChienDich.DataMember = "ChienDich";
-            this.bdsChienDich.DataSource = this.dSTaoChienDich;
-            // 
-            // chienDichTableAdapter
-            // 
-            this.chienDichTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ChienDichTableAdapter = this.chienDichTableAdapter;
-            this.tableAdapterManager.UpdateOrder = MUAHEXANH.DSTaoChienDichTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // gcChienDich
             // 
-            this.gcChienDich.DataSource = this.bdsChienDich;
             this.gcChienDich.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcChienDich.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcChienDich.Location = new System.Drawing.Point(0, 30);
@@ -305,7 +278,7 @@
             this.gcChienDich.Margin = new System.Windows.Forms.Padding(4);
             this.gcChienDich.MenuManager = this.barManager1;
             this.gcChienDich.Name = "gcChienDich";
-            this.gcChienDich.Size = new System.Drawing.Size(1688, 271);
+            this.gcChienDich.Size = new System.Drawing.Size(1688, 467);
             this.gcChienDich.TabIndex = 11;
             this.gcChienDich.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvChienDich});
@@ -368,7 +341,7 @@
             this.colNgayKetThuc.VisibleIndex = 3;
             this.colNgayKetThuc.Width = 100;
             // 
-            // FrmChienDich
+            // FrmTaoChienDich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,7 +353,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmChienDich";
+            this.Name = "FrmTaoChienDich";
             this.Text = "FrmTaoChienDich";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTaoChienDich_Load);
@@ -393,8 +366,6 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcDiaBanChienDich)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiaBanChienDich)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSTaoChienDich)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChienDich)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcChienDich)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvChienDich)).EndInit();
             this.ResumeLayout(false);
@@ -415,10 +386,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.BindingSource bdsChienDich;
-        private DSTaoChienDich dSTaoChienDich;
-        private DSTaoChienDichTableAdapters.ChienDichTableAdapter chienDichTableAdapter;
-        private DSTaoChienDichTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gcChienDich;
         private DevExpress.XtraGrid.Views.Grid.GridView gvChienDich;
         private DevExpress.XtraEditors.PanelControl panelControl2;

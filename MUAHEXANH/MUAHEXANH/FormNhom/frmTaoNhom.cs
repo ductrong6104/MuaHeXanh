@@ -39,6 +39,8 @@ namespace MUAHEXANH
         {
             // TODO: This line of code loads data into the 'dStaoNhom.ttsv_trongnhom' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'dStaoNhom.ttsv_trongnhom' table. You can move, or remove it, as needed.
+            lblTenDoi.Text = Program.tenDoiLucDN;
+            
             this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dStaoNhom.sp_lay_nhom_tu_doi, Program.mTeam);
             this.ttsv_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -119,6 +121,7 @@ namespace MUAHEXANH
                 return;
             }
             this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dStaoNhom.sp_lay_nhom_tu_doi, Program.mTeam);
+            this.sp_lay_nha_chuaconhom_tudoiTableAdapter.Fill(this.dStaoNhom.sp_lay_nha_chuaconhom_tudoi, Program.mTeam);
             trangThaiBanDau();
         }
 

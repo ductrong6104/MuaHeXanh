@@ -402,14 +402,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MUAHEXANH.exe" size="1672664">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MUAHEXANH.exe" size="1673688">
       <assemblyIdentity name="MUAHEXANH" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>G/WLydvxY2W/UlEhM3nkdSq2X3jueYVCxl3PP6bCXqA=</dsig:DigestValue>
+        <dsig:DigestValue>d5xw/lZrofWejRBRPEbHMrkpELhE2R18xnNIsn46xus=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

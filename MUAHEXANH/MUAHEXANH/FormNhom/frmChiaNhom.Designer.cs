@@ -58,6 +58,10 @@
             this.bdsNHOM = new System.Windows.Forms.BindingSource(this.components);
             this.dSchiaNhom = new MUAHEXANH.DSchiaNhom();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -80,8 +84,6 @@
             this.maNhomDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sp_lay_nhom_tu_manhomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmbNHOMCANTHEM = new System.Windows.Forms.ComboBox();
             this.sp_lay_nhom_tu_doi_de_chiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -98,6 +100,7 @@
             this.thongtinsinhvien_trongnhomTableAdapter = new MUAHEXANH.DSchiaNhomTableAdapters.thongtinsinhvien_trongnhomTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chọnLàmNhómTrưởngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hủyLàmNhómTrưởngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlNHOM)).BeginInit();
             this.pnlNHOM.SuspendLayout();
@@ -106,6 +109,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dSchiaNhom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlSVNHOM)).BeginInit();
             this.pnlSVNHOM.SuspendLayout();
@@ -121,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_manhomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_doi_de_chiaBindingSource)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -366,6 +370,10 @@
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.labelControl8);
+            this.panelControl4.Controls.Add(this.pictureBox4);
+            this.panelControl4.Controls.Add(this.labelControl7);
+            this.panelControl4.Controls.Add(this.pictureBox3);
             this.panelControl4.Controls.Add(this.labelControl4);
             this.panelControl4.Controls.Add(this.pictureBox1);
             this.panelControl4.Controls.Add(this.labelControl1);
@@ -375,9 +383,43 @@
             this.panelControl4.Size = new System.Drawing.Size(1522, 50);
             this.panelControl4.TabIndex = 1;
             // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(1196, 14);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(58, 20);
+            this.labelControl8.TabIndex = 7;
+            this.labelControl8.Text = "Đội phó";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Lime;
+            this.pictureBox4.Location = new System.Drawing.Point(1116, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(64, 24);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(978, 14);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(79, 20);
+            this.labelControl7.TabIndex = 5;
+            this.labelControl7.Text = "Đội trưởng";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Red;
+            this.pictureBox3.Location = new System.Drawing.Point(898, 10);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 24);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(1251, 14);
+            this.labelControl4.Location = new System.Drawing.Point(1414, 14);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(98, 20);
             this.labelControl4.TabIndex = 3;
@@ -386,7 +428,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox1.Location = new System.Drawing.Point(1171, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(1334, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 24);
             this.pictureBox1.TabIndex = 2;
@@ -582,8 +624,6 @@
             // 
             // panelControl6
             // 
-            this.panelControl6.Controls.Add(this.labelControl5);
-            this.panelControl6.Controls.Add(this.pictureBox2);
             this.panelControl6.Controls.Add(this.labelControl3);
             this.panelControl6.Controls.Add(this.cmbNHOMCANTHEM);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -591,23 +631,6 @@
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(779, 83);
             this.panelControl6.TabIndex = 0;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(671, 26);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(98, 20);
-            this.labelControl5.TabIndex = 5;
-            this.labelControl5.Text = "Nhóm trưởng";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox2.Location = new System.Drawing.Point(591, 22);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 24);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // labelControl3
             // 
@@ -713,9 +736,10 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chọnLàmNhómTrưởngToolStripMenuItem});
+            this.chọnLàmNhómTrưởngToolStripMenuItem,
+            this.hủyLàmNhómTrưởngToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(233, 28);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(233, 80);
             // 
             // chọnLàmNhómTrưởngToolStripMenuItem
             // 
@@ -723,6 +747,13 @@
             this.chọnLàmNhómTrưởngToolStripMenuItem.Size = new System.Drawing.Size(232, 24);
             this.chọnLàmNhómTrưởngToolStripMenuItem.Text = "Chọn làm nhóm trưởng";
             this.chọnLàmNhómTrưởngToolStripMenuItem.Click += new System.EventHandler(this.chọnLàmNhómTrưởngToolStripMenuItem_Click);
+            // 
+            // hủyLàmNhómTrưởngToolStripMenuItem
+            // 
+            this.hủyLàmNhómTrưởngToolStripMenuItem.Name = "hủyLàmNhómTrưởngToolStripMenuItem";
+            this.hủyLàmNhómTrưởngToolStripMenuItem.Size = new System.Drawing.Size(232, 24);
+            this.hủyLàmNhómTrưởngToolStripMenuItem.Text = "Hủy làm nhóm trưởng";
+            this.hủyLàmNhómTrưởngToolStripMenuItem.Click += new System.EventHandler(this.hủyLàmNhómTrưởngToolStripMenuItem_Click);
             // 
             // frmChiaNhom
             // 
@@ -749,6 +780,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlSVNHOM)).EndInit();
             this.pnlSVNHOM.ResumeLayout(false);
@@ -766,7 +799,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_lay_nhom_tu_doi_de_chiaBindingSource)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -825,8 +857,6 @@
         private System.Windows.Forms.ToolStripMenuItem chọnLàmNhómTrưởngToolStripMenuItem;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private System.Windows.Forms.DataGridViewTextBoxColumn mANHOMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENNHOMDataGridViewTextBoxColumn;
@@ -843,5 +873,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hOTENDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhomDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn themVaoNhom;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ToolStripMenuItem hủyLàmNhómTrưởngToolStripMenuItem;
     }
 }

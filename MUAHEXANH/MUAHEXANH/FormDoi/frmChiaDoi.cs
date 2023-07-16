@@ -15,6 +15,9 @@ namespace MUAHEXANH
     public partial class frmChiaDoi : Form
     {
         private string maKhoaCuaDoi;
+        private string nhomTruong;
+        private string doiTruong;
+        private string doiPho;
         public frmChiaDoi()
         {
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace MUAHEXANH
             this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter.Fill(this.dSchiaDoi.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoi, cmbDOI.SelectedValue.ToString());
             this.sp_lay_nhom_tu_manhomTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaDoi.sp_lay_nhom_tu_manhom, txtMANHOM.Text);
+            
             this.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter.Connection.ConnectionString = Program.connstr;
             maKhoaCuaDoi = ((DataRowView)sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource[0])["MAKHOA"].ToString();
             this.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter.Fill(this.dSchiaDoi.sp_lay_dssv_chuacodoi_theo_makhoa, maKhoaCuaDoi);
@@ -44,8 +48,8 @@ namespace MUAHEXANH
             this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaDoi.sp_lay_nhom_tu_manhom, txtMANHOM.Text);
             maKhoaCuaDoi = ((DataRowView)sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource[0])["MAKHOA"].ToString();
             this.sp_lay_dssv_chuacodoi_theo_makhoaTableAdapter.Fill(this.dSchiaDoi.sp_lay_dssv_chuacodoi_theo_makhoa, maKhoaCuaDoi);
-            
 
+            
             for (int i = 0; i < dgvSVCHUACODOI.Rows.Count; i++)
             {
                 // chi lay sinh vien nào được tick
@@ -169,15 +173,29 @@ namespace MUAHEXANH
 
         private void chọnLàmĐộiTrưởngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            string svDuocChon = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["MASV"].ToString();
+            if (svDuocChon == doiTruong)
+            {
+                MessageBox.Show("Sinh viên này đã là đội trưởng!", "", MessageBoxButtons.OK);
+                return;
+            }
+            else if (svDuocChon == doiPho)
+            {
+                MessageBox.Show("Sinh viên này đã là đội phó! ", "", MessageBoxButtons.OK);
+                return;
+            }
+            else if (svDuocChon == nhomTruong)
+            {
+                MessageBox.Show("Sinh viên này đã là nhóm trưởng! ", "", MessageBoxButtons.OK);
+                return;
+            }
             if (MessageBox.Show("Ban có thật sự muốn chọn sinh viên này làm đội trưởng không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 int position = cmbDOI.SelectedIndex;
                 try
                 {
                     
-                    string doiTruong = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["masv"].ToString();
-                    string cmd = "UPDATE DOI SET DOITRUONG = '" + doiTruong + "' WHERE MADOI = '" + cmbDOI.SelectedValue.ToString() + "'";
+                    string cmd = "UPDATE DOI SET DOITRUONG = '" + svDuocChon + "' WHERE MADOI = '" + cmbDOI.SelectedValue.ToString() + "'";
                     Console.WriteLine("cmd set doi truong: " + cmd);
                     int setDoiTruong = Program.ExecSqlNonQuery(cmd);
                     if (setDoiTruong != 0)
@@ -203,6 +221,22 @@ namespace MUAHEXANH
 
         private void chọnLàmĐộiPhóToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string svDuocChon = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["MASV"].ToString();
+            if (svDuocChon == doiTruong)
+            {
+                MessageBox.Show("Sinh viên này đã là đội trưởng!", "", MessageBoxButtons.OK);
+                return;
+            }
+            else if (svDuocChon == doiPho)
+            {
+                MessageBox.Show("Sinh viên này đã là đội phó! ", "", MessageBoxButtons.OK);
+                return;
+            }
+            else if (svDuocChon == nhomTruong)
+            {
+                MessageBox.Show("Sinh viên này đã là nhóm trưởng! ", "", MessageBoxButtons.OK);
+                return;
+            }
             if (MessageBox.Show("Ban có thật sự muốn chọn sinh viên này làm đội trưởng không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 int position = cmbDOI.SelectedIndex;
@@ -210,7 +244,7 @@ namespace MUAHEXANH
                 {
 
                     string doipho = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["masv"].ToString();
-                    string cmd = "UPDATE DOI SET DOIPHO = '" + doipho + "' WHERE MADOI = '" + cmbDOI.SelectedValue.ToString() + "'";
+                    string cmd = "UPDATE DOI SET DOIPHO = '" + svDuocChon + "' WHERE MADOI = '" + cmbDOI.SelectedValue.ToString() + "'";
                     Console.WriteLine("cmd set doi PHO: " + cmd);
                     int setDoiTruong = Program.ExecSqlNonQuery(cmd);
                     if (setDoiTruong != 0)
@@ -235,28 +269,35 @@ namespace MUAHEXANH
 
         private void dgvTHANHVIENDOI_Paint(object sender, PaintEventArgs e)
         {
-            string doitruong = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOITRUONG"].ToString();
-            string doipho = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOIPHO"].ToString();
+            if (dgvTHANHVIENDOI.RowCount == 0)
+            {
+                return;
+            }
+            doiTruong = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOITRUONG"].ToString();
+            doiPho = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOIPHO"].ToString();
+            nhomTruong = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["NHOMTRUONG"].ToString();
             for (int i = 0; i < dgvTHANHVIENDOI.Rows.Count; i++)
             {
                 // chi lay sinh vien nào được tick
-                if (dgvTHANHVIENDOI.Rows[i].Cells[0].Value.ToString().Trim() == doitruong.Trim())
+                if (dgvTHANHVIENDOI.Rows[i].Cells[0].Value.ToString().Trim() == doiTruong.Trim())
                 {
                     dgvTHANHVIENDOI.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                     dgvTHANHVIENDOI.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 }
-                else if (dgvTHANHVIENDOI.Rows[i].Cells[0].Value.ToString().Trim() == doipho.Trim())
+                else if (dgvTHANHVIENDOI.Rows[i].Cells[0].Value.ToString().Trim() == doiPho.Trim())
                 {
                     dgvTHANHVIENDOI.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                     dgvTHANHVIENDOI.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                }
+                else if (dgvTHANHVIENDOI.Rows[i].Cells[0].Value.ToString().Trim() == nhomTruong)
+                {
+                    dgvTHANHVIENDOI.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                 }
             }
         }
 
         private void xóaKhỏiĐộiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string doitruong = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOITRUONG"].ToString();
-            string doipho = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOIPHO"].ToString();
             if (MessageBox.Show("Ban có thật sự muốn xóa sinh viên này khỏi đội không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 int position = cmbDOI.SelectedIndex;
@@ -265,7 +306,7 @@ namespace MUAHEXANH
 
                     string svCanXoa = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["masv"].ToString();
                     
-                    if (svCanXoa.Trim() == doitruong.Trim())
+                    if (svCanXoa.Trim() == doiTruong.Trim())
                     {
                         string cmdDOITRUONG = "UPDATE DOI SET DOITRUONG = NULL WHERE MADOI = '" + cmbDOI.SelectedValue.ToString() + "'";
                         Console.WriteLine("cmd set doi TRUONG NULL: " + cmdDOITRUONG);
@@ -276,7 +317,7 @@ namespace MUAHEXANH
                             return;
                         }
                     }
-                    else if (svCanXoa.Trim() == doipho.Trim())
+                    else if (svCanXoa.Trim() == doiPho.Trim())
                     {
                         string cmdDOITRUONG = "UPDATE DOI SET DOIPHO = NULL WHERE MADOI = '" + cmbDOI.SelectedValue.ToString() + "'";
                         Console.WriteLine("cmd set doi PHO NULL: " + cmdDOITRUONG);
@@ -284,6 +325,17 @@ namespace MUAHEXANH
                         if (setDoiTruong != 0)
                         {
                             MessageBox.Show("Lỗi xóa đội phó! ", "", MessageBoxButtons.OK);
+                            return;
+                        }
+                    }
+                    else if (svCanXoa.Trim() == nhomTruong.Trim())
+                    {
+                        string cmdDOITRUONG = "UPDATE NHOM SET NHOMTRUONG = NULL WHERE MANHOM = '" + txtMANHOM.Text + "'";
+                        Console.WriteLine("cmd set nhom truong NULL: " + cmdDOITRUONG);
+                        int setDoiTruong = Program.ExecSqlNonQuery(cmdDOITRUONG);
+                        if (setDoiTruong != 0)
+                        {
+                            MessageBox.Show("Lỗi xóa nhóm trưởng! ", "", MessageBoxButtons.OK);
                             return;
                         }
                     }

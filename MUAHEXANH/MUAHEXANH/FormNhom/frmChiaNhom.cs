@@ -22,6 +22,8 @@ namespace MUAHEXANH
         private string maDoi;
         private string maNhomDangChon = "";
         private bool ghiThanhCong = false;
+        private string maDoiTruong ="";
+        private string maDoiPho ="";
         public frmChiaNhom()
         {
             InitializeComponent();
@@ -51,9 +53,25 @@ namespace MUAHEXANH
 
             // TODO: This line of code loads data into the 'dSchiaNhom.Nhom' table. You can move, or remove it, as needed.
             dSchiaNhom.EnforceConstraints = false;
-            this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
+            string cmd = "exec sp_lay_madoitruong_madoipho_tudoi '" + Program.mTeam + "'";
+            using (SqlDataReader reader = Program.ExecSqlDataReader(cmd))
+            {
+                if (reader == null)
+                {
+                    return;
+                }
+                reader.Read();
+                if (reader.GetString(0) == null)
+                    return;
+                if (reader.GetString(1) == null)
+                    return;
+                maDoiTruong = reader.GetString(0);
+                maDoiPho = reader.GetString(1);
+                Console.WriteLine("ma doi truong: " + maDoiTruong);
+                Console.WriteLine("ma doi pho: " + maDoiPho);
+            }
+                this.sp_lay_nhom_tu_doiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam);
-            
             batTatContextMenuStrip();
 
             //this.thongtinsinhvien_trongnhomTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -157,11 +175,22 @@ namespace MUAHEXANH
                 {
                     if (dgvSVNHOM.Rows[i].Cells[0].Value.ToString() == nhomTruong.Trim())
                     {
-                        MessageBox.Show("Bạn không thể nhóm trưởng sang nhóm khác! Vui lòng chọn sinh viên khác!", "", MessageBoxButtons.OK);
+                        MessageBox.Show("Bạn không thể chuyển nhóm trưởng sang nhóm khác! Vui lòng chọn sinh viên khác!", "", MessageBoxButtons.OK);
                         dgvSVNHOM.Focus();
                         return;
                     }
-                          
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value.ToString() == maDoiTruong)
+                    {
+                        MessageBox.Show("Bạn không thể chuyển đội trưởng sang nhóm khác! Vui lòng chọn sinh viên khác!", "", MessageBoxButtons.OK);
+                        dgvSVNHOM.Focus();
+                        return;
+                    }
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value.ToString() == maDoiTruong)
+                    {
+                        MessageBox.Show("Bạn không thể chuyển đội phó sang nhóm khác! Vui lòng chọn sinh viên khác!", "", MessageBoxButtons.OK);
+                        dgvSVNHOM.Focus();
+                        return;
+                    }
                     Console.WriteLine(dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
                     dtXoa.Rows.Add(manhomxoa, dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
                     dtThem.Rows.Add(manhomthem, dgvSVNHOM.Rows[i].Cells[0].Value.ToString());
@@ -235,13 +264,24 @@ namespace MUAHEXANH
 
         private void chọnLàmNhómTrưởngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string nhomTruong = ((DataRowView)bdsSVNHOM[bdsSVNHOM.Position])["masv"].ToString();
+            if (nhomTruong == maDoiTruong)
+            {
+                MessageBox.Show("Đây là đội trưởng! Không thể làm nhóm trưởng!", "", MessageBoxButtons.OK);
+                return;
+            }
+            if (nhomTruong == maDoiPho)
+            {
+                MessageBox.Show("Đây là đội phó! Không thể làm nhóm trưởng!", "", MessageBoxButtons.OK);
+                return;
+            }
             if (MessageBox.Show("Ban có thật sự muốn chọn sinh viên này làm nhóm trưởng không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 
                 try
                 {
                     string maNhom = ((DataRowView)bdsNHOM[bdsNHOM.Position])["manhom"].ToString();
-                    string nhomTruong = ((DataRowView)bdsSVNHOM[bdsSVNHOM.Position])["masv"].ToString();
+                    
                     string cmd = "UPDATE NHOM SET NHOMTRUONG = '" + nhomTruong + "' WHERE MANHOM = '" + maNhom + "'";
                     Console.WriteLine("cmd set nhom truong: " + cmd);
                     int setNhomTruong = Program.ExecSqlNonQuery(cmd);
@@ -275,12 +315,21 @@ namespace MUAHEXANH
                 for (int j = 0; j < dgvNHOM.Rows.Count; j++)
                 {
                     // chi lay sinh vien nào được tick
-                    if (dgvSVNHOM.Rows[i].Cells[0].Value.ToString().Trim() == dgvNHOM.Rows[j].Cells[7].Value.ToString().Trim())
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value?.ToString().Trim() == dgvNHOM.Rows[j].Cells[7].Value?.ToString().Trim())
                     {
                         dgvSVNHOM.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
 
                     }
-
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value?.ToString().Trim() == maDoiTruong)
+                    {
+                        dgvSVNHOM.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                        dgvSVNHOM.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    }
+                    if (dgvSVNHOM.Rows[i].Cells[0].Value?.ToString().Trim() == maDoiPho)
+                    {
+                        dgvSVNHOM.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                        dgvSVNHOM.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    }
                 }
 
             }
@@ -295,17 +344,65 @@ namespace MUAHEXANH
                 for (int j = 0; j < dgvNHOM.Rows.Count; j++)
                 {
                     // chi lay sinh vien nào được tick
-                    if (dgvSVNHOMCANTHEM.Rows[i].Cells[0].Value.ToString().Trim() == dgvNHOM.Rows[j].Cells[7].Value.ToString().Trim())
+                    if (dgvSVNHOMCANTHEM.Rows[i].Cells[0].Value?.ToString().Trim() == dgvNHOM.Rows[j].Cells[7].Value?.ToString().Trim())
                     {
                         dgvSVNHOMCANTHEM.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
 
                     }
-
+                    if (dgvSVNHOMCANTHEM.Rows[i].Cells[0].Value?.ToString().Trim() == maDoiTruong)
+                    {
+                        dgvSVNHOMCANTHEM.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                        dgvSVNHOMCANTHEM.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    }
+                    if (dgvSVNHOMCANTHEM.Rows[i].Cells[0].Value?.ToString().Trim() == maDoiPho)
+                    {
+                        dgvSVNHOMCANTHEM.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                        dgvSVNHOMCANTHEM.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    }
                 }
 
             }
         }
 
-        
+        private void hủyLàmNhómTrưởngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string nhomTruong = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOMTRUONG"].ToString();
+            string svDuocChon = ((DataRowView)bdsSVNHOM[bdsSVNHOM.Position])["masv"].ToString();
+            if (svDuocChon != nhomTruong)
+            {
+                MessageBox.Show("Đây không phải nhóm trưởng!", "", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (MessageBox.Show("Ban hủy nhóm trưởng cho sinh viên này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+                try
+                {
+                    string maNhom = ((DataRowView)bdsNHOM[bdsNHOM.Position])["manhom"].ToString();
+
+                    string cmd = "UPDATE NHOM SET NHOMTRUONG = NULL WHERE MANHOM = '" + maNhom + "'";
+                    Console.WriteLine("cmd huy nhom truong: " + cmd);
+                    int setNhomTruong = Program.ExecSqlNonQuery(cmd);
+                    if (setNhomTruong != 0)
+                    {
+                        MessageBox.Show("Lỗi hủy nhóm trưởng! ", "", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi hủy nhóm trưởng! " + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+                MessageBox.Show("Hủy thành công! ", "", MessageBoxButtons.OK);
+                ghiThanhCong = true;
+                this.sp_lay_nhom_tu_doiTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_doi, Program.mTeam.Trim());
+
+                //this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+                //this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaNhom.sp_lay_nhom_tu_manhom, cmbNHOMCANTHEM.SelectedValue.ToString());
+            }
+        }
     }
 }

@@ -89,7 +89,6 @@ namespace MUAHEXANH
             {
                 Program.conn.Close();
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("Vui lòng chọn phù hợp tài khoản cho giảng viên hay sinh viên!");
                 return null;
             }
         }

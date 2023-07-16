@@ -1403,6 +1403,8 @@ namespace MUAHEXANH {
             
             private global::System.Data.DataColumn columnMaNhom;
             
+            private global::System.Data.DataColumn columnNhomTruong;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public sp_lay_nhom_tu_manhomDataTable() {
@@ -1462,6 +1464,14 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NhomTruongColumn {
+                get {
+                    return this.columnNhomTruong;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1497,12 +1507,13 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public sp_lay_nhom_tu_manhomRow Addsp_lay_nhom_tu_manhomRow(string masv, string hoten, string MaNhom) {
+            public sp_lay_nhom_tu_manhomRow Addsp_lay_nhom_tu_manhomRow(string masv, string hoten, string MaNhom, string NhomTruong) {
                 sp_lay_nhom_tu_manhomRow rowsp_lay_nhom_tu_manhomRow = ((sp_lay_nhom_tu_manhomRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         masv,
                         hoten,
-                        MaNhom};
+                        MaNhom,
+                        NhomTruong};
                 rowsp_lay_nhom_tu_manhomRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsp_lay_nhom_tu_manhomRow);
                 return rowsp_lay_nhom_tu_manhomRow;
@@ -1536,6 +1547,7 @@ namespace MUAHEXANH {
                 this.columnmasv = base.Columns["masv"];
                 this.columnhoten = base.Columns["hoten"];
                 this.columnMaNhom = base.Columns["MaNhom"];
+                this.columnNhomTruong = base.Columns["NhomTruong"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1547,6 +1559,8 @@ namespace MUAHEXANH {
                 base.Columns.Add(this.columnhoten);
                 this.columnMaNhom = new global::System.Data.DataColumn("MaNhom", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaNhom);
+                this.columnNhomTruong = new global::System.Data.DataColumn("NhomTruong", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNhomTruong);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnmasv,
                                 this.columnMaNhom}, true));
@@ -1556,6 +1570,8 @@ namespace MUAHEXANH {
                 this.columnhoten.MaxLength = 51;
                 this.columnMaNhom.AllowDBNull = false;
                 this.columnMaNhom.MaxLength = 5;
+                this.columnNhomTruong.ReadOnly = true;
+                this.columnNhomTruong.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2630,6 +2646,22 @@ namespace MUAHEXANH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NhomTruong {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_lay_nhom_tu_manhom.NhomTruongColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NhomTruong\' in table \'sp_lay_nhom_tu_manhom\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_lay_nhom_tu_manhom.NhomTruongColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IshotenNull() {
                 return this.IsNull(this.tablesp_lay_nhom_tu_manhom.hotenColumn);
             }
@@ -2638,6 +2670,18 @@ namespace MUAHEXANH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SethotenNull() {
                 this[this.tablesp_lay_nhom_tu_manhom.hotenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNhomTruongNull() {
+                return this.IsNull(this.tablesp_lay_nhom_tu_manhom.NhomTruongColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNhomTruongNull() {
+                this[this.tablesp_lay_nhom_tu_manhom.NhomTruongColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4024,6 +4068,7 @@ SELECT MaSV, Ho, Ten, MaKhoa FROM SinhVien WHERE (MaSV = @MaSV)";
             tableMapping.ColumnMappings.Add("masv", "masv");
             tableMapping.ColumnMappings.Add("hoten", "hoten");
             tableMapping.ColumnMappings.Add("MaNhom", "MaNhom");
+            tableMapping.ColumnMappings.Add("NhomTruong", "NhomTruong");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

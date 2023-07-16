@@ -134,6 +134,14 @@ namespace MUAHEXANH
                 gcNHOM.Focus();
                 return;
             }
+            string tennhom = ((DataRowView)bdsDSNHOM[bdsDSNHOM.Position])["TENNHOM"].ToString();
+            if (tennhom == "temp")
+            {
+                MessageBox.Show("Đây là nhóm chính, để chia các thành viên đội vào nhóm này! Không thể xóa nhóm này", "", MessageBoxButtons.OK);
+                gcNHOM.Focus();
+                return;
+            }
+
 
             if (MessageBox.Show("Ban có thật sự muốn xóa nhóm này không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

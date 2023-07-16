@@ -28,7 +28,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
             this.sp_lay_ds_taikhoanTableAdapter.Fill(this.dStaoTaiKhoan.sp_lay_ds_taikhoan, role);
             if (dgvTaiKhoanXoa.RowCount == 0)
             {
-                MessageBox.Show("Không có tài khoản nào để khôi phục lúc này!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không có tài khoản nào để xóa lúc này!", "", MessageBoxButtons.OK);
                 return;
             }
         }
@@ -55,7 +55,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
             Console.WriteLine(dgvTaiKhoanXoa.Rows.Count);
             if (dgvTaiKhoanXoa.RowCount == 0)
             {
-                MessageBox.Show("Không có tài khoản nào để khôi phục lúc này!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Không có tài khoản nào để xóa lúc này!", "", MessageBoxButtons.OK);
                 return;
             }
         }

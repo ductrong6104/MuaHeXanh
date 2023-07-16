@@ -209,17 +209,17 @@
     <Compile Include="FormRestore\frmRestore.Designer.cs">
       <DependentUpon>frmRestore.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTaoChienDich\FrmChienDich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoChienDich\FrmChienDich.Designer.cs">
+      <DependentUpon>FrmChienDich.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTaoChienDich\FrmNhapLieuChienDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTaoChienDich\FrmNhapLieuChienDich.Designer.cs">
       <DependentUpon>FrmNhapLieuChienDich.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTaoChienDich\FrmTaoChienDich.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTaoChienDich\FrmTaoChienDich.Designer.cs">
-      <DependentUpon>FrmTaoChienDich.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCongViec\FrmChonAp.cs">
       <SubType>Form</SubType>
@@ -376,11 +376,11 @@
     <EmbeddedResource Include="FormRestore\frmRestore.resx">
       <DependentUpon>frmRestore.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoChienDich\FrmChienDich.resx">
+      <DependentUpon>FrmChienDich.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTaoChienDich\FrmNhapLieuChienDich.resx">
       <DependentUpon>FrmNhapLieuChienDich.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTaoChienDich\FrmTaoChienDich.resx">
-      <DependentUpon>FrmTaoChienDich.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCongViec\FrmChonAp.resx">
       <DependentUpon>FrmChonAp.cs</DependentUpon>

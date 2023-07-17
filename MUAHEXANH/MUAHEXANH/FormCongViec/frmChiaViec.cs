@@ -280,7 +280,7 @@ namespace MUAHEXANH
             try
             {
                 this.sp_lay_dsphancong_tu_doiTableAdapter.Fill(this.dSchiaViec.sp_lay_dsphancong_tu_doi, maDoi, deNgay.Text, cmbBuoi.Text);
-                
+                this.sp_lay_dscongviec_tu_doiTableAdapter.Fill(this.dSchiaViec.sp_lay_dscongviec_tu_doi, Program.mTeam);
 
             }
             catch (Exception ex)

@@ -100,6 +100,7 @@ namespace MUAHEXANH
             }
             
             this.thongtinsinhvien_trongnhomTableAdapter.Fill(this.dSchiaNhom.thongtinsinhvien_trongnhom);
+            
             if (!ghiThanhCong) 
                 maNhomDangChon = ((DataRowView)bdsNHOM[bdsNHOM.Position])["MANHOM"].ToString();
             Console.WriteLine("manhomdangchon trong datagridview3: " + maNhomDangChon);

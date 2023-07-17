@@ -103,7 +103,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                     sqlcmd.CommandType = CommandType.StoredProcedure;
                     sqlcmd.Parameters.Add(para);
                     sqlcmd.ExecuteNonQuery();
-                    this.sp_lay_ds_taikhoanTableAdapter.Fill(this.dStaoTaiKhoan.sp_lay_ds_taikhoan, role);
+                    
                     if (dgvTaiKhoanXoa.RowCount == 0)
                     {
                         MessageBox.Show("Không có tài khoản nào để xóa lúc này!", "", MessageBoxButtons.OK);
@@ -117,6 +117,7 @@ namespace MUAHEXANH.FormTaoTaiKhoanCuaKhoa
                     return;
                 }
                 MessageBox.Show("Xóa tài khoản thành công!", "", MessageBoxButtons.OK);
+                this.sp_lay_ds_taikhoanTableAdapter.Fill(this.dStaoTaiKhoan.sp_lay_ds_taikhoan, role);
             }
         }
         public void printDT(DataTable dt)

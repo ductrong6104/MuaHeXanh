@@ -287,14 +287,23 @@ namespace MUAHEXANH
 
                 using (SqlCommand command = new SqlCommand(query, Program.conn))
                 {
-                    command.Parameters.AddWithValue("@MaChienDich", maChienDich);
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
+                    try
                     {
-                        FrmTaoChienDich_Load(null, null);
+                        command.Parameters.AddWithValue("@MaChienDich", maChienDich);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            FrmTaoChienDich_Load(null, null);
+                        }
                     }
+
+                    catch (Exception ex)
+                    {
+                        Alert.ErrorMessageBox("Chiến dịch đã có đội");
+                    }
+                   
                 }
             }
         }

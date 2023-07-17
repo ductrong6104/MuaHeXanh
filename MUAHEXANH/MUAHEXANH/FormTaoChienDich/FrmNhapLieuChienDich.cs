@@ -45,11 +45,12 @@ namespace MUAHEXANH
             if (state == 0)
             {
                 txtTenChienDich.Focus();
-                dtpNgayPhatDong.Properties.MinValue = this.minNgayBatDau;
-                dtpNgayPhatDong.DateTime = this.minNgayBatDau;
-                DateTime tmp = this.minNgayBatDau.AddDays(1);
-                dtpNgayKetThuc.Properties.MinValue = tmp;
-                dtpNgayKetThuc.DateTime = tmp;
+                DateTime tmp = this.minNgayBatDau.AddYears(1);
+                dtpNgayPhatDong.Properties.MinValue = tmp;
+                dtpNgayPhatDong.DateTime = tmp;
+                
+                dtpNgayKetThuc.Properties.MinValue = tmp.AddDays(1);
+                dtpNgayKetThuc.DateTime = tmp.AddDays(1);
             }
             else
             {

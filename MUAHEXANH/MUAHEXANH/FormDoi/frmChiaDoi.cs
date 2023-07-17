@@ -120,6 +120,7 @@ namespace MUAHEXANH
 
             try
             {
+                int ViTri = cmbDOI.SelectedIndex;
                 Program.KetNoi();
                 SqlCommand sqlcmd = new SqlCommand("sp_chiadoi", Program.conn);
                 sqlcmd.Parameters.Clear();
@@ -130,6 +131,7 @@ namespace MUAHEXANH
                 Console.WriteLine("manhomdangchon trong btnChuyen: " + manhomthem);
                 //ghiThanhCong = true;
                 this.sp_lay_doi_tu_chiendichTableAdapter.Fill(this.dSchiaDoi.sp_lay_doi_tu_chiendich, Program.maChienDich);
+                cmbDOI.SelectedIndex = ViTri;
                 this.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiTableAdapter.Fill(this.dSchiaDoi.sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoi, cmbDOI.SelectedValue.ToString());
                 this.sp_lay_nhom_tu_manhomTableAdapter.Fill(this.dSchiaDoi.sp_lay_nhom_tu_manhom, txtMANHOM.Text);
                 maKhoaCuaDoi = ((DataRowView)sp_lay_manhom_tenhom_makhoa_tenkhoa_tu_madoiBindingSource[0])["MAKHOA"].ToString();
@@ -276,6 +278,7 @@ namespace MUAHEXANH
             doiTruong = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOITRUONG"].ToString();
             doiPho = ((DataRowView)sp_lay_doi_tu_chiendichBindingSource[sp_lay_doi_tu_chiendichBindingSource.Position])["DOIPHO"].ToString();
             nhomTruong = ((DataRowView)sp_lay_nhom_tu_manhomBindingSource[sp_lay_nhom_tu_manhomBindingSource.Position])["NHOMTRUONG"].ToString();
+            Console.WriteLine("nhom truong " + nhomTruong);
             for (int i = 0; i < dgvTHANHVIENDOI.Rows.Count; i++)
             {
                 // chi lay sinh vien nào được tick

@@ -47,6 +47,7 @@ namespace MUAHEXANH
             this.ttsv_trongnhomTableAdapter.Fill(this.dStaoNhom.ttsv_trongnhom);
             this.sp_lay_nha_chuaconhom_tudoiTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sp_lay_nha_chuaconhom_tudoiTableAdapter.Fill(this.dStaoNhom.sp_lay_nha_chuaconhom_tudoi, Program.mTeam);
+            trangThaiBanDau();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
